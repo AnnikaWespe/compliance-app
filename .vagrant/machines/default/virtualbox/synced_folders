@@ -1,0 +1,1 @@
+{"nfs":{"/vagrant":{"type":"nfs","fsnotify":true,"guestpath":"/vagrant","hostpath":"/Users/annikawestphaling/Documents/Projekte/compliance-app","disabled":false,"__vagrantfile":true,"map_uid":501,"map_gid":20,"nfs_udp":true,"nfs_version":3,"uuid":"1285679721"}}}
