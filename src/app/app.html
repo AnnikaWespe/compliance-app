@@ -1,1 +1,48 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content" swipeEnabled="false">
+
+
+  <ion-content padding>
+      <div class="logo"></div>
+      <div class="user-data">
+        <h2 class="primary">User</h2>
+        <div class="stripes"></div>
+        <p class="font-color">Eva Muster</p>
+        <p class="font-color">Funktion</p>
+        <p class="font-color">Adresse 1</p>
+        <p class="font-color">Adresse 2</p>
+
+      </div>
+
+      <ion-footer>
+        <ion-row menuClose>
+          <ion-item tappable class="font-color">
+            <ion-label class="page-title">
+              Share App
+            </ion-label>
+          </ion-item>
+        </ion-row>
+
+        <ion-row menuClose>
+          <ion-item tappable class="font-color">
+            <ion-label class="page-title">
+              Link MR Homepage
+            </ion-label>
+          </ion-item>
+        </ion-row>
+
+        <ion-row menuClose>
+          <ion-item tappable class="font-color">
+            <ion-label class="page-title">
+              Nathan
+            </ion-label>
+          </ion-item>
+        </ion-row>
+      </ion-footer>
+
+
+
+
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
