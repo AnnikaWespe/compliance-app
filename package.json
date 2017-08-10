@@ -16,8 +16,7 @@
     "e2e": "protractor test-config/protractor.conf.js",
     "webdriver-update": "webdriver-manager update",
     "postinstall": "webdriver-manager update",
-    "precommit": "./pre-commit",
-    "prepush": "npm run lint"
+    "precommit": "./pre-commit"
   },
   "config": {
     "ionic_tslint": "tslint.json"
