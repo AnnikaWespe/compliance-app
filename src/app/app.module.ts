@@ -11,7 +11,8 @@ import {QuestionScreenComponent} from '../pages/questionScreen/questionScreen.co
 import {UserService} from '../services/user.service';
 import {ConfirmSendEmailComponent} from '../pages/questionScreen/confirmSendEmail/confirmSendEmail.component';
 import {InfoScreenComponent} from '../pages/questionScreen/infoScreen/infoScreen.component';
-import {EndScreenComponent} from "../pages/questionScreen/endScreen/endScreen.component";
+import {EndScreenComponent} from '../pages/questionScreen/endScreen/endScreen.component';
+import {AppInsightsModule} from '../app-insights/appinsights.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {EndScreenComponent} from "../pages/questionScreen/endScreen/endScreen.co
     EndScreenComponent
   ],
   imports: [
+    AppInsightsModule,
     BrowserModule,
     IonicModule.forRoot(MyAppComponent)
   ],

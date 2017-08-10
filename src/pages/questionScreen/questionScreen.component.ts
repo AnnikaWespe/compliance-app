@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {UserService} from '../../services/user.service';
 import {ConfirmSendEmailComponent} from './confirmSendEmail/confirmSendEmail.component';
-import {InfoScreenComponent} from "./infoScreen/infoScreen.component";
+import {InfoScreenComponent} from './infoScreen/infoScreen.component';
 
 @Component({
   selector: 'page-question-screen',
