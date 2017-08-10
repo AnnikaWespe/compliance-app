@@ -25,7 +25,7 @@ export class QuestionScreenComponent {
       let procedure;
       if (option.getUserCareerLevel) {
         let userCareerLevel = this.userService.getUser().careerLevel;
-        console.log(userCareerLevel)
+        console.log(userCareerLevel);
         procedure = option.proceed[userCareerLevel];
       }
       else {
@@ -34,8 +34,7 @@ export class QuestionScreenComponent {
       console.log(procedure);
       console.log(option);
       console.log(res);
-
-      if (procedure.continueWith === 'email'){
+      if (procedure.continueWith === 'email') {
         this.navCtrl.push(ConfirmSendEmailComponent, {procedure: procedure, result: res});
       }
       else if (procedure.continueWith === 'info') {

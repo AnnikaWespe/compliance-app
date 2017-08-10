@@ -206,4 +206,4 @@ export const DECISIONTREE_DATA = {
     }
   ]
 
-}
+};

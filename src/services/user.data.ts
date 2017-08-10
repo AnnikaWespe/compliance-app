@@ -3,4 +3,4 @@ export const USER = {
   lastName: 'Muster',
   function: 'senior underwriter',
   careerLevel: 'FE2'
-}
+};
