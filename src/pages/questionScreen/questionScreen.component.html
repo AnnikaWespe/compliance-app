@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle start>
+      <ion-icon name="md-person" class="menu-button"></ion-icon>
+    </button>
+    <ion-title>
+      Compliance App
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2 class="primary" padding-top>{{option.questionOrComment}}</h2>
+  <div class="stripes"></div>
+  <p class="grey">{{option.questionOrComment}}</p>
+  <button
+    ion-button
+    tappable
+    class="answer"
+    *ngFor="let subOption of option.options"
+    [disabled]="subOption.disabled"
+    (click)="loadNext(subOption)">
+    {{subOption.name}}
+  </button>
+</ion-content>

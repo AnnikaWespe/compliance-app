@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle start>
+      <ion-icon name="md-person" class="menu-button"></ion-icon>
+    </button>
+    <ion-title>
+      Compliance App
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2 class="primary" padding-top>Danke!</h2>
+  <div class="stripes"></div>
+  <p class="grey">Wir hoffen, es hat alles geklappt.</p>
+  <p class="grey" *ngIf="procedure.documentationRequired">
+    Dieser Vorgang erfordert eine Dokumentation. Bitte bewahren Sie hierfür die Emails zu Anfragen und Genehmigungen sorgfältig auf.
+  </p>
+  <div *ngIf="procedure.sendFormToHumanResources">
+    <p class="grey">
+      Für diesen Vorgang müssen Sie ein Formular ausfüllen und an HR senden.
+    </p>
+    <button
+      ion-button
+      tappable
+      class="answer">
+      Zum Formular
+    </button>
+  </div>
+
+
+  <button
+    ion-button
+    tappable
+    class="answer">
+    Mehr Information
+  </button>
+  <button
+    ion-button
+    tappable
+    class="answer"
+    (click)="goToStartPage()">
+    Ok
+  </button>
+</ion-content>

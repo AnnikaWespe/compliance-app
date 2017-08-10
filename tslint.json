@@ -29,7 +29,7 @@
     ],
     "no-arg": true,
     "no-bitwise": true,
-    "no-console": [
+    /*"no-console": [
       true,
       "log",
       "debug",
@@ -39,6 +39,9 @@
       "time",
       "timeEnd",
       "trace"
+    ],*/
+    "no-console": [
+      false
     ],
     "no-construct": true,
     "no-debugger": true,

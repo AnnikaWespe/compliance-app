@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle start>
+      <ion-icon name="md-person" class="menu-button"></ion-icon>
+    </button>
+    <ion-title>
+      Compliance App
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2 class="primary" padding-top>Auswertung</h2>
+  <div class="stripes"></div>
+  <p class="grey" *ngIf="procedure.note === 'normal'">
+    Für diesen Vorgang benötigen Sie die Genehmigung von (Compliance oder einem Vorgesetzten).
+    Möchten Sie hierzu zu Ihrem Emailpostfach verwiesen werden?
+    Sie können dann eine vorausgefüllte Email versenden.
+  </p>
+  <p class="grey" *ngIf="procedure.note === 'standard'">Eine Zuwendung in diesem Segment ist grundsätzlich nicht gestattet.
+    Es besteht die Möglichkeit, eine Ausnahme durch
+    Compliance zu beantragen. Möchten Sie hierzu zu Ihrem Emailpostfach verwiesen werden?
+    Sie können dann eine vorausgefüllte Email versenden.</p>
+  <button
+    ion-button
+    tappable
+    class="answer"
+  (click)="sendEmail()">
+    Ja
+  </button>
+  <button
+    ion-button
+    tappable
+    class="answer"
+  (click)="goToStartPage()">
+    Nein, abbrechen.
+  </button>
+</ion-content>

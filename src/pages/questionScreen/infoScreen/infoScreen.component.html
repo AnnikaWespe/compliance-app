@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle start>
+      <ion-icon name="md-person" class="menu-button"></ion-icon>
+    </button>
+    <ion-title>
+      Compliance App
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2 class="primary" padding-top>Auswertung</h2>
+  <div class="stripes"></div>
+  <p class="grey">{{procedure.infoText}}</p>
+  <button
+    ion-button
+    tappable
+    class="answer">
+    Mehr Information
+  </button>
+  <button
+    ion-button
+    tappable
+    class="answer"
+    (click)="goToStartPage()"
+  >
+    Ok
+  </button>
+</ion-content>
