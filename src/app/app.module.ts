@@ -13,6 +13,8 @@ import {ConfirmSendEmailComponent} from '../pages/questionScreen/confirmSendEmai
 import {InfoScreenComponent} from '../pages/questionScreen/infoScreen/infoScreen.component';
 import {EndScreenComponent} from '../pages/questionScreen/endScreen/endScreen.component';
 import {AppInsightsModule} from '../app-insights/appinsights.module';
+import {IntroductionComponent} from '../pages/home/introduction/introduction.component';
+import {DecisionTreeDataService} from '../services/decisionTreeData.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import {AppInsightsModule} from '../app-insights/appinsights.module';
     QuestionScreenComponent,
     ConfirmSendEmailComponent,
     InfoScreenComponent,
-    EndScreenComponent
+    EndScreenComponent,
+    IntroductionComponent
   ],
   imports: [
     AppInsightsModule,
@@ -35,12 +38,14 @@ import {AppInsightsModule} from '../app-insights/appinsights.module';
     QuestionScreenComponent,
     ConfirmSendEmailComponent,
     InfoScreenComponent,
-    EndScreenComponent
+    EndScreenComponent,
+    IntroductionComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
     UserService,
+    DecisionTreeDataService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

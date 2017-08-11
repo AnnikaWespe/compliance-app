@@ -1,5 +1,28 @@
 page-home {
-a{
-  text-decoration: none;
-}
+  ion-grid{
+    height: 100%;
+    ion-row{
+      &.upper-row{
+        height: 40%;
+        button{
+          height: 100% !important;
+          .button-inner{
+            white-space: normal;
+          }
+        }
+      }
+      &.lower-row{
+        height: 60%;
+        button{
+          height: 100% !important;
+          .button-inner{
+            white-space: normal;
+          }
+          &.get{}
+          &.give{}
+        }
+      }
+    }
+  }
+
 }

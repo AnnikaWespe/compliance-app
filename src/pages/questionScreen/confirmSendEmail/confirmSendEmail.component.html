@@ -15,11 +15,15 @@
 <ion-content padding>
   <h2 class="primary" padding-top>Auswertung</h2>
   <div class="stripes"></div>
-  <p class="grey" *ngIf="procedure.note === 'normal'">
-    Für diesen Vorgang benötigen Sie die Genehmigung von (Compliance oder einem Vorgesetzten).
-    Möchten Sie hierzu zu Ihrem Emailpostfach verwiesen werden?
-    Sie können dann eine vorausgefüllte Email versenden.
-  </p>
+  <div *ngIf="procedure.note === 'normal'">
+    <p class="grey">
+      Für diesen Vorgang benötigen Sie die Genehmigung von (Compliance oder einem Vorgesetzten).
+      Möchten Sie hierzu zu Ihrem Emailpostfach verwiesen werden?
+      Sie können dann eine vorausgefüllte Email versenden.
+    </p>
+    <p class="grey">Hinweis: Sie können an Ihre Email gerne ein Bild (der Rechnung o.Ä.) anhängen.</p>
+  </div>
+
   <p class="grey" *ngIf="procedure.note === 'standard'">Eine Zuwendung in diesem Segment ist grundsätzlich nicht gestattet.
     Es besteht die Möglichkeit, eine Ausnahme durch
     Compliance zu beantragen. Möchten Sie hierzu zu Ihrem Emailpostfach verwiesen werden?

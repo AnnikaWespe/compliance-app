@@ -13,22 +13,41 @@
 
 
 <ion-content padding>
-  <h2 class="primary" padding-top>Willkommen</h2>
-  <div class="stripes"></div>
-  <p class="grey">Haben Sie Fragen zu Geschenken und Einladungen? Wir helfen Ihnen gerne!</p>
-  <p><a href="human-resources@munich-re.com">human-resources@munich-re.com</a></p>
-  <p><a href="www.munich-re.com/human-resources">www.munich-re.com/human-resources</a></p>
-
-  <h2 class="primary" padding-top>Start</h2>
-  <div class="stripes"></div>
-  <p class="grey">{{decisionTreeData.questionOrComment}}</p>
-  <button
-    ion-button
-    tappable
-    class="answer"
-    *ngFor="let option of decisionTreeData.options"
-    [disabled]="option.disabled"
-    (click)="startProcess(option)">
-    {{option.name}}
-  </button>
+  <ion-grid>
+    <ion-row class="upper-row">
+      <ion-col
+        col-12
+        class="go-to-introduction-screen"
+        (click)="goToIntroductionScreen()">
+        <button ion-button clear full tappable>
+          Geschenke und Einladungen
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="lower-row">
+      <ion-col col-6>
+        <button
+          ion-button
+          clear
+          full
+          tappable
+          class="get"
+          [disabled]="decisionTreeData.options[0].disabled"
+          (click)="startProcess(decisionTreeData.options[0])">
+            {{decisionTreeData.options[0].name}}
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button
+          ion-button
+          clear full
+          tappable
+          class="give"
+          [disabled]="decisionTreeData.options[1].disabled"
+          (click)="startProcess(decisionTreeData.options[1])">
+          {{decisionTreeData.options[1].name}}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

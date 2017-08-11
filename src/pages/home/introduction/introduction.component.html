@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle start>
+      <ion-icon name="md-person" class="menu-button"></ion-icon>
+    </button>
+    <ion-title>
+      Compliance App
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2 class="primary" padding-top>Einleitung</h2>
+  <div class="stripes"></div>
+  <p class="grey">Haben Sie Fragen zu Geschenken und Einladungen? Wir helfen Ihnen gerne!</p>
+  <p><a href="human-resources@munich-re.com">human-resources@munich-re.com</a></p>
+  <p><a href="www.munich-re.com/human-resources">www.munich-re.com/human-resources</a></p>
+
+
+  <div class="grey">Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen? Zur Vermeidung von
+    Interessenskonflikten bzw. Reputationsschäden, muss der Grundsatz der "Sozialadäquanz" beachtet werden. Hierbei
+    gilt:
+    <ul>
+      <li>immer auf den Empfänger und dessen sozialen Status bezogen.</li>
+      <li>Typische Testfrage ist: "Könnte sich der Empfänger das selbst leistet und wäre er auch bereit dafür?</li>
+    </ul>
+  </div>
+  <button
+    ion-button
+    tappable
+    class="answer"
+    *ngFor="let option of decisionTreeData.options"
+    [disabled]="option.disabled"
+    (click)="startProcess(option)">
+    {{option.name}}
+  </button>
+</ion-content>
