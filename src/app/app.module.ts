@@ -15,6 +15,7 @@ import {EndScreenComponent} from '../pages/questionScreen/endScreen/endScreen.co
 import {AppInsightsModule} from '../app-insights/appinsights.module';
 import {IntroductionComponent} from '../pages/home/introduction/introduction.component';
 import {DecisionTreeDataService} from '../services/decisionTreeData.service';
+import {DisclaimerComponent} from '../pages/disclaimer/disclaimer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {DecisionTreeDataService} from '../services/decisionTreeData.service';
     ConfirmSendEmailComponent,
     InfoScreenComponent,
     EndScreenComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    DisclaimerComponent
   ],
   imports: [
     AppInsightsModule,
@@ -39,7 +41,8 @@ import {DecisionTreeDataService} from '../services/decisionTreeData.service';
     ConfirmSendEmailComponent,
     InfoScreenComponent,
     EndScreenComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    DisclaimerComponent
   ],
   providers: [
     StatusBar,

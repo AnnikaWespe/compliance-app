@@ -14,25 +14,9 @@
 
       <ion-footer>
         <ion-row menuClose>
-          <ion-item tappable>
+          <ion-item tappable *ngFor="let page of pages" (click) = "openPage(page)">
             <ion-label class="page-title" class="font-color">
-              Share App
-            </ion-label>
-          </ion-item>
-        </ion-row>
-
-        <ion-row menuClose>
-          <ion-item tappable>
-            <ion-label class="page-title" class="font-color">
-              Link MR Homepage
-            </ion-label>
-          </ion-item>
-        </ion-row>
-
-        <ion-row menuClose>
-          <ion-item tappable>
-            <ion-label class="page-title" class="font-color">
-              Nathan
+              {{page.title}}
             </ion-label>
           </ion-item>
         </ion-row>
