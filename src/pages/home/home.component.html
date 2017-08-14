@@ -5,14 +5,16 @@
       <ion-icon name="md-person" class="menu-button"></ion-icon>
     </button>
     <ion-title>
-      Compliance App
+      {{'title' | translate}}
     </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
+
 <ion-content padding>
+
   <ion-grid>
     <ion-row class="upper-row">
       <ion-col
@@ -20,7 +22,7 @@
         class="go-to-introduction-screen"
         (click)="goToIntroductionScreen()">
         <button ion-button clear full tappable>
-          Geschenke und Einladungen
+          {{'home_GeschenkeUndEinladungen' | translate}}
         </button>
       </ion-col>
     </ion-row>

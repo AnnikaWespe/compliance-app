@@ -5,6 +5,8 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {HomePageComponent} from '../pages/home/home.component';
 import {UserService} from '../services/user.service';
 import {DisclaimerComponent} from '../pages/disclaimer/disclaimer.component';
+import {TranslateService} from '@ngx-translate/core';
+
 // import {AppInsightsService} from '../app-insights/appinsights.service';
 
 @Component({
@@ -16,18 +18,32 @@ export class MyAppComponent {
   pages;
   user;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
-              userService: UserService/*, appinsightsService: AppInsightsService*/) {
+  constructor(platform: Platform,
+              statusBar: StatusBar,
+              splashScreen: SplashScreen,
+              userService: UserService,
+              private translate: TranslateService
+              /*, appinsightsService: AppInsightsService*/) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
     });
     this.user = userService.getUser();
     this.setMenu();
+    this.setTranslateParams();
     /*appinsightsService.Init({
       instrumentationKey: AppConfig.applicationsInsightsKey,
       url: '../assets/js/ai.1.0.9.min.js'
     });*/
+    translate.get('HELLO').subscribe(result => {
+      console.log(result);
+    });
+
+    translate.get(['HELLO']).subscribe(result => {
+      console.log(JSON.stringify(result));
+    });
+
+    console.log(this.translate.instant('HELLO'));
   }
 
   openPage(page) {
@@ -38,5 +54,10 @@ export class MyAppComponent {
     this.pages = [
       {title: 'Home', component: HomePageComponent, parameters: {}},
       {title: 'Disclaimer', component: DisclaimerComponent, parameters: {}}];
+  }
+
+  setTranslateParams() {
+    this.translate.setDefaultLang('de');
+    this.translate.use('de');
   }
 }

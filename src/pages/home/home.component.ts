@@ -12,7 +12,8 @@ export class HomePageComponent {
 
   decisionTreeData;
 
-  constructor(public navCtrl: NavController, decisionTreeDataService: DecisionTreeDataService) {
+  constructor(public navCtrl: NavController,
+              decisionTreeDataService: DecisionTreeDataService) {
     this.decisionTreeData = decisionTreeDataService.getDecisionTreeData();
   }
 
@@ -20,7 +21,7 @@ export class HomePageComponent {
     this.navCtrl.push(QuestionScreenComponent, {option: option, result: [option.name]});
   }
 
-  goToIntroductionScreen(){
+  goToIntroductionScreen() {
     this.navCtrl.push(IntroductionComponent);
   }
 
