@@ -27,6 +27,12 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+
+$font-family-base: 'munichRe';
+$font-family-ios-base: 'munichRe';
+$font-family-md-base: 'munichRe';
+$font-family-wp-base: 'munichRe';
+
 $colors: (
   primary: #007f92,
   secondary: #2b5684,

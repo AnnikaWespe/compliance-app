@@ -1,40 +1,68 @@
 
+// fonts
+
+@font-face {
+  font-family: 'munichRe';
+  src: url('../assets/fonts/Munich_RE_App-Regular.woff');
+}
+
+@font-face {
+  font-family: 'munichRe';
+  src: url('../assets/fonts/Munich_RE_App-Regular_Italic.woff');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'munichRe';
+  src: url('../assets/fonts/Munich_RE_App-Bold_Italic.woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'munichRe';
+  src: url('../assets/fonts/Munich_RE_App-Bold.woff');
+  font-weight: bold;
+}
 
 //define color schemes
-.primary{
+.primary {
   color: map_get($colors, primary);
 }
-.grey{
+
+.grey {
   color: map_get($colors, font-grey)
 }
-.secondary{
+
+.secondary {
   color: map_get($colors, secondary)
 }
-.font-color{
+
+.font-color {
   color: map_get($colors, font-color)
 }
 
 //define UI elements
-.stripes{
+.stripes {
   height: 8px;
   width: 100%;
   background: url('../assets/images/stripes.png');
 }
 
-button.answer{
+button.answer {
   text-transform: none;
   color: map_get($colors, light) !important;
   width: 80%;
 }
 
-ion-icon.menu-button{
+ion-icon.menu-button {
   color: map_get($colors, font-color);
   font-size: medium;
 }
 
 //menu
-ion-menu{
-  ion-content{
+ion-menu {
+  ion-content {
     div.logo {
       background: url('../assets/images/logo.png') no-repeat;
       height: 10%;
@@ -43,14 +71,11 @@ ion-menu{
       background-size: contain;
       clear: left;
     }
-    div.user-data{
-     clear: both;
+    div.user-data {
+      clear: both;
       font-size: medium;
       padding-top: 10%;
     }
   }
 }
 
-*{
-  font-family: Arial, Helvetica, sans-serif;
-}
