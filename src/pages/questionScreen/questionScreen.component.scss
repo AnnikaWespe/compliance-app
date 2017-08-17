@@ -1,3 +1,6 @@
 page-question-screen {
-
+span.open-info{
+  text-decoration: underline;
+  color: map_get($colors, secondary);
+}
 }

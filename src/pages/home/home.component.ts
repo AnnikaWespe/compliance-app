@@ -15,6 +15,7 @@ export class HomePageComponent {
   constructor(public navCtrl: NavController,
               decisionTreeDataService: DecisionTreeDataService) {
     this.decisionTreeData = decisionTreeDataService.getDecisionTreeData();
+    // this.presentInfo();
   }
 
   startProcess(option) {
@@ -24,5 +25,32 @@ export class HomePageComponent {
   goToIntroductionScreen() {
     this.navCtrl.push(IntroductionComponent);
   }
+
+  /*presentInfo() {
+    let alert = this.alertCtrl.create({
+      message: `Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen? Zur Vermeidung von
+    Interessenskonflikten bzw. Reputationsschäden, muss der Grundsatz der "Sozialadäquanz" beachtet werden. Hierbei
+    gilt:
+    <ul>
+      <li>immer auf den Empfänger und dessen sozialen Status bezogen.</li>
+      <li>Typische Testfrage ist: "Könnte sich der Empfänger das selbst leistet und wäre er auch bereit dafür?</li>
+    </ul>`,
+      buttons: [
+        {
+          text: 'Ok, nicht mehr anzeigen!',
+          handler: () => {
+            console.log('Buy clicked');
+          }
+        },
+        {
+          text: 'Ok!',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    alert.present();
+  }*/
 
 }

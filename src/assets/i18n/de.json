@@ -1,5 +1,6 @@
 {
-  "title": "G&E App",
-    "home_GeschenkeUndEinladungen": "Geschenke und Einladungen"
-
+  "title": "Compliance App",
+  "home_GeschenkeUndEinladungen": "Geschenke und Einladungen",
+  "home_informationText": "Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen? Zur Vermeidung von Interessenskonflikten bzw. Reputationsschäden muss der Grundsatz der \"Sozialadäquanz\" beachtet werden. Hierbei gilt:<ul><li>immer auf den Empfänger und dessen sozialen Status bezogen.</li><li>Typische Testfrage ist: \"Könnte sich der Empfänger das selbst leisten, und wäre er auch bereit dazu?\"</li></ul>",
+  "questionScreen_info": " "
 }

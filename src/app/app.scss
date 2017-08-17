@@ -60,6 +60,10 @@ ion-icon.menu-button {
   font-size: medium;
 }
 
+//alert
+.alert-ios, .alert-wrapper{
+  max-width: 90% !important;
+}
 //menu
 ion-menu {
   ion-content {
@@ -77,5 +81,8 @@ ion-menu {
       padding-top: 10%;
     }
   }
+
+
+
 }
 

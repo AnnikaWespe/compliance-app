@@ -3,6 +3,7 @@ import {NavController, NavParams} from 'ionic-angular';
 import {UserService} from '../../services/user.service';
 import {ConfirmSendEmailComponent} from './confirmSendEmail/confirmSendEmail.component';
 import {InfoScreenComponent} from './infoScreen/infoScreen.component';
+import {GlossaryService} from '../../services/glossary.service';
 
 @Component({
   selector: 'page-question-screen',
@@ -13,7 +14,10 @@ export class QuestionScreenComponent {
   option;
   result: string[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private userService: UserService) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private userService: UserService,
+              private glossaryService: GlossaryService) {
     this.option = navParams.get('option');
     this.result = navParams.get('result');
   }
@@ -44,6 +48,10 @@ export class QuestionScreenComponent {
     else {
       this.navCtrl.push(QuestionScreenComponent, {option: option, result: res});
     }
+  }
+
+  openInfo(term) {
+    this.glossaryService.createPopUp(term);
   }
 
 

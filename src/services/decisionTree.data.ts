@@ -2,9 +2,10 @@ export const DECISIONTREE_DATA = {
   questionOrComment: 'Wie können wir helfen?',
   options: [
     {
-      name: 'Annahme von Zuwendung',
+      name: 'Annahme',
       terminalPoint: false,
       questionOrComment: 'Welcher Art ist die Zuwendung?',
+      type: 'what',
       options: [
         {
           name: 'Bargeld',
@@ -16,6 +17,7 @@ export const DECISIONTREE_DATA = {
           name: 'Special Events (z.B. Formel 1, VIP Logen, Oktoberfest)',
           terminalPoint: false,
           questionOrComment: 'Von wem kommt die Zuwendung?',
+          type: 'who',
           options: [
             {
               name: 'Von Anderen',
@@ -96,6 +98,7 @@ export const DECISIONTREE_DATA = {
           name: 'Geschäftsessen',
           terminalPoint: false,
           questionOrComment: 'Von wem kommt die Zuwendung?',
+          type: 'who',
           options: [
             {
               name: 'Von Anderen',
@@ -198,8 +201,9 @@ export const DECISIONTREE_DATA = {
       ]
     },
     {
-      name: 'Vergabe von Zuwendung',
+      name: 'Vergabe',
       questionOrComment: 'Welcher Art ist die Zuwendung?',
+      type: 'what',
       terminalPoint: false,
       disabled: true,
       options: []

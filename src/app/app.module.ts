@@ -14,11 +14,12 @@ import {InfoScreenComponent} from '../pages/questionScreen/infoScreen/infoScreen
 import {EndScreenComponent} from '../pages/questionScreen/endScreen/endScreen.component';
 import {AppInsightsModule} from '../app-insights/appinsights.module';
 import {IntroductionComponent} from '../pages/home/introduction/introduction.component';
-import {DecisionTreeDataService} from '../services/decisionTreeData.service';
 import {DisclaimerComponent} from '../pages/disclaimer/disclaimer.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {createTranslateLoader} from '../services/CreateTranslateLoader';
 import {Http, HttpModule} from '@angular/http';
+import {DecisionTreeDataService} from '../services/decisionTreeData.service';
+import {GlossaryService} from "../services/glossary.service";
 
 @NgModule({
   declarations: [
@@ -39,10 +40,12 @@ import {Http, HttpModule} from '@angular/http';
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
         deps: [Http]
-      }
+      },
     }),
     HttpModule,
-    IonicModule.forRoot(MyAppComponent)
+    IonicModule.forRoot(MyAppComponent, {
+      backButtonText: '',
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -60,6 +63,7 @@ import {Http, HttpModule} from '@angular/http';
     SplashScreen,
     UserService,
     DecisionTreeDataService,
+    GlossaryService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

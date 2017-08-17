@@ -1,25 +1,31 @@
 page-home {
-  ion-grid{
-    height: 100%;
-    ion-row{
-      &.upper-row{
-        height: 40%;
-        button{
-          height: 100% !important;
-          .button-inner{
-            white-space: normal;
-          }
-        }
-      }
-      &.lower-row{
-        height: 60%;
-        button{
-          height: 100% !important;
-          .button-inner{
-            white-space: normal;
-          }
-          &.get{}
-          &.give{}
+  ion-content {
+    background-image: url('../assets/images/home.png');
+    background-size: cover;
+    .title{
+      text-align: center;
+      font-weight: bold;
+    }
+    .information-text {
+      padding: 5%;
+      margin: 5%;
+      background: rgba(225, 225, 225, .7);
+      border-radius: 4px;
+    }
+    .lower-div {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      padding: 5%;
+      display: flex;
+      justify-content: space-between;
+      button {
+        border-radius: 4px !important;
+        display: inline-block;
+        width: 45%;
+        .button-inner {
+          white-space: normal;
+          text-transform: none;
         }
       }
     }

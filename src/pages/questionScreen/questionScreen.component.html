@@ -15,7 +15,16 @@
 <ion-content padding>
   <h2 class="primary" padding-top>{{option.questionOrComment}}</h2>
   <div class="stripes"></div>
-  <p class="grey">{{option.questionOrComment}}</p>
+  <h6 class="grey" *ngIf="option.type == 'what'">Es werden fünf Formen von Zuwendungen unterschieden: Bargeld,
+    <span tappable (click)="openInfo('Special Events')" class="open-info">Special Events</span>,
+    Einladungen mit überwiegendem Unterhaltungscharakter,
+    <span tappable (click)="openInfo('Geschäftsessen')" class="open-info">Geschäftsessen</span> und
+    Geschenke.
+    Was wird Ihnen angeboten?</h6>
+  <h6 class="grey" *ngIf="option.type == 'who'">Sie können von einem
+    <span tappable (click)="openInfo('Geschäftspartner')" class="open-info">Geschäftspartner</span> oder von anderen Personen eingeladen werden.
+  Wer lädt Sie ein?</h6>
+
   <button
     ion-button
     tappable
