@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {UserService} from '../../services/user.service';
-import {ConfirmSendEmailComponent} from './confirmSendEmail/confirmSendEmail.component';
 import {InfoScreenComponent} from './infoScreen/infoScreen.component';
 import {GlossaryService} from '../../services/glossary.service';
+import {ConfirmSendInquiryComponent} from './confirmSendInquiry/confirmSendInquiry.component';
 
 @Component({
   selector: 'page-question-screen',
@@ -13,6 +13,7 @@ export class QuestionScreenComponent {
 
   option;
   result: string[];
+  title: string;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -20,6 +21,7 @@ export class QuestionScreenComponent {
               private glossaryService: GlossaryService) {
     this.option = navParams.get('option');
     this.result = navParams.get('result');
+    this.title = this.option.title || this.navParams.get('title') || '';
   }
 
   loadNext(option) {
@@ -39,14 +41,14 @@ export class QuestionScreenComponent {
       console.log(option);
       console.log(res);
       if (procedure.continueWith === 'email') {
-        this.navCtrl.push(ConfirmSendEmailComponent, {procedure: procedure, result: res});
+        this.navCtrl.push(ConfirmSendInquiryComponent, {procedure: procedure, result: res, title: this.title});
       }
       else if (procedure.continueWith === 'info') {
-        this.navCtrl.push(InfoScreenComponent, {procedure: procedure, result: res});
+        this.navCtrl.push(InfoScreenComponent, {procedure: procedure, result: res, title: this.title});
       }
     }
     else {
-      this.navCtrl.push(QuestionScreenComponent, {option: option, result: res});
+      this.navCtrl.push(QuestionScreenComponent, {option: option, result: res, title: this.title});
     }
   }
 

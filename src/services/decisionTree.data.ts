@@ -9,12 +9,14 @@ export const DECISIONTREE_DATA = {
       options: [
         {
           name: 'Bargeld',
+          title: 'Bargeld',
           terminalPoint: false,
           disabled: true,
           options: []
         },
         {
           name: 'Special Events (z.B. Formel 1, VIP Logen, Oktoberfest)',
+          title: 'Special Event',
           terminalPoint: false,
           questionOrComment: 'Von wem kommt die Zuwendung?',
           type: 'who',
@@ -90,12 +92,14 @@ export const DECISIONTREE_DATA = {
         },
         {
           name: 'Einladungen mit überwiegendem Unterhaltungscharakter',
+          title: 'Unterhaltung',
           terminalPoint: false,
           disabled: true,
           options: []
         },
         {
           name: 'Geschäftsessen',
+          title: 'Geschäftsessen',
           terminalPoint: false,
           questionOrComment: 'Von wem kommt die Zuwendung?',
           type: 'who',
@@ -194,6 +198,7 @@ export const DECISIONTREE_DATA = {
         },
         {
           name: 'Geschenke',
+          title: 'Geschenk',
           terminalPoint: false,
           disabled: true,
           options: []

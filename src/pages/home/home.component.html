@@ -13,12 +13,15 @@
 
 
 <ion-content>
-  <h1 class="title">
-    {{'home_GeschenkeUndEinladungen' | translate}}
-  </h1>
-  <div [innerHtml]="'home_informationText' | translate" class="information-text"></div>
+  <div class="information-text">
+    <h1 class="title">
+      {{'home_GeschenkeUndEinladungen' | translate}}
+    </h1>
+    <span [innerHtml]="'home_informationText_0' | translate"></span>
+    <span [innerHtml]="'home_informationText_1' | translate" tappable (click)="openInfo('home_informationText_1')" class="open-info"></span>
+    <span [innerHtml]="'home_informationText_2' | translate"></span>
+  </div>
   <div class="lower-div">
-
     <button
       ion-button
       full

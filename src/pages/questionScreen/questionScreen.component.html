@@ -4,8 +4,11 @@
     <button ion-button icon-only menuToggle start>
       <ion-icon name="md-person" class="menu-button"></ion-icon>
     </button>
-    <ion-title>
-      Compliance App
+    <ion-title *ngIf="!title">
+      {{'title' | translate}}
+    </ion-title>
+    <ion-title *ngIf="title">
+      {{title}}
     </ion-title>
   </ion-navbar>
 
@@ -24,14 +27,33 @@
   <h6 class="grey" *ngIf="option.type == 'who'">Sie können von einem
     <span tappable (click)="openInfo('Geschäftspartner')" class="open-info">Geschäftspartner</span> oder von anderen Personen eingeladen werden.
   Wer lädt Sie ein?</h6>
+  <div *ngIf="option.type !== 'who' && option.type !== 'what'"
+    class="distance"></div>
 
-  <button
-    ion-button
-    tappable
-    class="answer"
-    *ngFor="let subOption of option.options"
-    [disabled]="subOption.disabled"
-    (click)="loadNext(subOption)">
-    {{subOption.name}}
-  </button>
+
+  <div *ngIf="option.type !== 'what'">
+    <button
+      ion-button
+      tappable
+      class="answer"
+      *ngFor="let subOption of option.options"
+      [disabled]="subOption.disabled"
+      (click)="loadNext(subOption)">
+      {{subOption.name}}
+    </button>
+  </div>
+
+  <div *ngIf="option.type == 'what'">
+    <ion-item
+      text-wrap
+      tappable
+      class="answer"
+      *ngFor="let subOption of option.options"
+      [class.item-disabled]="subOption.disabled"
+      (click)="loadNext(subOption)">
+        {{subOption.name}}
+      <ion-icon name="star" item-end></ion-icon>
+    </ion-item>
+  </div>
+
 </ion-content>

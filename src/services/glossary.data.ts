@@ -17,8 +17,8 @@ export const GLOSSARY = {
   Essenseinladungen und Einladungen mit überwiegendem Unterhaltungscharakter; 
   Einladungen zu Seminaren, Vortragsveranstaltungen und Messen inklusive Anreise- und Übernachtungskosten`,
   'Geschäftspartner':
-    `Jede Partei, zu der eine Geschäftsbeziehung besteht ist ein Geschäftspartner. 
-Insbesondere Zedenten, Retrozedenten, Retrozessionäre sowie Makler`,
+    `Jede Partei, zu der eine Geschäftsbeziehung, besteht ist ein Geschäftspartner. 
+Insbesondere Zedenten, Retrozedenten, Retrozessionäre sowie Makler.`,
   'Genehmigungsgrenzen': `Ab einem festgelegten Geldwert, der sich nach Art der Zuwendung sowie Höhe unterscheidet, 
   ist eine Genehmigung zuvor bei einer zuständigen Führungskompetenz einzuholen. `,
   'Internationale Organisation (IO)':

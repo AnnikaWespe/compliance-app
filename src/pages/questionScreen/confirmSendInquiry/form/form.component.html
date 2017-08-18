@@ -1,0 +1,79 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle start>
+      <ion-icon name="md-person" class="menu-button"></ion-icon>
+    </button>
+    <ion-title>
+      {{title}}
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+
+
+
+  <form [formGroup]="supplementaryData" (ngSubmit)="logForm()">
+    <h2 class="primary" padding-top>Angaben zur Zuwendung</h2>
+    <div class="stripes"></div>
+    <ion-item>
+      <ion-label stacked>Zeitpunkt der Zuwendung</ion-label>
+      <ion-input type="text" formControlName="time" placeholder="Monat/Jahr"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Kurze Beschreibung</ion-label>
+      <ion-textarea type="text" formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Begründung</ion-label>
+      <ion-textarea type="text" formControlName="reason"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Geschätzter Wert in €</ion-label>
+      <ion-input type="text" formControlName="value"></ion-input>
+    </ion-item>
+    <h2 class="primary" padding-top>Angaben zum Zuwendenden</h2>
+    <div class="stripes"></div>
+    <ion-item>
+      <ion-label stacked>Unternehmen</ion-label>
+      <ion-input type="text" formControlName="company"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Name</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Anlass</ion-label>
+      <ion-input type="text" formControlName="occasion"></ion-input>
+    </ion-item>
+    <!--<button ion-button type="submit" [disabled]="!todo.valid">Submit</button>-->
+  </form>
+
+
+  <button
+    ion-button
+    tappable
+    class="answer"
+    (click)="send()">
+    Absenden
+  </button>
+  <button
+    ion-button
+    tappable
+    class="answer"
+    (click)="save()">
+    Speichern
+  </button>
+  <button
+    ion-button
+    tappable
+    class="answer"
+    (click)="goToStartPage()">
+    Abbrechen
+  </button>
+</ion-content>

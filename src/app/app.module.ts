@@ -9,28 +9,28 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {QuestionScreenComponent} from '../pages/questionScreen/questionScreen.component';
 import {UserService} from '../services/user.service';
-import {ConfirmSendEmailComponent} from '../pages/questionScreen/confirmSendEmail/confirmSendEmail.component';
 import {InfoScreenComponent} from '../pages/questionScreen/infoScreen/infoScreen.component';
 import {EndScreenComponent} from '../pages/questionScreen/endScreen/endScreen.component';
 import {AppInsightsModule} from '../app-insights/appinsights.module';
-import {IntroductionComponent} from '../pages/home/introduction/introduction.component';
 import {DisclaimerComponent} from '../pages/disclaimer/disclaimer.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {createTranslateLoader} from '../services/CreateTranslateLoader';
 import {Http, HttpModule} from '@angular/http';
 import {DecisionTreeDataService} from '../services/decisionTreeData.service';
-import {GlossaryService} from "../services/glossary.service";
+import {GlossaryService} from '../services/glossary.service';
+import {FormComponent} from '../pages/questionScreen/confirmSendInquiry/form/form.component';
+import {ConfirmSendInquiryComponent} from '../pages/questionScreen/confirmSendInquiry/confirmSendInquiry.component';
 
 @NgModule({
   declarations: [
     MyAppComponent,
     HomePageComponent,
     QuestionScreenComponent,
-    ConfirmSendEmailComponent,
+    ConfirmSendInquiryComponent,
     InfoScreenComponent,
     EndScreenComponent,
-    IntroductionComponent,
-    DisclaimerComponent
+    DisclaimerComponent,
+    FormComponent
   ],
   imports: [
     AppInsightsModule,
@@ -52,11 +52,11 @@ import {GlossaryService} from "../services/glossary.service";
     MyAppComponent,
     HomePageComponent,
     QuestionScreenComponent,
-    ConfirmSendEmailComponent,
+    ConfirmSendInquiryComponent,
     InfoScreenComponent,
     EndScreenComponent,
-    IntroductionComponent,
-    DisclaimerComponent
+    DisclaimerComponent,
+    FormComponent
   ],
   providers: [
     StatusBar,

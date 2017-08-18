@@ -1,6 +1,10 @@
 page-question-screen {
-span.open-info{
-  text-decoration: underline;
-  color: map_get($colors, secondary);
-}
+
+  .item-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  div.distance{
+    height: 5%;
+  }
 }

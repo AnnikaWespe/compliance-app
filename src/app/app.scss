@@ -60,6 +60,11 @@ ion-icon.menu-button {
   font-size: medium;
 }
 
+span.open-info {
+  text-decoration: underline;
+  color: map_get($colors, secondary);
+}
+
 //alert
 .alert-ios, .alert-wrapper{
   max-width: 90% !important;

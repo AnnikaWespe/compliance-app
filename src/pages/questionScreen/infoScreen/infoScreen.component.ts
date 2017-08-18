@@ -10,10 +10,12 @@ export class InfoScreenComponent {
 
   result;
   procedure;
+  title: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.procedure = navParams.get('procedure');
     this.result = navParams.get('result');
+    this.title = this.navParams.get('title') || '';
   }
 
 

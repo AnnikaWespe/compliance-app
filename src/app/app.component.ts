@@ -35,15 +35,6 @@ export class MyAppComponent {
       instrumentationKey: AppConfig.applicationsInsightsKey,
       url: '../assets/js/ai.1.0.9.min.js'
     });*/
-    translate.get('HELLO').subscribe(result => {
-      console.log(result);
-    });
-
-    translate.get(['HELLO']).subscribe(result => {
-      console.log(JSON.stringify(result));
-    });
-
-    console.log(this.translate.instant('HELLO'));
   }
 
   openPage(page) {
