@@ -4,6 +4,7 @@ import {UserService} from '../../services/user.service';
 import {InfoScreenComponent} from './infoScreen/infoScreen.component';
 import {GlossaryService} from '../../services/glossary.service';
 import {ConfirmSendInquiryComponent} from './confirmSendInquiry/confirmSendInquiry.component';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'page-question-screen',
@@ -18,7 +19,8 @@ export class QuestionScreenComponent {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private userService: UserService,
-              private glossaryService: GlossaryService) {
+              private glossaryService: GlossaryService,
+              private translateService: TranslateService) {
     this.option = navParams.get('option');
     this.result = navParams.get('result');
     this.title = this.option.title || this.navParams.get('title') || '';
@@ -53,7 +55,11 @@ export class QuestionScreenComponent {
   }
 
   openInfo(term) {
-    this.glossaryService.createPopUp(term);
+    term = this.translateService.get(term).subscribe(
+      value => {
+        this.glossaryService.createPopUp(value);
+      }
+    );
   }
 
 

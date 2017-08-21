@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle start>
+      <ion-icon name="md-person" class="menu-button"></ion-icon>
+    </button>
+    <ion-title *ngIf="!title">
+      {{'title' | translate}}
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2 class="primary" padding-top>Ihre gespeicherten Vorgänge</h2>
+  <div class="stripes"></div>
+  <h6 class="grey" *ngIf="processes.length">
+    Klicken Sie auf einen Vorgang, um die Bearbeitung fortzusetzen.
+  </h6>
+  <h6 class="grey" *ngIf="processes.length == 0">
+    Sie haben noch keine gespeicherten Vorgänge.
+  </h6>
+  <div>
+    <ion-item
+      text-wrap
+      tappable
+      *ngFor="let process of processes"
+      (click)="loadProcess(process)">
+      <p>{{process.category}}</p>
+      <p>{{process.supplementaryData.name}}</p>
+      <p>{{process.timeStamp | date:'dd.MM.yyyy' }}</p>
+      <ion-icon name="trash" item-end (click)="deleteProcess($event, process)"></ion-icon>
+    </ion-item>
+  </div>
+
+
+</ion-content>

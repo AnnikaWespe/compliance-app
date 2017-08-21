@@ -6,6 +6,7 @@ import {HomePageComponent} from '../pages/home/home.component';
 import {UserService} from '../services/user.service';
 import {DisclaimerComponent} from '../pages/disclaimer/disclaimer.component';
 import {TranslateService} from '@ngx-translate/core';
+import {SavedProcessesComponent} from '../pages/savedProcesses/savedProcesses.component';
 
 // import {AppInsightsService} from '../app-insights/appinsights.service';
 
@@ -44,7 +45,9 @@ export class MyAppComponent {
   setMenu() {
     this.pages = [
       {title: 'Home', component: HomePageComponent, parameters: {}},
-      {title: 'Disclaimer', component: DisclaimerComponent, parameters: {}}];
+      {title: 'Disclaimer', component: DisclaimerComponent, parameters: {}},
+      {title: 'Gespeicherte Vorgänge', component: SavedProcessesComponent, parameters: {}}
+      ];
   }
 
   setTranslateParams() {

@@ -20,6 +20,8 @@ import {DecisionTreeDataService} from '../services/decisionTreeData.service';
 import {GlossaryService} from '../services/glossary.service';
 import {FormComponent} from '../pages/questionScreen/confirmSendInquiry/form/form.component';
 import {ConfirmSendInquiryComponent} from '../pages/questionScreen/confirmSendInquiry/confirmSendInquiry.component';
+import {SaveProcessService} from '../services/saveProcess.service';
+import {SavedProcessesComponent} from "../pages/savedProcesses/savedProcesses.component";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {ConfirmSendInquiryComponent} from '../pages/questionScreen/confirmSendIn
     InfoScreenComponent,
     EndScreenComponent,
     DisclaimerComponent,
-    FormComponent
+    FormComponent,
+    SavedProcessesComponent
   ],
   imports: [
     AppInsightsModule,
@@ -56,7 +59,8 @@ import {ConfirmSendInquiryComponent} from '../pages/questionScreen/confirmSendIn
     InfoScreenComponent,
     EndScreenComponent,
     DisclaimerComponent,
-    FormComponent
+    FormComponent,
+    SavedProcessesComponent
   ],
   providers: [
     StatusBar,
@@ -64,6 +68,7 @@ import {ConfirmSendInquiryComponent} from '../pages/questionScreen/confirmSendIn
     UserService,
     DecisionTreeDataService,
     GlossaryService,
+    SaveProcessService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -18,7 +18,7 @@
 
 
 
-  <form [formGroup]="supplementaryData" (ngSubmit)="logForm()">
+  <form [formGroup]="supplementaryDataForm" (ngSubmit)="logForm()">
     <h2 class="primary" padding-top>Angaben zur Zuwendung</h2>
     <div class="stripes"></div>
     <ion-item>
@@ -51,6 +51,15 @@
       <ion-label stacked>Anlass</ion-label>
       <ion-input type="text" formControlName="occasion"></ion-input>
     </ion-item>
+    <h2 class="primary" padding-top>Versteuerung</h2>
+    <div class="stripes"></div>
+    <ion-item>
+      <ion-label>Versteuerung durch den Zuwendenden nach §37b EStG erfolgt?</ion-label>
+      <ion-select formControlName="tax">
+        <ion-option value="f">Ja</ion-option>
+        <ion-option value="m">Male</ion-option>
+      </ion-select>
+    </ion-item>
     <!--<button ion-button type="submit" [disabled]="!todo.valid">Submit</button>-->
   </form>
 
@@ -59,7 +68,8 @@
     ion-button
     tappable
     class="answer"
-    (click)="send()">
+    (click)="send()"
+    [disabled]="!supplementaryData.valid">
     Absenden
   </button>
   <button

@@ -65,6 +65,10 @@ $colors: (
 
 @import "ionic.theme.default";
 
+$text-input-highlight-color-valid: map_get($colors, primary);
+$text-input-md-highlight-color: map_get($colors, secondary);
+$text-input-ios-highlight-color: map_get($colors, secondary);
+
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:

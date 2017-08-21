@@ -18,15 +18,15 @@
 <ion-content padding>
   <h2 class="primary" padding-top>{{option.questionOrComment}}</h2>
   <div class="stripes"></div>
-  <h6 class="grey" *ngIf="option.type == 'what'">Es werden fünf Formen von Zuwendungen unterschieden: Bargeld,
-    <span tappable (click)="openInfo('Special Events')" class="open-info">Special Events</span>,
-    Einladungen mit überwiegendem Unterhaltungscharakter,
-    <span tappable (click)="openInfo('Geschäftsessen')" class="open-info">Geschäftsessen</span> und
-    Geschenke.
-    Was wird Ihnen angeboten?</h6>
-  <h6 class="grey" *ngIf="option.type == 'who'">Sie können von einem
-    <span tappable (click)="openInfo('Geschäftspartner')" class="open-info">Geschäftspartner</span> oder von anderen Personen eingeladen werden.
-  Wer lädt Sie ein?</h6>
+  <h6 class="grey" *ngIf="option.type == 'what'">{{'questionScreen_what_0'|translate}}
+    <span tappable (click)="openInfo('questionScreen_what_1')" class="open-info">{{'questionScreen_what_1'|translate}}</span>,
+    {{'questionScreen_what_2'|translate}}
+    <span tappable (click)="openInfo('questionScreen_what_3')" class="open-info">{{'questionScreen_what_3'|translate}}</span>
+    {{'questionScreen_what_4'|translate}}
+  </h6>
+  <h6 class="grey" *ngIf="option.type == 'who'">{{'questionScreen_who_0'|translate}}
+    <span tappable (click)="openInfo('questionScreen_who_1')" class="open-info">{{'questionScreen_who_1'|translate}}</span>
+    {{'questionScreen_who_2'|translate}}</h6>
   <div *ngIf="option.type !== 'who' && option.type !== 'what'"
     class="distance"></div>
 
@@ -52,7 +52,7 @@
       [class.item-disabled]="subOption.disabled"
       (click)="loadNext(subOption)">
         {{subOption.name}}
-      <ion-icon name="star" item-end></ion-icon>
+      <ion-icon name="{{subOption.icon}}" item-end></ion-icon>
     </ion-item>
   </div>
 
