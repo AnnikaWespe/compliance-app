@@ -49,6 +49,7 @@
     "@ionic/cli-plugin-ionic-angular": "1.4.1",
     "@types/jasmine": "2.5.37",
     "@types/node": "7.0.8",
+    "@angular/tsc-wrapped": "^4.3.5",
     "angular2-template-loader": "0.6.2",
     "codelyzer": "2.0.0-beta.4",
     "html-loader": "0.4.5",

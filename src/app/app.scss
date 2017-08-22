@@ -84,7 +84,7 @@ span.open-info {
 }
 
 //alert
-.alert-ios, .alert-wrapper{
+.alert-ios .alert-wrapper{
   max-width: 90% !important;
 }
 //menu
@@ -105,7 +105,8 @@ ion-menu {
     }
   }
 
-
-
+}
+.scroll-content{
+  background: rgba(255,255,255,0.85);
 }
 

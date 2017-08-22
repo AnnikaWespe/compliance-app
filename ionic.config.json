@@ -1,5 +1,6 @@
 {
   "name": "Compliance-App",
   "app_id": "0d82be1a",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integrations": {}
 }
