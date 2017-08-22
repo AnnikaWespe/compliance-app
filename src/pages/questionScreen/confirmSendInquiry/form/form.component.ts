@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, Validators} from '@angular/forms';
 import {SaveProcessService} from '../../../../services/saveProcess.service';
@@ -9,12 +9,20 @@ import {HomePageComponent} from '../../../home/home.component';
   templateUrl: 'form.component.html'
 })
 export class FormComponent {
+
+
   procedure;
   result;
   title;
   supplementaryData;
   supplementaryDataForm;
   timeStamp;
+  saveButtonActive = false;
+
+  @HostListener('document:keypress', ['$event'])
+  handleKeyboardEvent() {
+    this.saveButtonActive = true;
+  }
 
 
   constructor(public navCtrl: NavController,
@@ -35,6 +43,7 @@ export class FormComponent {
       name: [this.supplementaryData.name || '', Validators.required],
       occasion: [this.supplementaryData.occasion || '', Validators.required],
       tax: [this.supplementaryData.tax || '', Validators.required],
+      taxReceiptWhere: [this.supplementaryData.taxReceiptWhere || '']
     });
   }
 
@@ -49,9 +58,11 @@ export class FormComponent {
     };
     if (this.timeStamp) {
       this.saveProcessService.deleteProcess(this.timeStamp);
-    };
+    }
+    ;
     this.timeStamp = timeStamp;
     this.saveProcessService.saveProcess(data);
+    this.saveButtonActive = false;
   }
 
   goToStartPage() {

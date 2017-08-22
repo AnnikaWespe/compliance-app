@@ -1,3 +1,10 @@
+ion-content{
+  background-image: url('../assets/images/home_black_and_white.gif');
+  background-size: cover;
+};
+
+
+
 
 // fonts
 
@@ -47,6 +54,17 @@
   height: 8px;
   width: 100%;
   background: url('../assets/images/stripes.png');
+}
+
+div.buttons-wrapper{
+  position: absolute;
+  width: 100%;
+  top: 70%;
+  transform: translateY(-70%);
+  button{
+    margin:10px auto;
+    display:block;
+  };
 }
 
 button.answer {

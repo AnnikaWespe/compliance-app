@@ -55,10 +55,14 @@
     <div class="stripes"></div>
     <ion-item>
       <ion-label>Versteuerung durch den Zuwendenden nach §37b EStG erfolgt?</ion-label>
-      <ion-select formControlName="tax">
-        <ion-option value="f">Ja</ion-option>
-        <ion-option value="m">Male</ion-option>
+      <ion-select formControlName="tax" (click) = 'saveButtonActive = true'>
+        <ion-option value="yes">Ja</ion-option>
+        <ion-option value="no">Nein</ion-option>
       </ion-select>
+    </ion-item>
+    <ion-item *ngIf="supplementaryDataForm.value.tax == 'yes'">
+      <ion-label stacked>Bestätigung liegt bei</ion-label>
+      <ion-input type="text" formControlName="taxReceiptWhere"></ion-input>
     </ion-item>
     <!--<button ion-button type="submit" [disabled]="!todo.valid">Submit</button>-->
   </form>
@@ -76,7 +80,8 @@
     ion-button
     tappable
     class="answer"
-    (click)="save()">
+    (click)="save()"
+    [disabled]="!saveButtonActive">
     Speichern
   </button>
   <button

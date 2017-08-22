@@ -12,34 +12,43 @@
 </ion-header>
 
 
-<ion-content padding>
-  <h2 class="primary" padding-top>Auswertung</h2>
-  <div class="stripes"></div>
-  <div *ngIf="procedure.note === 'normal'">
-    <p class="grey">
-      Für diesen Vorgang benötigen Sie die Genehmigung von (Compliance oder einem Vorgesetzten).
-      Wir werden von Ihnen hierzu gleich Daten abfragen. Diese können Sie dann im nächsten Schritt abschicken, oder ggf.
-      den Vorgang für die spätere Bearbeitung abspeichern.
-    </p>
-    <p class="grey">Wollen Sie fortfahren?</p>
+<ion-content>
+  <div padding>
+    <h2 class="primary" padding-top>Auswertung</h2>
+    <div class="stripes"></div>
+    <div *ngIf="procedure.note === 'normal'">
+      <p class="grey">
+        Für diesen Vorgang benötigen Sie die Genehmigung von (Compliance oder einem Vorgesetzten).
+        Wir werden von Ihnen hierzu gleich Daten abfragen. Diese können Sie dann im nächsten Schritt abschicken, oder ggf.
+        den Vorgang für die spätere Bearbeitung abspeichern.
+      </p>
+      <p class="grey">Wollen Sie fortfahren?</p>
+    </div>
+    <p class="grey" *ngIf="procedure.note === 'warning'">Eine Zuwendung in diesem Segment ist grundsätzlich nicht gestattet.
+      Es besteht die Möglichkeit, eine Ausnahme durch
+      Compliance zu beantragen. Möchten Sie dies tun?
+      <br><br>In diesem Fall werden wir
+      von Ihnen hierzu gleich Daten abfragen. Diese können Sie dann im nächsten Schritt abschicken, oder ggf.
+      den Vorgang für die spätere Bearbeitung abspeichern.</p>
+
   </div>
 
-  <p class="grey" *ngIf="procedure.note === 'standard'">Eine Zuwendung in diesem Segment ist grundsätzlich nicht gestattet.
-    Es besteht die Möglichkeit, eine Ausnahme durch
-    Compliance zu beantragen. Möchten Sie hierzu zu Ihrem Emailpostfach verwiesen werden?
-    Sie können dann eine vorausgefüllte Email versenden.</p>
-  <button
-    ion-button
-    tappable
-    class="answer"
-  (click)="continue()">
-    Ja
-  </button>
-  <button
-    ion-button
-    tappable
-    class="answer"
-  (click)="goToStartPage()">
-    Nein, abbrechen.
-  </button>
+
+  <div class="buttons-wrapper">
+    <button
+      ion-button
+      tappable
+      class="answer"
+      (click)="continue()">
+      Ja
+    </button>
+    <button
+      ion-button
+      tappable
+      class="answer"
+      (click)="goToStartPage()">
+      Nein, abbrechen.
+    </button>
+  </div>
+
 </ion-content>

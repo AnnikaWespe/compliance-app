@@ -12,21 +12,28 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+<div padding>
   <h2 class="primary" padding-top>Auswertung</h2>
   <div class="stripes"></div>
   <p class="grey">{{procedure.infoText}}</p>
-  <button
-    ion-button
-    tappable
-    class="answer">
-    Mehr Information
-  </button>
-  <button
-    ion-button
-    tappable
-    class="answer"
-    (click)="goToStartPage()">
-    Ok
-  </button>
+</div>
+
+  <div class="buttons-wrapper">
+    <button
+      ion-button
+      tappable
+      class="answer">
+      Mehr Information
+    </button>
+    <button
+      ion-button
+      tappable
+      class="answer"
+      (click)="goToStartPage()">
+      Ok
+    </button>
+  </div>
+
+
 </ion-content>
