@@ -16,7 +16,7 @@
     "e2e": "protractor test-config/protractor.conf.js",
     "webdriver-update": "webdriver-manager update",
     "postinstall": "webdriver-manager update",
-    "precommit": "./pre-commit"
+    "azure-blob": "node ./build/azure.blob.js"
   },
   "config": {
     "ionic_tslint": "tslint.json"
