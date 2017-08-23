@@ -4,11 +4,12 @@ export const DECISIONTREE_DATA = {
     {
       name: 'Annahme',
       terminalPoint: false,
-      questionOrComment: 'Welcher Art ist die Zuwendung?',
+      questionOrComment: 'Worum handelt es sich?',
       type: 'what',
       options: [
         {
           name: 'Bargeld',
+          addition: 'und bargeldähnliche Zuwendungen',
           title: 'Bargeld',
           icon: 'cash',
           terminalPoint: false,
@@ -16,11 +17,12 @@ export const DECISIONTREE_DATA = {
           options: []
         },
         {
-          name: 'Special Events (z.B. Formel 1, VIP Logen, Oktoberfest)',
+          name: 'Special Events',
+          addition: '(z.B. Formel 1, VIP Logen, Oktoberfest)',
           title: 'Special Event',
-          icon: 'bowtie',
+          icon: 'specialEvent',
           terminalPoint: false,
-          questionOrComment: 'Von wem kommt die Zuwendung?',
+          questionOrComment: 'Von wem kommt die Einladung?',
           type: 'who',
           options: [
             {
@@ -32,10 +34,11 @@ export const DECISIONTREE_DATA = {
             {
               name: 'Von Geschäftspartnern',
               terminalPoint: false,
-              questionOrComment: 'Welchen Wert hat die Zuwendung?',
+              questionOrComment: 'Welchen Wert hat die Einladung?',
+              type: 'howMuch',
               options: [
                 {
-                  name: '≤500€',
+                  name: '≤ 500€',
                   terminalPoint: true,
                   getUserCareerLevel: true,
                   proceed: {
@@ -61,7 +64,7 @@ export const DECISIONTREE_DATA = {
                   }
                 },
                 {
-                  name: '>500€',
+                  name: '> 500€',
                   terminalPoint: true,
                   getUserCareerLevel: true,
                   proceed: {
@@ -93,9 +96,10 @@ export const DECISIONTREE_DATA = {
           ]
         },
         {
-          name: 'Einladungen mit überwiegendem Unterhaltungscharakter',
+          name: 'Einladungen',
+          addition: 'mit überwiegendem Unterhaltungscharakter',
           title: 'Unterhaltung',
-          icon: 'film',
+          icon: 'entertainment',
           terminalPoint: false,
           disabled: true,
           options: []
@@ -103,9 +107,9 @@ export const DECISIONTREE_DATA = {
         {
           name: 'Geschäftsessen',
           title: 'Geschäftsessen',
-          icon: 'wine',
+          icon: 'businessLunch',
           terminalPoint: false,
-          questionOrComment: 'Von wem kommt die Zuwendung?',
+          questionOrComment: 'Von wem kommt die Einladung?',
           type: 'who',
           options: [
             {
@@ -125,10 +129,11 @@ export const DECISIONTREE_DATA = {
             {
               name: 'Von Geschäftspartnern',
               terminalPoint: false,
-              questionOrComment: 'Welchen Wert hat die Zuwendung?',
+              questionOrComment: 'Welchen Wert hat die Einladung?',
+              type: 'howMuch',
               options: [
                 {
-                  name: '≤250€',
+                  name: 'x ≤ 250€',
                   terminalPoint: true,
                   getUserCareerLevel: false,
                   proceed: {
@@ -143,7 +148,7 @@ export const DECISIONTREE_DATA = {
                   }
                 },
                 {
-                  name: '250< x ≤500€',
+                  name: '250€ < x ≤ 500€',
                   terminalPoint: true,
                   getUserCareerLevel: true,
                   proceed: {
@@ -169,7 +174,7 @@ export const DECISIONTREE_DATA = {
                   }
                 },
                 {
-                  name: '>500€',
+                  name: 'x > 500€',
                   terminalPoint: true,
                   getUserCareerLevel: true,
                   proceed: {
@@ -203,7 +208,7 @@ export const DECISIONTREE_DATA = {
         {
           name: 'Geschenke',
           title: 'Geschenk',
-          icon: 'cube',
+          icon: 'gifts',
           terminalPoint: false,
           disabled: true,
           options: []
@@ -212,7 +217,7 @@ export const DECISIONTREE_DATA = {
     },
     {
       name: 'Vergabe',
-      questionOrComment: 'Welcher Art ist die Zuwendung?',
+      questionOrComment: 'Worum handelt es sich?',
       type: 'what',
       terminalPoint: false,
       disabled: true,

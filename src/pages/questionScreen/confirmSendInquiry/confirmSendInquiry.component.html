@@ -16,20 +16,8 @@
   <div padding>
     <h2 class="primary" padding-top>Auswertung</h2>
     <div class="stripes"></div>
-    <div *ngIf="procedure.note === 'normal'">
-      <p class="grey">
-        Für diesen Vorgang benötigen Sie die Genehmigung von (Compliance oder einem Vorgesetzten).
-        Wir werden von Ihnen hierzu gleich Daten abfragen. Diese können Sie dann im nächsten Schritt abschicken, oder ggf.
-        den Vorgang für die spätere Bearbeitung abspeichern.
-      </p>
-      <p class="grey">Wollen Sie fortfahren?</p>
-    </div>
-    <p class="grey" *ngIf="procedure.note === 'warning'">Eine Zuwendung in diesem Segment ist grundsätzlich nicht gestattet.
-      Es besteht die Möglichkeit, eine Ausnahme durch
-      Compliance zu beantragen. Möchten Sie dies tun?
-      <br><br>In diesem Fall werden wir
-      von Ihnen hierzu gleich Daten abfragen. Diese können Sie dann im nächsten Schritt abschicken, oder ggf.
-      den Vorgang für die spätere Bearbeitung abspeichern.</p>
+    <p *ngIf="procedure.note === 'normal'" class="grey" [innerHtml]="'confirmSendInquiry_note_normal'|translate"></p>
+    <p class="grey" *ngIf="procedure.note === 'warning'" [innerHtml]="'confirmSendInquiry_note_warning' |translate"></p>
 
   </div>
 
@@ -38,16 +26,16 @@
     <button
       ion-button
       tappable
-      class="answer"
+      class="answer bold"
       (click)="continue()">
-      Ja
+      {{'confirmSendInquiry_button_0'|translate}}
     </button>
     <button
       ion-button
       tappable
-      class="answer"
+      class="answer bold"
       (click)="goToStartPage()">
-      Nein, abbrechen.
+      {{'confirmSendInquiry_button_1'|translate}}
     </button>
   </div>
 

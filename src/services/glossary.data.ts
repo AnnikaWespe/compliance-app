@@ -75,5 +75,15 @@ Großsportveranstaltungen (Oktoberfest,Fußballspiele, Formel-1-Rennen)`,
     Räumlichkeiten von Munich Re verstanden`,
   'Interessenskonflikt':
     `Sämtliche Zuwendungen deren Gewährung bzw. Annahme eine Unvereinbarkeit zwischen privaten 
-  Interesse des Mitarbeiters und den Unternehmensinteresse begründet`
+  Interesse des Mitarbeiters und den Unternehmensinteresse begründet`,
+  'Andere':
+    'andere Personen, u.a. Lieferanten, externe Dienstleister, Amtsträger',
+  'Andere Personen':
+    'andere Personen, u.a. Lieferanten, externe Dienstleister, Amtsträger',
+  'Selbstgenehmigung': '',
+  'Einladungen':
+    'Einladungen zu Veranstaltungen mit überwiegenden Unterhaltungscharakter, z.B. Operspiele',
+  'Bargeld':
+    `Bargeld, bargeldähnliche Zuwendungen und sonstige finanzielle Vorteile 
+  (Schecks, Überweisungen, Preisnachlässe, Rabatte etc.)`
 }

@@ -71,6 +71,9 @@ button.answer {
   text-transform: none;
   color: map_get($colors, light) !important;
   width: 80%;
+  &.bold{
+    font-weight: bold;
+  }
 }
 
 ion-icon.menu-button {
@@ -81,6 +84,10 @@ ion-icon.menu-button {
 span.open-info {
   text-decoration: underline;
   color: map_get($colors, secondary);
+}
+
+span.small{
+  font-size: small;
 }
 
 //alert

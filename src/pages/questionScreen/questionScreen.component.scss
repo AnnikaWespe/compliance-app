@@ -1,10 +1,55 @@
 page-question-screen {
 
-
-
-    .item-disabled {
-      opacity: 0.3;
-      pointer-events: none;
+  ion-item {
+    ion-label{
+      font-size: medium !important;
     }
+    &.entertainment {
+      color: #F28217;
+      div[item-start] {
+        background: url('../assets/icon/entertainment.png') no-repeat;
+        background-size: contain;
+      }
+    }
+    &.businessLunch {
+      color: #7CBE31;
+      div[item-start] {
+        background: url('../assets/icon/businessLunch.png') no-repeat;
+        background-size: contain;
+      }
+    }
+    &.cash {
+      color: #FB0005;
+      div[item-start] {
+        background: url('../assets/icon/cash.png') no-repeat;
+        background-size: contain;
+      }
+    }
+    &.specialEvent {
+      color: #278DFF;
+      div[item-start] {
+        background: url('../assets/icon/specialEvent.png') no-repeat;
+        background-size: contain;
+      }
+    }
+    &.gifts {
+      color: #7CBE31;
+      div[item-start] {
+        background: url('../assets/icon/gifts.png') no-repeat;
+        background-size: contain;
+      }
+    }
+    div[item-start] {
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+
+
+  .item-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
 
 }

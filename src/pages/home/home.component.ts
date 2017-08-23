@@ -25,7 +25,7 @@ export class HomePageComponent {
   }
 
   openInfo(term) {
-    term = this.translateService.get(term).subscribe(
+    this.translateService.get(term).subscribe(
       value => {
         this.glossaryService.createPopUp(value);
       }
