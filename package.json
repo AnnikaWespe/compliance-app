@@ -1,8 +1,8 @@
 {
-  "name": "mswag-ionic-seed",
-  "version": "0.0.1",
-  "author": "Mobile Software AG",
-  "homepage": "http://mobile-software.de/",
+  "name": "ComplianceApp",
+  "version": "0.0.2",
+  "author": "Munich RE",
+  "homepage": "http://munichre.com",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
