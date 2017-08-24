@@ -1,5 +1,4 @@
 export const DECISIONTREE_DATA = {
-  questionOrComment: 'Wie können wir helfen?',
   options: [
     {
       name: 'Annahme',
@@ -22,19 +21,13 @@ export const DECISIONTREE_DATA = {
           title: 'Special Event',
           icon: 'specialEvent',
           terminalPoint: false,
-          questionOrComment: 'Von wem kommt die Einladung?',
+          questionOrComment: 'Wer lädt Sie ein?',
           type: 'who',
           options: [
             {
-              name: 'Von Anderen',
+              name: 'Geschäftspartner',
               terminalPoint: false,
-              disabled: true,
-              options: []
-            },
-            {
-              name: 'Von Geschäftspartnern',
-              terminalPoint: false,
-              questionOrComment: 'Welchen Wert hat die Einladung?',
+              questionOrComment: 'Welchen Geldwert hat die Einladung?',
               type: 'howMuch',
               options: [
                 {
@@ -51,13 +44,13 @@ export const DECISIONTREE_DATA = {
                     },
                     FE2: {
                       continueWith: 'info',
-                      infoText: `Sie können sich ein Geschäftsessen in diesem Preissegment selbst genehmigen.`,
+                      infoText: `self-approval`,
                       documentationRequired: false,
                       sendFormToHumanResources: true,
                     },
                     FE1: {
                       continueWith: 'info',
-                      infoText: `Sie können sich ein Geschäftsessen in diesem Preissegment selbst genehmigen.`,
+                      infoText: `self-approval`,
                       documentationRequired: false,
                       sendFormToHumanResources: true,
                     },
@@ -92,6 +85,12 @@ export const DECISIONTREE_DATA = {
                   }
                 }
               ]
+            },
+            {
+              name: 'Andere',
+              terminalPoint: false,
+              disabled: true,
+              options: []
             }
           ]
         },
@@ -109,27 +108,13 @@ export const DECISIONTREE_DATA = {
           title: 'Geschäftsessen',
           icon: 'businessLunch',
           terminalPoint: false,
-          questionOrComment: 'Von wem kommt die Einladung?',
+          questionOrComment: 'Wer lädt Sie ein?',
           type: 'who',
           options: [
             {
-              name: 'Von Anderen',
-              terminalPoint: true,
-              getUserCareerLevel: false,
-              proceed: {
-                all: {
-                  continueWith: 'email',
-                  emailTo: 'gComp',
-                  note: 'warning',
-                  documentationRequired: true,
-                  sendFormToHumanResources: false,
-                }
-              }
-            },
-            {
-              name: 'Von Geschäftspartnern',
+              name: 'Geschäftspartner',
               terminalPoint: false,
-              questionOrComment: 'Welchen Wert hat die Einladung?',
+              questionOrComment: 'Welchen Geldwert hat die Einladung?',
               type: 'howMuch',
               options: [
                 {
@@ -139,9 +124,7 @@ export const DECISIONTREE_DATA = {
                   proceed: {
                     all: {
                       continueWith: 'info',
-                      infoText: `Ein Geschäftsessen in diesem Preissegment ist grundsätzlich genehmigungsfrei. 
-                  Dies setzt voraus, dass es sich um übliche Geschäftspraxis handelt, 
-                  und der Grundsatz der Sozialadäquanz erfüllt ist.`,
+                      infoText: `no-approval_business-lunch`,
                       documentationRequired: false,
                       sendFormToHumanResources: false,
                     }
@@ -161,13 +144,13 @@ export const DECISIONTREE_DATA = {
                     },
                     FE2: {
                       continueWith: 'info',
-                      infoText: `Sie können sich ein Geschäftsessen in diesem Preissegment selbst genehmigen.`,
+                      infoText: `self-approval`,
                       documentationRequired: true,
                       sendFormToHumanResources: false,
                     },
                     FE1: {
                       continueWith: 'info',
-                      infoText: `Sie können sich ein Geschäftsessen in diesem Preissegment selbst genehmigen.`,
+                      infoText: `self-approval`,
                       documentationRequired: true,
                       sendFormToHumanResources: false,
                     },
@@ -202,6 +185,20 @@ export const DECISIONTREE_DATA = {
                   }
                 }
               ]
+            },
+            {
+              name: 'Andere',
+              terminalPoint: true,
+              getUserCareerLevel: false,
+              proceed: {
+                all: {
+                  continueWith: 'email',
+                  emailTo: 'gComp',
+                  note: 'warning_business-lunch',
+                  documentationRequired: true,
+                  sendFormToHumanResources: false,
+                }
+              }
             }
           ]
         },

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {QuestionScreenComponent} from '../questionScreen/questionScreen.component';
+import {QuestionScreenComponent} from '../get/questionScreen/questionScreen.component';
 import {DecisionTreeDataService} from '../../services/decisionTreeData.service';
 import {GlossaryService} from '../../services/glossary.service';
 import {TranslateService} from '@ngx-translate/core';

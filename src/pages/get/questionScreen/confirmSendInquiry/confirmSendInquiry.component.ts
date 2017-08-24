@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {AlertController, NavController, NavParams} from 'ionic-angular';
-import {HomePageComponent} from '../../home/home.component';
+import {HomePageComponent} from '../../../home/home.component';
 import {FormComponent} from './form/form.component';
 import {TranslateService} from '@ngx-translate/core';
 

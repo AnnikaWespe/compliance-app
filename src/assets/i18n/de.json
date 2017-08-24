@@ -1,5 +1,17 @@
 {
   "title": "Compliance App",
+  "home": {
+    "title": "Geschenke & Einladungen",
+    "info_0": "<p>Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen?</p>Zur Vermeidung von Interessenskonflikten bzw. Reputationsschäden muss der Grundsatz der",
+    "info_1": "Sozialadäquanz",
+    "info_2": "beachtet werden. Hierbei gilt:<ul><li>Immer auf den Empfänger und dessen sozialen Status bezogen.</li><li>Typische Testfrage ist: \"Könnte sich der Empfänger das selbst leisten, und wäre er auch bereit dazu?\"</li></ul>"
+  },
+  "receive": {
+    "questionScreen": {
+
+    }
+  },
+  "give": {},
   "home_GeschenkeUndEinladungen": "Geschenke & Einladungen",
   "home_informationText_0": "<p>Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen?</p>Zur Vermeidung von Interessenskonflikten bzw. Reputationsschäden muss der Grundsatz der",
   "home_informationText_1": "Sozialadäquanz",
@@ -10,15 +22,25 @@
   "questionScreen_what_3": "Einladungen mit überwiegendem Unterhaltungscharakter,",
   "questionScreen_what_4": "Geschäftsessen",
   "questionScreen_what_5": " und Geschenke.",
-  "questionScreen_who_0": "Sie können von einem",
+  "questionScreen_who_0": "Sie können entweder von einem",
   "questionScreen_who_1": "Geschäftspartner",
-  "questionScreen_who_2": "oder von anderen Personen eingeladen werden. Von wem kommt die Einladung?",
+  "questionScreen_who_2": "oder von anderen Personen eingeladen werden.",
   "confirmSendInquiry_note_normal": "In diesem Fall benötigen Sie die Genehmigung von Fr./Hr./Group Compliance, der/die nun mit Hilfe Ihrer Vorgangsdatekontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Dokumentationszwecke erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
-  "confirmSendInquiry_note_warning": "Eine Zuwendung in diesem Segment ist grundsätzlich nicht gestattet. Es besteht die Möglichkeit, eine Ausnahme durchCompliance zu beantragen. Möchten Sie dies tun?<br><br>In diesem Fall werden wirvon Ihnen hierzu gleich Daten abfragen. Diese können Sie dann im nächsten Schritt abschicken, oder ggf.den Vorgang für die spätere Bearbeitung abspeichern.",
+  "confirmSendInquiry_note_warning_business-lunch_0": "Ein Geschäftsessen von ",
+  "confirmSendInquiry_note_warning_business-lunch_1": "Anderen",
+  "confirmSendInquiry_note_warning_business-lunch_1_glossary": "Andere",
+  "confirmSendInquiry_note_warning_business-lunch_2": " ist grundsätzlich untersagt.<br><br>Es besteht die Möglichkeit, eine Ausnahme durch Compliance zu beantragen.",
   "confirmSendInquiry_alert_0": "Wirklich abbrechen?",
   "confirmSendInquiry_alert_1": "Ihre Eingaben gehen dabei verloren.",
   "confirmSendInquiry_alert_2": "Nein, bleiben",
   "confirmSendInquiry_alert_3": "Ok, abbrechen",
   "confirmSendInquiry_button_0": "Anfrage",
-  "confirmSendInquiry_button_1": "Abbrechen"
+  "confirmSendInquiry_button_0_GComp": "Anfrage an GComp",
+  "confirmSendInquiry_button_1": "Abbrechen",
+  "infoScreen_informationText_0": "Sofern der Grundsatz der ",
+  "infoScreen_informationText_1": "Sozialadäquanz",
+  "infoScreen_informationText_2": " erfüllt ist, ",
+  "infoScreen_informationText_no-approval_business-lunch": " können Sie die Einladung zum Geschäftsessen annehmen.",
+  "infoScreen_informationText_self-approval": " können Sie sich eine Zuwendung in diesem Segment selbst genehmigen.",
+  "infoScreen_informationText_3": "Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per Email eine Bestätigung über den Vorgang für Ihre Unterlagen."
 }

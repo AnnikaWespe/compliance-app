@@ -59,14 +59,18 @@
       <ion-label stacked>Bestätigung liegt bei</ion-label>
       <ion-input type="text" formControlName="taxReceiptWhere"></ion-input>
     </ion-item>
-    <!--<button ion-button type="submit" [disabled]="!todo.valid">Submit</button>-->
   </form>
+  <!--*ngIf="!supplementaryData.valid"-->
+  <ion-item>
+    <div class="grey small" item-start>Als Vorlage speichern</div>
+    <ion-checkbox [(ngModel)]="saveTemplateBoolean" item-end></ion-checkbox>
+  </ion-item>
+
 
 
   <button
     ion-button
     tappable
-    class="answer"
     (click)="send()"
     [disabled]="!supplementaryData.valid">
     Absenden
@@ -74,15 +78,13 @@
   <button
     ion-button
     tappable
-    class="answer"
-    (click)="save()"
+    (click)="saveProcess()"
     [disabled]="!saveButtonActive">
     Speichern
   </button>
   <button
     ion-button
     tappable
-    class="answer"
     (click)="goToStartPage()">
     Abbrechen
   </button>

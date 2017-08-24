@@ -41,7 +41,6 @@
     <button
       ion-button
       tappable
-      class="answer"
       *ngFor="let subOption of option.options"
       [disabled]="subOption.disabled"
       (click)="loadNext(subOption)"

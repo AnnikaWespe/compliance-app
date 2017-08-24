@@ -64,16 +64,14 @@ div.buttons-wrapper{
   button{
     margin:10px auto;
     display:block;
+    font-size: medium;
+    text-transform: none;
+    color: map_get($colors, light) !important;
+    width: 80%;
+    &.bold{
+      font-weight: bold;
+    }
   };
-}
-
-button.answer {
-  text-transform: none;
-  color: map_get($colors, light) !important;
-  width: 80%;
-  &.bold{
-    font-weight: bold;
-  }
 }
 
 ion-icon.menu-button {
@@ -86,7 +84,7 @@ span.open-info {
   color: map_get($colors, secondary);
 }
 
-span.small{
+.small{
   font-size: small;
 }
 

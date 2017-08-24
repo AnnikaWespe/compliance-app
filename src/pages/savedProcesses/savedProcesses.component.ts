@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {SaveProcessService} from '../../services/saveProcess.service';
-import {FormComponent} from '../questionScreen/confirmSendInquiry/form/form.component';
+import {FormComponent} from '../get/questionScreen/confirmSendInquiry/form/form.component';
+import {SaveProcessesService} from '../../services/saveProcesses.Service';
+import {Globals} from '../../app/globals';
 
 @Component({
   selector: 'page-saved-processes',
@@ -9,12 +10,15 @@ import {FormComponent} from '../questionScreen/confirmSendInquiry/form/form.comp
 })
 export class SavedProcessesComponent {
 
-  processes = [];
+  processesReceive = [];
+  processesGive = [];
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private saveProcessService: SaveProcessService) {
-    this.processes = saveProcessService.getOpenProcesses();
+              private saveProcessesService: SaveProcessesService,
+              private globals: Globals) {
+    this.processesReceive = saveProcessesService.getOpenProcesses(globals.SAVED_RECEIVE_PROCESSES);
+    this.processesGive = saveProcessesService.getOpenProcesses(globals.SAVED_GIVE_PROCESSES);
   }
 
   loadProcess(process) {
@@ -28,10 +32,18 @@ export class SavedProcessesComponent {
       });
   }
 
-  deleteProcess(event, process) {
+  deleteProcessReceive(event, process) {
     event.stopPropagation();
-    this.saveProcessService.deleteProcess(process.timeStamp);
-    this.processes = this.processes.filter((obj) => {
+    this.saveProcessesService.deleteProcess(process.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
+    this.processesReceive = this.processesReceive.filter((obj) => {
+      return obj.timeStamp !== process.timeStamp;
+    });
+  }
+
+  deleteProcessGive(event, process) {
+    event.stopPropagation();
+    this.saveProcessesService.deleteProcess(process.timeStamp, this.globals.SAVED_GIVE_PROCESSES);
+    this.processesReceive = this.processesReceive.filter((obj) => {
       return obj.timeStamp !== process.timeStamp;
     });
   }

@@ -13,19 +13,40 @@
 
 
 <ion-content padding>
-  <h2 class="primary" padding-top>Ihre gespeicherten Vorgänge</h2>
+  <h2 class="primary" padding-top>Gespeichert - Vergabe</h2>
   <div class="stripes"></div>
-  <h6 class="grey" *ngIf="processes.length">
+  <h6 class="grey" *ngIf="processesGive.length">
     Klicken Sie auf einen Vorgang, um die Bearbeitung fortzusetzen.
   </h6>
-  <h6 class="grey" *ngIf="processes.length == 0">
-    Sie haben noch keine gespeicherten Vorgänge.
+  <h6 class="grey" *ngIf="processesGive.length == 0">
+    Sie haben noch keine gespeicherten Vorgänge in dieser Kategorie.
   </h6>
   <div>
     <ion-item
       text-wrap
       tappable
-      *ngFor="let process of processes"
+      *ngFor="let process of processesGive"
+      (click)="loadProcess(process)">
+      <p>{{process.category}}</p>
+      <p>{{process.supplementaryData.name}}</p>
+      <p>{{process.timeStamp | date:'dd.MM.yyyy' }}</p>
+      <ion-icon name="trash" item-end (click)="deleteProcess($event, process)"></ion-icon>
+    </ion-item>
+  </div>
+
+  <h2 class="primary" padding-top>Gespeichert - Empfang</h2>
+  <div class="stripes"></div>
+  <h6 class="grey" *ngIf="processesReceive.length">
+    Klicken Sie auf einen Vorgang, um die Bearbeitung fortzusetzen.
+  </h6>
+  <h6 class="grey" *ngIf="processesReceive.length == 0">
+    Sie haben noch keine gespeicherten Vorgänge in dieser Kategorie.
+  </h6>
+  <div>
+    <ion-item
+      text-wrap
+      tappable
+      *ngFor="let process of processesReceive"
       (click)="loadProcess(process)">
       <p>{{process.category}}</p>
       <p>{{process.supplementaryData.name}}</p>

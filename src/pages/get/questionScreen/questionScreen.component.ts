@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {UserService} from '../../services/user.service';
+import {UserService} from '../../../services/user.service';
 import {InfoScreenComponent} from './infoScreen/infoScreen.component';
-import {GlossaryService} from '../../services/glossary.service';
+import {GlossaryService} from '../../../services/glossary.service';
 import {ConfirmSendInquiryComponent} from './confirmSendInquiry/confirmSendInquiry.component';
 import {TranslateService} from '@ngx-translate/core';
 

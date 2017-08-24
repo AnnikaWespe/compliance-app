@@ -1,28 +1,28 @@
 import {Injectable} from '@angular/core';
 
 @Injectable()
-export class SaveProcessService {
+export class SaveProcessesService {
 
-  saveProcess(data) {
-    let savedProcesses = JSON.parse(localStorage.getItem('savedProcesses')) || [];
+  saveProcess(data, category) {
+    let savedProcesses = JSON.parse(localStorage.getItem(category)) || [];
     savedProcesses.push(data.timeStamp);
     console.log('timeStamp', data.timeStamp);
     localStorage.setItem(data.timeStamp, JSON.stringify(data));
-    localStorage.setItem('savedProcesses', JSON.stringify(savedProcesses));
+    localStorage.setItem(category, JSON.stringify(savedProcesses));
   }
 
-  deleteProcess(timeStamp) {
-    let savedProcesses = JSON.parse(localStorage.getItem('savedProcesses')) || [];
+  deleteProcess(timeStamp, category) {
+    let savedProcesses = JSON.parse(localStorage.getItem(category)) || [];
     let index = savedProcesses.indexOf(timeStamp);
     if (index > -1) {
       savedProcesses.splice(index, 1);
     }
-    localStorage.setItem('savedProcesses', JSON.stringify(savedProcesses));
+    localStorage.setItem(category, JSON.stringify(savedProcesses));
     localStorage.removeItem(timeStamp);
   }
 
-  getOpenProcesses() {
-    let savedProcessesTimeStamps = JSON.parse(localStorage.getItem('savedProcesses')) || [];
+  getOpenProcesses(category) {
+    let savedProcessesTimeStamps = JSON.parse(localStorage.getItem(category)) || [];
     let processesForDisplay = [];
     for (let timeStamp of savedProcessesTimeStamps) {
       let process = JSON.parse(localStorage.getItem(timeStamp));

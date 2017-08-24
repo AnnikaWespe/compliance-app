@@ -1,8 +1,11 @@
 import {Component, HostListener} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import { NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, Validators} from '@angular/forms';
-import {SaveProcessService} from '../../../../services/saveProcess.service';
-import {HomePageComponent} from '../../../home/home.component';
+import {HomePageComponent} from '../../../../home/home.component';
+import {SaveProcessesService} from '../../../../../services/saveProcesses.Service';
+import {Globals} from '../../../../../app/globals';
+import {SaveTemplatesService} from '../../../../../services/saveTemplates.service';
+import {EndScreenComponent} from '../../endScreen/endScreen.component';
 
 @Component({
   selector: 'page-form',
@@ -18,6 +21,7 @@ export class FormComponent {
   supplementaryDataForm;
   timeStamp;
   saveButtonActive = false;
+  saveTemplateBoolean = false;
 
   @HostListener('document:keypress', ['$event'])
   handleKeyboardEvent() {
@@ -28,7 +32,9 @@ export class FormComponent {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               formBuilder: FormBuilder,
-              private saveProcessService: SaveProcessService) {
+              private saveProcessesService: SaveProcessesService,
+              private saveTemplatesService: SaveTemplatesService,
+              private globals: Globals) {
     this.procedure = navParams.get('procedure');
     this.result = navParams.get('result');
     this.title = navParams.get('title');
@@ -47,7 +53,35 @@ export class FormComponent {
     });
   }
 
-  save() {
+  saveProcess() {
+    let data = this.createDataObject();
+    let timeStamp = data.timeStamp;
+    if (this.timeStamp) {
+      this.saveProcessesService.deleteProcess(this.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
+    }
+    this.timeStamp = timeStamp;
+    this.saveProcessesService.saveProcess(data, this.globals.SAVED_RECEIVE_PROCESSES);
+    this.saveButtonActive = false;
+  }
+
+  send() {
+    let data = this.createDataObject();
+    let timeStamp = data.timeStamp;
+    if (this.timeStamp) {
+      this.saveProcessesService.deleteProcess(this.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
+    }
+    if (this.saveTemplateBoolean) {
+      this.saveTemplatesService.saveTemplate(timeStamp, this.globals.SAVED_RECEIVE_TEMPLATES);
+    }
+    this.navCtrl.setRoot(EndScreenComponent);
+  }
+
+
+  goToStartPage() {
+    this.navCtrl.setRoot(HomePageComponent);
+  }
+
+  createDataObject() {
     let timeStamp = Date.now().toString();
     let data = {
       result: this.result,
@@ -56,16 +90,6 @@ export class FormComponent {
       category: this.title,
       supplementaryData: this.supplementaryDataForm.value,
     };
-    if (this.timeStamp) {
-      this.saveProcessService.deleteProcess(this.timeStamp);
-    }
-    ;
-    this.timeStamp = timeStamp;
-    this.saveProcessService.saveProcess(data);
-    this.saveButtonActive = false;
-  }
-
-  goToStartPage() {
-    this.navCtrl.setRoot(HomePageComponent);
+    return data;
   }
 }

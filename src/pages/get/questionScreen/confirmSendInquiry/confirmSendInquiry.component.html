@@ -17,7 +17,9 @@
     <h2 class="primary" padding-top>Auswertung</h2>
     <div class="stripes"></div>
     <p *ngIf="procedure.note === 'normal'" class="grey" [innerHtml]="'confirmSendInquiry_note_normal'|translate"></p>
-    <p class="grey" *ngIf="procedure.note === 'warning'" [innerHtml]="'confirmSendInquiry_note_warning' |translate"></p>
+    <div class="grey" *ngIf="procedure.note === 'warning_business-lunch'">
+
+    </div>
 
   </div>
 
@@ -26,14 +28,14 @@
     <button
       ion-button
       tappable
-      class="answer bold"
+      class="bold"
       (click)="continue()">
       {{'confirmSendInquiry_button_0'|translate}}
     </button>
     <button
       ion-button
       tappable
-      class="answer bold"
+      class="bold"
       (click)="goToStartPage()">
       {{'confirmSendInquiry_button_1'|translate}}
     </button>
