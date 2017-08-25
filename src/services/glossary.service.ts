@@ -12,12 +12,6 @@ export class GlossaryService {
       let alert = this.alertCtrl.create({
         title: term,
         message: glossary[term],
-        buttons: [
-          {
-            text: 'Ok',
-            role: 'cancel'
-          },
-        ]
       });
       alert.present();
   }

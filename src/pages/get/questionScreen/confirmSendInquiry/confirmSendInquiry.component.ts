@@ -3,6 +3,7 @@ import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {HomePageComponent} from '../../../home/home.component';
 import {FormComponent} from './form/form.component';
 import {TranslateService} from '@ngx-translate/core';
+import {GlossaryService} from '../../../../services/glossary.service';
 
 @Component({
   selector: 'page-confirm-send-inquiry',
@@ -10,7 +11,7 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class ConfirmSendInquiryComponent {
   procedure;
-  result;
+  info;
   title;
   alertTitle;
   alertMessage;
@@ -21,9 +22,10 @@ export class ConfirmSendInquiryComponent {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private alertCtrl: AlertController,
-              private translateService: TranslateService) {
+              private translateService: TranslateService,
+              private glossaryService: GlossaryService) {
     this.procedure = navParams.get('procedure');
-    this.result = navParams.get('result');
+    this.info = navParams.get('info');
     this.title = this.navParams.get('title');
     this.getAlertTranslation();
     console.log(this.procedure.note);
@@ -31,7 +33,7 @@ export class ConfirmSendInquiryComponent {
   }
 
   continue() {
-    this.navCtrl.push(FormComponent, {procedure: this.procedure, result: this.result, title: this.title});
+    this.navCtrl.push(FormComponent, {procedure: this.procedure, info: this.info, title: this.title});
   }
 
 
@@ -59,24 +61,32 @@ export class ConfirmSendInquiryComponent {
   }
 
   getAlertTranslation() {
-    this.translateService.get('confirmSendInquiry_alert_0').subscribe(
+    this.translateService.get('receive.confirmSendInquiry.alert_0').subscribe(
       value => {
         this.alertTitle = value;
       }
     );
-    this.translateService.get('confirmSendInquiry_alert_1').subscribe(
+    this.translateService.get('receive.confirmSendInquiry.alert_1').subscribe(
       value => {
         this.alertMessage = value;
       }
     );
-    this.translateService.get('confirmSendInquiry_alert_2').subscribe(
+    this.translateService.get('receive.confirmSendInquiry.alert_2').subscribe(
       value => {
         this.alertButton1Text = value;
       }
     );
-    this.translateService.get('confirmSendInquiry_alert_3').subscribe(
+    this.translateService.get('receive.confirmSendInquiry.alert_3').subscribe(
       value => {
         this.alertButton2Text = value;
+      }
+    );
+  }
+
+  openInfo(term) {
+    term = this.translateService.get(term).subscribe(
+      value => {
+        this.glossaryService.createPopUp(value);
       }
     );
   }

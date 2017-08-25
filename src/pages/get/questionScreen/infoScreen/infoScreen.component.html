@@ -17,15 +17,18 @@
     <h2 class="primary" padding-top>Auswertung</h2>
     <div class="stripes"></div>
     <div class="grey">
-      <p>{{"infoScreen_informationText_0" | translate}}
-        <span [innerHtml]="'infoScreen_informationText_1' | translate" tappable
-              (click)="openInfo('infoScreen_informationText_1')" class="open-info"></span>
-        {{"infoScreen_informationText_2" | translate}}
-        <span *ngIf="procedure.infoText == 'no-approval_business-lunch'">{{"infoScreen_informationText_no-approval_business-lunch" | translate}}</span>
+      <p>{{"receive.infoScreen.info_0" | translate}}
+        <span [innerHtml]="'receive.infoScreen.info_1' | translate" tappable
+              (click)="openInfo('receive.infoScreen.info_1')" class="open-info"></span>
+        {{"receive.infoScreen.info_2" | translate}}
+        <span *ngIf="procedure.infoText == 'no-approval_business-lunch'">{{"receive.infoScreen.info_no-approval_business-lunch" | translate}}</span>
         <span
-          *ngIf="procedure.infoText == 'self-approval'">{{"infoScreen_informationText_self-approval" | translate}}</span>
+          *ngIf="procedure.infoText == 'self-approval'">{{"receive.infoScreen.info_self-approval_0" | translate}}
+        <span [innerHtml]="'receive.infoScreen.info_self-approval_1' | translate" tappable
+              (click)="openInfo('glossary_self-approval')" class="open-info"></span>.
+        </span>
       </p>
-      <p>{{"infoScreen_informationText_3" | translate}}</p>
+      <p>{{"receive.infoScreen.info_3" | translate}}</p>
     </div>
   </div>
 
@@ -33,13 +36,13 @@
     <button
       ion-button
       tappable>
-      Mehr Information
+      Annehmen
     </button>
     <button
       ion-button
       tappable
       (click)="goToStartPage()">
-      Ok
+      Abbrechen
     </button>
   </div>
 

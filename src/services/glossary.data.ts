@@ -80,7 +80,7 @@ Großsportveranstaltungen (Oktoberfest,Fußballspiele, Formel-1-Rennen)`,
     'andere Personen, u.a. Lieferanten, externe Dienstleister, Amtsträger',
   'Andere Personen':
     'andere Personen, u.a. Lieferanten, externe Dienstleister, Amtsträger',
-  'Selbstgenehmigung': '',
+  'Selbstgenehmigung': 'hier fehlt der Text für "Selbstgenehmigung"',
   'Einladungen':
     'Einladungen zu Veranstaltungen mit überwiegenden Unterhaltungscharakter, z.B. Operspiele',
   'Bargeld':

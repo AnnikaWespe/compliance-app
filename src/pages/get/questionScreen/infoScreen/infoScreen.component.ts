@@ -10,7 +10,7 @@ import {HomePageComponent} from '../../../home/home.component';
 })
 export class InfoScreenComponent {
 
-  result;
+  info;
   procedure;
   title: string;
 
@@ -19,7 +19,7 @@ export class InfoScreenComponent {
               private translateService: TranslateService,
               private glossaryService: GlossaryService) {
     this.procedure = navParams.get('procedure');
-    this.result = navParams.get('result');
+    this.info = navParams.get('info');
     this.title = this.navParams.get('title') || '';
   }
 

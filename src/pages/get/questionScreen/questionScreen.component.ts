@@ -13,7 +13,6 @@ import {TranslateService} from '@ngx-translate/core';
 export class QuestionScreenComponent {
 
   option;
-  result: string[];
   title: string;
 
   constructor(public navCtrl: NavController,
@@ -22,13 +21,10 @@ export class QuestionScreenComponent {
               private glossaryService: GlossaryService,
               private translateService: TranslateService) {
     this.option = navParams.get('option');
-    this.result = navParams.get('result');
     this.title = this.option.title || this.navParams.get('title') || '';
   }
 
   loadNext(option) {
-    let res = this.result.slice();
-    res.push(option.name);
     if (option.terminalPoint) {
       let procedure;
       if (option.getUserCareerLevel) {
@@ -41,16 +37,23 @@ export class QuestionScreenComponent {
       }
       console.log(procedure);
       console.log(option);
-      console.log(res);
       if (procedure.continueWith === 'email') {
-        this.navCtrl.push(ConfirmSendInquiryComponent, {procedure: procedure, result: res, title: this.title});
+        this.navCtrl.push(ConfirmSendInquiryComponent, {
+          procedure: procedure,
+          info: option.proceed.info,
+          title: this.title
+        });
       }
       else if (procedure.continueWith === 'info') {
-        this.navCtrl.push(InfoScreenComponent, {procedure: procedure, result: res, title: this.title});
+        this.navCtrl.push(InfoScreenComponent, {
+          procedure: procedure,
+          info: option.proceed.info,
+          title: this.title
+        });
       }
     }
     else {
-      this.navCtrl.push(QuestionScreenComponent, {option: option, result: res, title: this.title});
+      this.navCtrl.push(QuestionScreenComponent, {option: option, title: this.title});
     }
   }
 

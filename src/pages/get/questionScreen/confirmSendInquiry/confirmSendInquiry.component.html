@@ -11,33 +11,66 @@
 
 </ion-header>
 
-
+"warning_0_business-lunch": "Ein Geschäftsessen ",
+"warning_1_others": "von ",
+"warning_2_others": "Anderen",
+"warning_others_glossary": "Andere",
+"warning"
 <ion-content>
   <div padding>
-    <h2 class="primary" padding-top>Auswertung</h2>
-    <div class="stripes"></div>
-    <p *ngIf="procedure.note === 'normal'" class="grey" [innerHtml]="'confirmSendInquiry_note_normal'|translate"></p>
-    <div class="grey" *ngIf="procedure.note === 'warning_business-lunch'">
 
+    <div
+      *ngIf="procedure.note === 'normal'"
+      class="grey"
+      [innerHtml]="'receive.confirmSendInquiry.normal'|translate">
     </div>
 
+    <div class="grey" *ngIf="procedure.note === 'warning'">
+      <p>
+        <span *ngIf="info.what == 'businessLunch'">
+          {{"receive.confirmSendInquiry.warning_0_business-lunch_0" | translate}}
+          <span
+            (click)="openInfo('receive.confirmSendInquiry.warning_0_business-lunch_1')"
+            class="open-info">{{"receive.confirmSendInquiry.warning_0_business-lunch_1" | translate}}</span>
+        </span>
+        <span *ngIf="info.who == 'others'">
+          {{"receive.confirmSendInquiry.warning_1_others_0" | translate}}
+          <span (click)="openInfo('glossary.others')"
+                class="open-info">{{"receive.confirmSendInquiry.warning_1_others_1" | translate}}</span>
+        </span>
+        <span [innerHtml]="'receive.confirmSendInquiry.warning'|translate"></span>
+      </p>
+    </div>
   </div>
 
+ <!-- <span
+    *ngIf="procedure.infoText == 'self-approval'">
+    {{"receive.confirmSendInquiry.informationText_self-approval" | translate}}
+  </span>-->
 
   <div class="buttons-wrapper">
     <button
       ion-button
       tappable
       class="bold"
-      (click)="continue()">
-      {{'confirmSendInquiry_button_0'|translate}}
+      (click)="continue()"
+      *ngIf="procedure.note === 'normal'">
+      {{'receive.confirmSendInquiry.button_0'|translate}}
+    </button>
+    <button
+      ion-button
+      tappable
+      class="bold"
+      (click)="continue()"
+      *ngIf="procedure.note === 'warning'">
+      {{'receive.confirmSendInquiry.button_0_GComp'|translate}}
     </button>
     <button
       ion-button
       tappable
       class="bold"
       (click)="goToStartPage()">
-      {{'confirmSendInquiry_button_1'|translate}}
+      {{'receive.confirmSendInquiry.button_1'|translate}}
     </button>
   </div>
 
