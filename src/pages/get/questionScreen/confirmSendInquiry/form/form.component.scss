@@ -1,7 +1,7 @@
 page-form {
   .radio-tax-label {
     ion-label {
-      white-space: pre-wrap;
+     white-space: nowrap;
     }
   }
   ion-content{
@@ -12,6 +12,9 @@ page-form {
       text-transform: none;
       width: 80%;
     }
+  }
+  ion-label.alert{
+    color: red;
   }
 
 

@@ -30,10 +30,14 @@
             class="open-info">{{'receive.questionScreen.what_4'|translate}}</span>
       {{'receive.questionScreen.what_5'|translate}}
     </h6>
-    <h6 class="grey" *ngIf="option.type == 'who'">{{'receive.questionScreen.who_0'|translate}}
-      <span tappable (click)="openInfo('receive.questionScreen.who_1')"
-            class="open-info">{{'receive.questionScreen.who_1'|translate}}</span>
-      {{'receive.questionScreen.who_2'|translate}}</h6>
+    <h6 class="grey" *ngIf="option.type == 'who' && (option.what == 'specialEvent' || option.what == 'entertainment' || option.what == 'businessLunch')">
+      {{'receive.questionScreen.who_invitation_0'|translate}}
+      <span tappable (click)="openInfo('glossary.business-partner')"
+            class="open-info">{{'receive.questionScreen.who_invitation_1'|translate}}</span>
+      {{'receive.questionScreen.who_invitation_2'|translate}}
+      <span tappable (click)="openInfo('glossary.others')"
+            class="open-info">{{'receive.questionScreen.who_invitation_3'|translate}}</span>
+      {{'receive.questionScreen.who_invitation_4'|translate}}</h6>
   </div>
 
 

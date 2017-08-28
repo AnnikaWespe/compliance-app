@@ -35,12 +35,12 @@ export const DECISIONTREE_DATA = {
                     name: '≤ 500€',
                     terminalPoint: true,
                     getUserCareerLevel: true,
-                    info: {
-                      what: 'specialEvent',
-                      who: 'businessPartner',
-                      howMuch: '≤ 500€',
-                    },
                     proceed: {
+                      info: {
+                        what: 'specialEvent',
+                        who: 'businessPartner',
+                        howMuch: '≤ 500€',
+                      },
                       standard: {
                         continueWith: 'email',
                         emailTo: 'FE2,',

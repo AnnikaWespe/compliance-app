@@ -85,5 +85,6 @@ Großsportveranstaltungen (Oktoberfest,Fußballspiele, Formel-1-Rennen)`,
     'Einladungen zu Veranstaltungen mit überwiegenden Unterhaltungscharakter, z.B. Operspiele',
   'Bargeld':
     `Bargeld, bargeldähnliche Zuwendungen und sonstige finanzielle Vorteile 
-  (Schecks, Überweisungen, Preisnachlässe, Rabatte etc.)`
+  (Schecks, Überweisungen, Preisnachlässe, Rabatte etc.)`,
+  '§37b EStG': 'Hier fehlt der Text zu §37b EStG'
 }

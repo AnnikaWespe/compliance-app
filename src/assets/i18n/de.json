@@ -14,13 +14,15 @@
       "what_3": "Einladungen mit überwiegendem Unterhaltungscharakter,",
       "what_4": "Geschäftsessen",
       "what_5": " und Geschenke.",
-      "who_0": "Sie können entweder von einem",
-      "who_1": "Geschäftspartner",
-      "who_2": "oder von anderen Personen eingeladen werden."
+      "who_invitation_0": "Sie können entweder von einem",
+      "who_invitation_1": "Geschäftspartner",
+      "who_invitation_2": "oder von ",
+      "who_invitation_3": "anderen Personen",
+      "who_invitation_4": " eingeladen werden."
     },
     "confirmSendInquiry": {
-      "normal": "In diesem Fall benötigen Sie die Genehmigung von Fr./Hr./Group Compliance, der/die nun mit Hilfe Ihrer Vorgangsdatekontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Dokumentationszwecke erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
-      "warning_0_business-lunch_0": "Ein ",
+      "normal": "In diesem Fall benötigen Sie die Genehmigung von Fr./Hr./Group Compliance, der/die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Dokumentationszwecke erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
+      "warning_0_business-lunch_0": "Die Annahme einer Einladung zum ",
       "warning_0_business-lunch_1": "Geschäftsessen",
       "warning_1_others_0": " von ",
       "warning_1_others_1": "Anderen",
@@ -33,7 +35,7 @@
       "button_0_GComp": "Anfrage an GComp",
       "button_1": "Abbrechen"
     },
-    "infoScreen":{
+    "infoScreen": {
       "info_0": "Sofern der Grundsatz der ",
       "info_1": "Sozialadäquanz",
       "info_2": " erfüllt ist, ",
@@ -45,35 +47,62 @@
       "info_self-approval_1_special-event_1": "Special Event",
       "info_self-approval_1": "selbst genehmigen",
       "info_3": "Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per Email eine Bestätigung über den Vorgang für Ihre Unterlagen."
+    },
+    "formScreen": {
+      "cash": {
+        "label_time": "Zeitpunkt der Zuwendung"
+      },
+      "specialEvent": {
+        "label_time": "Zeitpunkt des Events",
+        "label_description": "Name des Events, Anlass",
+        "label_value": "Geschätzter Wert in €",
+        "label_person": "Einladender - Name der Person, Unternehmen",
+        "label_reason": "Begründung"
+      },
+      "entertainment": {},
+      "businessLunch": {
+        "label_time": "Zeitpunkt des Geschäftsessens",
+        "label_description": "Name des Lokals, Anlass",
+        "label_value": "Geschätzter Wert in €",
+        "label_person": "Einladender - Name der Person, Unternehmen",
+        "label_reason": "Begründung"
+
+      },
+      "gifts": {},
+      "label_tax_0": "Versteuerung durch den Zuwendenden nach ",
+      "label_tax_1": "§37b EStG",
+      "label_tax_2": " erfolgt?",
+      "label_tax_3": "Bestätigung liegt bei"
     }
   },
   "give": {},
   "glossary": {
-    "code of conduct": "Verhaltenskodex",
-    "social adequacy":"Sozialadäquanz",
-    "donations":"Zuwendungen",
-    "business partner":"Geschäftspartner",
-    "approval limit":"Genehmigungsgrenzen",
-    "international organisation":"Internationale Organisation (IO)",
-    "management level 1/2":"Führungsebene 1/2",
-    "office support":"Amtsträger",
-    "donations w/o authorisation":"Genehmigungsfreie Geschenke/Einladungen",
-    "donations with authorisation":"Genehmigungspflichtige Geschenke",
-    "online catalog":"Onlinekatalog",
-    "forbidden presents":"Untersagte Geschenke",
-    "principle of adequacy":"Prinzip der Angemessenheit",
-    "special events":"Special Events",
-    "employee event":"Mitarbeiterveranstaltungen",
-    "inventarisation of presents":"Inventarisierung von Geschenken",
-    "notification over retained gifts":"Meldung über behaltene Geschenke",
-    "employee of CP":"Mitarbeiter des Bereichs CP",
-    "guest list":"Einladungslisten",
-    "notification over accepted invitation":"Meldung über angenomme Einladung",
-    "business lunch":"Geschäftsessen",
-    "conflict of interest":"Interessenskonflikt",
-    "others":"Andere",
-    "self-approval":"Selbstgenehmigung",
-    "invitations":"Einladungen",
-    "cash":"Bargeld"
+    "code-of-conduct": "Verhaltenskodex",
+    "social-adequacy": "Sozialadäquanz",
+    "donations": "Zuwendungen",
+    "business-partner": "Geschäftspartner",
+    "approval-limit": "Genehmigungsgrenzen",
+    "international-organisation": "Internationale Organisation (IO)",
+    "management-level-1/2": "Führungsebene 1/2",
+    "office-support": "Amtsträger",
+    "donations-w/o-authorisation": "Genehmigungsfreie Geschenke/Einladungen",
+    "donations-with-authorisation": "Genehmigungspflichtige Geschenke",
+    "online-catalog": "Onlinekatalog",
+    "forbidden-presents": "Untersagte Geschenke",
+    "principle-of-adequacy": "Prinzip der Angemessenheit",
+    "special-events": "Special Events",
+    "employee-event": "Mitarbeiterveranstaltungen",
+    "inventarisation-of-presents": "Inventarisierung von Geschenken",
+    "notification-over-retained-gifts": "Meldung über behaltene Geschenke",
+    "employee-of-CP": "Mitarbeiter des Bereichs CP",
+    "guest-list": "Einladungslisten",
+    "notification-over-accepted-invitation": "Meldung über angenomme Einladung",
+    "business-lunch": "Geschäftsessen",
+    "conflict-of-interest": "Interessenskonflikt",
+    "others": "Andere",
+    "self-approval": "Selbstgenehmigung",
+    "invitations": "Einladungen",
+    "cash": "Bargeld",
+    "paragraph-tax": "§37b EStG"
   }
 }
