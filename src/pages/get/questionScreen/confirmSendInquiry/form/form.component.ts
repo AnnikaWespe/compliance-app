@@ -78,7 +78,6 @@ export class FormComponent {
     this.saveProcessesService.saveProcess(data, this.globals.SAVED_RECEIVE_PROCESSES);
     this.saveButtonActive = false;
   }
-
   // validation as per https://loiane.com/2017/08/angular-reactive-forms-trigger-validation-on-submit/
 
   send() {
@@ -101,7 +100,7 @@ export class FormComponent {
   }
 
   isFieldValid(field: string) {
-    return !this.supplementaryDataForm.get(field).valid;
+    return !this.supplementaryDataForm.get(field).valid && this.supplementaryDataForm.get(field).touched;
   }
 
   displayFieldCss(field: string) {
@@ -150,6 +149,8 @@ export class FormComponent {
 
 
   // Helper Methods
+
+
 
 
   createDataObject() {
