@@ -24,6 +24,7 @@ import {SavedProcessesComponent} from '../pages/savedProcesses/savedProcesses.co
 import {SaveProcessesService} from '../services/saveProcesses.Service';
 import {SaveTemplatesService} from '../services/saveTemplates.service';
 import {Globals} from './globals';
+import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {Globals} from './globals';
     EndScreenComponent,
     DisclaimerComponent,
     FormComponent,
-    SavedProcessesComponent
+    SavedProcessesComponent,
+    SavedTemplatesComponent
   ],
   imports: [
     AppInsightsModule,
@@ -62,7 +64,8 @@ import {Globals} from './globals';
     EndScreenComponent,
     DisclaimerComponent,
     FormComponent,
-    SavedProcessesComponent
+    SavedProcessesComponent,
+    SavedTemplatesComponent
   ],
   providers: [
     StatusBar,

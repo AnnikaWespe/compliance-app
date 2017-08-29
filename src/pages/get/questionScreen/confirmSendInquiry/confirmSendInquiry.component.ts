@@ -17,6 +17,7 @@ export class ConfirmSendInquiryComponent {
   alertMessage;
   alertButton1Text;
   alertButton2Text;
+  normalText;
 
 
   constructor(public navCtrl: NavController,
@@ -27,7 +28,7 @@ export class ConfirmSendInquiryComponent {
     this.procedure = navParams.get('procedure');
     this.info = navParams.get('info');
     this.title = this.navParams.get('title');
-    this.getAlertTranslation();
+    this.getTranslation();
     console.log(this.procedure.note);
     console.log(this.procedure);
   }
@@ -60,7 +61,12 @@ export class ConfirmSendInquiryComponent {
     alert.present();
   }
 
-  getAlertTranslation() {
+  getTranslation() {
+    this.translateService.get( 'receive.confirmSendInquiry.normal', {emailTo: this.procedure.emailTo}).subscribe(
+      value => {
+        this.normalText = value;
+      }
+    );
     this.translateService.get('receive.confirmSendInquiry.alert_0').subscribe(
       value => {
         this.alertTitle = value;

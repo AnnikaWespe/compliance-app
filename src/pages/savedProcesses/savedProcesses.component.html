@@ -4,8 +4,8 @@
     <button ion-button icon-only menuToggle start>
       <ion-icon name="md-person" class="menu-button"></ion-icon>
     </button>
-    <ion-title *ngIf="!title">
-      {{'title' | translate}}
+    <ion-title>
+      {{'savedProcesses.title' | translate}}
     </ion-title>
   </ion-navbar>
 
@@ -13,7 +13,7 @@
 
 
 <ion-content padding>
-  <h2 class="primary" padding-top>Gespeichert - Vergabe</h2>
+  <h2 class="primary" padding-top>Vergabe</h2>
   <div class="stripes"></div>
   <h6 class="grey" *ngIf="processesGive.length">
     Klicken Sie auf einen Vorgang, um die Bearbeitung fortzusetzen.
@@ -28,13 +28,13 @@
       *ngFor="let process of processesGive"
       (click)="loadProcess(process)">
       <p>{{process.category}}</p>
-      <p>{{process.supplementaryData.name}}</p>
+      <p>{{process.supplementaryData.person}}</p>
       <p>{{process.timeStamp | date:'dd.MM.yyyy' }}</p>
-      <ion-icon name="trash" item-end (click)="deleteProcess($event, process)"></ion-icon>
+      <ion-icon name="trash" item-end (click)="deleteProcessGive($event, process)"></ion-icon>
     </ion-item>
   </div>
 
-  <h2 class="primary" padding-top>Gespeichert - Empfang</h2>
+  <h2 class="primary" padding-top>Empfang</h2>
   <div class="stripes"></div>
   <h6 class="grey" *ngIf="processesReceive.length">
     Klicken Sie auf einen Vorgang, um die Bearbeitung fortzusetzen.
@@ -49,9 +49,9 @@
       *ngFor="let process of processesReceive"
       (click)="loadProcess(process)">
       <p>{{process.category}}</p>
-      <p>{{process.supplementaryData.name}}</p>
+      <p>{{process.supplementaryData.person}}</p>
       <p>{{process.timeStamp | date:'dd.MM.yyyy' }}</p>
-      <ion-icon name="trash" item-end (click)="deleteProcess($event, process)"></ion-icon>
+      <ion-icon name="trash" item-end (click)="deleteProcessReceive($event, process)"></ion-icon>
     </ion-item>
   </div>
 

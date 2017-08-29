@@ -1,5 +1,5 @@
 import {Component, HostListener} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, Validators} from '@angular/forms';
 import {HomePageComponent} from '../../../../home/home.component';
 import {SaveProcessesService} from '../../../../../services/saveProcesses.Service';
@@ -21,14 +21,19 @@ export class FormComponent {
   title;
   supplementaryData;
   supplementaryDataForm;
+  // timeStamp is set when the process already exists in saved processes in localStorage
   timeStamp;
-  saveButtonActive = false;
+  saveButtonActive = true;
   saveTemplateBoolean = false;
   label_time;
   label_description;
   label_reason;
   label_value;
   label_person;
+  alertTitle;
+  alertMessage;
+  alertButton1Text;
+  alertButton2Text;
 
   @HostListener('document:keypress', ['$event'])
   handleKeyboardEvent() {
@@ -38,6 +43,7 @@ export class FormComponent {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
+              private alertCtrl: AlertController,
               formBuilder: FormBuilder,
               private saveProcessesService: SaveProcessesService,
               private saveTemplatesService: SaveTemplatesService,
@@ -50,7 +56,7 @@ export class FormComponent {
     this.title = navParams.get('title');
     this.timeStamp = navParams.get('timeStamp');
     this.supplementaryData = navParams.get('supplementaryData') || {};
-    this.setLabels();
+    this.getTranslation();
     this.supplementaryDataForm = formBuilder.group({
       time: [this.supplementaryData.time || timeProposition, Validators.required],
       description: [this.supplementaryData.description || '', Validators.required],
@@ -73,22 +79,78 @@ export class FormComponent {
     this.saveButtonActive = false;
   }
 
+  // validation as per https://loiane.com/2017/08/angular-reactive-forms-trigger-validation-on-submit/
+
   send() {
-    let data = this.createDataObject();
-    let timeStamp = data.timeStamp;
-    if (this.timeStamp) {
-      this.saveProcessesService.deleteProcess(this.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
+    if (this.supplementaryDataForm.invalid) {
+      Object.keys(this.supplementaryDataForm.controls).forEach(field => {
+        const control = this.supplementaryDataForm.get(field);
+        control.markAsTouched({onlySelf: true});
+      });
+    } else {
+      let data = this.createDataObject();
+      if (this.timeStamp) {
+        this.saveProcessesService.deleteProcess(this.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
+      }
+      if (this.saveTemplateBoolean) {
+        this.saveTemplatesService.saveTemplate(data, this.globals.SAVED_RECEIVE_TEMPLATES);
+      }
+      this.navCtrl.setRoot(EndScreenComponent, {procedure: this.procedure, info: this.info, title: this.title});
     }
-    if (this.saveTemplateBoolean) {
-      this.saveTemplatesService.saveTemplate(timeStamp, this.globals.SAVED_RECEIVE_TEMPLATES);
-    }
-    this.navCtrl.setRoot(EndScreenComponent);
+
+  }
+
+  isFieldValid(field: string) {
+    return !this.supplementaryDataForm.get(field).valid;
+  }
+
+  displayFieldCss(field: string) {
+    return {
+      'has-error': this.isFieldValid(field)
+    };
   }
 
 
   goToStartPage() {
-    this.navCtrl.setRoot(HomePageComponent);
+    if (this.saveButtonActive) {
+      let alert = this.alertCtrl.create({
+        title: this.alertTitle,
+        message: this.alertMessage,
+        buttons: [
+          {
+            text: this.alertButton1Text,
+            role: 'cancel',
+            handler: () => {
+            }
+          },
+          {
+            text: this.alertButton2Text,
+            handler: () => {
+              this.navCtrl.setRoot(HomePageComponent);
+            }
+          }
+        ]
+      });
+      alert.present();
+    } else {
+      this.navCtrl.setRoot(HomePageComponent);
+    }
   }
+
+
+  requiredFieldAlert() {
+    let message;
+    let title;
+    let alert = this.alertCtrl.create({
+      title: title,
+      message: message
+    });
+    alert.present();
+  }
+
+
+  // Helper Methods
+
 
   createDataObject() {
     let timeStamp = Date.now().toString();
@@ -102,7 +164,7 @@ export class FormComponent {
     return data;
   }
 
-  setLabels() {
+  getTranslation() {
     this.translateService.get('receive.formScreen.' + this.info.what + '.label_time').subscribe(
       value => this.label_time = value
     );
@@ -118,7 +180,28 @@ export class FormComponent {
     this.translateService.get('receive.formScreen.' + this.info.what + '.label_person').subscribe(
       value => this.label_person = value
     );
+    this.translateService.get('receive.confirmSendInquiry.alert_0').subscribe(
+      value => {
+        this.alertTitle = value;
+      }
+    );
+    this.translateService.get('receive.confirmSendInquiry.alert_1').subscribe(
+      value => {
+        this.alertMessage = value;
+      }
+    );
+    this.translateService.get('receive.confirmSendInquiry.alert_2').subscribe(
+      value => {
+        this.alertButton1Text = value;
+      }
+    );
+    this.translateService.get('receive.confirmSendInquiry.alert_3').subscribe(
+      value => {
+        this.alertButton2Text = value;
+      }
+    );
   }
+
   openInfo(term) {
     term = this.translateService.get(term).subscribe(
       value => {

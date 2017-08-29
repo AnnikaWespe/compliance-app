@@ -1,10 +1,27 @@
 {
   "title": "Compliance App",
+
+  "buttons": {
+    "button_accept": "Annahme",
+    "button_cancel": "Abbrechen",
+    "button_send": "Absenden",
+    "button_save": "Speichern"
+  },
+  "templates": {
+    "title": "Vorlagen"
+  },
+  "savedProcesses": {
+    "title": "Gespeicherte Vorgänge"
+  },
   "home": {
+    "title_menu": "Home",
     "title": "Geschenke & Einladungen",
     "info_0": "<p>Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen?</p>Zur Vermeidung von Interessenskonflikten bzw. Reputationsschäden muss der Grundsatz der",
     "info_1": "Sozialadäquanz",
     "info_2": "beachtet werden. Hierbei gilt:<ul><li>Immer auf den Empfänger und dessen sozialen Status bezogen.</li><li>Typische Testfrage ist: \"Könnte sich der Empfänger das selbst leisten, und wäre er auch bereit dazu?\"</li></ul>"
+  },
+  "disclaimer": {
+    "title": "Disclaimer"
   },
   "receive": {
     "questionScreen": {
@@ -21,7 +38,7 @@
       "who_invitation_4": " eingeladen werden."
     },
     "confirmSendInquiry": {
-      "normal": "In diesem Fall benötigen Sie die Genehmigung von Fr./Hr./Group Compliance, der/die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Dokumentationszwecke erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
+      "normal": "In diesem Fall benötigen Sie die Genehmigung von {{emailTo}}, der/die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Dokumentationszwecke erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
       "warning_0_business-lunch_0": "Die Annahme einer Einladung zum ",
       "warning_0_business-lunch_1": "Geschäftsessen",
       "warning_1_others_0": " von ",
@@ -32,8 +49,7 @@
       "alert_2": "Nein, bleiben",
       "alert_3": "Ok, abbrechen",
       "button_0": "Anfrage",
-      "button_0_GComp": "Anfrage an GComp",
-      "button_1": "Abbrechen"
+      "button_0_GComp": "Anfrage an GComp"
     },
     "infoScreen": {
       "info_0": "Sofern der Grundsatz der ",
@@ -66,7 +82,6 @@
         "label_value": "Geschätzter Wert in €",
         "label_person": "Einladender - Name der Person, Unternehmen",
         "label_reason": "Begründung"
-
       },
       "gifts": {},
       "label_tax_0": "Versteuerung durch den Zuwendenden nach ",

@@ -43,7 +43,7 @@ export const DECISIONTREE_DATA = {
                       },
                       standard: {
                         continueWith: 'email',
-                        emailTo: 'FE2,',
+                        emailTo: 'FE2',
                         note: 'normal',
                         documentationRequired: false,
                         sendFormToHumanResources: true,

@@ -1,0 +1,59 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle start>
+      <ion-icon name="md-person" class="menu-button"></ion-icon>
+    </button>
+    <ion-title>
+      {{'templates.title' | translate}}
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2 class="primary" padding-top>Vergabe</h2>
+  <div class="stripes"></div>
+  <h6 class="grey" *ngIf="templatesGive.length">
+    Klicken Sie auf eine Vorlage, um zum vorausgefüllten Formular zu gelangen.
+  </h6>
+  <h6 class="grey" *ngIf="templatesGive.length == 0">
+    Sie haben noch keine gespeicherten Vorgänge in dieser Kategorie.
+  </h6>
+  <div>
+    <ion-item
+      text-wrap
+      tappable
+      *ngFor="let template of templatesGive"
+      (click)="loadProcess(template)">
+      <p>{{template.category}}</p>
+      <p>{{template.supplementaryData.person}}</p>
+      <p>{{template.timeStamp | date:'dd.MM.yyyy' }}</p>
+      <ion-icon name="trash" item-end (click)="deleteTemplateGive($event, template)"></ion-icon>
+    </ion-item>
+  </div>
+
+  <h2 class="primary" padding-top>Empfang</h2>
+  <div class="stripes"></div>
+  <h6 class="grey" *ngIf="templatesReceive.length">
+    Klicken Sie auf eine Vorlage, um zum vorausgefüllten Formular zu gelangen.
+  </h6>
+  <h6 class="grey" *ngIf="templatesReceive.length == 0">
+    Sie haben noch keine gespeicherten Vorgänge in dieser Kategorie.
+  </h6>
+  <div>
+    <ion-item
+      text-wrap
+      tappable
+      *ngFor="let template of templatesReceive"
+      (click)="loadProcess(template)">
+      <p>{{template.category}}</p>
+      <p>{{template.supplementaryData.person}}</p>
+      <p>{{template.timeStamp | date:'dd.MM.yyyy' }}</p>
+      <ion-icon name="trash" item-end (click)="deleteTemplateReceive($event, template)"></ion-icon>
+    </ion-item>
+  </div>
+
+
+</ion-content>

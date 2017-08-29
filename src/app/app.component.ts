@@ -7,6 +7,7 @@ import {UserService} from '../services/user.service';
 import {DisclaimerComponent} from '../pages/disclaimer/disclaimer.component';
 import {TranslateService} from '@ngx-translate/core';
 import {SavedProcessesComponent} from '../pages/savedProcesses/savedProcesses.component';
+import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.component';
 
 // import {AppInsightsService} from '../app-insights/appinsights.service';
 
@@ -29,9 +30,9 @@ export class MyAppComponent {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+    this.setTranslateParams();
     this.user = userService.getUser();
     this.setMenu();
-    this.setTranslateParams();
     /*appinsightsService.Init({
       instrumentationKey: AppConfig.applicationsInsightsKey,
       url: '../assets/js/ai.1.0.9.min.js'
@@ -43,12 +44,14 @@ export class MyAppComponent {
   }
 
   setMenu() {
-    this.pages = [
-      {title: 'Home', component: HomePageComponent, parameters: {}},
-      {title: 'Disclaimer', component: DisclaimerComponent, parameters: {}},
-      {title: 'Gespeicherte Vorgänge', component: SavedProcessesComponent, parameters: {}}
-      ];
+    this.pages = {
+      home: {component: HomePageComponent, parameters: {}},
+      disclaimer: {component: DisclaimerComponent, parameters: {}},
+      savedProcesses: {component: SavedProcessesComponent, parameters: {}},
+      templates: {component: SavedTemplatesComponent, parameters: {}}
+    };
   }
+
 
   setTranslateParams() {
     this.translate.setDefaultLang('de');

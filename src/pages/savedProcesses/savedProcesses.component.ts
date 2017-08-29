@@ -25,7 +25,7 @@ export class SavedProcessesComponent {
     this.navCtrl.push(FormComponent,
       {
         procedure: process.procedure,
-        result: process.result,
+        info: process.info,
         title: process.category,
         supplementaryData: process.supplementaryData,
         timeStamp: process.timeStamp

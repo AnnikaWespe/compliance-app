@@ -12,11 +12,32 @@
 
       </div>
 
+
       <ion-footer>
         <ion-row menuClose>
-          <ion-item tappable *ngFor="let page of pages" (click) = "openPage(page)">
+          <ion-item tappable (click) = "openPage(pages.home)">
             <ion-label class="page-title" class="font-color">
-              {{page.title}}
+              {{'home.title_menu'|translate}}
+            </ion-label>
+          </ion-item>
+
+          <ion-item tappable (click) = "openPage(pages.disclaimer)">
+            <ion-label class="page-title" class="font-color">
+              {{'disclaimer.title'|translate}}
+            </ion-label>
+          </ion-item>
+
+
+          <ion-item tappable (click) = "openPage(pages.savedProcesses)">
+            <ion-label class="page-title" class="font-color">
+              {{'savedProcesses.title'|translate}}
+            </ion-label>
+          </ion-item>
+
+
+          <ion-item tappable (click) = "openPage(pages.templates)">
+            <ion-label class="page-title" class="font-color">
+              {{'templates.title'|translate}}
             </ion-label>
           </ion-item>
         </ion-row>

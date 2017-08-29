@@ -3,4 +3,5 @@ export const USER = {
   lastName: 'Muster',
   function: 'senior underwriter',
   careerLevel: 'FE2'
+  // careerLevel: 'standard'
 };

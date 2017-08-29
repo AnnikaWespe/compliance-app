@@ -11,18 +11,13 @@
 
 </ion-header>
 
-"warning_0_business-lunch": "Ein Geschäftsessen ",
-"warning_1_others": "von ",
-"warning_2_others": "Anderen",
-"warning_others_glossary": "Andere",
-"warning"
 <ion-content>
   <div padding>
 
     <div
       *ngIf="procedure.note === 'normal'"
       class="grey"
-      [innerHtml]="'receive.confirmSendInquiry.normal'|translate">
+      [innerHtml]="normalText">
     </div>
 
     <div class="grey" *ngIf="procedure.note === 'warning'">
@@ -42,11 +37,6 @@
       </p>
     </div>
   </div>
-
- <!-- <span
-    *ngIf="procedure.infoText == 'self-approval'">
-    {{"receive.confirmSendInquiry.informationText_self-approval" | translate}}
-  </span>-->
 
   <div class="buttons-wrapper">
     <button
@@ -70,7 +60,7 @@
       tappable
       class="bold"
       (click)="goToStartPage()">
-      {{'receive.confirmSendInquiry.button_1'|translate}}
+      {{'buttons.button_cancel'|translate}}
     </button>
   </div>
 
