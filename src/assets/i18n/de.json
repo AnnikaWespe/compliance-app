@@ -7,6 +7,10 @@
     "button_send": "Absenden",
     "button_save": "Speichern"
   },
+  "generics":{
+    "yes": "Ja",
+    "no": "Nein"
+  }
   "templates": {
     "title": "Vorlagen"
   },
@@ -87,7 +91,11 @@
       "label_tax_0": "Versteuerung durch den Zuwendenden nach ",
       "label_tax_1": "§37b EStG",
       "label_tax_2": " erfolgt?",
-      "label_tax_3": "Bestätigung liegt bei"
+      "label_tax_3": "Bestätigung liegt bei",
+      "save-template": "Als Vorlage speichern",
+      "alert_required-field_title": "Formular unvollständig",
+      "alert_required-field_message": "Bitte füllen Sie die rot markierten Felder aus."
+
     }
   },
   "give": {},

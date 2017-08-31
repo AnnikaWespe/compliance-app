@@ -25,16 +25,16 @@
       <ion-label stacked>{{label_value}}</ion-label>
       <ion-input type="text" formControlName="value"></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item [ngClass]="displayFieldCss('person')">
       <ion-label stacked>{{label_person}}</ion-label>
       <ion-input type="text" formControlName="person"></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item [ngClass]="displayFieldCss('reason')">
       <ion-label stacked>{{label_reason}}</ion-label>
       <ion-textarea type="text" formControlName="reason"></ion-textarea>
     </ion-item>
     <ion-list radio-group formControlName="tax">
-      <ion-item class="radio-tax-label" class="grey">
+      <ion-item class="radio-tax-label" class="grey" [ngClass]="displayFieldCss('tax')">
         <ion-label text-wrap>
           {{'receive.formScreen.label_tax_0'|translate}}
           <span tappable (click)="openInfo('glossary.paragraph-tax')"
@@ -43,23 +43,22 @@
         </ion-label>
       </ion-item>
       <ion-item  class="grey">
-        <ion-label>Ja</ion-label>
+        <ion-label>{{'generics.yes'|translate}}</ion-label>
         <ion-radio checked="false" value="yes"></ion-radio>
       </ion-item>
       <ion-item  class="grey">
-        <ion-label>Nein</ion-label>
+        <ion-label>{{'generics.no'|translate}}</ion-label>
         <ion-radio checked="false" value="no"></ion-radio>
       </ion-item>
-      <ion-item *ngIf="supplementaryDataForm.value.tax == 'yes'">
+      <ion-item *ngIf="supplementaryDataForm.value.tax == 'yes'" [ngClass]="displayFieldCss('taxReceiptWhere')" class="taxReceiptWhere">
         <ion-label stacked>{{'receive.formScreen.label_tax_3'|translate}}</ion-label>
         <ion-input type="text" formControlName="taxReceiptWhere"></ion-input>
       </ion-item>
     </ion-list>
 
   </form>
-  <!--*ngIf="!supplementaryData.valid"-->
   <ion-item>
-    <ion-label class="grey small">Als Vorlage speichern</ion-label>
+    <ion-label class="grey small">{{'receive.formScreen.save-template'|translate}}</ion-label>
     <ion-checkbox [(ngModel)]="saveTemplateBoolean" item-end></ion-checkbox>
   </ion-item>
 

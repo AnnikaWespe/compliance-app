@@ -1,6 +1,6 @@
 import {Component, HostListener} from '@angular/core';
 import {AlertController, NavController, NavParams} from 'ionic-angular';
-import {FormBuilder, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {HomePageComponent} from '../../../../home/home.component';
 import {SaveProcessesService} from '../../../../../services/saveProcesses.Service';
 import {Globals} from '../../../../../app/globals';
@@ -34,6 +34,8 @@ export class FormComponent {
   alertMessage;
   alertButton1Text;
   alertButton2Text;
+  alertRequiredFieldMessage;
+  alertRequiredFieldTitle;
 
   @HostListener('document:keypress', ['$event'])
   handleKeyboardEvent() {
@@ -65,6 +67,14 @@ export class FormComponent {
       person: [this.supplementaryData.person || '', Validators.required],
       tax: [this.supplementaryData.tax || '', Validators.required],
       taxReceiptWhere: [this.supplementaryData.taxReceiptWhere || '']
+    }, {
+      validator: (group) => {
+        let taxCtrl = group.controls.tax;
+        let taxReceiptWhereCtrl = group.controls.taxReceiptWhere;
+        if(taxCtrl.value == "yes" && !countryCtrl.value){
+          return {invalid: true};
+        }
+      }
     });
   }
 
@@ -78,25 +88,48 @@ export class FormComponent {
     this.saveProcessesService.saveProcess(data, this.globals.SAVED_RECEIVE_PROCESSES);
     this.saveButtonActive = false;
   }
-  // validation as per https://loiane.com/2017/08/angular-reactive-forms-trigger-validation-on-submit/
 
   send() {
     if (this.supplementaryDataForm.invalid) {
+      console.log(this.supplementaryDataForm);
+      this.requiredFieldAlert();
       Object.keys(this.supplementaryDataForm.controls).forEach(field => {
         const control = this.supplementaryDataForm.get(field);
         control.markAsTouched({onlySelf: true});
       });
     } else {
-      let data = this.createDataObject();
+      /*let data = this.createDataObject();
       if (this.timeStamp) {
         this.saveProcessesService.deleteProcess(this.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
       }
       if (this.saveTemplateBoolean) {
         this.saveTemplatesService.saveTemplate(data, this.globals.SAVED_RECEIVE_TEMPLATES);
       }
-      this.navCtrl.setRoot(EndScreenComponent, {procedure: this.procedure, info: this.info, title: this.title});
+      this.navCtrl.setRoot(EndScreenComponent, {procedure: this.procedure, info: this.info, title: this.title});*/
+      console.log(this.supplementaryDataForm);
     }
 
+  }
+
+  sendToBackend() {
+    let data = this.createDataObject();
+    if (this.timeStamp) {
+      this.saveProcessesService.deleteProcess(this.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
+    }
+    if (this.saveTemplateBoolean) {
+      this.saveTemplatesService.saveTemplate(data, this.globals.SAVED_RECEIVE_TEMPLATES);
+    }
+    this.navCtrl.setRoot(EndScreenComponent, {procedure: this.procedure, info: this.info, title: this.title});
+  }
+
+  requiredIfTaxAlreadyPaid() {
+    let taxAlreadyPaid = this.supplementaryDataForm.value.tax;
+    let fieldHasText = this.supplementaryDataForm.value.taxReceiptWhere.length > 0;
+    if (taxAlreadyPaid) {
+      return fieldHasText;
+    } else {
+      return true;
+    }
   }
 
   isFieldValid(field: string) {
@@ -138,19 +171,15 @@ export class FormComponent {
 
 
   requiredFieldAlert() {
-    let message;
-    let title;
     let alert = this.alertCtrl.create({
-      title: title,
-      message: message
+      title: this.alertRequiredFieldTitle,
+      message: this.alertRequiredFieldMessage
     });
     alert.present();
   }
 
 
   // Helper Methods
-
-
 
 
   createDataObject() {
@@ -199,6 +228,16 @@ export class FormComponent {
     this.translateService.get('receive.confirmSendInquiry.alert_3').subscribe(
       value => {
         this.alertButton2Text = value;
+      }
+    );
+    this.translateService.get('receive.formScreen.alert_required-field_message').subscribe(
+      value => {
+        this.alertRequiredFieldMessage = value;
+      }
+    );
+    this.translateService.get('receive.formScreen.alert_required-field_title').subscribe(
+      value => {
+        this.alertRequiredFieldTitle = value;
       }
     );
   }
