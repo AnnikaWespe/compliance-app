@@ -25,13 +25,13 @@
         <span *ngIf="info.what == 'businessLunch'">
           {{"receive.confirmSendInquiry.warning_0_business-lunch_0" | translate}}
           <span
-            (click)="openInfo('receive.confirmSendInquiry.warning_0_business-lunch_1')"
-            class="open-info">{{"receive.confirmSendInquiry.warning_0_business-lunch_1" | translate}}</span>
+            (click)="openInfo('glossary.business-lunch')"
+            class="open-info">{{"receive.confirmSendInquiry.warning_0_business-lunch_1_glossary" | translate}}</span>
         </span>
         <span *ngIf="info.who == 'others'">
           {{"receive.confirmSendInquiry.warning_1_others_0" | translate}}
           <span (click)="openInfo('glossary.others')"
-                class="open-info">{{"receive.confirmSendInquiry.warning_1_others_1" | translate}}</span>
+                class="open-info">{{"receive.confirmSendInquiry.warning_1_others_1_glossary" | translate}}</span>
         </span>
         <span [innerHtml]="'receive.confirmSendInquiry.warning'|translate"></span>
       </p>

@@ -10,7 +10,7 @@
   "generics":{
     "yes": "Ja",
     "no": "Nein"
-  }
+  },
   "templates": {
     "title": "Vorlagen"
   },
@@ -21,7 +21,7 @@
     "title_menu": "Home",
     "title": "Geschenke & Einladungen",
     "info_0": "<p>Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen?</p>Zur Vermeidung von Interessenskonflikten bzw. Reputationsschäden muss der Grundsatz der",
-    "info_1": "Sozialadäquanz",
+    "info_1_glossary": "Sozialadäquanz",
     "info_2": "beachtet werden. Hierbei gilt:<ul><li>Immer auf den Empfänger und dessen sozialen Status bezogen.</li><li>Typische Testfrage ist: \"Könnte sich der Empfänger das selbst leisten, und wäre er auch bereit dazu?\"</li></ul>"
   },
   "disclaimer": {
@@ -30,23 +30,23 @@
   "receive": {
     "questionScreen": {
       "what_0": "Es werden fünf Formen von Zuwendungen unterschieden: ",
-      "what_1": "Bargeld",
-      "what_2": "Special Events",
+      "what_1_glossary": "Bargeld",
+      "what_2_glossary": "Special Events",
       "what_3": "Einladungen mit überwiegendem Unterhaltungscharakter,",
-      "what_4": "Geschäftsessen",
+      "what_4_glossary": "Geschäftsessen",
       "what_5": " und Geschenke.",
       "who_invitation_0": "Sie können entweder von einem",
-      "who_invitation_1": "Geschäftspartner",
+      "who_invitation_1_glossary": "Geschäftspartner",
       "who_invitation_2": "oder von ",
-      "who_invitation_3": "anderen Personen",
+      "who_invitation_3_glossary": "anderen Personen",
       "who_invitation_4": " eingeladen werden."
     },
     "confirmSendInquiry": {
       "normal": "In diesem Fall benötigen Sie die Genehmigung von {{emailTo}}, der/die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Dokumentationszwecke erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
       "warning_0_business-lunch_0": "Die Annahme einer Einladung zum ",
-      "warning_0_business-lunch_1": "Geschäftsessen",
+      "warning_0_business-lunch_1_glossary": "Geschäftsessen",
       "warning_1_others_0": " von ",
-      "warning_1_others_1": "Anderen",
+      "warning_1_others_1_glossary": "Anderen",
       "warning": " ist grundsätzlich untersagt.<br><br>Es besteht die Möglichkeit, eine Ausnahme durch Compliance zu beantragen.",
       "alert_0": "Wirklich abbrechen?",
       "alert_1": "Ihre Eingaben gehen dabei verloren.",
@@ -57,15 +57,15 @@
     },
     "infoScreen": {
       "info_0": "Sofern der Grundsatz der ",
-      "info_1": "Sozialadäquanz",
+      "info_1_glossary": "Sozialadäquanz",
       "info_2": " erfüllt ist, ",
       "info_no-approval_business-lunch": " können Sie die Einladung zum Geschäftsessen annehmen.",
       "info_self-approval_0": " können Sie sich ",
       "info_self-approval_1_business-lunch_0": "die Einladung zum",
-      "info_self-approval_1_business-lunch_1": "Geschäftsessen",
+      "info_self-approval_1_business-lunch_1_glossary": "Geschäftsessen",
       "info_self-approval_1_special-event_0": "die Einladung zum ",
-      "info_self-approval_1_special-event_1": "Special Event",
-      "info_self-approval_1": "selbst genehmigen",
+      "info_self-approval_1_special-event_1_glossary": "Special Event",
+      "info_self-approval_1_glossary": "selbst genehmigen",
       "info_3": "Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per Email eine Bestätigung über den Vorgang für Ihre Unterlagen."
     },
     "formScreen": {
@@ -89,7 +89,7 @@
       },
       "gifts": {},
       "label_tax_0": "Versteuerung durch den Zuwendenden nach ",
-      "label_tax_1": "§37b EStG",
+      "label_tax_1_glossary": "§37b EStG",
       "label_tax_2": " erfolgt?",
       "label_tax_3": "Bestätigung liegt bei",
       "save-template": "Als Vorlage speichern",

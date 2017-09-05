@@ -90,10 +90,7 @@ export class ConfirmSendInquiryComponent {
   }
 
   openInfo(term) {
-    term = this.translateService.get(term).subscribe(
-      value => {
-        this.glossaryService.createPopUp(value);
-      }
-    );
+    this.glossaryService.createPopUp(term);
   }
+
 }

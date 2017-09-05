@@ -3,7 +3,6 @@ import {NavController} from 'ionic-angular';
 import {QuestionScreenComponent} from '../get/questionScreen/questionScreen.component';
 import {DecisionTreeDataService} from '../../services/decisionTreeData.service';
 import {GlossaryService} from '../../services/glossary.service';
-import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'page-home',
@@ -15,8 +14,7 @@ export class HomePageComponent {
 
   constructor(public navCtrl: NavController,
               decisionTreeDataService: DecisionTreeDataService,
-              private glossaryService: GlossaryService,
-              private translateService: TranslateService) {
+              private glossaryService: GlossaryService) {
     this.decisionTreeData = decisionTreeDataService.getDecisionTreeData();
   }
 
@@ -25,11 +23,7 @@ export class HomePageComponent {
   }
 
   openInfo(term) {
-    this.translateService.get(term).subscribe(
-      value => {
-        this.glossaryService.createPopUp(value);
-      }
-    );
+    this.glossaryService.createPopUp(term);
   }
 
 }

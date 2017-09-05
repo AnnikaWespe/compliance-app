@@ -18,8 +18,8 @@
     <div class="stripes"></div>
     <div class="grey">
       <p>{{"receive.infoScreen.info_0" | translate}}
-        <span [innerHtml]="'receive.infoScreen.info_1' | translate" tappable
-              (click)="openInfo('receive.infoScreen.info_1')" class="open-info"></span>
+        <span [innerHtml]="'receive.infoScreen.info_1_glossary' | translate" tappable
+              (click)="openInfo('glossary.social-adequacy')" class="open-info"></span>
         {{"receive.infoScreen.info_2" | translate}}
 
         <span *ngIf="procedure.infoText == 'no-approval_business-lunch'">{{"receive.infoScreen.info_no-approval_business-lunch" | translate}}</span>
@@ -27,15 +27,15 @@
         <span *ngIf="procedure.infoText == 'self-approval'">{{"receive.infoScreen.info_self-approval_0" | translate}}
           <span *ngIf="info.what == 'specialEvent'">
             {{"receive.infoScreen.info_self-approval_1_special-event_0" | translate}}
-            <span [innerHtml]="'receive.infoScreen.info_self-approval_1_special-event_1' | translate" tappable
+            <span [innerHtml]="'receive.infoScreen.info_self-approval_1_special-event_1_glossary' | translate" tappable
                   (click)="openInfo('glossary.special-events')" class="open-info"></span>
           </span>
           <span *ngIf="info.what == 'businessLunch'">
             {{"receive.infoScreen.info_self-approval_1_business-lunch_0" | translate}}
-            <span [innerHtml]="'receive.infoScreen.info_self-approval_1_business-lunch_1' | translate" tappable
+            <span [innerHtml]="'receive.infoScreen.info_self-approval_1_business-lunch_1_glossary' | translate" tappable
                   (click)="openInfo('glossary.business-lunch')" class="open-info"></span>
           </span>
-        <span [innerHtml]="'receive.infoScreen.info_self-approval_1' | translate" tappable
+        <span [innerHtml]="'receive.infoScreen.info_self-approval_1_glossary' | translate" tappable
               (click)="openInfo('glossary.self-approval')" class="open-info"></span>.
         </span>
 

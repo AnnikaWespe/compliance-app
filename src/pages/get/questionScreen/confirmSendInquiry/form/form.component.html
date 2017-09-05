@@ -23,7 +23,7 @@
     </ion-item>
     <ion-item [ngClass]="displayFieldCss('value')">
       <ion-label stacked>{{label_value}}</ion-label>
-      <ion-input type="text" formControlName="value"></ion-input>
+      <ion-input type="number" formControlName="value"></ion-input>
     </ion-item>
     <ion-item [ngClass]="displayFieldCss('person')">
       <ion-label stacked>{{label_person}}</ion-label>
@@ -38,7 +38,7 @@
         <ion-label text-wrap>
           {{'receive.formScreen.label_tax_0'|translate}}
           <span tappable (click)="openInfo('glossary.paragraph-tax')"
-                class="open-info">{{'receive.formScreen.label_tax_1'|translate}}</span>
+                class="open-info">{{'receive.formScreen.label_tax_1_glossary'|translate}}</span>
           {{'receive.formScreen.label_tax_2'|translate}}
         </ion-label>
       </ion-item>
@@ -54,6 +54,7 @@
         <ion-label stacked>{{'receive.formScreen.label_tax_3'|translate}}</ion-label>
         <ion-input type="text" formControlName="taxReceiptWhere"></ion-input>
       </ion-item>
+      <ion-item></ion-item>
     </ion-list>
 
   </form>
@@ -66,7 +67,7 @@
   <button
     ion-button
     tappable
-    (click)="send()">
+    (click)="checkIfFormValid()">
     {{'buttons.button_send'|translate}}
   </button>
   <button

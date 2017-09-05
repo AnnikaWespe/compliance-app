@@ -53,11 +53,7 @@ export class InfoScreenComponent {
   }
 
   openInfo(term) {
-    this.translateService.get(term).subscribe(
-      value => {
-        this.glossaryService.createPopUp(value);
-      }
-    );
+    this.glossaryService.createPopUp(term);
   }
 
   getTranslation() {

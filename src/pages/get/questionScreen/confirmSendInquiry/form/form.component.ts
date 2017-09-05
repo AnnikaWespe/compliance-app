@@ -1,6 +1,6 @@
-import {Component, HostListener} from '@angular/core';
+import {Component} from '@angular/core';
 import {AlertController, NavController, NavParams} from 'ionic-angular';
-import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 import {HomePageComponent} from '../../../../home/home.component';
 import {SaveProcessesService} from '../../../../../services/saveProcesses.Service';
 import {Globals} from '../../../../../app/globals';
@@ -21,7 +21,7 @@ export class FormComponent {
   title;
   supplementaryData;
   supplementaryDataForm;
-  // timeStamp is set when the process already exists in saved processes in localStorage
+  // timeStamp is set when user hits "Save"-Button or when she picks up an unfinished process from the storage
   timeStamp;
   saveButtonActive = true;
   saveTemplateBoolean = false;
@@ -36,11 +36,6 @@ export class FormComponent {
   alertButton2Text;
   alertRequiredFieldMessage;
   alertRequiredFieldTitle;
-
-  @HostListener('document:keypress', ['$event'])
-  handleKeyboardEvent() {
-    this.saveButtonActive = true;
-  }
 
 
   constructor(public navCtrl: NavController,
@@ -71,11 +66,18 @@ export class FormComponent {
       validator: (group) => {
         let taxCtrl = group.controls.tax;
         let taxReceiptWhereCtrl = group.controls.taxReceiptWhere;
-        if(taxCtrl.value == "yes" && !countryCtrl.value){
+        console.log(taxCtrl);
+        console.log(taxReceiptWhereCtrl);
+        if (taxCtrl.value === 'yes' && !taxReceiptWhereCtrl) {
           return {invalid: true};
         }
       }
     });
+    this.supplementaryDataForm.valueChanges.subscribe(
+      () => {
+        this.saveButtonActive = true;
+      }
+    );
   }
 
   saveProcess() {
@@ -89,7 +91,7 @@ export class FormComponent {
     this.saveButtonActive = false;
   }
 
-  send() {
+  checkIfFormValid() {
     if (this.supplementaryDataForm.invalid) {
       console.log(this.supplementaryDataForm);
       this.requiredFieldAlert();
@@ -98,37 +100,14 @@ export class FormComponent {
         control.markAsTouched({onlySelf: true});
       });
     } else {
-      /*let data = this.createDataObject();
+      let data = this.createDataObject();
       if (this.timeStamp) {
         this.saveProcessesService.deleteProcess(this.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
       }
       if (this.saveTemplateBoolean) {
         this.saveTemplatesService.saveTemplate(data, this.globals.SAVED_RECEIVE_TEMPLATES);
       }
-      this.navCtrl.setRoot(EndScreenComponent, {procedure: this.procedure, info: this.info, title: this.title});*/
-      console.log(this.supplementaryDataForm);
-    }
-
-  }
-
-  sendToBackend() {
-    let data = this.createDataObject();
-    if (this.timeStamp) {
-      this.saveProcessesService.deleteProcess(this.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
-    }
-    if (this.saveTemplateBoolean) {
-      this.saveTemplatesService.saveTemplate(data, this.globals.SAVED_RECEIVE_TEMPLATES);
-    }
-    this.navCtrl.setRoot(EndScreenComponent, {procedure: this.procedure, info: this.info, title: this.title});
-  }
-
-  requiredIfTaxAlreadyPaid() {
-    let taxAlreadyPaid = this.supplementaryDataForm.value.tax;
-    let fieldHasText = this.supplementaryDataForm.value.taxReceiptWhere.length > 0;
-    if (taxAlreadyPaid) {
-      return fieldHasText;
-    } else {
-      return true;
+      this.navCtrl.setRoot(EndScreenComponent, {procedure: this.procedure, info: this.info, title: this.title});
     }
   }
 
@@ -137,6 +116,12 @@ export class FormComponent {
   }
 
   displayFieldCss(field: string) {
+    /*if (field = 'taxReceiptWhere') {
+      return {
+        'has-error': this.supplementaryDataForm.value.taxReceiptWhere !== ''
+      };
+    }
+    else {*/
     return {
       'has-error': this.isFieldValid(field)
     };
@@ -243,10 +228,6 @@ export class FormComponent {
   }
 
   openInfo(term) {
-    term = this.translateService.get(term).subscribe(
-      value => {
-        this.glossaryService.createPopUp(value);
-      }
-    );
+    this.glossaryService.createPopUp(term);
   }
 }
