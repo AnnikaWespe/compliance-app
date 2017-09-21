@@ -13,7 +13,7 @@
         "release": {
             "codeSignIdentity": "iPhone Distribution",
             "developmentTeam": "QBXX2YVVB7",
-            "packageType": "ad-hoc",
+            "packageType": "app-store",
             "buildFlag": [
                 "EMBEDDED_CONTENT_CONTAINS_SWIFT = YES",
                 "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES=NO",
