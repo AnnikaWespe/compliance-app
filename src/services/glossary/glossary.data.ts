@@ -78,13 +78,12 @@ Großsportveranstaltungen (Oktoberfest,Fußballspiele, Formel-1-Rennen)`,
   Interesse des Mitarbeiters und den Unternehmensinteresse begründet`,
   'Andere':
     'andere Personen, u.a. Lieferanten, externe Dienstleister, Amtsträger',
-  'Andere Personen':
-    'andere Personen, u.a. Lieferanten, externe Dienstleister, Amtsträger',
   'Selbstgenehmigung': 'hier fehlt der Text für "Selbstgenehmigung"',
   'Einladungen':
     'Einladungen zu Veranstaltungen mit überwiegenden Unterhaltungscharakter, z.B. Operspiele',
   'Bargeld':
     `Bargeld, bargeldähnliche Zuwendungen und sonstige finanzielle Vorteile 
   (Schecks, Überweisungen, Preisnachlässe, Rabatte etc.)`,
-  '§37b EStG': 'Hier fehlt der Text zu §37b EStG'
+  '§37b EStG': 'Hier fehlt der Text zu §37b EStG',
+  'Geschenke und Einladungen': 'Hier fehlt der Text zu "Geschenke und Einladungen"',
 }

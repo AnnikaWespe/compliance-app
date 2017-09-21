@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {TranslateService} from '@ngx-translate/core';
-import {GlossaryService} from '../../../../services/glossary.service';
+import {GlossaryService} from '../../../../services/glossary/glossary.service';
 import {HomePageComponent} from '../../../home/home.component';
 
 @Component({
@@ -10,9 +10,7 @@ import {HomePageComponent} from '../../../home/home.component';
 })
 export class InfoScreenComponent {
 
-  info;
-  procedure;
-  title: string;
+  process;
   alertTitle;
   alertMessage;
   alertButton1Text;
@@ -23,9 +21,7 @@ export class InfoScreenComponent {
               private translateService: TranslateService,
               private glossaryService: GlossaryService,
               private alertCtrl: AlertController) {
-    this.procedure = navParams.get('procedure');
-    this.info = navParams.get('info');
-    this.title = this.navParams.get('title') || '';
+    this.process = this.navParams.get('process');
     this.getTranslation();
   }
 

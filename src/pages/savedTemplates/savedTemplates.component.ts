@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
-import {FormComponent} from '../get/questionScreen/confirmSendInquiry/form/form.component';
-import {Globals} from '../../app/globals';
-import {SaveTemplatesService} from '../../services/saveTemplates.service';
+import {NavController} from 'ionic-angular';
+import {FormComponent} from '../getDonation/questionScreen/confirmSendInquiry/form/form.component';
+import {Globals} from '../../services/globals';
+import {TemplatesStorageService} from '../../services/Template+ProcessStorage/templatesStorage.service';
 
 @Component({
   selector: 'page-saved-templates',
@@ -14,27 +14,24 @@ export class SavedTemplatesComponent {
   templatesGive = [];
 
   constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              private saveTemplatesService: SaveTemplatesService,
+              private templatesStorageService: TemplatesStorageService,
               private globals: Globals) {
-    this.templatesReceive = saveTemplatesService.getTemplates(globals.SAVED_RECEIVE_TEMPLATES);
-    this.templatesGive = saveTemplatesService.getTemplates(globals.SAVED_GIVE_TEMPLATES);
+    this.templatesReceive = templatesStorageService.getTemplates(globals.SAVED_RECEIVE_TEMPLATES);
+    this.templatesGive = templatesStorageService.getTemplates(globals.SAVED_GIVE_TEMPLATES);
   }
 
   loadProcess(process) {
     this.navCtrl.push(FormComponent,
       {
-        procedure: process.procedure,
-        info: process.info,
-        title: process.category,
-        supplementaryData: process.supplementaryData,
-        timeStamp: null
-      });
+        process: process,
+        savedProcess: false
+      })
+    ;
   }
 
   deleteTemplateReceive(event, process) {
     event.stopPropagation();
-    this.saveTemplatesService.deleteTemplate(process.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
+    this.templatesStorageService.deleteTemplate(process.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
     this.templatesReceive = this.templatesReceive.filter((obj) => {
       return obj.timeStamp !== process.timeStamp;
     });
@@ -42,7 +39,7 @@ export class SavedTemplatesComponent {
 
   deleteTemplateGive(event, process) {
     event.stopPropagation();
-    this.saveTemplatesService.deleteTemplate(process.timeStamp, this.globals.SAVED_GIVE_PROCESSES);
+    this.templatesStorageService.deleteTemplate(process.timeStamp, this.globals.SAVED_GIVE_PROCESSES);
     this.templatesReceive = this.templatesReceive.filter((obj) => {
       return obj.timeStamp !== process.timeStamp;
     });

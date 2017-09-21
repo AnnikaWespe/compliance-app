@@ -3,20 +3,19 @@ import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {HomePageComponent} from '../../../home/home.component';
 import {FormComponent} from './form/form.component';
 import {TranslateService} from '@ngx-translate/core';
-import {GlossaryService} from '../../../../services/glossary.service';
+import {GlossaryService} from '../../../../services/glossary/glossary.service';
+import {Process} from '../../../../services/process.model';
 
 @Component({
   selector: 'page-confirm-send-inquiry',
   templateUrl: 'confirmSendInquiry.component.html'
 })
 export class ConfirmSendInquiryComponent {
-  procedure;
-  info;
-  title;
+  process: Process;
   alertTitle;
   alertMessage;
-  alertButton1Text;
-  alertButton2Text;
+  alertButtonYes;
+  alertButtonNo;
   normalText;
 
 
@@ -25,18 +24,13 @@ export class ConfirmSendInquiryComponent {
               private alertCtrl: AlertController,
               private translateService: TranslateService,
               private glossaryService: GlossaryService) {
-    this.procedure = navParams.get('procedure');
-    this.info = navParams.get('info');
-    this.title = this.navParams.get('title');
+    this.process = this.navParams.get('process');
     this.getTranslation();
-    console.log(this.procedure.note);
-    console.log(this.procedure);
   }
 
   continue() {
-    this.navCtrl.push(FormComponent, {procedure: this.procedure, info: this.info, title: this.title});
+    this.navCtrl.push(FormComponent, {process: this.process, savedProcess: false});
   }
-
 
 
   goToStartPage() {
@@ -45,15 +39,15 @@ export class ConfirmSendInquiryComponent {
       message: this.alertMessage,
       buttons: [
         {
-          text: this.alertButton1Text,
-          role: 'cancel',
+          text: this.alertButtonYes,
           handler: () => {
+            this.navCtrl.setRoot(HomePageComponent);
           }
         },
         {
-          text: this.alertButton2Text,
+          text: this.alertButtonNo,
+          role: 'cancel',
           handler: () => {
-            this.navCtrl.setRoot(HomePageComponent);
           }
         }
       ]
@@ -62,7 +56,8 @@ export class ConfirmSendInquiryComponent {
   }
 
   getTranslation() {
-    this.translateService.get( 'receive.confirmSendInquiry.normal', {emailTo: this.procedure.emailTo}).subscribe(
+    this.translateService.get('receive.confirmSendInquiry.normal',
+      {emailTo: this.process.procedure.emailTo}).subscribe(
       value => {
         this.normalText = value;
       }
@@ -77,14 +72,14 @@ export class ConfirmSendInquiryComponent {
         this.alertMessage = value;
       }
     );
-    this.translateService.get('receive.confirmSendInquiry.alert_2').subscribe(
+    this.translateService.get('generics.yes').subscribe(
       value => {
-        this.alertButton1Text = value;
+        this.alertButtonYes = value;
       }
     );
-    this.translateService.get('receive.confirmSendInquiry.alert_3').subscribe(
+    this.translateService.get('generics.no').subscribe(
       value => {
-        this.alertButton2Text = value;
+        this.alertButtonNo = value;
       }
     );
   }
@@ -94,3 +89,4 @@ export class ConfirmSendInquiryComponent {
   }
 
 }
+

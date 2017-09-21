@@ -14,9 +14,7 @@
 
 <ion-content>
   <div class="information-text">
-    <h1 class="title">
-      {{'home.title' | translate}}
-    </h1>
+    <h1 class="title" [innerHtml]="'home.title' | translate" tappable (click)="openInfo('glossary.gifts-and-invitations')"></h1>
     <span [innerHtml]="'home.info_0' | translate"></span>
     <span [innerHtml]="'home.info_1_glossary' | translate" tappable (click)="openInfo('glossary.social-adequacy')" class="open-info"></span>
     <span [innerHtml]="'home.info_2' | translate"></span>
@@ -41,6 +39,9 @@
     </button>
 
   </div>
+
+  <!--<div [innerHtml] = "translatedText"></div>-->
+
 
 
 </ion-content>

@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {FormComponent} from '../get/questionScreen/confirmSendInquiry/form/form.component';
-import {SaveProcessesService} from '../../services/saveProcesses.Service';
-import {Globals} from '../../app/globals';
+import {FormComponent} from '../getDonation/questionScreen/confirmSendInquiry/form/form.component';
+import {ProcessStorageService} from '../../services/Template+ProcessStorage/processStorage.Service';
+import {Globals} from '../../services/globals';
 
 @Component({
   selector: 'page-saved-processes',
@@ -15,26 +15,23 @@ export class SavedProcessesComponent {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private saveProcessesService: SaveProcessesService,
+              private processStorageService: ProcessStorageService,
               private globals: Globals) {
-    this.processesReceive = saveProcessesService.getOpenProcesses(globals.SAVED_RECEIVE_PROCESSES);
-    this.processesGive = saveProcessesService.getOpenProcesses(globals.SAVED_GIVE_PROCESSES);
+    this.processesReceive = processStorageService.getOpenProcesses(globals.SAVED_RECEIVE_PROCESSES);
+    this.processesGive = processStorageService.getOpenProcesses(globals.SAVED_GIVE_PROCESSES);
   }
 
   loadProcess(process) {
     this.navCtrl.push(FormComponent,
       {
-        procedure: process.procedure,
-        info: process.info,
-        title: process.category,
-        supplementaryData: process.supplementaryData,
-        timeStamp: process.timeStamp
+        process: process,
+        savedProcess: true
       });
   }
 
   deleteProcessReceive(event, process) {
     event.stopPropagation();
-    this.saveProcessesService.deleteProcess(process.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
+    this.processStorageService.deleteProcess(process.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
     this.processesReceive = this.processesReceive.filter((obj) => {
       return obj.timeStamp !== process.timeStamp;
     });
@@ -42,8 +39,8 @@ export class SavedProcessesComponent {
 
   deleteProcessGive(event, process) {
     event.stopPropagation();
-    this.saveProcessesService.deleteProcess(process.timeStamp, this.globals.SAVED_GIVE_PROCESSES);
-    this.processesReceive = this.processesReceive.filter((obj) => {
+    this.processStorageService.deleteProcess(process.timeStamp, this.globals.SAVED_GIVE_PROCESSES);
+    this.processesGive = this.processesGive.filter((obj) => {
       return obj.timeStamp !== process.timeStamp;
     });
   }

@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {UserService} from '../../../services/user.service';
 import {InfoScreenComponent} from './infoScreen/infoScreen.component';
-import {GlossaryService} from '../../../services/glossary.service';
+import {GlossaryService} from '../../../services/glossary/glossary.service';
 import {ConfirmSendInquiryComponent} from './confirmSendInquiry/confirmSendInquiry.component';
+import {DecisionTreeService} from '../../../services/decisionTree/decisionTreeData.service';
+import {Process} from '../../../services/process.model';
 
 @Component({
   selector: 'page-question-screen',
@@ -16,36 +17,24 @@ export class QuestionScreenComponent {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private userService: UserService,
-              private glossaryService: GlossaryService) {
+              private glossaryService: GlossaryService,
+              private decisionTreeService: DecisionTreeService) {
     this.option = navParams.get('option');
     this.title = this.option.title || this.navParams.get('title') || '';
   }
 
   loadNext(option) {
     if (option.terminalPoint) {
-      let procedure;
-      if (option.getUserCareerLevel) {
-        let userCareerLevel = this.userService.getUser().careerLevel;
-        procedure = option.proceed[userCareerLevel];
-      }
-      else {
-        procedure = option.proceed.all;
-      }
-      console.log(procedure);
-      console.log(option);
+      let procedure = this.decisionTreeService.getProcedure(option);
+      let process = new Process(option.proceed.info, procedure, this.title);
       if (procedure.continueWith === 'email') {
         this.navCtrl.push(ConfirmSendInquiryComponent, {
-          procedure: procedure,
-          info: option.proceed.info,
-          title: this.title
+          process: process
         });
       }
       else if (procedure.continueWith === 'info') {
         this.navCtrl.push(InfoScreenComponent, {
-          procedure: procedure,
-          info: option.proceed.info,
-          title: this.title
+          process: process
         });
       }
     }
@@ -57,6 +46,4 @@ export class QuestionScreenComponent {
   openInfo(term) {
     this.glossaryService.createPopUp(term);
   }
-
-
 }

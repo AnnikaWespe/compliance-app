@@ -1,4 +1,6 @@
 {
+
+  "test-div": "hallo hallo <span\" tappable (click)=\"openInfo('glossary.social-adequacy')\" class=\"open-info\">hallo hier steht was</span>hello <a href=\"google.com\">world</a> ",
   "title": "Compliance App",
 
   "buttons": {
@@ -38,11 +40,11 @@
       "who_invitation_0": "Sie können entweder von einem",
       "who_invitation_1_glossary": "Geschäftspartner",
       "who_invitation_2": "oder von ",
-      "who_invitation_3_glossary": "anderen Personen",
+      "who_invitation_3_glossary": "einer anderen Person",
       "who_invitation_4": " eingeladen werden."
     },
     "confirmSendInquiry": {
-      "normal": "In diesem Fall benötigen Sie die Genehmigung von {{emailTo}}, der/die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Dokumentationszwecke erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
+      "normal": "In diesem Fall benötigen Sie die Genehmigung von {{emailTo}}, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
       "warning_0_business-lunch_0": "Die Annahme einer Einladung zum ",
       "warning_0_business-lunch_1_glossary": "Geschäftsessen",
       "warning_1_others_0": " von ",
@@ -50,8 +52,6 @@
       "warning": " ist grundsätzlich untersagt.<br><br>Es besteht die Möglichkeit, eine Ausnahme durch Compliance zu beantragen.",
       "alert_0": "Wirklich abbrechen?",
       "alert_1": "Ihre Eingaben gehen dabei verloren.",
-      "alert_2": "Nein, bleiben",
-      "alert_3": "Ok, abbrechen",
       "button_0": "Anfrage",
       "button_0_GComp": "Anfrage an GComp"
     },
@@ -63,10 +63,9 @@
       "info_self-approval_0": " können Sie sich ",
       "info_self-approval_1_business-lunch_0": "die Einladung zum",
       "info_self-approval_1_business-lunch_1_glossary": "Geschäftsessen",
-      "info_self-approval_1_special-event_0": "die Einladung zum ",
-      "info_self-approval_1_special-event_1_glossary": "Special Event",
+      "info_self-approval_1_special-event_0": "die Einladung zum Special Event",
       "info_self-approval_1_glossary": "selbst genehmigen",
-      "info_3": "Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per Email eine Bestätigung über den Vorgang für Ihre Unterlagen."
+      "info_3": "Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen."
     },
     "formScreen": {
       "cash": {
@@ -126,6 +125,7 @@
     "self-approval": "Selbstgenehmigung",
     "invitations": "Einladungen",
     "cash": "Bargeld",
-    "paragraph-tax": "§37b EStG"
+    "paragraph-tax": "§37b EStG",
+    "gifts-and-invitations": "Geschenke und Einladungen"
   }
 }

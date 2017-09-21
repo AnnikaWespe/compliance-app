@@ -61,10 +61,6 @@ h6.grey{
 }
 
 div.buttons-wrapper{
-  position: absolute;
-  width: 100%;
-  top: 70%;
-  transform: translateY(-70%);
   button{
     margin:10px auto;
     display:block;
@@ -72,9 +68,7 @@ div.buttons-wrapper{
     text-transform: none;
     color: map_get($colors, light) !important;
     width: 80%;
-    &.bold{
-      font-weight: bold;
-    }
+    font-weight: bold;
   };
 }
 

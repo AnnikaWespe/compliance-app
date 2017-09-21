@@ -5,18 +5,20 @@ page-home {
     .title{
       text-align: center;
       font-weight: bold;
-      padding-bottom: 10%;
+      padding-bottom: 5%;
+      text-decoration: underline;
+      color: map_get($colors, secondary);
+      line-height: 1.5;
     }
     .information-text {
       padding: 5%;
       margin: 5%;
-      background: rgba(225, 225, 225, .7);
+     background: rgba(225, 225, 225, .9);
       border-radius: 4px;
+      font-size: medium;
     }
     .lower-div {
-      position: absolute;
       width: 100%;
-      bottom: 0;
       padding: 5%;
       display: flex;
       justify-content: space-between;
@@ -28,12 +30,13 @@ page-home {
         .button-inner {
           white-space: normal;
           text-transform: none;
+          font-weight: bold;
         }
       }
     }
   }
 
   .scroll-content{
-    background: rgba(255,255,255,0.35)  ;
+   background: rgba(255,255,255,0.2)  ;
   }
 }

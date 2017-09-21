@@ -8,10 +8,10 @@ import {HomePageComponent} from '../../../home/home.component';
 })
 export class EndScreenComponent {
 
-  procedure;
+  process;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.procedure = navParams.get('procedure');
+    this.process = navParams.get('process');
   }
 
   goToStartPage(){

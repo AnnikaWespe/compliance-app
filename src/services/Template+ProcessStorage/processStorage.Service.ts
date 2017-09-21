@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
+import {Process} from '../process.model';
 
 @Injectable()
-export class SaveProcessesService {
+export class ProcessStorageService {
 
   saveProcess(data, category) {
     let savedProcesses = JSON.parse(localStorage.getItem(category)) || [];
@@ -23,11 +24,11 @@ export class SaveProcessesService {
 
   getOpenProcesses(category) {
     let savedProcessesTimeStamps = JSON.parse(localStorage.getItem(category)) || [];
-    let processesForDisplay = [];
+    let processes: Process[] = [];
     for (let timeStamp of savedProcessesTimeStamps) {
-      let process = JSON.parse(localStorage.getItem(timeStamp));
-      processesForDisplay.push(process);
+      let process: Process = JSON.parse(localStorage.getItem(timeStamp));
+      processes.push(process);
     }
-    return processesForDisplay;
+    return processes;
   }
 }

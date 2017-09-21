@@ -4,7 +4,7 @@
       <ion-icon name="md-person" class="menu-button"></ion-icon>
     </button>
     <ion-title>
-      {{title}}
+      {{process.pageTitle}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -23,7 +23,7 @@
     </ion-item>
     <ion-item [ngClass]="displayFieldCss('value')">
       <ion-label stacked>{{label_value}}</ion-label>
-      <ion-input type="number" formControlName="value"></ion-input>
+      <ion-input type="text" formControlName="value"></ion-input>
     </ion-item>
     <ion-item [ngClass]="displayFieldCss('person')">
       <ion-label stacked>{{label_person}}</ion-label>
@@ -58,7 +58,7 @@
     </ion-list>
 
   </form>
-  <ion-item>
+  <ion-item *ngIf="process.info.what !== 'specialEvent'">
     <ion-label class="grey small">{{'receive.formScreen.save-template'|translate}}</ion-label>
     <ion-checkbox [(ngModel)]="saveTemplateBoolean" item-end></ion-checkbox>
   </ion-item>

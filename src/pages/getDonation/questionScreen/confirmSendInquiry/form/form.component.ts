@@ -1,30 +1,27 @@
 import {Component} from '@angular/core';
 import {AlertController, NavController, NavParams} from 'ionic-angular';
-import {FormBuilder, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HomePageComponent} from '../../../../home/home.component';
-import {SaveProcessesService} from '../../../../../services/saveProcesses.Service';
-import {Globals} from '../../../../../app/globals';
-import {SaveTemplatesService} from '../../../../../services/saveTemplates.service';
+import {ProcessStorageService} from '../../../../../services/Template+ProcessStorage/processStorage.Service';
+import {Globals} from '../../../../../services/globals';
+import {TemplatesStorageService} from '../../../../../services/Template+ProcessStorage/templatesStorage.service';
 import {EndScreenComponent} from '../../endScreen/endScreen.component';
 import {TranslateService} from '@ngx-translate/core';
-import {GlossaryService} from '../../../../../services/glossary.service';
+import {GlossaryService} from '../../../../../services/glossary/glossary.service';
+import {Process} from '../../../../../services/process.model';
 
 @Component({
   selector: 'page-form',
   templateUrl: 'form.component.html'
 })
 export class FormComponent {
-
-
-  procedure;
-  info;
-  title;
-  supplementaryData;
-  supplementaryDataForm;
-  // timeStamp is set when user hits "Save"-Button or when she picks up an unfinished process from the storage
-  timeStamp;
+  supplementaryDataForm: FormGroup;
+  process: Process;
   saveButtonActive = true;
   saveTemplateBoolean = false;
+  processSaved: boolean;
+
+  // strings that need translate service
   label_time;
   label_description;
   label_reason;
@@ -42,37 +39,32 @@ export class FormComponent {
               public navParams: NavParams,
               private alertCtrl: AlertController,
               formBuilder: FormBuilder,
-              private saveProcessesService: SaveProcessesService,
-              private saveTemplatesService: SaveTemplatesService,
+              private processStorageService: ProcessStorageService,
+              private templatesStorageService: TemplatesStorageService,
               private globals: Globals,
               private translateService: TranslateService,
               private glossaryService: GlossaryService) {
     let timeProposition = new Date().toISOString();
-    this.procedure = navParams.get('procedure');
-    this.info = navParams.get('info');
-    this.title = navParams.get('title');
-    this.timeStamp = navParams.get('timeStamp');
-    this.supplementaryData = navParams.get('supplementaryData') || {};
+    this.process = this.navParams.get('process');
+    this.processSaved = this.navParams.get('savedProcess');
     this.getTranslation();
     this.supplementaryDataForm = formBuilder.group({
-      time: [this.supplementaryData.time || timeProposition, Validators.required],
-      description: [this.supplementaryData.description || '', Validators.required],
-      reason: [this.supplementaryData.reason || '', Validators.required],
-      value: [this.supplementaryData.value || '', Validators.required],
-      person: [this.supplementaryData.person || '', Validators.required],
-      tax: [this.supplementaryData.tax || '', Validators.required],
-      taxReceiptWhere: [this.supplementaryData.taxReceiptWhere || '']
-    }, {
+      time: [this.process.supplementaryData.time || timeProposition, Validators.required],
+      description: [this.process.supplementaryData.description || '', Validators.required],
+      reason: [this.process.supplementaryData.reason || '', Validators.required],
+      value: [this.process.supplementaryData.value || '', Validators.required],
+      person: [this.process.supplementaryData.person || '', Validators.required],
+      tax: [this.process.supplementaryData.tax || '', Validators.required],
+      taxReceiptWhere: [this.process.supplementaryData.taxReceiptWhere || '']
+    }, /*{
       validator: (group) => {
         let taxCtrl = group.controls.tax;
         let taxReceiptWhereCtrl = group.controls.taxReceiptWhere;
-        console.log(taxCtrl);
-        console.log(taxReceiptWhereCtrl);
         if (taxCtrl.value === 'yes' && !taxReceiptWhereCtrl) {
           return {invalid: true};
         }
       }
-    });
+    }*/);
     this.supplementaryDataForm.valueChanges.subscribe(
       () => {
         this.saveButtonActive = true;
@@ -81,33 +73,36 @@ export class FormComponent {
   }
 
   saveProcess() {
-    let data = this.createDataObject();
-    let timeStamp = data.timeStamp;
-    if (this.timeStamp) {
-      this.saveProcessesService.deleteProcess(this.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
+    let timeStamp = Date.now().toString();
+    if (this.processSaved) {
+      this.processStorageService.deleteProcess(this.process.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
     }
-    this.timeStamp = timeStamp;
-    this.saveProcessesService.saveProcess(data, this.globals.SAVED_RECEIVE_PROCESSES);
+    this.process.timeStamp = timeStamp;
+    this.process.supplementaryData = this.supplementaryDataForm.value;
+    this.processStorageService.saveProcess(this.process, this.globals.SAVED_RECEIVE_PROCESSES);
     this.saveButtonActive = false;
+    this.processSaved = true;
   }
 
   checkIfFormValid() {
     if (this.supplementaryDataForm.invalid) {
-      console.log(this.supplementaryDataForm);
-      this.requiredFieldAlert();
       Object.keys(this.supplementaryDataForm.controls).forEach(field => {
         const control = this.supplementaryDataForm.get(field);
         control.markAsTouched({onlySelf: true});
       });
+      this.requiredFieldAlert();
+
     } else {
-      let data = this.createDataObject();
-      if (this.timeStamp) {
-        this.saveProcessesService.deleteProcess(this.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
+      let timeStamp = Date.now().toString();
+      this.process.supplementaryData = this.supplementaryDataForm.value;
+      if (this.processSaved) {
+        this.processStorageService.deleteProcess(this.process.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
       }
       if (this.saveTemplateBoolean) {
-        this.saveTemplatesService.saveTemplate(data, this.globals.SAVED_RECEIVE_TEMPLATES);
+        this.process.timeStamp = timeStamp;
+        this.templatesStorageService.saveTemplate(this.process, this.globals.SAVED_RECEIVE_TEMPLATES);
       }
-      this.navCtrl.setRoot(EndScreenComponent, {procedure: this.procedure, info: this.info, title: this.title});
+      this.navCtrl.setRoot(EndScreenComponent, {process: this.process});
     }
   }
 
@@ -167,32 +162,20 @@ export class FormComponent {
   // Helper Methods
 
 
-  createDataObject() {
-    let timeStamp = Date.now().toString();
-    let data = {
-      info: this.info,
-      procedure: this.procedure,
-      timeStamp: timeStamp,
-      category: this.title,
-      supplementaryData: this.supplementaryDataForm.value,
-    };
-    return data;
-  }
-
   getTranslation() {
-    this.translateService.get('receive.formScreen.' + this.info.what + '.label_time').subscribe(
+    this.translateService.get('receive.formScreen.' + this.process.info.what + '.label_time').subscribe(
       value => this.label_time = value
     );
-    this.translateService.get('receive.formScreen.' + this.info.what + '.label_description').subscribe(
+    this.translateService.get('receive.formScreen.' + this.process.info.what + '.label_description').subscribe(
       value => this.label_description = value
     );
-    this.translateService.get('receive.formScreen.' + this.info.what + '.label_reason').subscribe(
+    this.translateService.get('receive.formScreen.' + this.process.info.what + '.label_reason').subscribe(
       value => this.label_reason = value
     );
-    this.translateService.get('receive.formScreen.' + this.info.what + '.label_value').subscribe(
+    this.translateService.get('receive.formScreen.' + this.process.info.what + '.label_value').subscribe(
       value => this.label_value = value
     );
-    this.translateService.get('receive.formScreen.' + this.info.what + '.label_person').subscribe(
+    this.translateService.get('receive.formScreen.' + this.process.info.what + '.label_person').subscribe(
       value => this.label_person = value
     );
     this.translateService.get('receive.confirmSendInquiry.alert_0').subscribe(

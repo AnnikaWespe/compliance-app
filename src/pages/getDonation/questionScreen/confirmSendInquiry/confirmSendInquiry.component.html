@@ -5,7 +5,7 @@
       <ion-icon name="md-person" class="menu-button"></ion-icon>
     </button>
     <ion-title>
-      {{title}}
+      {{process.pageTitle}}
     </ion-title>
   </ion-navbar>
 
@@ -15,20 +15,20 @@
   <div padding>
 
     <div
-      *ngIf="procedure.note === 'normal'"
+      *ngIf="process.procedure.note === 'normal'"
       class="grey"
       [innerHtml]="normalText">
     </div>
 
-    <div class="grey" *ngIf="procedure.note === 'warning'">
+    <div class="grey" *ngIf="process.procedure.note === 'warning'">
       <p>
-        <span *ngIf="info.what == 'businessLunch'">
+        <span *ngIf="process.info.what == 'businessLunch'">
           {{"receive.confirmSendInquiry.warning_0_business-lunch_0" | translate}}
           <span
             (click)="openInfo('glossary.business-lunch')"
             class="open-info">{{"receive.confirmSendInquiry.warning_0_business-lunch_1_glossary" | translate}}</span>
         </span>
-        <span *ngIf="info.who == 'others'">
+        <span *ngIf="process.info.who == 'others'">
           {{"receive.confirmSendInquiry.warning_1_others_0" | translate}}
           <span (click)="openInfo('glossary.others')"
                 class="open-info">{{"receive.confirmSendInquiry.warning_1_others_1_glossary" | translate}}</span>
@@ -42,23 +42,20 @@
     <button
       ion-button
       tappable
-      class="bold"
       (click)="continue()"
-      *ngIf="procedure.note === 'normal'">
+      *ngIf="process.procedure.note === 'normal'">
       {{'receive.confirmSendInquiry.button_0'|translate}}
     </button>
     <button
       ion-button
       tappable
-      class="bold"
       (click)="continue()"
-      *ngIf="procedure.note === 'warning'">
+      *ngIf="process.procedure.note === 'warning'">
       {{'receive.confirmSendInquiry.button_0_GComp'|translate}}
     </button>
     <button
       ion-button
       tappable
-      class="bold"
       (click)="goToStartPage()">
       {{'buttons.button_cancel'|translate}}
     </button>

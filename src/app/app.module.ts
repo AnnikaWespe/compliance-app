@@ -7,23 +7,23 @@ import {HomePageComponent} from '../pages/home/home.component';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-import {QuestionScreenComponent} from '../pages/get/questionScreen/questionScreen.component';
-import {UserService} from '../services/user.service';
-import {InfoScreenComponent} from '../pages/get/questionScreen/infoScreen/infoScreen.component';
-import {EndScreenComponent} from '../pages/get/questionScreen/endScreen/endScreen.component';
-import {AppInsightsModule} from '../app-insights/appinsights.module';
+import {QuestionScreenComponent} from '../pages/getDonation/questionScreen/questionScreen.component';
+import {UserService} from '../services/user/user.service';
+import {InfoScreenComponent} from '../pages/getDonation/questionScreen/infoScreen/infoScreen.component';
+import {EndScreenComponent} from '../pages/getDonation/questionScreen/endScreen/endScreen.component';
+import {AppInsightsModule} from '../services/app-insights/appinsights.module';
 import {DisclaimerComponent} from '../pages/disclaimer/disclaimer.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {createTranslateLoader} from '../services/CreateTranslateLoader';
+import {createTranslateLoader} from '../services/TranslateLoader';
 import {Http, HttpModule} from '@angular/http';
-import {DecisionTreeDataService} from '../services/decisionTreeData.service';
-import {GlossaryService} from '../services/glossary.service';
-import {FormComponent} from '../pages/get/questionScreen/confirmSendInquiry/form/form.component';
-import {ConfirmSendInquiryComponent} from '../pages/get/questionScreen/confirmSendInquiry/confirmSendInquiry.component';
+import {DecisionTreeService} from '../services/decisionTree/decisionTreeData.service';
+import {GlossaryService} from '../services/glossary/glossary.service';
+import {FormComponent} from '../pages/getDonation/questionScreen/confirmSendInquiry/form/form.component';
+import {ConfirmSendInquiryComponent} from '../pages/getDonation/questionScreen/confirmSendInquiry/confirmSendInquiry.component';
 import {SavedProcessesComponent} from '../pages/savedProcesses/savedProcesses.component';
-import {SaveProcessesService} from '../services/saveProcesses.Service';
-import {SaveTemplatesService} from '../services/saveTemplates.service';
-import {Globals} from './globals';
+import {ProcessStorageService} from '../services/Template+ProcessStorage/processStorage.Service';
+import {TemplatesStorageService} from '../services/Template+ProcessStorage/templatesStorage.service';
+import {Globals} from '../services/globals';
 import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.component';
 
 @NgModule({
@@ -71,10 +71,10 @@ import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.co
     StatusBar,
     SplashScreen,
     UserService,
-    DecisionTreeDataService,
+    DecisionTreeService,
     GlossaryService,
-    SaveProcessesService,
-    SaveTemplatesService,
+    ProcessStorageService,
+    TemplatesStorageService,
     Globals,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

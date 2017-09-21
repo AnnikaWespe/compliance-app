@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
+import {Process} from '../process.model';
 
 @Injectable()
-export class SaveTemplatesService {
+export class TemplatesStorageService {
 
   saveTemplate(data, category) {
     let templates = JSON.parse(localStorage.getItem(category)) || [];
@@ -23,9 +24,9 @@ export class SaveTemplatesService {
 
   getTemplates(category) {
     let templatesTimeStamps = JSON.parse(localStorage.getItem(category)) || [];
-    let templates = [];
+    let templates: Process[] = [];
     for (let timeStamp of templatesTimeStamps) {
-      let template = JSON.parse(localStorage.getItem(timeStamp));
+      let template: Process = JSON.parse(localStorage.getItem(timeStamp));
       templates.push(template);
     }
     return templates;

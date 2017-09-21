@@ -5,7 +5,7 @@
       <ion-icon name="md-person" class="menu-button"></ion-icon>
     </button>
     <ion-title>
-      {{title}}
+      {{process.pageTitle}}
     </ion-title>
   </ion-navbar>
 
@@ -14,23 +14,19 @@
 
 <ion-content>
   <div padding>
-    <h2 class="primary" padding-top>Auswertung</h2>
-    <div class="stripes"></div>
     <div class="grey">
       <p>{{"receive.infoScreen.info_0" | translate}}
         <span [innerHtml]="'receive.infoScreen.info_1_glossary' | translate" tappable
               (click)="openInfo('glossary.social-adequacy')" class="open-info"></span>
         {{"receive.infoScreen.info_2" | translate}}
 
-        <span *ngIf="procedure.infoText == 'no-approval_business-lunch'">{{"receive.infoScreen.info_no-approval_business-lunch" | translate}}</span>
+        <span *ngIf="process.procedure.infoText == 'no-approval_business-lunch'">{{"receive.infoScreen.info_no-approval_business-lunch" | translate}}</span>
 
-        <span *ngIf="procedure.infoText == 'self-approval'">{{"receive.infoScreen.info_self-approval_0" | translate}}
-          <span *ngIf="info.what == 'specialEvent'">
+        <span *ngIf="process.procedure.infoText == 'self-approval'">{{"receive.infoScreen.info_self-approval_0" | translate}}
+          <span *ngIf="process.info.what == 'specialEvent'">
             {{"receive.infoScreen.info_self-approval_1_special-event_0" | translate}}
-            <span [innerHtml]="'receive.infoScreen.info_self-approval_1_special-event_1_glossary' | translate" tappable
-                  (click)="openInfo('glossary.special-events')" class="open-info"></span>
           </span>
-          <span *ngIf="info.what == 'businessLunch'">
+          <span *ngIf="process.info.what == 'businessLunch'">
             {{"receive.infoScreen.info_self-approval_1_business-lunch_0" | translate}}
             <span [innerHtml]="'receive.infoScreen.info_self-approval_1_business-lunch_1_glossary' | translate" tappable
                   (click)="openInfo('glossary.business-lunch')" class="open-info"></span>
