@@ -4,11 +4,20 @@ import {UserService} from '../user/user.service';
 
 @Injectable()
 export class DecisionTreeService {
+
+
   constructor(private userService: UserService) {
   }
 
   getDecisionTreeData() {
     return DECISIONTREE_DATA;
+  }
+
+  setGetOrReceive(){
+
+  }
+  getGetOrReceive(){
+
   }
 
   getProcedure(option) {
@@ -22,4 +31,10 @@ export class DecisionTreeService {
     }
     return procedure;
   }
+
+  getQuestionAndInfo(){
+
+  }
+
+
 }

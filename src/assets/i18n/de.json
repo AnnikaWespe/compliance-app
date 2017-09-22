@@ -1,5 +1,4 @@
 {
-  "example": "<span class = 'open-info' glossary = 'Sozialadäquanz'>Sozialadäquanz</span>",
   "title": "Compliance App",
 
   "buttons": {
@@ -20,26 +19,23 @@
   },
   "home": {
     "title_menu": "Home",
-    "title": "['Geschenke und Einladungen', '']",
-    "info": "<p>Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen?</p>Zur Vermeidung von Interessenskonflikten bzw. Reputationsschäden muss der Grundsatz der ['Sozialadäquanz', ''] beachtet werden. Hierbei gilt:<ul><li>Immer auf den Empfänger und dessen sozialen Status bezogen.</li><li>Typische Testfrage ist: \"Könnte sich der Empfänger das selbst leisten, und wäre er auch bereit dazu?\"</li></ul>"
+    "title": "[Geschenke und Einladungen, same]",
+    "info": "<p>Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen?</p>Zur Vermeidung von Interessenskonflikten bzw. Reputationsschäden muss der Grundsatz der [Sozialadäquanz, same] beachtet werden. Hierbei gilt:<ul><li>Immer auf den Empfänger und dessen sozialen Status bezogen.</li><li>Typische Testfrage ist: \"Könnte sich der Empfänger das selbst leisten, und wäre er auch bereit dazu?\"</li></ul>"
   },
   "disclaimer": {
     "title": "Disclaimer"
   },
   "receive": {
     "questionScreen": {
-      "what": "Es werden fünf Formen von Zuwendungen unterschieden: <span class='open-info' glossary='Bargeld'>Bargeld</span>, <span class='open-info' glossary='Special Events'>Special Events</span>, <span class='open-info' glossary='Einladungen mit überwiegendem Unterhaltungscharakter'>Einladungen mit überwiegendem Unterhaltungscharakter</span>, <span class='open-info' glossary='Geschäftsessen'>Geschäftsessen</span> und <span class='open-info' glossary='Geschenke'>Geschenke</span>",
-      "what_0": "Es werden fünf Formen von Zuwendungen unterschieden: ",
-      "what_1_glossary": "Bargeld",
-      "what_2_glossary": "Special Events",
-      "what_3": "Einladungen mit überwiegendem Unterhaltungscharakter,",
-      "what_4_glossary": "Geschäftsessen",
-      "what_5": " und Geschenke.",
-      "who_invitation_0": "Sie können entweder von einem",
-      "who_invitation_1_glossary": "Geschäftspartner",
-      "who_invitation_2": "oder von ",
-      "who_invitation_3_glossary": "einer anderen Person",
-      "who_invitation_4": " eingeladen werden."
+      "question": {
+        "who_invitation": "Wer lädt Sie ein?",
+        "what": "Worum handelt es sich?"
+      },
+      "info":{
+        "what": "Es werden fünf Formen von Zuwendungen unterschieden: [Bargeld, same], [Special Events, same], [Einladungen mit überwiegendem Unterhaltungscharakter, same], [Geschäftsessen, same] und [Geschenke, same].",
+        "who_invitation": "Sie können entweder von einem [Geschäftspartner, same] oder von [einer anderen Person, Andere] eingeladen werden."
+      }
+
     },
     "confirmSendInquiry": {
       "normal": "In diesem Fall benötigen Sie die Genehmigung von {{emailTo}}, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",

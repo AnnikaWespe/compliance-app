@@ -33,12 +33,19 @@ export class GlossaryService {
     return false;
   }
 
-  injectSpanTags(string){
-    let regExp = /\[([^)]+)\]/;
-    let matches = regExp.exec(string);
-    let stringToBeReplaced = matches[0];
-    let content = matches[1].split(',');
-    console.log(stringToBeReplaced, content);
+  injectSpanTags(string) {
+    let regExp = /\[(.*?)\]/;
+    let match = regExp.exec(string);
+    while (match) {
+      let stringToBeReplacedInHtml = match[0];
+      let content = match[1].split(',');
+      let stringToAppearInHtml = content[0];
+      let stringToAppearInPopUp = (content[1].replace(/ /g, '') === 'same') ?
+        stringToAppearInHtml : content[1];
+      string = string.replace(stringToBeReplacedInHtml,
+        '<span class = "open-info" glossary = "' + stringToAppearInPopUp + '">' + stringToAppearInHtml + '</span>');
+      match = regExp.exec(string);
+    }
     return string;
   }
 

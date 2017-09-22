@@ -46,7 +46,8 @@ export class HomePageComponent implements AfterViewChecked {
   getTranslation() {
     this.translateService.get('home.title').subscribe(
       (value) => {
-        this.title = this.domSanitizer.bypassSecurityTrustHtml(value);
+        let stringWithSpanTags = this.glossaryService.injectSpanTags(value);
+        this.title = this.domSanitizer.bypassSecurityTrustHtml(stringWithSpanTags);
       }
     );
     this.translateService.get('home.info').subscribe(

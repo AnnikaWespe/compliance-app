@@ -3,7 +3,6 @@ export const DECISIONTREE_DATA = {
       {
         name: 'Annahme',
         terminalPoint: false,
-        questionOrComment: 'Worum handelt es sich?',
         type: 'what',
         options: [
           {
@@ -21,15 +20,13 @@ export const DECISIONTREE_DATA = {
             addition: '(z.B. Formel 1, VIP Logen, Oktoberfest)',
             title: 'Special Event',
             terminalPoint: false,
-            questionOrComment: 'Wer lädt Sie ein?',
-            type: 'who',
+            type: 'who_invitation',
             options: [
               {
                 what: 'specialEvent',
                 name: 'Geschäftspartner',
                 terminalPoint: false,
-                questionOrComment: 'Welchen Geldwert hat die Einladung?',
-                type: 'howMuch',
+                type: 'howMuch_invitation',
                 options: [
                   {
                     name: '≤ 500€',
@@ -120,15 +117,13 @@ export const DECISIONTREE_DATA = {
             title: 'Geschäftsessen',
             what: 'businessLunch',
             terminalPoint: false,
-            questionOrComment: 'Wer lädt Sie ein?',
-            type: 'who',
+            type: 'who_invitation',
             options: [
               {
                 what: 'businessLunch',
                 name: 'Geschäftspartner',
                 terminalPoint: false,
-                questionOrComment: 'Welchen Geldwert hat die Einladung?',
-                type: 'howMuch',
+                type: 'howMuch_invitation',
                 options: [
                   {
                     name: 'x ≤ 250€',
