@@ -1,6 +1,5 @@
 {
-
-  "test-div": "hallo hallo <span\" tappable (click)=\"openInfo('glossary.social-adequacy')\" class=\"open-info\">hallo hier steht was</span>hello <a href=\"google.com\">world</a> ",
+  "example": "<span class = 'open-info' glossary = 'Sozialadäquanz'>Sozialadäquanz</span>",
   "title": "Compliance App",
 
   "buttons": {
@@ -21,16 +20,15 @@
   },
   "home": {
     "title_menu": "Home",
-    "title": "Geschenke & Einladungen",
-    "info_0": "<p>Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen?</p>Zur Vermeidung von Interessenskonflikten bzw. Reputationsschäden muss der Grundsatz der",
-    "info_1_glossary": "Sozialadäquanz",
-    "info_2": "beachtet werden. Hierbei gilt:<ul><li>Immer auf den Empfänger und dessen sozialen Status bezogen.</li><li>Typische Testfrage ist: \"Könnte sich der Empfänger das selbst leisten, und wäre er auch bereit dazu?\"</li></ul>"
+    "title": "['Geschenke und Einladungen', '']",
+    "info": "<p>Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen?</p>Zur Vermeidung von Interessenskonflikten bzw. Reputationsschäden muss der Grundsatz der ['Sozialadäquanz', ''] beachtet werden. Hierbei gilt:<ul><li>Immer auf den Empfänger und dessen sozialen Status bezogen.</li><li>Typische Testfrage ist: \"Könnte sich der Empfänger das selbst leisten, und wäre er auch bereit dazu?\"</li></ul>"
   },
   "disclaimer": {
     "title": "Disclaimer"
   },
   "receive": {
     "questionScreen": {
+      "what": "Es werden fünf Formen von Zuwendungen unterschieden: <span class='open-info' glossary='Bargeld'>Bargeld</span>, <span class='open-info' glossary='Special Events'>Special Events</span>, <span class='open-info' glossary='Einladungen mit überwiegendem Unterhaltungscharakter'>Einladungen mit überwiegendem Unterhaltungscharakter</span>, <span class='open-info' glossary='Geschäftsessen'>Geschäftsessen</span> und <span class='open-info' glossary='Geschenke'>Geschenke</span>",
       "what_0": "Es werden fünf Formen von Zuwendungen unterschieden: ",
       "what_1_glossary": "Bargeld",
       "what_2_glossary": "Special Events",
@@ -97,35 +95,5 @@
 
     }
   },
-  "give": {},
-  "glossary": {
-    "code-of-conduct": "Verhaltenskodex",
-    "social-adequacy": "Sozialadäquanz",
-    "donations": "Zuwendungen",
-    "business-partner": "Geschäftspartner",
-    "approval-limit": "Genehmigungsgrenzen",
-    "international-organisation": "Internationale Organisation (IO)",
-    "management-level-1/2": "Führungsebene 1/2",
-    "office-support": "Amtsträger",
-    "donations-w/o-authorisation": "Genehmigungsfreie Geschenke/Einladungen",
-    "donations-with-authorisation": "Genehmigungspflichtige Geschenke",
-    "online-catalog": "Onlinekatalog",
-    "forbidden-presents": "Untersagte Geschenke",
-    "principle-of-adequacy": "Prinzip der Angemessenheit",
-    "special-events": "Special Events",
-    "employee-event": "Mitarbeiterveranstaltungen",
-    "inventarisation-of-presents": "Inventarisierung von Geschenken",
-    "notification-over-retained-gifts": "Meldung über behaltene Geschenke",
-    "employee-of-CP": "Mitarbeiter des Bereichs CP",
-    "guest-list": "Einladungslisten",
-    "notification-over-accepted-invitation": "Meldung über angenomme Einladung",
-    "business-lunch": "Geschäftsessen",
-    "conflict-of-interest": "Interessenskonflikt",
-    "others": "Andere",
-    "self-approval": "Selbstgenehmigung",
-    "invitations": "Einladungen",
-    "cash": "Bargeld",
-    "paragraph-tax": "§37b EStG",
-    "gifts-and-invitations": "Geschenke und Einladungen"
-  }
+  "give": {}
 }
