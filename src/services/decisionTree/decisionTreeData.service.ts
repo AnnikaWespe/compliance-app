@@ -1,23 +1,30 @@
 import {Injectable} from '@angular/core';
 import {DECISIONTREE_DATA} from './decisionTree.data';
 import {UserService} from '../user/user.service';
+import {TranslateService} from '@ngx-translate/core';
+import {Observable} from 'rxjs/Rx';
+
+type Branch = 'get-donation' | 'give-donation' ;
 
 @Injectable()
 export class DecisionTreeService {
 
+  private branch: Branch;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,
+              private translateService: TranslateService) {
   }
 
   getDecisionTreeData() {
     return DECISIONTREE_DATA;
   }
 
-  setGetOrReceive(){
-
+  setBranch(branch: Branch) {
+    this.branch = branch;
   }
-  getGetOrReceive(){
 
+  getBranch() {
+    return this.branch;
   }
 
   getProcedure(option) {
@@ -32,8 +39,10 @@ export class DecisionTreeService {
     return procedure;
   }
 
-  getQuestionAndInfo(){
-
+  getQuestionscreenText(string) {
+    let questionObservable = this.translateService.get(this.branch + '.questionScreen.question.' + string);
+    let infoObservable = this.translateService.get(this.branch + '.questionScreen.info.' + string);
+    return Observable.forkJoin([questionObservable, infoObservable]);
   }
 
 

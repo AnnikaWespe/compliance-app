@@ -19,14 +19,14 @@ export class HomePageComponent implements AfterViewChecked {
   clickHandlersAdded: boolean;
 
   constructor(public navCtrl: NavController,
-              decisionTreeService: DecisionTreeService,
+              private decisionTreeService: DecisionTreeService,
               private glossaryService: GlossaryService,
               private translateService: TranslateService,
               private elRef: ElementRef,
               private renderer: Renderer2,
               private domSanitizer: DomSanitizer) {
     this.decisionTreeData = decisionTreeService.getDecisionTreeData();
-    this.getTranslation();
+    this.createPageText();
   }
 
   ngAfterViewChecked() {
@@ -35,7 +35,8 @@ export class HomePageComponent implements AfterViewChecked {
     }
   }
 
-  startProcess(option) {
+  startProcess(option, branch) {
+    this.decisionTreeService.setBranch(branch);
     this.navCtrl.push(QuestionScreenComponent, {option: option, result: [option.name]});
   }
 
@@ -43,7 +44,8 @@ export class HomePageComponent implements AfterViewChecked {
     this.glossaryService.createPopUp(term);
   }
 
-  getTranslation() {
+
+  createPageText() {
     this.translateService.get('home.title').subscribe(
       (value) => {
         let stringWithSpanTags = this.glossaryService.injectSpanTags(value);

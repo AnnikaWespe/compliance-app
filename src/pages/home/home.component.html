@@ -23,7 +23,7 @@
       full
       tappable
       [disabled]="decisionTreeData.options[0].disabled"
-      (click)="startProcess(decisionTreeData.options[0])">
+      (click)="startProcess(decisionTreeData.options[0], 'get-donation')">
       {{decisionTreeData.options[0].name}}
     </button>
 
@@ -32,7 +32,7 @@
       full
       tappable
       [disabled]="decisionTreeData.options[1].disabled"
-      (click)="startProcess(decisionTreeData.options[1])">
+      (click)="startProcess(decisionTreeData.options[1], 'give-donation')">
       {{decisionTreeData.options[1].name}}
     </button>
 

@@ -25,7 +25,7 @@
   "disclaimer": {
     "title": "Disclaimer"
   },
-  "receive": {
+  "get-donation": {
     "questionScreen": {
       "question": {
         "who_invitation": "Wer lädt Sie ein?",
@@ -91,5 +91,5 @@
 
     }
   },
-  "give": {}
+  "give-donation": {}
 }

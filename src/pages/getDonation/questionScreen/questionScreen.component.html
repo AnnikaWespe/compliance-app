@@ -17,27 +17,10 @@
 
 <ion-content>
   <div padding>
-    <h2 class="primary" padding-top>{{option.questionOrComment}}</h2>
+    <h2 class="primary" padding-top [innerHtml] = "question"></h2>
     <div class="stripes"></div>
-    <h6 class="grey" *ngIf="option.type == 'what'">{{'receive.questionScreen.what_0'|translate}}
-      <br>
-      <span tappable (click)="openInfo('glossary.cash')"
-            class="open-info">{{'receive.questionScreen.what_1_glossary'|translate}}</span>,
-      <span tappable (click)="openInfo('glossary.special-events')"
-            class="open-info">{{'receive.questionScreen.what_2_glossary'|translate}}</span>,
-      {{'receive.questionScreen.what_3'|translate}}
-      <span tappable (click)="openInfo('glossary.business-lunch')"
-            class="open-info">{{'receive.questionScreen.what_4_glossary'|translate}}</span>
-      {{'receive.questionScreen.what_5'|translate}}
+    <h6 class="grey" [innerHtml] = "info">
     </h6>
-    <h6 class="grey" *ngIf="option.type == 'who' && (option.what == 'specialEvent' || option.what == 'entertainment' || option.what == 'businessLunch')">
-      {{'receive.questionScreen.who_invitation_0'|translate}}
-      <span tappable (click)="openInfo('glossary.business-partner')"
-            class="open-info">{{'receive.questionScreen.who_invitation_1_glossary'|translate}}</span>
-      {{'receive.questionScreen.who_invitation_2'|translate}}
-      <span tappable (click)="openInfo('glossary.others')"
-            class="open-info">{{'receive.questionScreen.who_invitation_3_glossary'|translate}}</span>
-      {{'receive.questionScreen.who_invitation_4'|translate}}</h6>
   </div>
 
 
