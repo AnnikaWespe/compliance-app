@@ -1,25 +1,28 @@
-import {Component} from '@angular/core';
+import {AfterViewChecked, Component, ElementRef, Renderer2} from '@angular/core';
 import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {HomePageComponent} from '../../../../home/home.component';
-import {ProcessStorageService} from '../../../../../services/Template+ProcessStorage/processStorage.Service';
-import {Globals} from '../../../../../services/globals';
-import {TemplatesStorageService} from '../../../../../services/Template+ProcessStorage/templatesStorage.service';
+import {HomePageComponent} from '../../../home/home.component';
+import {ProcessStorageService} from '../../../../services/Template+ProcessStorage/processStorage.Service';
+import {Globals} from '../../../../services/globals';
+import {TemplatesStorageService} from '../../../../services/Template+ProcessStorage/templatesStorage.service';
 import {EndScreenComponent} from '../../endScreen/endScreen.component';
 import {TranslateService} from '@ngx-translate/core';
-import {GlossaryService} from '../../../../../services/glossary/glossary.service';
-import {Process} from '../../../../../services/process.model';
+import {GlossaryService} from '../../../../services/glossary/glossary.service';
+import {Process} from '../../../../services/process.model';
+import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
+import {DecisionTreeService} from "../../../../services/decisionTree/decisionTreeData.service";
 
 @Component({
   selector: 'page-form',
   templateUrl: 'form.component.html'
 })
-export class FormComponent {
+export class FormComponent implements AfterViewChecked{
   supplementaryDataForm: FormGroup;
   process: Process;
   saveButtonActive = true;
   saveTemplateBoolean = false;
   processSaved: boolean;
+  clickHandlersAdded = false;
 
   // strings that need translate service
   label_time;
@@ -27,6 +30,7 @@ export class FormComponent {
   label_reason;
   label_value;
   label_person;
+  label_tax: SafeHtml;
   alertTitle;
   alertMessage;
   alertButton1Text;
@@ -43,7 +47,11 @@ export class FormComponent {
               private templatesStorageService: TemplatesStorageService,
               private globals: Globals,
               private translateService: TranslateService,
-              private glossaryService: GlossaryService) {
+              private glossaryService: GlossaryService,
+              private elRef: ElementRef,
+              private renderer: Renderer2,
+              private domSanitizer: DomSanitizer,
+              private decisionTreeService: DecisionTreeService) {
     let timeProposition = new Date().toISOString();
     this.process = this.navParams.get('process');
     this.processSaved = this.navParams.get('savedProcess');
@@ -70,6 +78,12 @@ export class FormComponent {
         this.saveButtonActive = true;
       }
     );
+  }
+
+  ngAfterViewChecked() {
+    if (!this.clickHandlersAdded) {
+      this.clickHandlersAdded = this.glossaryService.injectClickEventHandler(this.elRef, this.renderer);
+    }
   }
 
   saveProcess() {
@@ -163,47 +177,53 @@ export class FormComponent {
 
 
   getTranslation() {
-    this.translateService.get('receive.formScreen.' + this.process.info.what + '.label_time').subscribe(
+    let branch = this.decisionTreeService.getBranch();
+    this.translateService.get(branch + '.formScreen.' + this.process.info.what + '.label_time').subscribe(
       value => this.label_time = value
     );
-    this.translateService.get('receive.formScreen.' + this.process.info.what + '.label_description').subscribe(
+    this.translateService.get(branch + '.formScreen.' + this.process.info.what + '.label_description').subscribe(
       value => this.label_description = value
     );
-    this.translateService.get('receive.formScreen.' + this.process.info.what + '.label_reason').subscribe(
+    this.translateService.get(branch + '.formScreen.' + this.process.info.what + '.label_reason').subscribe(
       value => this.label_reason = value
     );
-    this.translateService.get('receive.formScreen.' + this.process.info.what + '.label_value').subscribe(
+    this.translateService.get(branch + '.formScreen.' + this.process.info.what + '.label_value').subscribe(
       value => this.label_value = value
     );
-    this.translateService.get('receive.formScreen.' + this.process.info.what + '.label_person').subscribe(
+    this.translateService.get(branch + '.formScreen.' + this.process.info.what + '.label_person').subscribe(
       value => this.label_person = value
     );
-    this.translateService.get('receive.confirmSendInquiry.alert_0').subscribe(
+    this.translateService.get(branch + '.formScreen.label_tax').subscribe(
+      value => {
+        this.label_tax = this.domSanitizer.bypassSecurityTrustHtml(this.glossaryService.injectSpanTags(value));
+      }
+    );
+    this.translateService.get(branch + '.confirmSendInquiry.alert_0').subscribe(
       value => {
         this.alertTitle = value;
       }
     );
-    this.translateService.get('receive.confirmSendInquiry.alert_1').subscribe(
+    this.translateService.get(branch + '.confirmSendInquiry.alert_1').subscribe(
       value => {
         this.alertMessage = value;
       }
     );
-    this.translateService.get('receive.confirmSendInquiry.alert_2').subscribe(
+    this.translateService.get(branch + '.confirmSendInquiry.alert_2').subscribe(
       value => {
         this.alertButton1Text = value;
       }
     );
-    this.translateService.get('receive.confirmSendInquiry.alert_3').subscribe(
+    this.translateService.get(branch + '.confirmSendInquiry.alert_3').subscribe(
       value => {
         this.alertButton2Text = value;
       }
     );
-    this.translateService.get('receive.formScreen.alert_required-field_message').subscribe(
+    this.translateService.get(branch + '.formScreen.alert_required-field_message').subscribe(
       value => {
         this.alertRequiredFieldMessage = value;
       }
     );
-    this.translateService.get('receive.formScreen.alert_required-field_title').subscribe(
+    this.translateService.get(branch + '.formScreen.alert_required-field_title').subscribe(
       value => {
         this.alertRequiredFieldTitle = value;
       }

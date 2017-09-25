@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {FormComponent} from '../getDonation/questionScreen/confirmSendInquiry/form/form.component';
+import {FormComponent} from '../questionScreen/confirmSendInquiry/form/form.component';
 import {ProcessStorageService} from '../../services/Template+ProcessStorage/processStorage.Service';
 import {Globals} from '../../services/globals';
 

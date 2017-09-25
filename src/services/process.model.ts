@@ -7,7 +7,9 @@ export class Process {
   procedure: {
     continueWith: string;
     emailTo: string;
-    note: string;
+    note?: string;
+    infoText?: string;
+    continueButtonType?: string;
     documentationRequired: boolean;
     sendFormToHumanResources: boolean;
   };

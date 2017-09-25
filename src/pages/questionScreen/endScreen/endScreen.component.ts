@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {HomePageComponent} from '../../../home/home.component';
+import {HomePageComponent} from '../../home/home.component';
 
 @Component({
   selector: 'page-end-screen',

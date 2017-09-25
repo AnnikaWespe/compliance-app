@@ -36,22 +36,20 @@
     <ion-list radio-group formControlName="tax">
       <ion-item class="radio-tax-label" class="grey" [ngClass]="displayFieldCss('tax')">
         <ion-label text-wrap>
-          {{'receive.formScreen.label_tax_0'|translate}}
-          <span tappable (click)="openInfo('glossary.paragraph-tax')"
-                class="open-info">{{'receive.formScreen.label_tax_1_glossary'|translate}}</span>
-          {{'receive.formScreen.label_tax_2'|translate}}
+          <span tappable [innerHtml]="label_tax"></span>
         </ion-label>
       </ion-item>
-      <ion-item  class="grey">
+      <ion-item class="grey">
         <ion-label>{{'generics.yes'|translate}}</ion-label>
         <ion-radio checked="false" value="yes"></ion-radio>
       </ion-item>
-      <ion-item  class="grey">
+      <ion-item class="grey">
         <ion-label>{{'generics.no'|translate}}</ion-label>
         <ion-radio checked="false" value="no"></ion-radio>
       </ion-item>
-      <ion-item *ngIf="supplementaryDataForm.value.tax == 'yes'" [ngClass]="displayFieldCss('taxReceiptWhere')" class="taxReceiptWhere">
-        <ion-label stacked>{{'receive.formScreen.label_tax_3'|translate}}</ion-label>
+      <ion-item *ngIf="supplementaryDataForm.value.tax == 'yes'" [ngClass]="displayFieldCss('taxReceiptWhere')"
+                class="taxReceiptWhere">
+        <ion-label stacked>{{'get-donation.formScreen.label_tax_where'|translate}}</ion-label>
         <ion-input type="text" formControlName="taxReceiptWhere"></ion-input>
       </ion-item>
       <ion-item></ion-item>
@@ -68,19 +66,19 @@
     ion-button
     tappable
     (click)="checkIfFormValid()">
-    {{'buttons.button_send'|translate}}
+    {{'buttons.send'|translate}}
   </button>
   <button
     ion-button
     tappable
     (click)="saveProcess()"
     [disabled]="!saveButtonActive">
-    {{'buttons.button_save'|translate}}
+    {{'buttons.save'|translate}}
   </button>
   <button
     ion-button
     tappable
     (click)="goToStartPage()">
-    {{'buttons.button_cancel'|translate}}
+    {{'buttons.cancel'|translate}}
   </button>
 </ion-content>

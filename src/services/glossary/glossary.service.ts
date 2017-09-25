@@ -39,6 +39,9 @@ export class GlossaryService {
     while (match) {
       let stringToBeReplacedInHtml = match[0];
       let content = match[1].split(',');
+      if (content[1].charAt(0) === ' ') {
+        content[1] = content[1].substr(1);
+      }
       let stringToAppearInHtml = content[0];
       let stringToAppearInPopUp = (content[1].replace(/ /g, '') === 'same') ?
         stringToAppearInHtml : content[1];

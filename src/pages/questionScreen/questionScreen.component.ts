@@ -1,10 +1,10 @@
 import {AfterViewChecked, Component, ElementRef, Renderer2} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {InfoScreenComponent} from './infoScreen/infoScreen.component';
-import {GlossaryService} from '../../../services/glossary/glossary.service';
+import {GlossaryService} from '../../services/glossary/glossary.service';
 import {ConfirmSendInquiryComponent} from './confirmSendInquiry/confirmSendInquiry.component';
-import {DecisionTreeService} from '../../../services/decisionTree/decisionTreeData.service';
-import {Process} from '../../../services/process.model';
+import {DecisionTreeService} from '../../services/decisionTree/decisionTreeData.service';
+import {Process} from '../../services/process.model';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 
 @Component({

@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle start>
+      <ion-icon name="md-person" class="menu-button"></ion-icon>
+    </button>
+    <ion-title>
+      {{process.pageTitle}}
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div padding>
+    <div class="grey" [innerHtml] = "infoText">
+    </div>
+  </div>
+
+  <div class="buttons-wrapper">
+    <button
+      ion-button
+      tappable>
+      {{"buttons.accept" | translate}}
+    </button>
+    <button
+      ion-button
+      tappable
+      (click)="goToStartPage()">
+      {{"buttons.cancel" | translate}}
+    </button>
+  </div>
+
+
+</ion-content>

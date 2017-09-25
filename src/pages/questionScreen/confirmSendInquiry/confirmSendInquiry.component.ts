@@ -1,17 +1,23 @@
-import {Component} from '@angular/core';
+import {AfterViewChecked, Component, ElementRef, Renderer2} from '@angular/core';
 import {AlertController, NavController, NavParams} from 'ionic-angular';
-import {HomePageComponent} from '../../../home/home.component';
+import {HomePageComponent} from '../../home/home.component';
 import {FormComponent} from './form/form.component';
 import {TranslateService} from '@ngx-translate/core';
-import {GlossaryService} from '../../../../services/glossary/glossary.service';
-import {Process} from '../../../../services/process.model';
+import {GlossaryService} from '../../../services/glossary/glossary.service';
+import {Process} from '../../../services/process.model';
+import {DecisionTreeService} from '../../../services/decisionTree/decisionTreeData.service';
+import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 
 @Component({
   selector: 'page-confirm-send-inquiry',
   templateUrl: 'confirmSendInquiry.component.html'
 })
-export class ConfirmSendInquiryComponent {
+export class ConfirmSendInquiryComponent implements AfterViewChecked{
   process: Process;
+  note: SafeHtml;
+  clickHandlersAdded = false;
+  continueButtonText: string;
+
   alertTitle;
   alertMessage;
   alertButtonYes;
@@ -23,9 +29,25 @@ export class ConfirmSendInquiryComponent {
               public navParams: NavParams,
               private alertCtrl: AlertController,
               private translateService: TranslateService,
-              private glossaryService: GlossaryService) {
+              private glossaryService: GlossaryService,
+              private domSanitizer: DomSanitizer,
+              private elRef: ElementRef,
+              private renderer: Renderer2,
+              decisionTreeService: DecisionTreeService) {
     this.process = this.navParams.get('process');
+    decisionTreeService
+      .getConfirmInquiryPageContent(this.process.procedure.note, this.process.procedure.continueButtonType)
+      .subscribe((results) => {
+      this.createPageText(results[0], results[1]);
+      console.log(results);
+    });
     this.getTranslation();
+  }
+
+  ngAfterViewChecked() {
+    if (!this.clickHandlersAdded) {
+      this.clickHandlersAdded = this.glossaryService.injectClickEventHandler(this.elRef, this.renderer);
+    }
   }
 
   continue() {
@@ -86,6 +108,12 @@ export class ConfirmSendInquiryComponent {
 
   openInfo(term) {
     this.glossaryService.createPopUp(term);
+  }
+
+  createPageText(note, buttonText) {
+    let infoStringWithSpanTags = this.glossaryService.injectSpanTags(note);
+    this.note = this.domSanitizer.bypassSecurityTrustHtml(infoStringWithSpanTags);
+    this.continueButtonText = buttonText;
   }
 
 }

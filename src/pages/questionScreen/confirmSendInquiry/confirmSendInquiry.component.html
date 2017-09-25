@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle start>
+      <ion-icon name="md-person" class="menu-button"></ion-icon>
+    </button>
+    <ion-title>
+      {{process.pageTitle}}
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="grey" [innerHtml]="note" padding></div>
+
+
+  <div class="buttons-wrapper">
+    <button
+      ion-button
+      tappable
+      (click)="continue()">
+      {{continueButtonText}}
+    </button>
+    <button
+      ion-button
+      tappable
+      (click)="goToStartPage()">
+      {{'buttons.cancel'|translate}}
+    </button>
+  </div>
+
+</ion-content>

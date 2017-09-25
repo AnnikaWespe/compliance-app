@@ -32,7 +32,7 @@
       [disabled]="subOption.disabled"
       (click)="loadNext(subOption)"
       [class.bold]="option.type == 'howMuch'">
-      {{subOption.name}}
+      {{"buttons." + subOption.name | translate}}
     </button>
   </div>
 
@@ -46,8 +46,8 @@
       (click)="loadNext(subOption)"
       [ngClass]="subOption.what">
       <div item-start></div>
-      {{subOption.name}}<br>
-      <span class="small">{{subOption.addition}}</span>
+      {{"buttons." + subOption.what | translate}}<br>
+      <span class="small">{{"buttons_addition." + subOption.what | translate}}</span>
     </ion-item>
   </div>
 

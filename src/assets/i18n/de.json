@@ -1,65 +1,85 @@
 {
   "title": "Compliance App",
-
-  "buttons": {
-    "button_accept": "Annahme",
-    "button_cancel": "Abbrechen",
-    "button_send": "Absenden",
-    "button_save": "Speichern"
-  },
-  "generics":{
+  "generics": {
     "yes": "Ja",
     "no": "Nein"
   },
-  "templates": {
-    "title": "Vorlagen"
+  "buttons": {
+    "accept": "Annahme",
+    "cancel": "Abbrechen",
+    "send": "Absenden",
+    "save": "Speichern",
+    "cash": "Bargeld",
+    "specialEvent": "Special Event",
+    "entertainment": "Einladungen",
+    "businessLunch": "Geschäftsessen",
+    "gifts": "Geschenke",
+    "businessPartner": "Geschäftspartner",
+    "others": "Andere",
+    "≤ 500€": "≤ 500€",
+    "> 500€": "> 500€",
+    "x ≤ 250€": "x ≤ 250€",
+    "250€ < x ≤ 500€": "250€ < x ≤ 500€",
+    "x > 500€": "x > 500€",
+    "inquiry_normal": "Anfrage",
+    "inquiry_warning": "Anfrage an GComp"
   },
-  "savedProcesses": {
-    "title": "Gespeicherte Vorgänge"
+  "buttons_addition": {
+    "cash": "und bargeldähnliche Zuwendungen",
+    "specialEvent": "(z.B. Formel 1, VIP Logen, Oktoberfest)",
+    "entertainment": "mit überwiegendem Unterhaltungscharakter",
+    "businessLunch": "",
+    "gifts": ""
   },
-  "home": {
-    "title_menu": "Home",
-    "title": "[Geschenke und Einladungen, same]",
-    "info": "<p>Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen?</p>Zur Vermeidung von Interessenskonflikten bzw. Reputationsschäden muss der Grundsatz der [Sozialadäquanz, same] beachtet werden. Hierbei gilt:<ul><li>Immer auf den Empfänger und dessen sozialen Status bezogen.</li><li>Typische Testfrage ist: \"Könnte sich der Empfänger das selbst leisten, und wäre er auch bereit dazu?\"</li></ul>"
-  },
-  "disclaimer": {
-    "title": "Disclaimer"
+  "secondary-pages": {
+    "templates": {
+      "title": "Vorlagen"
+    },
+    "savedProcesses": {
+      "title": "Gespeicherte Vorgänge"
+    },
+    "disclaimer": {
+      "title": "Disclaimer"
+    },
+    "home": {
+      "title_menu": "Home",
+      "title": "[Geschenke und Einladungen, same]",
+      "info": "<p>Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen?</p>Zur Vermeidung von Interessenskonflikten bzw. Reputationsschäden muss der Grundsatz der [Sozialadäquanz, same] beachtet werden. Hierbei gilt:<ul><li>Immer auf den Empfänger und dessen sozialen Status bezogen.</li><li>Typische Testfrage ist: \"Könnte sich der Empfänger das selbst leisten, und wäre er auch bereit dazu?\"</li></ul>",
+      "buttons": {
+        "give-donation": "Vergabe",
+        "get-donation": "Annahme"
+      }
+    }
   },
   "get-donation": {
     "questionScreen": {
       "question": {
         "who_invitation": "Wer lädt Sie ein?",
-        "what": "Worum handelt es sich?"
+        "what": "Worum handelt es sich?",
+        "howMuch_invitation": "Welchen Geldwert hat die Einladung?"
       },
-      "info":{
+      "info": {
         "what": "Es werden fünf Formen von Zuwendungen unterschieden: [Bargeld, same], [Special Events, same], [Einladungen mit überwiegendem Unterhaltungscharakter, same], [Geschäftsessen, same] und [Geschenke, same].",
-        "who_invitation": "Sie können entweder von einem [Geschäftspartner, same] oder von [einer anderen Person, Andere] eingeladen werden."
+        "who_invitation": "Sie können entweder von einem [Geschäftspartner, same] oder von [einer anderen Person, Andere] eingeladen werden.",
+        "howMuch_invitation": ""
       }
-
     },
     "confirmSendInquiry": {
-      "normal": "In diesem Fall benötigen Sie die Genehmigung von {{emailTo}}, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
-      "warning_0_business-lunch_0": "Die Annahme einer Einladung zum ",
-      "warning_0_business-lunch_1_glossary": "Geschäftsessen",
-      "warning_1_others_0": " von ",
-      "warning_1_others_1_glossary": "Anderen",
-      "warning": " ist grundsätzlich untersagt.<br><br>Es besteht die Möglichkeit, eine Ausnahme durch Compliance zu beantragen.",
+      "normal_GComp": "In diesem Fall benötigen Sie die Genehmigung von Group Compliance, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
+      "normal_FE1": "In diesem Fall benötigen Sie die Genehmigung von Ihrer FE1, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
+      "normal_FE2": "In diesem Fall benötigen Sie die Genehmigung von Ihrer FE2, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
+      "warning_business-lunch_others": "Die Annahme einer Einladung zum [Geschäftsessen, same] von [Anderen, Andere] ist grundsätzlich untersagt.<br><br>Es besteht die Möglichkeit, eine Ausnahme durch Compliance zu beantragen.",
       "alert_0": "Wirklich abbrechen?",
       "alert_1": "Ihre Eingaben gehen dabei verloren.",
-      "button_0": "Anfrage",
-      "button_0_GComp": "Anfrage an GComp"
+      "buttons": {
+        "normal": "Anfrage",
+        "warning": "Anfrage an GComp"
+      }
     },
     "infoScreen": {
-      "info_0": "Sofern der Grundsatz der ",
-      "info_1_glossary": "Sozialadäquanz",
-      "info_2": " erfüllt ist, ",
-      "info_no-approval_business-lunch": " können Sie die Einladung zum Geschäftsessen annehmen.",
-      "info_self-approval_0": " können Sie sich ",
-      "info_self-approval_1_business-lunch_0": "die Einladung zum",
-      "info_self-approval_1_business-lunch_1_glossary": "Geschäftsessen",
-      "info_self-approval_1_special-event_0": "die Einladung zum Special Event",
-      "info_self-approval_1_glossary": "selbst genehmigen",
-      "info_3": "Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen."
+      "no-approval_business-lunch": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung zum Geschäftsessen annehmen.<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
+      "self-approval_business-lunch": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung zum Geschäftsessen [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
+      "self-approval_special-event": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung zum Special Event [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen."
     },
     "formScreen": {
       "cash": {
@@ -81,14 +101,11 @@
         "label_reason": "Begründung"
       },
       "gifts": {},
-      "label_tax_0": "Versteuerung durch den Zuwendenden nach ",
-      "label_tax_1_glossary": "§37b EStG",
-      "label_tax_2": " erfolgt?",
-      "label_tax_3": "Bestätigung liegt bei",
+      "label_tax": "Versteuerung durch den Zuwendenden nach [§37b EStG, same] erfolgt?",
+      "label_tax_where": "Bestätigung liegt bei",
       "save-template": "Als Vorlage speichern",
       "alert_required-field_title": "Formular unvollständig",
       "alert_required-field_message": "Bitte füllen Sie die rot markierten Felder aus."
-
     }
   },
   "give-donation": {}

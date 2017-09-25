@@ -1,16 +1,22 @@
-import {Component} from '@angular/core';
+import {AfterViewChecked, Component, ElementRef, Renderer2} from '@angular/core';
 import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {TranslateService} from '@ngx-translate/core';
-import {GlossaryService} from '../../../../services/glossary/glossary.service';
-import {HomePageComponent} from '../../../home/home.component';
+import {GlossaryService} from '../../../services/glossary/glossary.service';
+import {HomePageComponent} from '../../home/home.component';
+import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
+import {DecisionTreeService} from '../../../services/decisionTree/decisionTreeData.service';
+import {Process} from '../../../services/process.model';
 
 @Component({
   selector: 'page-info-screen',
   templateUrl: 'infoScreen.component.html'
 })
-export class InfoScreenComponent {
+export class InfoScreenComponent implements AfterViewChecked {
 
-  process;
+  process: Process;
+  infoText: SafeHtml;
+  clickHandlersAdded = false;
+
   alertTitle;
   alertMessage;
   alertButton1Text;
@@ -20,9 +26,22 @@ export class InfoScreenComponent {
               public navParams: NavParams,
               private translateService: TranslateService,
               private glossaryService: GlossaryService,
-              private alertCtrl: AlertController) {
+              private alertCtrl: AlertController,
+              private elRef: ElementRef,
+              private renderer: Renderer2,
+              private domSanitizer: DomSanitizer,
+              decisionTreeService: DecisionTreeService) {
     this.process = this.navParams.get('process');
-    this.getTranslation();
+    decisionTreeService.getInfoScreenText(this.process.procedure.infoText).subscribe((string) => {
+      this.createPageText(string);
+    });
+    this.getAlertTranslation();
+  }
+
+  ngAfterViewChecked() {
+    if (!this.clickHandlersAdded) {
+      this.clickHandlersAdded = this.glossaryService.injectClickEventHandler(this.elRef, this.renderer);
+    }
   }
 
 
@@ -52,7 +71,7 @@ export class InfoScreenComponent {
     this.glossaryService.createPopUp(term);
   }
 
-  getTranslation() {
+  getAlertTranslation() {
     this.translateService.get('receive.confirmSendInquiry.alert_0').subscribe(
       value => {
         this.alertTitle = value;
@@ -75,4 +94,8 @@ export class InfoScreenComponent {
     );
   }
 
+  createPageText(string) {
+    let stringWithSpanTags = this.glossaryService.injectSpanTags(string);
+    this.infoText = this.domSanitizer.bypassSecurityTrustHtml(stringWithSpanTags);
+  }
 }

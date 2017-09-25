@@ -1,6 +1,6 @@
 import {AfterViewChecked, Component, ElementRef, Renderer2} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {QuestionScreenComponent} from '../getDonation/questionScreen/questionScreen.component';
+import {QuestionScreenComponent} from '../questionScreen/questionScreen.component';
 import {DecisionTreeService} from '../../services/decisionTree/decisionTreeData.service';
 import {GlossaryService} from '../../services/glossary/glossary.service';
 import {TranslateService} from '@ngx-translate/core';

@@ -45,5 +45,16 @@ export class DecisionTreeService {
     return Observable.forkJoin([questionObservable, infoObservable]);
   }
 
+  getInfoScreenText(string) {
+    let infoObservable = this.translateService.get(this.branch + '.infoScreen.' + string);
+    return infoObservable;
+  }
+
+  getConfirmInquiryPageContent(note, continueButtonType) {
+    let confirmInquiryTextObservable = this.translateService.get(this.branch + '.confirmSendInquiry.' + note);
+    let confirmInquiryButtonObservable = this.translateService
+      .get('buttons.' + continueButtonType);
+    return Observable.forkJoin([confirmInquiryTextObservable, confirmInquiryButtonObservable]);
+  }
 
 }
