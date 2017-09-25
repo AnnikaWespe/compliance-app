@@ -39,14 +39,14 @@
         "@ngx-translate/http-loader": "^0.1.0",
         "applicationinsights-js": "^1.0.9",
         "cordova-ios-plugin-no-export-compliance": "git+https://github.com/mikaoelitiana/cordova-ios-plugin-no-export-compliance.git",
-        "ionic-angular": "3.6.0",
+        "ionic-angular": "3.6.1",
         "ionicons": "3.0.0",
         "rxjs": "5.4.0",
         "sw-toolbox": "3.6.0",
         "zone.js": "0.8.12"
     },
     "devDependencies": {
-        "@ionic/app-scripts": "2.1.3",
+        "@ionic/app-scripts": "2.1.4",
         "@ionic/cli-plugin-ionic-angular": "1.4.1",
         "@types/jasmine": "2.5.37",
         "@types/node": "7.0.8",
@@ -55,7 +55,6 @@
         "codelyzer": "2.0.0-beta.4",
         "html-loader": "0.4.5",
         "husky": "0.13.3",
-        "ionic": "3.7.0",
         "azure-storage": "^2.2.2",
         "istanbul-instrumenter-loader": "^2.0.0",
         "jasmine-core": "2.5.2",
@@ -77,8 +76,7 @@
         "ts-node": "2.0.0",
         "tslint": "4.3.1",
         "typedoc": "0.5.6",
-        "typescript": "2.3.4",
-        "webpack": "2.3.2"
+        "typescript": "2.3.4"
     },
     "cordovaPlugins": [
         "cordova-plugin-device",
