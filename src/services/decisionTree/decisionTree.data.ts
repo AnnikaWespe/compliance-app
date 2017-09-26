@@ -5,7 +5,24 @@ export const DECISIONTREE_DATA = {
       type: 'what',
       options: [
         {
-          what: 'cash'
+          what: 'cash',
+          getUserCareerLevel: false,
+          proceed: {
+            info: {
+              branch: 'get-donation',
+              what: 'cash',
+              who: 'unspecified',
+              howMuch: 'unspecified',
+            },
+            all: {
+              continueWith: 'email',
+              emailTo: 'gComp',
+              continueButtonType: 'inquiry_warning',
+              note: 'warning_cash',
+              documentationRequired: true,
+              sendFormToHumanResources: false,
+            }
+          }
         },
         {
           what: 'specialEvent',

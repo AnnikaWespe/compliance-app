@@ -57,14 +57,14 @@
       "give-donation": "Vergabe von Zuwendung",
       "get-donation": "Annahme von Zuwendung",
       "please-click": "Klicken Sie auf eine Vorlage, um zum vorausgefüllten Formular zu gelangen.",
-      "no-templates": "Sie haben noch keine gespeicherten Vorlagen in dieser Kategorie."
+      "no-templates": "Sie haben keine gespeicherten Vorlagen in dieser Kategorie."
     },
     "savedProcesses": {
       "title": "Gespeicherte Vorgänge",
       "give-donation": "Vergabe von Zuwendung",
       "get-donation": "Annahme von Zuwendung",
       "please-click": "Klicken Sie auf einen Vorgang, um die Bearbeitung fortzusetzen",
-      "no-processes": "Sie haben noch keine gespeicherten Vorgänge in dieser Kategorie."
+      "no-processes": "Sie haben keine gespeicherten Vorgänge in dieser Kategorie."
     },
     "disclaimer": {
       "title": "Disclaimer"
@@ -88,6 +88,7 @@
       "normal_FE1": "In diesem Fall benötigen Sie die Genehmigung von Ihrer FE1, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
       "normal_FE2": "In diesem Fall benötigen Sie die Genehmigung von Ihrer FE2, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
       "warning_business-lunch_others": "Die Annahme einer Einladung zum [Geschäftsessen, same] von [Anderen, Andere] ist grundsätzlich untersagt.<br><br>Es besteht die Möglichkeit, eine Ausnahme durch Compliance zu beantragen.",
+      "warning_cash": "Grundsätzlich ist die Annahme von Bargeld untersagt. In Ausnahmefällen kann eine schriftlichen Genehmigung vorab bei GComp beantragt werden.<p>Jetzt eine Genehmigung beantragen?</p>",
       "alert_0": "Wirklich abbrechen?",
       "alert_1": "Ihre Eingaben gehen dabei verloren.",
       "buttons": {
