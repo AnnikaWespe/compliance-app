@@ -9,7 +9,7 @@ export class ProcessStorageService {
     savedProcesses.push(data.timeStamp);
     console.log('timeStamp', data.timeStamp);
     localStorage.setItem(data.timeStamp, JSON.stringify(data));
-    localStorage.setItem(branch, JSON.stringify(savedProcesses));
+    localStorage.setItem(branch + '_processes', JSON.stringify(savedProcesses));
   }
 
   deleteProcess(timeStamp, branch) {
