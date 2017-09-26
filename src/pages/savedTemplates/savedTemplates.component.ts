@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {FormComponent} from '../questionScreen/confirmSendInquiry/form/form.component';
-import {Globals} from '../../services/globals';
 import {TemplatesStorageService} from '../../services/Template+ProcessStorage/templatesStorage.service';
 
 @Component({
@@ -14,10 +13,9 @@ export class SavedTemplatesComponent {
   templatesGive = [];
 
   constructor(public navCtrl: NavController,
-              private templatesStorageService: TemplatesStorageService,
-              private globals: Globals) {
-    this.templatesReceive = templatesStorageService.getTemplates(globals.SAVED_RECEIVE_TEMPLATES);
-    this.templatesGive = templatesStorageService.getTemplates(globals.SAVED_GIVE_TEMPLATES);
+              private templatesStorageService: TemplatesStorageService) {
+    this.templatesReceive = templatesStorageService.getTemplates('get-donation');
+    this.templatesGive = templatesStorageService.getTemplates('give-donation');
   }
 
   loadProcess(process) {
@@ -31,7 +29,7 @@ export class SavedTemplatesComponent {
 
   deleteTemplateReceive(event, process) {
     event.stopPropagation();
-    this.templatesStorageService.deleteTemplate(process.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
+    this.templatesStorageService.deleteTemplate(process.timeStamp, 'get-donation');
     this.templatesReceive = this.templatesReceive.filter((obj) => {
       return obj.timeStamp !== process.timeStamp;
     });
@@ -39,7 +37,7 @@ export class SavedTemplatesComponent {
 
   deleteTemplateGive(event, process) {
     event.stopPropagation();
-    this.templatesStorageService.deleteTemplate(process.timeStamp, this.globals.SAVED_GIVE_PROCESSES);
+    this.templatesStorageService.deleteTemplate(process.timeStamp, 'give-donation');
     this.templatesReceive = this.templatesReceive.filter((obj) => {
       return obj.timeStamp !== process.timeStamp;
     });

@@ -5,7 +5,7 @@
       <ion-icon name="md-person" class="menu-button"></ion-icon>
     </button>
     <ion-title>
-      {{'savedProcesses.title' | translate}}
+      {{'secondary-pages.savedProcesses.title' | translate}}
     </ion-title>
   </ion-navbar>
 
@@ -13,13 +13,12 @@
 
 
 <ion-content padding>
-  <h2 class="primary" padding-top>Vergabe</h2>
+  <h2 class="primary" padding-top>{{"secondary-pages.savedProcesses.give-donation"| translate}}</h2>
   <div class="stripes"></div>
   <h6 class="grey" *ngIf="processesGive.length">
-    Klicken Sie auf einen Vorgang, um die Bearbeitung fortzusetzen.
-  </h6>
+    {{"secondary-pages.savedProcesses.please-click"| translate}}</h6>
   <h6 class="grey" *ngIf="processesGive.length == 0">
-    Sie haben noch keine gespeicherten Vorgänge in dieser Kategorie.
+    {{"secondary-pages.savedProcesses.no-processes"| translate}}
   </h6>
   <div>
     <ion-item
@@ -34,13 +33,12 @@
     </ion-item>
   </div>
 
-  <h2 class="primary" padding-top>Empfang</h2>
+  <h2 class="primary" padding-top>{{"secondary-pages.savedProcesses.get-donation"| translate}}</h2>
   <div class="stripes"></div>
   <h6 class="grey" *ngIf="processesReceive.length">
-    Klicken Sie auf einen Vorgang, um die Bearbeitung fortzusetzen.
-  </h6>
+    {{"secondary-pages.savedProcesses.please-click"| translate}}  </h6>
   <h6 class="grey" *ngIf="processesReceive.length == 0">
-    Sie haben noch keine gespeicherten Vorgänge in dieser Kategorie.
+    {{"secondary-pages.savedProcesses.no-processes"| translate}}
   </h6>
   <div>
     <ion-item

@@ -5,7 +5,7 @@
       <ion-icon name="md-person" class="menu-button"></ion-icon>
     </button>
     <ion-title>
-      {{'templates.title' | translate}}
+      {{'secondary-pages.templates.title' | translate}}
     </ion-title>
   </ion-navbar>
 
@@ -13,13 +13,13 @@
 
 
 <ion-content padding>
-  <h2 class="primary" padding-top>Vergabe</h2>
+  <h2 class="primary" padding-top>{{'secondary-pages.templates.give-donation' | translate}}</h2>
   <div class="stripes"></div>
   <h6 class="grey" *ngIf="templatesGive.length">
-    Klicken Sie auf eine Vorlage, um zum vorausgefüllten Formular zu gelangen.
+    {{'secondary-pages.templates.please-click' | translate}}
   </h6>
   <h6 class="grey" *ngIf="templatesGive.length == 0">
-    Sie haben noch keine gespeicherten Vorlagen in dieser Kategorie.
+    {{'secondary-pages.templates.no-templates' | translate}}
   </h6>
   <div>
     <ion-item
@@ -34,13 +34,13 @@
     </ion-item>
   </div>
 
-  <h2 class="primary" padding-top>Empfang</h2>
+  <h2 class="primary" padding-top>{{'secondary-pages.templates.get-donation' | translate}}</h2>
   <div class="stripes"></div>
   <h6 class="grey" *ngIf="templatesReceive.length">
-    Klicken Sie auf eine Vorlage, um zum vorausgefüllten Formular zu gelangen.
+    {{'secondary-pages.templates.please-click' | translate}}
   </h6>
   <h6 class="grey" *ngIf="templatesReceive.length == 0">
-    Sie haben noch keine gespeicherten Vorlagen in dieser Kategorie.
+    {{'secondary-pages.templates.no-templates' | translate}}
   </h6>
   <div>
     <ion-item

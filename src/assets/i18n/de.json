@@ -5,6 +5,8 @@
     "no": "Nein"
   },
   "buttons": {
+    "give-donation": "Vergabe",
+    "get-donation": "Annahme",
     "accept": "Annahme",
     "cancel": "Abbrechen",
     "send": "Absenden",
@@ -24,6 +26,7 @@
     "inquiry_normal": "Anfrage",
     "inquiry_warning": "Anfrage an GComp"
   },
+
   "buttons_addition": {
     "cash": "und bargeldähnliche Zuwendungen",
     "specialEvent": "(z.B. Formel 1, VIP Logen, Oktoberfest)",
@@ -31,24 +34,40 @@
     "businessLunch": "",
     "gifts": ""
   },
+  "titles": {
+  "entertainment": "Unterhaltung",
+  "specialEvent": "Special Event",
+  "businessLunch": "Geschäftsessen",
+  "gifts": "Geschenke",
+  "cash": "Bargeld"
+},
   "secondary-pages": {
-    "templates": {
-      "title": "Vorlagen"
-    },
-    "savedProcesses": {
-      "title": "Gespeicherte Vorgänge"
-    },
-    "disclaimer": {
-      "title": "Disclaimer"
+    "side-menu": {
+      "name": "Name",
+      "function": "Funktion",
+      "carreer-level": "Karrierelevel"
     },
     "home": {
       "title_menu": "Home",
       "title": "[Geschenke und Einladungen, same]",
-      "info": "<p>Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen?</p>Zur Vermeidung von Interessenskonflikten bzw. Reputationsschäden muss der Grundsatz der [Sozialadäquanz, same] beachtet werden. Hierbei gilt:<ul><li>Immer auf den Empfänger und dessen sozialen Status bezogen.</li><li>Typische Testfrage ist: \"Könnte sich der Empfänger das selbst leisten, und wäre er auch bereit dazu?\"</li></ul>",
-      "buttons": {
-        "give-donation": "Vergabe",
-        "get-donation": "Annahme"
-      }
+      "info": "<p>Was ist wichtig bei Annahme oder Vergabe von Geschenken und Einladungen?</p>Zur Vermeidung von Interessenskonflikten bzw. Reputationsschäden muss der Grundsatz der [Sozialadäquanz, same] beachtet werden. Hierbei gilt:<ul><li>Immer auf den Empfänger und dessen sozialen Status bezogen.</li><li>Typische Testfrage ist: \"Könnte sich der Empfänger das selbst leisten, und wäre er auch bereit dazu?\"</li></ul>"
+    },
+    "templates": {
+      "title": "Vorlagen",
+      "give-donation": "Vergabe von Zuwendung",
+      "get-donation": "Annahme von Zuwendung",
+      "please-click": "Klicken Sie auf eine Vorlage, um zum vorausgefüllten Formular zu gelangen.",
+      "no-templates": "Sie haben noch keine gespeicherten Vorlagen in dieser Kategorie."
+    },
+    "savedProcesses": {
+      "title": "Gespeicherte Vorgänge",
+      "give-donation": "Vergabe von Zuwendung",
+      "get-donation": "Annahme von Zuwendung",
+      "please-click": "Klicken Sie auf einen Vorgang, um die Bearbeitung fortzusetzen",
+      "no-processes": "Sie haben noch keine gespeicherten Vorgänge in dieser Kategorie."
+    },
+    "disclaimer": {
+      "title": "Disclaimer"
     }
   },
   "get-donation": {

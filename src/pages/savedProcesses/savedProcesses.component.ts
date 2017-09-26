@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {FormComponent} from '../questionScreen/confirmSendInquiry/form/form.component';
 import {ProcessStorageService} from '../../services/Template+ProcessStorage/processStorage.Service';
-import {Globals} from '../../services/globals';
 
 @Component({
   selector: 'page-saved-processes',
@@ -15,10 +14,9 @@ export class SavedProcessesComponent {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private processStorageService: ProcessStorageService,
-              private globals: Globals) {
-    this.processesReceive = processStorageService.getOpenProcesses(globals.SAVED_RECEIVE_PROCESSES);
-    this.processesGive = processStorageService.getOpenProcesses(globals.SAVED_GIVE_PROCESSES);
+              private processStorageService: ProcessStorageService) {
+    this.processesReceive = processStorageService.getOpenProcesses('get-donation');
+    this.processesGive = processStorageService.getOpenProcesses('give-donation');
   }
 
   loadProcess(process) {
@@ -31,7 +29,7 @@ export class SavedProcessesComponent {
 
   deleteProcessReceive(event, process) {
     event.stopPropagation();
-    this.processStorageService.deleteProcess(process.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
+    this.processStorageService.deleteProcess(process.timeStamp, 'get-donation');
     this.processesReceive = this.processesReceive.filter((obj) => {
       return obj.timeStamp !== process.timeStamp;
     });
@@ -39,7 +37,7 @@ export class SavedProcessesComponent {
 
   deleteProcessGive(event, process) {
     event.stopPropagation();
-    this.processStorageService.deleteProcess(process.timeStamp, this.globals.SAVED_GIVE_PROCESSES);
+    this.processStorageService.deleteProcess(process.timeStamp, 'give-donation');
     this.processesGive = this.processesGive.filter((obj) => {
       return obj.timeStamp !== process.timeStamp;
     });

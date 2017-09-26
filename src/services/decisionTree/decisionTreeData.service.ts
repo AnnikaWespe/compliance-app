@@ -10,6 +10,7 @@ type Branch = 'get-donation' | 'give-donation' ;
 export class DecisionTreeService {
 
   private branch: Branch;
+  private title = '';
 
   constructor(private userService: UserService,
               private translateService: TranslateService) {
@@ -25,6 +26,14 @@ export class DecisionTreeService {
 
   getBranch() {
     return this.branch;
+  }
+
+  setTitle(title) {
+    this.title = title;
+  }
+
+  getTitle() {
+    return this.title;
   }
 
   getProcedure(option) {

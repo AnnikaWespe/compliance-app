@@ -14,7 +14,7 @@
 
 <ion-content>
   <div class="information-text">
-    <h1 class="title" [innerHtml]="title"></h1>
+    <h1 class="title" [innerHtml]="innerPageHeader"></h1>
     <div [innerHtml]="info"></div>
   </div>
   <div class="lower-div">
@@ -24,7 +24,7 @@
       tappable
       [disabled]="decisionTreeData.options[0].disabled"
       (click)="startProcess(decisionTreeData.options[0], 'get-donation')">
-      {{"home.buttons." + decisionTreeData.options[0].name | translate}}
+      {{"buttons." + decisionTreeData.options[0].name | translate}}
     </button>
 
     <button
@@ -33,7 +33,7 @@
       tappable
       [disabled]="decisionTreeData.options[1].disabled"
       (click)="startProcess(decisionTreeData.options[1], 'give-donation')">
-      {{"home.buttons." + decisionTreeData.options[1].name | translate}}
+      {{"buttons." + decisionTreeData.options[1].name | translate}}
     </button>
 
   </div>

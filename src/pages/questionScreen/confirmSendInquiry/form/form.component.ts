@@ -3,14 +3,13 @@ import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HomePageComponent} from '../../../home/home.component';
 import {ProcessStorageService} from '../../../../services/Template+ProcessStorage/processStorage.Service';
-import {Globals} from '../../../../services/globals';
 import {TemplatesStorageService} from '../../../../services/Template+ProcessStorage/templatesStorage.service';
 import {EndScreenComponent} from '../../endScreen/endScreen.component';
 import {TranslateService} from '@ngx-translate/core';
 import {GlossaryService} from '../../../../services/glossary/glossary.service';
 import {Process} from '../../../../services/process.model';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
-import {DecisionTreeService} from "../../../../services/decisionTree/decisionTreeData.service";
+import {DecisionTreeService} from '../../../../services/decisionTree/decisionTreeData.service';
 
 @Component({
   selector: 'page-form',
@@ -45,7 +44,6 @@ export class FormComponent implements AfterViewChecked{
               formBuilder: FormBuilder,
               private processStorageService: ProcessStorageService,
               private templatesStorageService: TemplatesStorageService,
-              private globals: Globals,
               private translateService: TranslateService,
               private glossaryService: GlossaryService,
               private elRef: ElementRef,
@@ -89,11 +87,11 @@ export class FormComponent implements AfterViewChecked{
   saveProcess() {
     let timeStamp = Date.now().toString();
     if (this.processSaved) {
-      this.processStorageService.deleteProcess(this.process.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
+      this.processStorageService.deleteProcess(this.process.timeStamp, this.process.info.branch);
     }
     this.process.timeStamp = timeStamp;
     this.process.supplementaryData = this.supplementaryDataForm.value;
-    this.processStorageService.saveProcess(this.process, this.globals.SAVED_RECEIVE_PROCESSES);
+    this.processStorageService.saveProcess(this.process, this.process.info.branch);
     this.saveButtonActive = false;
     this.processSaved = true;
   }
@@ -110,11 +108,11 @@ export class FormComponent implements AfterViewChecked{
       let timeStamp = Date.now().toString();
       this.process.supplementaryData = this.supplementaryDataForm.value;
       if (this.processSaved) {
-        this.processStorageService.deleteProcess(this.process.timeStamp, this.globals.SAVED_RECEIVE_PROCESSES);
+        this.processStorageService.deleteProcess(this.process.timeStamp, this.process.info.branch);
       }
       if (this.saveTemplateBoolean) {
         this.process.timeStamp = timeStamp;
-        this.templatesStorageService.saveTemplate(this.process, this.globals.SAVED_RECEIVE_TEMPLATES);
+        this.templatesStorageService.saveTemplate(this.process, this.process.info.branch);
       }
       this.navCtrl.setRoot(EndScreenComponent, {process: this.process});
     }

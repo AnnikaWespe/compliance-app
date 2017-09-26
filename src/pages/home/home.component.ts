@@ -13,7 +13,7 @@ import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 export class HomePageComponent implements AfterViewChecked {
 
   decisionTreeData;
-  title: SafeHtml;
+  innerPageHeader: SafeHtml;
   info: SafeHtml;
 
   clickHandlersAdded: boolean;
@@ -46,13 +46,13 @@ export class HomePageComponent implements AfterViewChecked {
 
 
   createPageText() {
-    this.translateService.get('home.title').subscribe(
+    this.translateService.get('secondary-pages.home.title').subscribe(
       (value) => {
         let stringWithSpanTags = this.glossaryService.injectSpanTags(value);
-        this.title = this.domSanitizer.bypassSecurityTrustHtml(stringWithSpanTags);
+        this.innerPageHeader = this.domSanitizer.bypassSecurityTrustHtml(stringWithSpanTags);
       }
     );
-    this.translateService.get('home.info').subscribe(
+    this.translateService.get('secondary-pages.home.info').subscribe(
       (value) => {
         let stringWithSpanTags = this.glossaryService.injectSpanTags(value);
         this.info = this.domSanitizer.bypassSecurityTrustHtml(stringWithSpanTags);

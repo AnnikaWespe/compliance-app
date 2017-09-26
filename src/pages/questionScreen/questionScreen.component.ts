@@ -6,6 +6,7 @@ import {ConfirmSendInquiryComponent} from './confirmSendInquiry/confirmSendInqui
 import {DecisionTreeService} from '../../services/decisionTree/decisionTreeData.service';
 import {Process} from '../../services/process.model';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'page-question-screen',
@@ -26,9 +27,18 @@ export class QuestionScreenComponent implements AfterViewChecked {
               private decisionTreeService: DecisionTreeService,
               private domSanitizer: DomSanitizer,
               private elRef: ElementRef,
-              private renderer: Renderer2) {
+              private renderer: Renderer2,
+              translateService: TranslateService) {
     this.option = navParams.get('option');
-    this.title = this.option.title || this.navParams.get('title') || '';
+    if (this.option.what) {
+      translateService.get('titles.' + this.option.what).subscribe((title) => {
+        this.title = title;
+        this.decisionTreeService.setTitle(title);
+      });
+    }
+    else {
+      this.title = this.decisionTreeService.getTitle();
+    }
     this.decisionTreeService.getQuestionscreenText(this.option.type).subscribe((results) => {
       this.createPageText(results[0], results[1]);
     });
@@ -41,7 +51,7 @@ export class QuestionScreenComponent implements AfterViewChecked {
   }
 
   loadNext(option) {
-    if (option.terminalPoint) {
+    if (!option.options) {
       let procedure = this.decisionTreeService.getProcedure(option);
       let process = new Process(option.proceed.info, procedure, this.title);
       if (procedure.continueWith === 'email') {
@@ -56,7 +66,7 @@ export class QuestionScreenComponent implements AfterViewChecked {
       }
     }
     else {
-      this.navCtrl.push(QuestionScreenComponent, {option: option, title: this.title});
+      this.navCtrl.push(QuestionScreenComponent, {option: option});
     }
   }
 

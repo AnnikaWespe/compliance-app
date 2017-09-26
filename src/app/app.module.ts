@@ -23,7 +23,6 @@ import {ConfirmSendInquiryComponent} from '../pages/questionScreen/confirmSendIn
 import {SavedProcessesComponent} from '../pages/savedProcesses/savedProcesses.component';
 import {ProcessStorageService} from '../services/Template+ProcessStorage/processStorage.Service';
 import {TemplatesStorageService} from '../services/Template+ProcessStorage/templatesStorage.service';
-import {Globals} from '../services/globals';
 import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.component';
 
 @NgModule({
@@ -75,7 +74,6 @@ import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.co
     GlossaryService,
     ProcessStorageService,
     TemplatesStorageService,
-    Globals,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -3,6 +3,7 @@ export class Process {
     what: string;
     who: string;
     howMuch: string;
+    branch: string;
   };
   procedure: {
     continueWith: string;

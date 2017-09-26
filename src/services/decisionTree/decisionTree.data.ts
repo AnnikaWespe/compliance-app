@@ -2,34 +2,25 @@ export const DECISIONTREE_DATA = {
   options: [
     {
       name: 'get-donation',
-      terminalPoint: false,
       type: 'what',
       options: [
         {
-          what: 'cash',
-          title: 'Bargeld',
-          terminalPoint: true,
-          disabled: true,
-          options: []
+          what: 'cash'
         },
         {
           what: 'specialEvent',
-          title: 'Special Event',
-          terminalPoint: false,
           type: 'who_invitation',
           options: [
             {
-              what: 'specialEvent',
               name: 'businessPartner',
-              terminalPoint: false,
               type: 'howMuch_invitation',
               options: [
                 {
                   name: '≤ 500€',
-                  terminalPoint: true,
                   getUserCareerLevel: true,
                   proceed: {
                     info: {
+                      branch: 'get-donation',
                       what: 'specialEvent',
                       who: 'businessPartner',
                       howMuch: '≤ 500€',
@@ -58,10 +49,10 @@ export const DECISIONTREE_DATA = {
                 },
                 {
                   name: '> 500€',
-                  terminalPoint: true,
                   getUserCareerLevel: true,
                   proceed: {
                     info: {
+                      branch: 'get-donation',
                       what: 'specialEvent',
                       who: 'businessPartner',
                       howMuch: '> 500€'
@@ -95,39 +86,31 @@ export const DECISIONTREE_DATA = {
               ]
             },
             {
-              what: 'specialEvent',
               name: 'others',
-              terminalPoint: false,
               disabled: true,
               options: []
             }
           ]
         },
         {
-          title: 'Unterhaltung',
           what: 'entertainment',
-          terminalPoint: false,
           disabled: true,
           options: []
         },
         {
-          title: 'Geschäftsessen',
           what: 'businessLunch',
-          terminalPoint: false,
           type: 'who_invitation',
           options: [
             {
-              what: 'businessLunch',
               name: 'businessPartner',
-              terminalPoint: false,
               type: 'howMuch_invitation',
               options: [
                 {
                   name: 'x ≤ 250€',
-                  terminalPoint: true,
                   getUserCareerLevel: false,
                   proceed: {
                     info: {
+                      branch: 'get-donation',
                       what: 'businessLunch',
                       who: 'businessPartner',
                       howMuch: 'x ≤ 250€',
@@ -142,10 +125,10 @@ export const DECISIONTREE_DATA = {
                 },
                 {
                   name: '250€ < x ≤ 500€',
-                  terminalPoint: true,
                   getUserCareerLevel: true,
                   proceed: {
                     info: {
+                      branch: 'get-donation',
                       what: 'businessLunch',
                       who: 'businessPartner',
                       howMuch: '250€ < x ≤ 500€',
@@ -174,10 +157,10 @@ export const DECISIONTREE_DATA = {
                 },
                 {
                   name: 'x > 500€',
-                  terminalPoint: true,
                   getUserCareerLevel: true,
                   proceed: {
                     info: {
+                      branch: 'get-donation',
                       what: 'businessLunch',
                       who: 'businessPartner',
                       howMuch: 'x > 500€',
@@ -212,10 +195,10 @@ export const DECISIONTREE_DATA = {
             },
             {
               name: 'others',
-              terminalPoint: true,
               getUserCareerLevel: false,
               proceed: {
                 info: {
+                  branch: 'get-donation',
                   what: 'businessLunch',
                   who: 'others',
                 },
@@ -232,9 +215,7 @@ export const DECISIONTREE_DATA = {
           ]
         },
         {
-          title: 'Geschenk',
           what: 'gifts',
-          terminalPoint: false,
           disabled: true,
           options: []
         }
@@ -243,7 +224,6 @@ export const DECISIONTREE_DATA = {
     {
       name: 'give-donation',
       type: 'what',
-      terminalPoint: false,
       disabled: true,
       options: []
     }
