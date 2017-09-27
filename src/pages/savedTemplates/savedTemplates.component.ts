@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {FormComponent} from '../questionScreen/confirmSendInquiry/form/form.component';
 import {TemplatesStorageService} from '../../services/Template+ProcessStorage/templatesStorage.service';
+import {Process} from '../../services/process.model';
+import {DecisionTreeService} from '../../services/decisionTree/decisionTreeData.service';
 
 @Component({
   selector: 'page-saved-templates',
@@ -13,18 +15,21 @@ export class SavedTemplatesComponent {
   templatesGive = [];
 
   constructor(public navCtrl: NavController,
-              private templatesStorageService: TemplatesStorageService) {
+              private templatesStorageService: TemplatesStorageService,
+              private decisionTreeService: DecisionTreeService) {
     this.templatesReceive = templatesStorageService.getTemplates('get-donation');
     this.templatesGive = templatesStorageService.getTemplates('give-donation');
   }
 
-  loadProcess(process) {
-    this.navCtrl.push(FormComponent,
-      {
-        process: process,
-        savedProcess: false
-      })
-    ;
+  loadProcess(process: Process) {
+    this.decisionTreeService.setTitle(process.info.what).subscribe(() => {
+        this.navCtrl.push(FormComponent,
+          {
+            process: process,
+            savedProcess: false
+          });
+      }
+    );
   }
 
   deleteTemplateReceive(event, process) {

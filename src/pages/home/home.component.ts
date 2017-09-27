@@ -27,6 +27,7 @@ export class HomePageComponent implements AfterViewChecked {
               private domSanitizer: DomSanitizer) {
     this.decisionTreeData = decisionTreeService.getDecisionTreeData();
     this.createPageText();
+    this.decisionTreeService.resetTitle();
   }
 
   ngAfterViewChecked() {

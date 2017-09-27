@@ -22,6 +22,7 @@ export class FormComponent implements AfterViewChecked{
   saveTemplateBoolean = false;
   processSaved: boolean;
   clickHandlersAdded = false;
+  title;
 
   // strings that need translate service
   label_time;
@@ -51,6 +52,7 @@ export class FormComponent implements AfterViewChecked{
               private domSanitizer: DomSanitizer,
               private decisionTreeService: DecisionTreeService) {
     let timeProposition = new Date().toISOString();
+    this.title = decisionTreeService.getTitle();
     this.process = this.navParams.get('process');
     this.processSaved = this.navParams.get('savedProcess');
     this.getTranslation();

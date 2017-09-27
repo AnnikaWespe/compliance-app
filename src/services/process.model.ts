@@ -14,7 +14,6 @@ export class Process {
     documentationRequired: boolean;
     sendFormToHumanResources: boolean;
   };
-  pageTitle: string;
   timeStamp: string;
   supplementaryData: {
     time?: string;
@@ -25,10 +24,9 @@ export class Process {
     tax?: string;
     taxReceiptWhere?: string;
   };
-  constructor(info, procedure, pageTitle, timeStamp = '', supplementaryData = {}){
+  constructor(info, procedure, timeStamp = '', supplementaryData = {}){
     this.info = info;
     this.procedure = procedure;
-    this.pageTitle = pageTitle;
     this.timeStamp = timeStamp;
     this.supplementaryData = supplementaryData;
   }

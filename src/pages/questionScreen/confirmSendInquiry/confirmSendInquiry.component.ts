@@ -17,12 +17,12 @@ export class ConfirmSendInquiryComponent implements AfterViewChecked{
   note: SafeHtml;
   clickHandlersAdded = false;
   continueButtonText: string;
+  title;
 
   alertTitle;
   alertMessage;
   alertButtonYes;
   alertButtonNo;
-  normalText;
 
 
   constructor(public navCtrl: NavController,
@@ -35,11 +35,11 @@ export class ConfirmSendInquiryComponent implements AfterViewChecked{
               private renderer: Renderer2,
               decisionTreeService: DecisionTreeService) {
     this.process = this.navParams.get('process');
+    this.title = decisionTreeService.getTitle();
     decisionTreeService
       .getConfirmInquiryPageContent(this.process.procedure.note, this.process.procedure.continueButtonType)
       .subscribe((results) => {
       this.createPageText(results[0], results[1]);
-      console.log(results);
     });
     this.getTranslation();
   }
@@ -50,7 +50,9 @@ export class ConfirmSendInquiryComponent implements AfterViewChecked{
     }
   }
 
-  continue() {
+  continue(string) {
+    // TODO: specify options 'deductible' or 'inventory'
+    console.log(string);
     this.navCtrl.push(FormComponent, {process: this.process, savedProcess: false});
   }
 
@@ -78,18 +80,12 @@ export class ConfirmSendInquiryComponent implements AfterViewChecked{
   }
 
   getTranslation() {
-    this.translateService.get('receive.confirmSendInquiry.normal',
-      {emailTo: this.process.procedure.emailTo}).subscribe(
-      value => {
-        this.normalText = value;
-      }
-    );
-    this.translateService.get('receive.confirmSendInquiry.alert_0').subscribe(
+    this.translateService.get('alerts.question_cancel').subscribe(
       value => {
         this.alertTitle = value;
       }
     );
-    this.translateService.get('receive.confirmSendInquiry.alert_1').subscribe(
+    this.translateService.get('alerts.warning').subscribe(
       value => {
         this.alertMessage = value;
       }

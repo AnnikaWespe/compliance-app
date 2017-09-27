@@ -43,7 +43,7 @@
       tappable
       *ngFor="let subOption of option.options"
       [class.item-disabled]="subOption.disabled"
-      (click)="loadNext(subOption)"
+      (click)="setTitle(subOption)"
       [ngClass]="subOption.what">
       <div item-start></div>
       {{"buttons." + subOption.what | translate}}<br>

@@ -86,4 +86,5 @@ Großsportveranstaltungen (Oktoberfest,Fußballspiele, Formel-1-Rennen)`,
   (Schecks, Überweisungen, Preisnachlässe, Rabatte etc.)`,
   '§37b EStG': 'Hier fehlt der Text zu §37b EStG',
   'Geschenke und Einladungen': 'Hier fehlt der Text zu "Geschenke und Einladungen"',
+  'Geschenke': 'Hier fehlt der Text zu "Geschenke"'
 }

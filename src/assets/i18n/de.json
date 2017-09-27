@@ -19,14 +19,25 @@
     "businessPartner": "Geschäftspartner",
     "others": "Andere",
     "≤ 500€": "≤ 500€",
+    "≤ 40€": "≤ 40€",
+    "≤ 250€": "≤ 250€",
     "> 500€": "> 500€",
+    "> 250€": "> 250€",
     "x ≤ 250€": "x ≤ 250€",
     "250€ < x ≤ 500€": "250€ < x ≤ 500€",
+    "40€ < x ≤ 500€": "40€ < x ≤ 500€",
     "x > 500€": "x > 500€",
+    "x > 250€": "x > 250€",
     "inquiry_normal": "Anfrage",
-    "inquiry_warning": "Anfrage an GComp"
+    "inquiry_gComp": "Anfrage an GComp",
+    "yes": "Ja",
+    "inventory": "Inventarisierung",
+    "deductible": "Selbstbehalt"
   },
-
+  "alerts": {
+    "question_cancel": "Wirklich abbrechen?",
+    "warning": "Ihre Eingaben gehen dabei verloren."
+  },
   "buttons_addition": {
     "cash": "und bargeldähnliche Zuwendungen",
     "specialEvent": "(z.B. Formel 1, VIP Logen, Oktoberfest)",
@@ -35,12 +46,12 @@
     "gifts": ""
   },
   "titles": {
-  "entertainment": "Unterhaltung",
-  "specialEvent": "Special Event",
-  "businessLunch": "Geschäftsessen",
-  "gifts": "Geschenke",
-  "cash": "Bargeld"
-},
+    "entertainment": "Unterhaltung",
+    "specialEvent": "Special Event",
+    "businessLunch": "Geschäftsessen",
+    "gifts": "Geschenke",
+    "cash": "Bargeld"
+  },
   "secondary-pages": {
     "side-menu": {
       "name": "Name",
@@ -57,7 +68,7 @@
       "give-donation": "Vergabe von Zuwendung",
       "get-donation": "Annahme von Zuwendung",
       "please-click": "Klicken Sie auf eine Vorlage, um zum vorausgefüllten Formular zu gelangen.",
-      "no-templates": "Sie haben keine gespeicherten Vorlagen in dieser Kategorie."
+      "no-templates": "Sie haben keine Vorlagen in dieser Kategorie."
     },
     "savedProcesses": {
       "title": "Gespeicherte Vorgänge",
@@ -73,33 +84,38 @@
   "get-donation": {
     "questionScreen": {
       "question": {
-        "who_invitation": "Wer lädt Sie ein?",
         "what": "Worum handelt es sich?",
-        "howMuch_invitation": "Welchen Geldwert hat die Einladung?"
+        "who_invitation": "Wer lädt Sie ein?",
+        "who_gift": "Von wem kommt das Geschenk?",
+        "howMuch_invitation": "Wie hoch ist der geschätzte Geldwert der Einladung?",
+        "howMuch_gift": "Wie hoch ist der geschätzte Geldwert des Geschenks?"
       },
       "info": {
-        "what": "Es werden fünf Formen von Zuwendungen unterschieden: [Bargeld, same], [Special Events, same], [Einladungen mit überwiegendem Unterhaltungscharakter, same], [Geschäftsessen, same] und [Geschenke, same].",
+        "what": "Es werden fünf Formen von [Zuwendungen, same] unterschieden: [Bargeld, same], [Special Events, same], [Einladungen mit überwiegendem Unterhaltungscharakter, same], [Geschäftsessen, same] und [Geschenke, same].",
         "who_invitation": "Sie können entweder von einem [Geschäftspartner, same] oder von [einer anderen Person, Andere] eingeladen werden.",
-        "howMuch_invitation": ""
+        "howMuch_invitation": "",
+        "howMuch_gift": ""
       }
     },
     "confirmSendInquiry": {
       "normal_GComp": "In diesem Fall benötigen Sie die Genehmigung von Group Compliance, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
-      "normal_FE1": "In diesem Fall benötigen Sie die Genehmigung von Ihrer FE1, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
-      "normal_FE2": "In diesem Fall benötigen Sie die Genehmigung von Ihrer FE2, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
+      "normal_FE1": "In diesem Fall benötigen Sie die Genehmigung von Ihrer FE 1, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
+      "normal_FE2": "In diesem Fall benötigen Sie die Genehmigung von Ihrer FE 2, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
+      "high-necessity_FE1": "Eine Genehmigung kann bei der FE 1 mittels eines aussagekräftigen Begründung der geschäftlichen Notwendigkeit beantragt werden.<p>Möchten Sie fortfahren?</p>",
+      "high-necessity_FE2": "Eine Genehmigung kann bei der FE 2 mittels eines aussagekräftigen Begründung der geschäftlichen Notwendigkeit beantragt werden.<p>Möchten Sie fortfahren?</p>",
+      "high-necessity_GComp": "Eine Genehmigung kann bei GComp mittels eines aussagekräftigen Begründung der geschäftlichen Notwendigkeit beantragt werden.<p>Möchten Sie fortfahren?</p>",
       "warning_business-lunch_others": "Die Annahme einer Einladung zum [Geschäftsessen, same] von [Anderen, Andere] ist grundsätzlich untersagt.<br><br>Es besteht die Möglichkeit, eine Ausnahme durch Compliance zu beantragen.",
-      "warning_cash": "Grundsätzlich ist die Annahme von Bargeld untersagt. In Ausnahmefällen kann eine schriftlichen Genehmigung vorab bei GComp beantragt werden.<p>Jetzt eine Genehmigung beantragen?</p>",
-      "alert_0": "Wirklich abbrechen?",
-      "alert_1": "Ihre Eingaben gehen dabei verloren.",
-      "buttons": {
-        "normal": "Anfrage",
-        "warning": "Anfrage an GComp"
-      }
+      "warning_cash": "Grundsätzlich ist die Annahme von [Bargeld, same] untersagt. In Ausnahmefällen kann eine schriftlichen Genehmigung <i>vorab</i> bei GComp beantragt werden.<p>Jetzt eine Genehmigung beantragen?</p>",
+      "warning_specialEvent_others": "Grundsätzlich ist die Annahme von Special Events von [Anderen, Andere] untersagt. In Ausnahmefällen kann eine schriftliche Genehmigung <i>vorab</i> bei GComp beantragt werden.<p>Jetzt eine Genehmigung beantragen?</p>",
+      "warning_entertainment_others": "Grundsätzlich ist die Annahme von Einladungen mit überwiegendem Unterhaltungscharakter von [Anderen, Andere] untersagt. In Ausnahmefällen kann eine schriftliche Genehmigung <i>vorab</i> bei GComp beantragt werden.<p>Jetzt eine Genehmigung beantragen?</p>",
+      "warning_gift": "<p>Grundsätzlich ist das erhaltene Geschenk an die MR AG abzugeben und dort zu inventarisieren.</p><p>Bei eigener Verwendung benötigen Sie die Genehmigung der FE 2. Darüber hinaus tragen Sie selbst die Steuer für den entstandenen geldwerten Vorteil, da das Geschenk der Lohnsteuerpflicht unterliegt.</p>Wie möchten Sie fortfahren?"
     },
     "infoScreen": {
       "no-approval_business-lunch": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung zum Geschäftsessen annehmen.<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
+      "no-approval_gift": "Die Annahme eines Geschenkes in diesem Segment ist genehmigungsfrei und hat keine steuerrechtlichen Folgen, sofern die Wertgrenze im Kalendermonat nicht überschritten wird.",
       "self-approval_business-lunch": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung zum Geschäftsessen [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
-      "self-approval_special-event": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung zum Special Event [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen."
+      "self-approval_special-event": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung zum Special Event [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
+      "self-approval_entertainment": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung mit überwiegendem Unterhaltungscharakter [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen."
     },
     "formScreen": {
       "cash": {
@@ -128,5 +144,32 @@
       "alert_required-field_message": "Bitte füllen Sie die rot markierten Felder aus."
     }
   },
-  "give-donation": {}
+  "give-donation": {
+    "questionScreen": {
+      "question": {
+        "who": "Wem möchten Sie etwas schenken?",
+        "what": "Was möchten Sie vergeben?",
+        "howMuch": "Wie hoch ist der geschätzte Geldwert?"
+      },
+      "info": {
+        "who": "Sie können entweder einem [Geschäftspartner, same] oder [einer anderen Person, Andere] eine Zuwendung zukommen lassen.",
+        "what": "Es werden fünf Formen von [Zuwendungen, same] unterschieden: [Bargeld, same], [Special Events, same], [Einladungen mit überwiegendem Unterhaltungscharakter, same], [Geschäftsessen, same] und [Geschenke, same].",
+        "howMuch": ""
+      }
+    },
+    "confirmSendInquiry": {
+      "normal_GComp": "In diesem Fall benötigen Sie die Genehmigung von Group Compliance, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
+      "normal_FE1": "In diesem Fall benötigen Sie die Genehmigung von Ihrer FE 1, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
+      "normal_FE2": "In diesem Fall benötigen Sie die Genehmigung von Ihrer FE 2, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
+      "warning_others": "Die Vergabe sämtlicher [Zuwendungen, same]  an [Andere, same] ist nicht gestattet. In Ausnahmefällen kann <i>vorab</i> eine Genehmigung von GComp eingeholt werden.<p>Genehmigung jetzt beantragen?</p>",
+      "warning_cash": "Grundsätzlich ist die Vergabe von Bargeld untersagt. In Ausnahmefällen kann <i>vorab</i> eine Genehmigung von GComp eingeholt werden.<p>Genehmigung jetzt beantragen?</p>",
+      "warning_specialEvent_standard": "Grundsätzlich ist die Einladung in Form eines [Special Events, same] im Geldwert von über 500 Euro untersagt. In Ausnahmefällen kann vorab eine Genehmigung von GComp und dem FE 1 eingeholt werden.<p>Genehmigung jetzt beantragen?</p>",
+      "warning_specialEvent_FE1": "Grundsätzlich ist die Einladung in Form eines [Special Events, same] im Geldwert von über 500 Euro untersagt. In Ausnahmefällen kann vorab eine Genehmigung von GComp eingeholt werden.<p>Genehmigung jetzt beantragen?</p>",
+      "high-necessity_FE2": "Sie benötigen die Genehmigung Ihrer FE 2. Zusätzlich muss eine aussagekräftige Begründung der geschäftlichen Notwendigkeit dargebracht werden"
+    },
+    "infoScreen": {
+      "self-approval_specialEvent": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung zum Special Event [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
+      "self-approval_entertainment": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung mit überwiegendem Unterhaltungscharakter [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen."
+    }
+  }
 }

@@ -5,7 +5,7 @@
       <ion-icon name="md-person" class="menu-button"></ion-icon>
     </button>
     <ion-title>
-      {{process.pageTitle}}
+      {{title}}
     </ion-title>
   </ion-navbar>
 
@@ -16,7 +16,7 @@
   <div class="grey" [innerHtml]="note" padding></div>
 
 
-  <div class="buttons-wrapper">
+  <div class="buttons-wrapper" *ngIf="process.procedure.continueButtonType !== 'inventory_or_deductible'">
     <button
       ion-button
       tappable
@@ -28,6 +28,21 @@
       tappable
       (click)="goToStartPage()">
       {{'buttons.cancel'|translate}}
+    </button>
+  </div>
+
+  <div class="buttons-wrapper" *ngIf="process.procedure.continueButtonType == 'inventory_or_deductible'">
+    <button
+      ion-button
+      tappable
+      (click)="continue('inventory')">
+      {{'buttons.inventory'|translate}}
+    </button>
+    <button
+      ion-button
+      tappable
+      (click)="continue('deductible')">
+      {{'buttons.deductible'|translate}}
     </button>
   </div>
 

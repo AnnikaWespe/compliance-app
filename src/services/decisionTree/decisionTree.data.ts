@@ -17,7 +17,7 @@ export const DECISIONTREE_DATA = {
             all: {
               continueWith: 'email',
               emailTo: 'gComp',
-              continueButtonType: 'inquiry_warning',
+              continueButtonType: 'yes',
               note: 'warning_cash',
               documentationRequired: true,
               sendFormToHumanResources: false,
@@ -104,15 +104,125 @@ export const DECISIONTREE_DATA = {
             },
             {
               name: 'others',
-              disabled: true,
-              options: []
+              getUserCareerLevel: false,
+              proceed: {
+                info: {
+                  branch: 'get-donation',
+                  what: 'specialEvent',
+                  who: 'others',
+                  howMuch: 'unspecified',
+                },
+                all: {
+                  continueWith: 'email',
+                  emailTo: 'gComp',
+                  continueButtonType: 'yes',
+                  note: 'warning_specialEvent_others',
+                  documentationRequired: true,
+                  sendFormToHumanResources: false,
+                }
+              }
             }
           ]
         },
         {
           what: 'entertainment',
-          disabled: true,
-          options: []
+          type: 'who_invitation',
+          options: [
+            {
+              name: 'businessPartner',
+              type: 'howMuch_invitation',
+              options: [
+                {
+                  name: '≤ 500€',
+                  getUserCareerLevel: true,
+                  proceed: {
+                    info: {
+                      branch: 'get-donation',
+                      what: 'specialEvent',
+                      who: 'businessPartner',
+                      howMuch: '≤ 500€',
+                    },
+                    standard: {
+                      continueWith: 'email',
+                      emailTo: 'FE2',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'high-necessity_FE2',
+                      documentationRequired: false,
+                      sendFormToHumanResources: true,
+                    },
+                    FE2: {
+                      continueWith: 'info',
+                      infoText: `self-approval_entertainment`,
+                      documentationRequired: false,
+                      sendFormToHumanResources: true,
+                    },
+                    FE1: {
+                      continueWith: 'info',
+                      infoText: `self-approval_entertainment`,
+                      documentationRequired: false,
+                      sendFormToHumanResources: true,
+                    },
+                  }
+                },
+                {
+                  name: '> 500€',
+                  getUserCareerLevel: true,
+                  proceed: {
+                    info: {
+                      branch: 'get-donation',
+                      what: 'entertainment',
+                      who: 'businessPartner',
+                      howMuch: '> 500€'
+                    },
+                    standard: {
+                      continueWith: 'email',
+                      emailTo: 'FE1',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'high-necessity_FE1',
+                      documentationRequired: false,
+                      sendFormToHumanResources: true,
+                    },
+                    FE2: {
+                      continueWith: 'email',
+                      emailTo: 'FE1',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'high-necessity_FE1',
+                      documentationRequired: false,
+                      sendFormToHumanResources: true,
+                    },
+                    FE1: {
+                      continueWith: 'email',
+                      emailTo: 'gComp',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'high-necessity_GComp',
+                      documentationRequired: false,
+                      sendFormToHumanResources: true,
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              name: 'others',
+              getUserCareerLevel: false,
+              proceed: {
+                info: {
+                  branch: 'get-donation',
+                  what: 'specialEvent',
+                  who: 'others',
+                  howMuch: 'unspecified',
+                },
+                all: {
+                  continueWith: 'email',
+                  emailTo: 'gComp',
+                  continueButtonType: 'yes',
+                  note: 'warning_entertainment_others',
+                  documentationRequired: true,
+                  sendFormToHumanResources: false,
+                }
+              }
+            }
+          ]
         },
         {
           what: 'businessLunch',
@@ -222,7 +332,7 @@ export const DECISIONTREE_DATA = {
                 all: {
                   continueWith: 'email',
                   emailTo: 'gComp',
-                  continueButtonType: 'inquiry_warning',
+                  continueButtonType: 'inquiry_gComp',
                   note: 'warning_business-lunch_others',
                   documentationRequired: true,
                   sendFormToHumanResources: false,
@@ -233,18 +343,285 @@ export const DECISIONTREE_DATA = {
         },
         {
           what: 'gifts',
-          disabled: true,
-          options: []
-        }
+          type: 'howMuch_gift',
+          options: [
+            {
+              name: '≤ 40€',
+              getUserCareerLevel: false,
+              proceed: {
+                info: {
+                  branch: 'get-donation',
+                  what: 'gift',
+                  who: 'unspecified',
+                  howMuch: '≤ 40€',
+                },
+                all: {
+                  continueWith: 'info',
+                  infoText: `no-approval_gift`,
+                  documentationRequired: false,
+                  sendFormToHumanResources: false,
+                }
+              }
+            },
+            {
+              name: '40€ < x ≤ 500€',
+              getUserCareerLevel: false,
+              proceed: {
+                info: {
+                  branch: 'get-donation',
+                  what: 'gift',
+                  who: 'unspecified',
+                  howMuch: '40€ < x ≤ 500€',
+                },
+                all: {
+                  continueWith: 'email',
+                  emailTo: 'FE2',
+                  continueButtonType: 'inventory_or_deductible',
+                  note: 'warning_gift',
+                  documentationRequired: false,
+                  sendFormToHumanResources: true,
+                },
+              }
+            },
+            {
+              name: 'x > 500€',
+              getUserCareerLevel: true,
+              proceed: {
+                info: {
+                  branch: 'get-donation',
+                  what: 'gift',
+                  who: 'unspecified',
+                  howMuch: 'x > 500€',
+                },
+                standard: {
+                  continueWith: 'email',
+                  emailTo: 'FE1',
+                  continueButtonType: 'inquiry_normal',
+                  note: 'normal_FE1',
+                  documentationRequired: true,
+                  sendFormToHumanResources: false,
+                },
+                FE2: {
+                  continueWith: 'email',
+                  emailTo: 'FE1',
+                  continueButtonType: 'inquiry_normal',
+                  note: 'normal_FE1',
+                  documentationRequired: true,
+                  sendFormToHumanResources: false,
+                },
+                FE1: {
+                  continueWith: 'email',
+                  emailTo: 'gComp',
+                  continueButtonType: 'inquiry_normal',
+                  note: 'normal_GComp',
+                  documentationRequired: true,
+                  sendFormToHumanResources: false,
+                }
+              }
+            }
+          ]
+        },
       ]
     },
     {
       name: 'give-donation',
-      type: 'what',
-      disabled: true,
-      options: []
+      type: 'who',
+      options: [
+        {
+          name: 'businessPartner',
+          type: 'what',
+          options: [
+            {
+              what: 'cash',
+              getUserCareerLevel: false,
+              proceed: {
+                info: {
+                  branch: 'give-donation',
+                  what: 'cash',
+                  who: 'businessPartner',
+                  howMuch: 'unspecified',
+                },
+                all: {
+                  continueWith: 'email',
+                  emailTo: 'gComp',
+                  continueButtonType: 'yes',
+                  note: 'warning_cash',
+                  documentationRequired: true,
+                  sendFormToHumanResources: false,
+                }
+              }
+            },
+            {
+              what: 'specialEvent',
+              type: 'howMuch',
+              options: [
+                {
+                  name: '≤ 250€',
+                  getUserCareerLevel: true,
+                  proceed: {
+                    info: {
+                      branch: 'give-donation',
+                      what: 'specialEvent',
+                      who: 'businessPartner',
+                      howMuch: '≤ 250€',
+                    },
+                    standard: {
+                      continueWith: 'email',
+                      emailTo: 'FE2',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'high-necessity_FE2',
+                      documentationRequired: false,
+                      sendFormToHumanResources: true,
+                    },
+                    FE2: {
+                      continueWith: 'info',
+                      infoText: `self-approval_specialEvent`,
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                    FE1: {
+                      continueWith: 'info',
+                      infoText: `self-approval_specialEvent`,
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    }
+                  }
+                },
+                {
+                  name: '> 250€',
+                  getUserCareerLevel: true,
+                  proceed: {
+                    info: {
+                      branch: 'give-donation',
+                      what: 'specialEvent',
+                      who: 'businessPartner',
+                      howMuch: '> 250€',
+                    },
+                    standard: {
+                      continueWith: 'email',
+                      emailTo: 'FE1+gComp',
+                      continueButtonType: 'yes',
+                      note: 'warning_specialEvent_standard',
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                    FE2: {
+                      continueWith: 'email',
+                      emailTo: 'FE1+gComp',
+                      continueButtonType: 'yes',
+                      note: 'warning_specialEvent_standard',
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                    FE1: {
+                      continueWith: 'email',
+                      emailTo: 'gComp',
+                      continueButtonType: 'yes',
+                      note: 'warning_specialEvent_FE1',
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                  }
+                }]
+            },
+            {
+              what: 'entertainment',
+              type: 'howMuch',
+              options: [
+                {
+                  name: '≤ 500€',
+                  getUserCareerLevel: true,
+                  proceed: {
+                    info: {
+                      branch: 'give-donation',
+                      what: 'entertainment',
+                      who: 'businessPartner',
+                      howMuch: '≤ 500€',
+                    },
+                    standard: {
+                      continueWith: 'email',
+                      emailTo: 'FE2',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'high-necessity_FE2',
+                      documentationRequired: false,
+                      sendFormToHumanResources: true,
+                    },
+                    FE2: {
+                      continueWith: 'info',
+                      infoText: `self-approval_entertainment`,
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                    FE1: {
+                      continueWith: 'info',
+                      infoText: `self-approval_entertainment`,
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    }
+                  }
+                },
+                {
+                  name: '> 500€',
+                  getUserCareerLevel: true,
+                  proceed: {
+                    info: {
+                      branch: 'give-donation',
+                      what: 'entertainment',
+                      who: 'businessPartner',
+                      howMuch: '> 500€',
+                    },
+                    standard: {
+                      continueWith: 'email',
+                      emailTo: 'FE1',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'normal_FE1',
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                    FE2: {
+                      continueWith: 'email',
+                      emailTo: 'FE1+gComp',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'normal_FE1',
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                    FE1: {
+                      continueWith: 'email',
+                      emailTo: 'gComp',
+                      continueButtonType: 'inquiry_gComp',
+                      note: 'normal_gComp',
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: 'others',
+          getUserCareerLevel: false,
+          proceed: {
+            info: {
+              branch: 'give-donation',
+              what: 'unspecified',
+              who: 'others',
+              howMuch: 'unspecified',
+            },
+            all: {
+              continueWith: 'email',
+              emailTo: 'gComp',
+              continueButtonType: 'yes',
+              note: 'warning_others',
+              documentationRequired: true,
+              sendFormToHumanResources: false,
+            }
+          }
+        }
+      ]
     }
   ]
-
-};
+}
 

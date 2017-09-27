@@ -16,6 +16,7 @@ export class InfoScreenComponent implements AfterViewChecked {
   process: Process;
   infoText: SafeHtml;
   clickHandlersAdded = false;
+  title;
 
   alertTitle;
   alertMessage;
@@ -32,6 +33,7 @@ export class InfoScreenComponent implements AfterViewChecked {
               private domSanitizer: DomSanitizer,
               decisionTreeService: DecisionTreeService) {
     this.process = this.navParams.get('process');
+    this.title = decisionTreeService.getTitle();
     decisionTreeService.getInfoScreenText(this.process.procedure.infoText).subscribe((string) => {
       this.createPageText(string);
     });

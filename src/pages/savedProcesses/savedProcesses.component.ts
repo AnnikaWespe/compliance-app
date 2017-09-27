@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {FormComponent} from '../questionScreen/confirmSendInquiry/form/form.component';
 import {ProcessStorageService} from '../../services/Template+ProcessStorage/processStorage.Service';
+import {DecisionTreeService} from '../../services/decisionTree/decisionTreeData.service';
+import {Process} from '../../services/process.model';
 
 @Component({
   selector: 'page-saved-processes',
@@ -14,17 +16,21 @@ export class SavedProcessesComponent {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private processStorageService: ProcessStorageService) {
+              private processStorageService: ProcessStorageService,
+              private decisionTreeService: DecisionTreeService) {
     this.processesReceive = processStorageService.getOpenProcesses('get-donation');
     this.processesGive = processStorageService.getOpenProcesses('give-donation');
   }
 
-  loadProcess(process) {
-    this.navCtrl.push(FormComponent,
-      {
-        process: process,
-        savedProcess: true
-      });
+  loadProcess(process: Process) {
+    this.decisionTreeService.setTitle(process.info.what).subscribe(() => {
+        this.navCtrl.push(FormComponent,
+          {
+            process: process,
+            savedProcess: true
+          });
+      }
+    );
   }
 
   deleteProcessReceive(event, process) {
