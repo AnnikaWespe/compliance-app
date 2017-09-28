@@ -94,7 +94,7 @@ export const DECISIONTREE_DATA = {
                       continueWith: 'email',
                       emailTo: 'gComp',
                       continueButtonType: 'inquiry_normal',
-                      note: 'normal_GComp',
+                      note: 'normal_gComp',
                       documentationRequired: false,
                       sendFormToHumanResources: true,
                     }
@@ -138,7 +138,7 @@ export const DECISIONTREE_DATA = {
                   proceed: {
                     info: {
                       branch: 'get-donation',
-                      what: 'specialEvent',
+                      what: 'entertainment',
                       who: 'businessPartner',
                       howMuch: '≤ 500€',
                     },
@@ -208,7 +208,7 @@ export const DECISIONTREE_DATA = {
               proceed: {
                 info: {
                   branch: 'get-donation',
-                  what: 'specialEvent',
+                  what: 'entertainment',
                   who: 'others',
                   howMuch: 'unspecified',
                 },
@@ -312,7 +312,7 @@ export const DECISIONTREE_DATA = {
                       continueWith: 'email',
                       emailTo: 'gComp',
                       continueButtonType: 'inquiry_normal',
-                      note: 'normal_GComp',
+                      note: 'normal_gComp',
                       documentationRequired: true,
                       sendFormToHumanResources: false,
                     }
@@ -413,7 +413,7 @@ export const DECISIONTREE_DATA = {
                   continueWith: 'email',
                   emailTo: 'gComp',
                   continueButtonType: 'inquiry_normal',
-                  note: 'normal_GComp',
+                  note: 'normal_gComp',
                   documentationRequired: true,
                   sendFormToHumanResources: false,
                 }
@@ -594,6 +594,190 @@ export const DECISIONTREE_DATA = {
                       documentationRequired: true,
                       sendFormToHumanResources: false,
                     },
+                  }
+                }
+              ]
+            },
+            {
+              what: 'businessLunch',
+              type: 'howMuch',
+              options: [
+                {
+                  name: 'x ≤ 250€',
+                  getUserCareerLevel: false,
+                  proceed: {
+                    info: {
+                      branch: 'give-donation',
+                      what: 'businessLunch',
+                      who: 'businessPartner',
+                      howMuch: '≤ 250€',
+                    },
+                    all: {
+                      continueWith: 'info',
+                      infoText: `no-approval_business-lunch`,
+                      documentationRequired: false,
+                      sendFormToHumanResources: false,
+                    }
+                  }
+                },
+                {
+                  name: '250€ < x ≤ 500€',
+                  getUserCareerLevel: true,
+                  proceed: {
+                    info: {
+                      branch: 'give-donation',
+                      what: 'businessLunch',
+                      who: 'businessPartner',
+                      howMuch: '250€ < x ≤ 500€',
+                    },
+                    standard: {
+                      continueWith: 'email',
+                      emailTo: 'FE2',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'normal_FE2',
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                    FE2: {
+                      continueWith: 'info',
+                      infoText: `self-approval_business-lunch`,
+                      documentationRequired: false,
+                      sendFormToHumanResources: false,
+                    },
+                    FE1: {
+                      continueWith: 'info',
+                      infoText: `self-approval_business-lunch`,
+                      documentationRequired: false,
+                      sendFormToHumanResources: false,
+                    },
+                  }
+                },
+                {
+                  name: 'x > 500€',
+                  getUserCareerLevel: true,
+                  proceed: {
+                    info: {
+                      branch: 'give-donation',
+                      what: 'businessLunch',
+                      who: 'businessPartner',
+                      howMuch: 'x > 500€',
+                    },
+                    standard: {
+                      continueWith: 'email',
+                      emailTo: 'FE1',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'normal_FE1',
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                    FE2: {
+                      continueWith: 'email',
+                      emailTo: 'gComp',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'normal_gComp',
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                    FE1: {
+                      continueWith: 'email',
+                      emailTo: 'gComp',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'normal_gComp',
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                  }
+                }
+              ]
+            },
+            {
+              what: 'gifts',
+              type: 'howMuch_gift',
+              options: [
+                {
+                  name: 'x ≤ 35€',
+                  getUserCareerLevel: false,
+                  proceed: {
+                    info: {
+                      branch: 'get-donation',
+                      what: 'gift',
+                      who: 'unspecified',
+                      howMuch: '≤ 35€',
+                    },
+                    all: {
+                      continueWith: 'info',
+                      infoText: `no-approval_gift`,
+                      documentationRequired: false,
+                      sendFormToHumanResources: false,
+                    }
+                  }
+                },
+                {
+                  name: '35€ < x ≤ 500€',
+                  getUserCareerLevel: true,
+                  proceed: {
+                    info: {
+                      branch: 'give-donation',
+                      what: 'gift',
+                      who: 'unspecified',
+                      howMuch: '35€ < x ≤ 500€',
+                    },
+                    standard: {
+                      continueWith: 'email',
+                      emailTo: 'FE2',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'normal_FE2',
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                    FE2: {
+                      continueWith: 'info',
+                      infoText: `self-approval_gift`,
+                      documentationRequired: false,
+                      sendFormToHumanResources: true,
+                    },
+                    FE1: {
+                      continueWith: 'info',
+                      infoText: `self-approval_gift`,
+                      documentationRequired: false,
+                      sendFormToHumanResources: true,
+                    }
+                  }
+                },
+                {
+                  name: 'x > 500€',
+                  getUserCareerLevel: true,
+                  proceed: {
+                    info: {
+                      branch: 'get-donation',
+                      what: 'gift',
+                      who: 'unspecified',
+                      howMuch: 'x > 500€',
+                    },
+                    standard: {
+                      continueWith: 'email',
+                      emailTo: 'FE1',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'normal_FE1',
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                    FE2: {
+                      continueWith: 'email',
+                      emailTo: 'FE1',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'normal_FE1',
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    },
+                    FE1: {
+                      continueWith: 'email',
+                      emailTo: 'gComp',
+                      continueButtonType: 'inquiry_normal',
+                      note: 'normal_gComp',
+                      documentationRequired: true,
+                      sendFormToHumanResources: false,
+                    }
                   }
                 }
               ]

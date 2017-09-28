@@ -23,7 +23,7 @@ export class MyAppComponent {
   constructor(platform: Platform,
               statusBar: StatusBar,
               splashScreen: SplashScreen,
-              userService: UserService,
+              private userService: UserService,
               private translate: TranslateService
               /*, appinsightsService: AppInsightsService*/) {
     platform.ready().then(() => {
@@ -57,4 +57,18 @@ export class MyAppComponent {
     this.translate.setDefaultLang('de');
     this.translate.use('de');
   }
+
+  switchUser() {
+    let currentUserCarreerLevel = this.user.careerLevel;
+    if (currentUserCarreerLevel === 'standard') {
+      this.user = this.userService.setUser('FE1');
+    }
+    else if (currentUserCarreerLevel === 'FE1') {
+      this.user = this.userService.setUser('FE2');
+    }
+    else {
+      this.user = this.userService.setUser('standard');
+    }
+  }
+
 }

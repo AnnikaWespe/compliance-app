@@ -20,7 +20,7 @@ export class FormComponent implements AfterViewChecked{
   process: Process;
   saveButtonActive = true;
   saveTemplateBoolean = false;
-  processSaved: boolean;
+  savedProcess: boolean;
   clickHandlersAdded = false;
   title;
 
@@ -54,7 +54,7 @@ export class FormComponent implements AfterViewChecked{
     let timeProposition = new Date().toISOString();
     this.title = decisionTreeService.getTitle();
     this.process = this.navParams.get('process');
-    this.processSaved = this.navParams.get('savedProcess');
+    this.savedProcess = this.navParams.get('savedProcess');
     this.getTranslation();
     this.supplementaryDataForm = formBuilder.group({
       time: [this.process.supplementaryData.time || timeProposition, Validators.required],
@@ -88,14 +88,14 @@ export class FormComponent implements AfterViewChecked{
 
   saveProcess() {
     let timeStamp = Date.now().toString();
-    if (this.processSaved) {
+    if (this.savedProcess) {
       this.processStorageService.deleteProcess(this.process.timeStamp, this.process.info.branch);
     }
     this.process.timeStamp = timeStamp;
     this.process.supplementaryData = this.supplementaryDataForm.value;
     this.processStorageService.saveProcess(this.process, this.process.info.branch);
     this.saveButtonActive = false;
-    this.processSaved = true;
+    this.savedProcess = true;
   }
 
   checkIfFormValid() {
@@ -109,7 +109,7 @@ export class FormComponent implements AfterViewChecked{
     } else {
       let timeStamp = Date.now().toString();
       this.process.supplementaryData = this.supplementaryDataForm.value;
-      if (this.processSaved) {
+      if (this.savedProcess) {
         this.processStorageService.deleteProcess(this.process.timeStamp, this.process.info.branch);
       }
       if (this.saveTemplateBoolean) {
