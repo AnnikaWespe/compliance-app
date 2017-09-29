@@ -13,9 +13,14 @@
 </h1>
 <ion-content padding>
   <div>
-    This is for testing purposes only<br>
-    {{process.info}}<br>
-    {{process.procedure}}<br>
+    For testing purposes only<br>
+    Bei der Zuwendung handelt sich um (ein/e) {{process.info.what}}<br>
+    <div *ngIf="process.info.branch === 'get-donation'"> Die Zuwendung <i>kommt von</i>  {{process.info.who}}</div>
+    <div *ngIf="process.info.branch === 'give-donation'"> Die Zuwendung <i>geht an</i>  {{process.info.who}}</div>
+    Wert der Zuwendung beträgt {{process.info.howMuch}}<br>
+    Die Email geht an {{process.procedure.emailTo}}<br>
+    Dokumentation erforderlich? {{process.procedure.documentationRequired}}<br>
+    Formular an HR erforderlich? {{process.procedure.sendFormToHumanResources}}<br>
 
   </div>
   <form [formGroup]="supplementaryDataForm">

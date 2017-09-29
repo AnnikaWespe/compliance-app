@@ -100,12 +100,12 @@
       }
     },
     "confirmSendInquiry": {
-      "normal_GComp": "In diesem Fall benötigen Sie die Genehmigung von Group Compliance, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
+      "normal_gComp": "In diesem Fall benötigen Sie die Genehmigung von Group Compliance, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
       "normal_FE1": "In diesem Fall benötigen Sie die Genehmigung von Ihrer FE 1, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
       "normal_FE2": "In diesem Fall benötigen Sie die Genehmigung von Ihrer FE 2, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
       "high-necessity_FE1": "Eine Genehmigung kann bei der FE 1 mittels eines aussagekräftigen Begründung der geschäftlichen Notwendigkeit beantragt werden.<p>Möchten Sie fortfahren?</p>",
       "high-necessity_FE2": "Eine Genehmigung kann bei der FE 2 mittels eines aussagekräftigen Begründung der geschäftlichen Notwendigkeit beantragt werden.<p>Möchten Sie fortfahren?</p>",
-      "high-necessity_GComp": "Eine Genehmigung kann bei GComp mittels eines aussagekräftigen Begründung der geschäftlichen Notwendigkeit beantragt werden.<p>Möchten Sie fortfahren?</p>",
+      "high-necessity_gComp": "Eine Genehmigung kann bei GComp mittels eines aussagekräftigen Begründung der geschäftlichen Notwendigkeit beantragt werden.<p>Möchten Sie fortfahren?</p>",
       "warning_business-lunch_others": "Die Annahme einer Einladung zum [Geschäftsessen, same] von [Anderen, Andere] ist grundsätzlich untersagt.<br><br>Es besteht die Möglichkeit, eine Ausnahme durch Compliance zu beantragen.",
       "warning_cash": "Grundsätzlich ist die Annahme von [Bargeld, same] untersagt. In Ausnahmefällen kann eine schriftlichen Genehmigung <i>vorab</i> bei GComp beantragt werden.<p>Jetzt eine Genehmigung beantragen?</p>",
       "warning_specialEvent_others": "Grundsätzlich ist die Annahme von Special Events von [Anderen, Andere] untersagt. In Ausnahmefällen kann eine schriftliche Genehmigung <i>vorab</i> bei GComp beantragt werden.<p>Jetzt eine Genehmigung beantragen?</p>",

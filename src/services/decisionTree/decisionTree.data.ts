@@ -194,7 +194,7 @@ export const DECISIONTREE_DATA = {
                       continueWith: 'email',
                       emailTo: 'gComp',
                       continueButtonType: 'inquiry_normal',
-                      note: 'high-necessity_GComp',
+                      note: 'high-necessity_gComp',
                       documentationRequired: false,
                       sendFormToHumanResources: true,
                     }
