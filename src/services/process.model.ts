@@ -7,7 +7,7 @@ export class Process {
   };
   procedure: {
     continueWith: string;
-    emailTo: string;
+    emailTo?: string;
     note?: string;
     infoText?: string;
     continueButtonType?: string;

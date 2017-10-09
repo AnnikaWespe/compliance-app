@@ -13,6 +13,8 @@
 
 
 <ion-content>
+
+
   <div padding>
     <div class="grey" [innerHtml] = "infoText">
     </div>
@@ -32,5 +34,12 @@
     </button>
   </div>
 
+  <p><b>Nur für Testzwecke</b></p>
+  Bei der Zuwendung handelt sich um (ein/e) {{process.info.what}}<br>
+  <div *ngIf="process.info.branch === 'get-donation'"> Die Zuwendung <i>kommt von</i>  {{process.info.who}}</div>
+  <div *ngIf="process.info.branch === 'give-donation'"> Die Zuwendung <i>geht an</i>  {{process.info.who}}</div>
+  Wert der Zuwendung beträgt {{process.info.howMuch}}<br>
+  Dokumentation erforderlich? {{process.procedure.documentationRequired}}<br>
+  Formular an HR erforderlich? {{process.procedure.sendFormToHumanResources}}<br>
 
 </ion-content>
