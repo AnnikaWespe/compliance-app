@@ -12,7 +12,7 @@
   {{"receive.formScreen" | translate}}
 </h1>
 <ion-content padding>
-  <div>
+  <!--<div>
     <p><b>Nur für Testzwecke</b></p>
     Bei der Zuwendung handelt sich um (ein/e) {{process.info.what}}<br>
     <div *ngIf="process.info.branch === 'get-donation'"> Die Zuwendung <i>kommt von</i>  {{process.info.who}}</div>
@@ -22,11 +22,11 @@
     Dokumentation erforderlich? {{process.procedure.documentationRequired}}<br>
     Formular an HR erforderlich? {{process.procedure.sendFormToHumanResources}}<br>
 
-  </div>
+  </div>-->
   <form [formGroup]="supplementaryDataForm">
     <ion-item>
       <ion-label stacked>{{label_time}}</ion-label>
-      <ion-datetime formControlName="time" placeholder="Monat/Jahr" displayFormat="MM/YYYY"></ion-datetime>
+      <ion-datetime formControlName="time" placeholder="Monat/Jahr" displayFormat="DD/MM/YYYY"></ion-datetime>
     </ion-item>
     <ion-item [ngClass]="displayFieldCss('description')">
       <ion-label stacked>{{label_description}}</ion-label>
@@ -44,10 +44,10 @@
       <ion-label stacked>{{label_reason}}</ion-label>
       <ion-textarea type="text" formControlName="reason"></ion-textarea>
     </ion-item>
-    <ion-list radio-group formControlName="tax">
+    <ion-list radio-group formControlName="tax" *ngIf="process.info.what == 'specialEvent'">
       <ion-item class="radio-tax-label" class="grey" [ngClass]="displayFieldCss('tax')">
         <ion-label text-wrap>
-          <span tappable [innerHtml]="label_tax"></span>
+          <span [innerHtml]="label_tax"></span>
         </ion-label>
       </ion-item>
       <ion-item class="grey">
@@ -58,10 +58,11 @@
         <ion-label>{{'generics.no'|translate}}</ion-label>
         <ion-radio checked="false" value="no"></ion-radio>
       </ion-item>
-      <ion-item *ngIf="supplementaryDataForm.value.tax == 'yes'" [ngClass]="displayFieldCss('taxReceiptWhere')"
-                class="taxReceiptWhere">
-        <ion-label stacked>{{'get-donation.formScreen.label_tax_where'|translate}}</ion-label>
-        <ion-input type="text" formControlName="taxReceiptWhere"></ion-input>
+      <ion-item *ngIf="supplementaryDataForm.value.tax == 'yes'"
+                class="taxReceiptWhere"
+                tappable>
+        <ion-label text-wrap stacked class="grey">{{'get-donation.formScreen.label_attachment'|translate}}</ion-label>
+        <ion-icon name="attach" item-end class = "grey"></ion-icon>
       </ion-item>
       <ion-item></ion-item>
     </ion-list>

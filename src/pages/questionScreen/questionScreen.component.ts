@@ -18,6 +18,7 @@ export class QuestionScreenComponent implements AfterViewChecked {
   question: SafeHtml;
   info: SafeHtml;
   clickHandlersAdded = false;
+  branch;
 
 
   constructor(public navCtrl: NavController,
@@ -32,6 +33,7 @@ export class QuestionScreenComponent implements AfterViewChecked {
     this.decisionTreeService.getQuestionscreenText(this.option.type).subscribe((results) => {
       this.createPageText(results[0], results[1]);
     });
+    this.branch = this.decisionTreeService.getBranch();
   }
 
   ngAfterViewChecked() {

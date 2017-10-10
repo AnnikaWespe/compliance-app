@@ -15,7 +15,7 @@ import {DecisionTreeService} from '../../../../services/decisionTree/decisionTre
   selector: 'page-form',
   templateUrl: 'form.component.html'
 })
-export class FormComponent implements AfterViewChecked{
+export class FormComponent implements AfterViewChecked {
   supplementaryDataForm: FormGroup;
   process: Process;
   saveButtonActive = true;
@@ -33,8 +33,8 @@ export class FormComponent implements AfterViewChecked{
   label_tax: SafeHtml;
   alertTitle;
   alertMessage;
-  alertButton1Text;
-  alertButton2Text;
+  alertButtonYes;
+  alertButtonNo;
   alertRequiredFieldMessage;
   alertRequiredFieldTitle;
 
@@ -62,17 +62,8 @@ export class FormComponent implements AfterViewChecked{
       reason: [this.process.supplementaryData.reason || '', Validators.required],
       value: [this.process.supplementaryData.value || '', Validators.required],
       person: [this.process.supplementaryData.person || '', Validators.required],
-      tax: [this.process.supplementaryData.tax || '', Validators.required],
-      taxReceiptWhere: [this.process.supplementaryData.taxReceiptWhere || '']
-    }, /*{
-      validator: (group) => {
-        let taxCtrl = group.controls.tax;
-        let taxReceiptWhereCtrl = group.controls.taxReceiptWhere;
-        if (taxCtrl.value === 'yes' && !taxReceiptWhereCtrl) {
-          return {invalid: true};
-        }
-      }
-    }*/);
+      tax: [this.process.supplementaryData.tax || '', Validators.required]
+    });
     this.supplementaryDataForm.valueChanges.subscribe(
       () => {
         this.saveButtonActive = true;
@@ -120,17 +111,15 @@ export class FormComponent implements AfterViewChecked{
     }
   }
 
+  addAttachment(){
+
+  }
+
   isFieldValid(field: string) {
     return !this.supplementaryDataForm.get(field).valid && this.supplementaryDataForm.get(field).touched;
   }
 
   displayFieldCss(field: string) {
-    /*if (field = 'taxReceiptWhere') {
-      return {
-        'has-error': this.supplementaryDataForm.value.taxReceiptWhere !== ''
-      };
-    }
-    else {*/
     return {
       'has-error': this.isFieldValid(field)
     };
@@ -144,13 +133,13 @@ export class FormComponent implements AfterViewChecked{
         message: this.alertMessage,
         buttons: [
           {
-            text: this.alertButton1Text,
+            text: this.alertButtonNo,
             role: 'cancel',
             handler: () => {
             }
           },
           {
-            text: this.alertButton2Text,
+            text: this.alertButtonYes,
             handler: () => {
               this.navCtrl.setRoot(HomePageComponent);
             }
@@ -198,24 +187,24 @@ export class FormComponent implements AfterViewChecked{
         this.label_tax = this.domSanitizer.bypassSecurityTrustHtml(this.glossaryService.injectSpanTags(value));
       }
     );
-    this.translateService.get(branch + '.confirmSendInquiry.alert_0').subscribe(
+    this.translateService.get('alerts.question_cancel').subscribe(
       value => {
         this.alertTitle = value;
       }
     );
-    this.translateService.get(branch + '.confirmSendInquiry.alert_1').subscribe(
+    this.translateService.get( 'alerts.warning').subscribe(
       value => {
         this.alertMessage = value;
       }
     );
-    this.translateService.get(branch + '.confirmSendInquiry.alert_2').subscribe(
+    this.translateService.get('generics.yes').subscribe(
       value => {
-        this.alertButton1Text = value;
+        this.alertButtonYes = value;
       }
     );
-    this.translateService.get(branch + '.confirmSendInquiry.alert_3').subscribe(
+    this.translateService.get('generics.no').subscribe(
       value => {
-        this.alertButton2Text = value;
+        this.alertButtonNo = value;
       }
     );
     this.translateService.get(branch + '.formScreen.alert_required-field_message').subscribe(

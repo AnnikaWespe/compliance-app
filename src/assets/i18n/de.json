@@ -12,7 +12,7 @@
     "send": "Absenden",
     "save": "Speichern",
     "cash": "Bargeld",
-    "specialEvent": "Special Event",
+    "specialEvent": "Special Events",
     "entertainment": "Einladungen",
     "businessLunch": "Geschäftsessen",
     "gifts": "Geschenke",
@@ -49,7 +49,7 @@
   },
   "titles": {
     "entertainment": "Unterhaltung",
-    "specialEvent": "Special Event",
+    "specialEvent": "Special Events",
     "businessLunch": "Geschäftsessen",
     "gifts": "Geschenke",
     "cash": "Bargeld"
@@ -94,7 +94,7 @@
       },
       "info": {
         "what": "Es werden fünf Formen von [Zuwendungen, same] unterschieden: [Bargeld, same], [Special Events, same], [Einladungen mit überwiegendem Unterhaltungscharakter, same], [Geschäftsessen, same] und [Geschenke, same].",
-        "who_invitation": "Sie können entweder von einem [Geschäftspartner, same] oder von [einer anderen Person, Andere] eingeladen werden.",
+        "who_invitation": "Sie können entweder von einem [Geschäftspartner, same] oder von einer [anderen Person, Andere] eingeladen werden.",
         "howMuch_invitation": "",
         "howMuch_gift": ""
       }
@@ -121,7 +121,11 @@
     },
     "formScreen": {
       "cash": {
-        "label_time": "Zeitpunkt der Zuwendung"
+        "label_time": "Zeitpunkt der Zuwendung",
+        "label_description": "Form des Geldgeschenks (Bargeld, Scheck, Aktie)",
+        "label_value": "Wert in €",
+        "label_person": "Schenkender - Name der Person, Unternehmen",
+        "label_reason": "Begründung"
       },
       "specialEvent": {
         "label_time": "Zeitpunkt des Events",
@@ -130,7 +134,13 @@
         "label_person": "Einladender - Name der Person, Unternehmen",
         "label_reason": "Begründung"
       },
-      "entertainment": {},
+      "entertainment": {
+        "label_time": "Zeitpunkt des Events",
+        "label_description": "Name des Events, Anlass",
+        "label_value": "Geschätzter Wert in €",
+        "label_person": "Einladender - Name der Person, Unternehmen",
+        "label_reason": "Begründung"
+      },
       "businessLunch": {
         "label_time": "Zeitpunkt des Geschäftsessens",
         "label_description": "Name des Lokals, Anlass",
@@ -138,9 +148,15 @@
         "label_person": "Einladender - Name der Person, Unternehmen",
         "label_reason": "Begründung"
       },
-      "gifts": {},
+      "gift": {
+        "label_time": "Zeitpunkt der Zuwendung",
+        "label_description": "Beschreibung des Geschenks",
+        "label_value": "Geschätzter Wert in €",
+        "label_person": "Schenkender - Name der Person, Unternehmen",
+        "label_reason": "Begründung"
+      },
       "label_tax": "Versteuerung durch den Zuwendenden nach [§37b EStG, same] erfolgt?",
-      "label_tax_where": "Bestätigung liegt bei",
+      "label_attachment": "Bestätigung anhängen",
       "save-template": "Als Vorlage speichern",
       "alert_required-field_title": "Formular unvollständig",
       "alert_required-field_message": "Bitte füllen Sie die rot markierten Felder aus."
@@ -155,7 +171,7 @@
         "howMuch_gift": "Wie hoch ist der geschätzte Geldwert des Geschenks?"
       },
       "info": {
-        "who": "Sie können entweder einem [Geschäftspartner, same] oder [einer anderen Person, Andere] eine Zuwendung zukommen lassen.",
+        "who": "Sie können entweder einem [Geschäftspartner, same] oder einer [anderen Person, Andere] eine Zuwendung zukommen lassen.",
         "what": "Es werden fünf Formen von [Zuwendungen, same] unterschieden: [Bargeld, same], [Special Events, same], [Einladungen mit überwiegendem Unterhaltungscharakter, same], [Geschäftsessen, same] und [Geschenke, same].",
         "howMuch": "",
         "howMuch_gift": ""
@@ -178,6 +194,48 @@
       "self-approval_gift": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie das Geschenk [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
       "no-approval_business-lunch": "Die Vergabe von Geschäftsessen in diesem Segment ist genehmigungsfrei, sofern es im Rahmen der üblichen Geschäftspraxis stattfindet und der Grundsatz der [Sozialadäquanz, same] gewahrt wird.",
       "no-approval_gift": "Die Vergabe von Geschenken in diesem Segment ist genehmigungsfrei. Sie können eine Bestellung über den <a href = 'www.google.de'>Online Katalog der MR AG</a> aufgeben oder sich das Geschenk selbst organisieren."
+    },
+    "formScreen": {
+      "cash": {
+        "label_time": "Zeitpunkt der Zuwendung",
+        "label_description": "Form des Geldgeschenks (Bargeld, Scheck, Aktie)",
+        "label_value": "Wert in €",
+        "label_person": "Empfänger - Name der Person, Unternehmen",
+        "label_reason": "Begründung"
+      },
+      "specialEvent": {
+        "label_time": "Zeitpunkt des Events",
+        "label_description": "Name des Events, Anlass",
+        "label_value": "Geschätzter Wert in €",
+        "label_person": "Eingeladener - Name der Person, Unternehmen",
+        "label_reason": "Begründung"
+      },
+      "entertainment": {
+        "label_time": "Zeitpunkt des Events",
+        "label_description": "Name des Events, Anlass",
+        "label_value": "Geschätzter Wert in €",
+        "label_person": "Eingeladener - Name der Person, Unternehmen",
+        "label_reason": "Begründung"
+      },
+      "businessLunch": {
+        "label_time": "Zeitpunkt des Geschäftsessens",
+        "label_description": "Name des Lokals, Anlass",
+        "label_value": "Geschätzter Wert in €",
+        "label_person": "Eingeladener - Name der Person, Unternehmen",
+        "label_reason": "Begründung"
+      },
+      "gift": {
+        "label_time": "Zeitpunkt der Zuwendung",
+        "label_description": "Beschreibung des Geschenks",
+        "label_value": "Geschätzter Wert in €",
+        "label_person": "Empfänger - Name der Person, Unternehmen",
+        "label_reason": "Begründung"
+      },
+      "label_tax": "Versteuerung durch den Zuwendenden nach [§37b EStG, same] erfolgt?",
+      "label_attachment": "Bestätigung anhängen",
+      "save-template": "Als Vorlage speichern",
+      "alert_required-field_title": "Formular unvollständig",
+      "alert_required-field_message": "Bitte füllen Sie die rot markierten Felder aus."
     }
   }
 }

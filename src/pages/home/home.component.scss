@@ -2,20 +2,23 @@ page-home {
   ion-content {
     background-image: url('../assets/images/home.jpeg');
     background-size: cover;
-    .title{
+    .title {
       text-align: center;
       font-weight: bold;
-      padding-bottom: 5%;
       text-decoration: underline;
       color: map_get($colors, secondary);
-      line-height: 1.5;
+      line-height: 1.2;
+      margin-top: 2%;
     }
     .information-text {
       padding: 5%;
       margin: 5%;
-     background: rgba(225, 225, 225, .9);
+      background: rgba(225, 225, 225, .9);
       border-radius: 4px;
-      font-size: medium;
+      ul {
+        margin: 5%;
+        padding: 0
+      }
     }
     .lower-div {
       width: 100%;
@@ -36,7 +39,7 @@ page-home {
     }
   }
 
-  .scroll-content{
-   background: rgba(255,255,255,0.2)  ;
+  .scroll-content {
+    background: rgba(255, 255, 255, 0.2);
   }
 }
