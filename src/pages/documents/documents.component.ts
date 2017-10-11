@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {UserService} from '../../services/user/user.service';
 import {InAppBrowser} from '@ionic-native/in-app-browser';
 
+
 @Component({
   selector: 'page-documents',
   templateUrl: 'documents.component.html'
@@ -15,8 +16,10 @@ export class DocumentsComponent {
   }
 
   openDocument(document){
+
     console.log(document);
-    this.inAppBrowser.create('assets/pdfs/faq_de.pdf');
+    let options = 'location=no,toolbarposition=top,toolbar=yes,enableViewportScale=yes,closebuttoncaption=Fertig';
+    this.inAppBrowser.create('assets/pdfs/faq_de.pdf', '_blank', options );
   }
 
 }
