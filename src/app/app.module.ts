@@ -7,23 +7,24 @@ import {HomePageComponent} from '../pages/home/home.component';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-import {QuestionScreenComponent} from '../pages/questionScreen/questionScreen.component';
 import {UserService} from '../services/user/user.service';
-import {InfoScreenComponent} from '../pages/questionScreen/infoScreen/infoScreen.component';
-import {EndScreenComponent} from '../pages/questionScreen/endScreen/endScreen.component';
+import {InfoScreenComponent} from '../pages/questions/infoScreen/infoScreen.component';
+import {EndScreenComponent} from '../pages/questions/endScreen/endScreen.component';
 import {AppInsightsModule} from '../services/app-insights/appinsights.module';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {createTranslateLoader} from '../services/TranslateLoader';
 import {Http, HttpModule} from '@angular/http';
 import {DecisionTreeService} from '../services/decisionTree/decisionTreeData.service';
 import {GlossaryService} from '../services/glossary/glossary.service';
-import {FormComponent} from '../pages/questionScreen/confirmSendInquiry/form/form.component';
-import {ConfirmSendInquiryComponent} from '../pages/questionScreen/confirmSendInquiry/confirmSendInquiry.component';
+import {FormComponent} from '../pages/questions/confirmSendInquiry/form/form.component';
+import {ConfirmSendInquiryComponent} from '../pages/questions/confirmSendInquiry/confirmSendInquiry.component';
 import {SavedProcessesComponent} from '../pages/savedProcesses/savedProcesses.component';
 import {ProcessStorageService} from '../services/Template+ProcessStorage/processStorage.Service';
 import {TemplatesStorageService} from '../services/Template+ProcessStorage/templatesStorage.service';
 import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.component';
 import {DocumentsComponent} from '../pages/documents/documents.component';
+import {FileOpener} from '@ionic-native/file-opener';
+import {QuestionScreenComponent} from '../pages/questions/questionScreen.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import {DocumentsComponent} from '../pages/documents/documents.component';
     GlossaryService,
     ProcessStorageService,
     TemplatesStorageService,
+    FileOpener,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

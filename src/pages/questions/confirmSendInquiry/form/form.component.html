@@ -60,7 +60,8 @@
       </ion-item>
       <ion-item *ngIf="supplementaryDataForm.value.tax == 'yes'"
                 class="taxReceiptWhere"
-                tappable>
+                tappable
+                (click) = "addAttachment()">
         <ion-label text-wrap stacked class="grey">{{'get-donation.formScreen.label_attachment'|translate}}</ion-label>
         <ion-icon name="attach" item-end class = "grey"></ion-icon>
       </ion-item>

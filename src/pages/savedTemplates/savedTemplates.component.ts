@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {FormComponent} from '../questionScreen/confirmSendInquiry/form/form.component';
+import {FormComponent} from '../questions/confirmSendInquiry/form/form.component';
 import {TemplatesStorageService} from '../../services/Template+ProcessStorage/templatesStorage.service';
 import {Process} from '../../services/process.model';
 import {DecisionTreeService} from '../../services/decisionTree/decisionTreeData.service';
