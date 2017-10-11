@@ -162,10 +162,14 @@
         "label_reason": "Begründung"
       },
       "label_tax": "Versteuerung durch den Zuwendenden nach [§37b EStG, same] erfolgt?",
-      "label_attachment": "Bestätigung anhängen",
+      "label_add_attachment": "Bestätigung anhängen",
+      "label_attachment_added": "Bestätigung angehängt",
       "save-template": "Als Vorlage speichern",
       "alert_required-field_title": "Formular unvollständig",
-      "alert_required-field_message": "Bitte füllen Sie die rot markierten Felder aus."
+      "alert_required-field_message": "Bitte füllen Sie die rot markierten Felder aus.",
+      "alert_attachment_gallery": "Galerie",
+      "alert_attachment_camera": "Kamera",
+      "alert_attachment_title": "Von wo möchten Sie den Anhang laden?"
     }
   },
   "give-donation": {
@@ -238,10 +242,14 @@
         "label_reason": "Begründung"
       },
       "label_tax": "Versteuerung durch den Zuwendenden nach [§37b EStG, same] erfolgt?",
-      "label_attachment": "Bestätigung anhängen",
+      "label_add_attachment": "Bestätigung anhängen",
+      "label_attachment_added": "Bestätigung angehängt",
       "save-template": "Als Vorlage speichern",
       "alert_required-field_title": "Formular unvollständig",
-      "alert_required-field_message": "Bitte füllen Sie die rot markierten Felder aus."
+      "alert_required-field_message": "Bitte füllen Sie die rot markierten Felder aus.",
+      "alert_attachment_gallery": "Galerie",
+      "alert_attachment_camera": "Kamera",
+      "alert_attachment_title": "Von wo möchten Sie den Anhang laden?"
     }
   }
 }

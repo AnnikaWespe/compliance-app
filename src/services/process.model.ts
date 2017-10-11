@@ -22,7 +22,7 @@ export class Process {
     value?: number;
     person?: string;
     tax?: string;
-    taxReceiptWhere?: string;
+    image?: string;
   };
   constructor(info, procedure, timeStamp = '', supplementaryData = {}){
     this.info = info;
