@@ -14,4 +14,8 @@ export class UserService {
     return this.user;
   }
 
+  getLanguage(){
+    return 'de';
+  }
+
 }

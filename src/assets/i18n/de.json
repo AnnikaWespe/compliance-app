@@ -79,8 +79,14 @@
       "please-click": "Klicken Sie auf einen Vorgang, um die Bearbeitung fortzusetzen",
       "no-processes": "Sie haben keine gespeicherten Vorgänge in dieser Kategorie."
     },
-    "disclaimer": {
-      "title": "Disclaimer"
+    "documents": {
+      "title": "Dokumente",
+      "faq": "FAQ",
+      "glossary": "Glossar",
+      "guideline": "Richtlinien",
+      "overview_give": "Übersicht Vergabe",
+      "overview_receive": "Übersicht Annahme",
+      "disclaimer": "Disclaimer"
     }
   },
   "get-donation": {

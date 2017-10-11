@@ -1,14 +1,19 @@
 import {Component} from '@angular/core';
+import {UserService} from '../../services/user/user.service';
 
 @Component({
-  selector: 'page-disclaimer',
-  templateUrl: 'disclaimer.component.html'
+  selector: 'page-documents',
+  templateUrl: 'documents.component.html'
 })
-export class DisclaimerComponent {
+export class DocumentsComponent {
 
-
-  constructor() {
+  language: string
+  constructor(userService: UserService) {
+    this.language = userService.getLanguage();
   }
 
+  openDocument(document){
+    console.log(document);
+  }
 
 }

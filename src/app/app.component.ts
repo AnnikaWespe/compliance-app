@@ -4,10 +4,10 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {HomePageComponent} from '../pages/home/home.component';
 import {UserService} from '../services/user/user.service';
-import {DisclaimerComponent} from '../pages/disclaimer/disclaimer.component';
 import {TranslateService} from '@ngx-translate/core';
 import {SavedProcessesComponent} from '../pages/savedProcesses/savedProcesses.component';
 import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.component';
+import {DocumentsComponent} from '../pages/documents/documents.component';
 
 // import {AppInsightsService} from '../app-insights/appinsights.service';
 
@@ -46,7 +46,7 @@ export class MyAppComponent {
   setMenu() {
     this.pages = {
       home: {component: HomePageComponent, parameters: {}},
-      disclaimer: {component: DisclaimerComponent, parameters: {}},
+      documents: {component: DocumentsComponent, parameters: {}},
       savedProcesses: {component: SavedProcessesComponent, parameters: {}},
       templates: {component: SavedTemplatesComponent, parameters: {}}
     };

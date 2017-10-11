@@ -27,13 +27,13 @@ export class HomePageComponent implements AfterViewChecked {
               private domSanitizer: DomSanitizer) {
     this.decisionTreeData = decisionTreeService.getDecisionTreeData();
     this.createPageText();
-    this.decisionTreeService.resetTitle();
   }
 
   ngAfterViewChecked() {
     if (!this.clickHandlersAdded) {
       this.clickHandlersAdded = this.glossaryService.injectClickEventHandler(this.elRef, this.renderer);
     }
+   this.decisionTreeService.resetTitle();
   }
 
   startProcess(option, branch) {

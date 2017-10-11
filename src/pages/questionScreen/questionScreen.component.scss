@@ -52,4 +52,13 @@ page-question-screen {
     pointer-events: none;
   }
 
+  h1.grey{
+    text-align: right;
+    opacity: 0.3;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-weight: bold;
+  }
+
 }

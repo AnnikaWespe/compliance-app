@@ -12,7 +12,6 @@ import {UserService} from '../services/user/user.service';
 import {InfoScreenComponent} from '../pages/questionScreen/infoScreen/infoScreen.component';
 import {EndScreenComponent} from '../pages/questionScreen/endScreen/endScreen.component';
 import {AppInsightsModule} from '../services/app-insights/appinsights.module';
-import {DisclaimerComponent} from '../pages/disclaimer/disclaimer.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {createTranslateLoader} from '../services/TranslateLoader';
 import {Http, HttpModule} from '@angular/http';
@@ -24,6 +23,7 @@ import {SavedProcessesComponent} from '../pages/savedProcesses/savedProcesses.co
 import {ProcessStorageService} from '../services/Template+ProcessStorage/processStorage.Service';
 import {TemplatesStorageService} from '../services/Template+ProcessStorage/templatesStorage.service';
 import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.component';
+import {DocumentsComponent} from '../pages/documents/documents.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.co
     ConfirmSendInquiryComponent,
     InfoScreenComponent,
     EndScreenComponent,
-    DisclaimerComponent,
+    DocumentsComponent,
     FormComponent,
     SavedProcessesComponent,
     SavedTemplatesComponent
@@ -61,7 +61,7 @@ import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.co
     ConfirmSendInquiryComponent,
     InfoScreenComponent,
     EndScreenComponent,
-    DisclaimerComponent,
+    DocumentsComponent,
     FormComponent,
     SavedProcessesComponent,
     SavedTemplatesComponent

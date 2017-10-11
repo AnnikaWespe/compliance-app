@@ -51,6 +51,6 @@
     </ion-item>
   </div>
 
-  <div>{{'buttons.' + branch | translate}}</div>
+  <h1 class="grey" padding *ngIf="option.type !== 'what'">{{'buttons.' + branch | translate}}</h1>
 
 </ion-content>
