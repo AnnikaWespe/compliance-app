@@ -28,7 +28,7 @@
       (click)="loadProcess(process)">
       <p>{{process.category}}</p>
       <p>{{process.supplementaryData.person}}</p>
-      <p>{{process.timeStamp | date:'dd.MM.yyyy' }}</p>
+      <p>{{process.timeStamp | date: dateFormat }}</p>
       <ion-icon name="trash" item-end (click)="deleteProcessGive($event, process)"></ion-icon>
     </ion-item>
   </div>
@@ -36,7 +36,7 @@
   <h2 class="primary" padding-top>{{"secondary-pages.savedProcesses.get-donation"| translate}}</h2>
   <div class="stripes"></div>
   <h6 class="grey" *ngIf="processesReceive.length">
-    {{"secondary-pages.savedProcesses.please-click"| translate}}  </h6>
+    {{"secondary-pages.savedProcesses.please-click"| translate}} </h6>
   <h6 class="grey" *ngIf="processesReceive.length == 0">
     {{"secondary-pages.savedProcesses.no-processes"| translate}}
   </h6>
@@ -48,7 +48,7 @@
       (click)="loadProcess(process)">
       <p>{{process.category}}</p>
       <p>{{process.supplementaryData.person}}</p>
-      <p>{{process.timeStamp | date:'dd.MM.yyyy' }}</p>
+      <p>{{process.timeStamp | date: dateFormat }}</p>
       <ion-icon name="trash" item-end (click)="deleteProcessReceive($event, process)"></ion-icon>
     </ion-item>
   </div>

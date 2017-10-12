@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only tappable (click)="goBack(false)">
+        <ion-icon name="md-checkmark" class="menu-button"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      {{"titles.attachment" | translate}}
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only tappable (click)="goBack(true)">
+        <ion-icon name="trash" class="menu-button"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <img [src]="image">
+</ion-content>
+
+

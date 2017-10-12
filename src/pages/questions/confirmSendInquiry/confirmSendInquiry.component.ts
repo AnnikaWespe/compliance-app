@@ -18,6 +18,7 @@ export class ConfirmSendInquiryComponent implements AfterViewChecked{
   clickHandlersAdded = false;
   continueButtonText: string;
   title;
+  branch;
 
   alertTitle;
   alertMessage;
@@ -42,6 +43,7 @@ export class ConfirmSendInquiryComponent implements AfterViewChecked{
       this.createPageText(results[0], results[1]);
     });
     this.getTranslation();
+    this.branch = decisionTreeService.getBranch();
   }
 
   ngAfterViewChecked() {
@@ -64,6 +66,7 @@ export class ConfirmSendInquiryComponent implements AfterViewChecked{
       buttons: [
         {
           text: this.alertButtonYes,
+          cssClass: 'alertButton',
           handler: () => {
             this.navCtrl.setRoot(HomePageComponent);
           }
@@ -71,6 +74,7 @@ export class ConfirmSendInquiryComponent implements AfterViewChecked{
         {
           text: this.alertButtonNo,
           role: 'cancel',
+          cssClass: 'alertButton',
           handler: () => {
           }
         }

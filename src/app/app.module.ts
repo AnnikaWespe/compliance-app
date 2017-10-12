@@ -26,6 +26,7 @@ import {DocumentsComponent} from '../pages/documents/documents.component';
 import {QuestionScreenComponent} from '../pages/questions/questionScreen.component';
 import {Camera} from '@ionic-native/camera';
 import {InAppBrowser} from '@ionic-native/in-app-browser';
+import {AttachmentModalComponent} from "../pages/questions/confirmSendInquiry/form/attachment/attachmentModal.component";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {InAppBrowser} from '@ionic-native/in-app-browser';
     DocumentsComponent,
     FormComponent,
     SavedProcessesComponent,
-    SavedTemplatesComponent
+    SavedTemplatesComponent,
+    AttachmentModalComponent,
   ],
   imports: [
     AppInsightsModule,
@@ -66,7 +68,8 @@ import {InAppBrowser} from '@ionic-native/in-app-browser';
     DocumentsComponent,
     FormComponent,
     SavedProcessesComponent,
-    SavedTemplatesComponent
+    SavedTemplatesComponent,
+    AttachmentModalComponent
   ],
   providers: [
     StatusBar,

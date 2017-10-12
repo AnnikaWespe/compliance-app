@@ -54,6 +54,15 @@ h6.grey{
   line-height: 150%;
 }
 
+h1.grey.branch {
+  text-align: right;
+  opacity: 0.3;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-weight: bold;
+}
+
 .stripes {
   height: 8px;
   width: 100%;
@@ -89,7 +98,11 @@ span.open-info {
 //alert
 .alert-ios .alert-wrapper{
   max-width: 90% !important;
+  button.alertButton{
+    font-weight: normal;
+  }
 }
+
 //menu
 ion-menu {
   ion-content {

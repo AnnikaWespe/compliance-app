@@ -17,6 +17,7 @@ export class InfoScreenComponent implements AfterViewChecked {
   infoText: SafeHtml;
   clickHandlersAdded = false;
   title;
+  branch;
 
   alertTitle;
   alertMessage;
@@ -38,6 +39,7 @@ export class InfoScreenComponent implements AfterViewChecked {
       this.createPageText(string);
     });
     this.getAlertTranslation();
+    this.branch = decisionTreeService.getBranch();
   }
 
   ngAfterViewChecked() {
@@ -54,12 +56,14 @@ export class InfoScreenComponent implements AfterViewChecked {
       buttons: [
         {
           text: this.alertButton1Text,
+          cssClass: 'alertButton',
           role: 'cancel',
           handler: () => {
           }
         },
         {
           text: this.alertButton2Text,
+          cssClass: 'alertButton',
           handler: () => {
             this.navCtrl.setRoot(HomePageComponent);
           }

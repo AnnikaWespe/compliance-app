@@ -49,7 +49,6 @@
       (click)="loadProcess(template)">
       <p>{{template.category}}</p>
       <p>{{template.supplementaryData.person}}</p>
-      <p>{{template.timeStamp | date:'dd.MM.yyyy' }}</p>
       <ion-icon name="trash" item-end (click)="deleteTemplateReceive($event, template)"></ion-icon>
     </ion-item>
   </div>

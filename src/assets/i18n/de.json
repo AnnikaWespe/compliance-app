@@ -9,6 +9,7 @@
     "get-donation": "Annahme",
     "accept": "Annahme",
     "cancel": "Abbrechen",
+    "finished": "Fertig",
     "send": "Absenden",
     "save": "Speichern",
     "cash": "Bargeld",
@@ -52,7 +53,8 @@
     "specialEvent": "Special Events",
     "businessLunch": "Geschäftsessen",
     "gifts": "Geschenke",
-    "cash": "Bargeld"
+    "cash": "Bargeld",
+    "attachment": "Anhang"
   },
   "secondary-pages": {
     "side-menu": {
@@ -95,8 +97,8 @@
         "what": "Worum handelt es sich?",
         "who_invitation": "Wer lädt Sie ein?",
         "who_gift": "Von wem kommt das Geschenk?",
-        "howMuch_invitation": "Wie hoch ist der geschätzte Geldwert der Einladung?",
-        "howMuch_gift": "Wie hoch ist der geschätzte Geldwert des Geschenks?"
+        "howMuch_invitation": "Wie hoch ist der geschätzte Wert der Einladung?",
+        "howMuch_gift": "Wie hoch ist der geschätzte Wert des Geschenks?"
       },
       "info": {
         "what": "Es werden fünf Formen von [Zuwendungen, same] unterschieden: [Bargeld, same], [Special Events, same], [Einladungen mit überwiegendem Unterhaltungscharakter, same], [Geschäftsessen, same] und [Geschenke, same].",
@@ -177,8 +179,8 @@
       "question": {
         "who": "Wem möchten Sie etwas schenken?",
         "what": "Was möchten Sie vergeben?",
-        "howMuch": "Wie hoch ist der geschätzte Geldwert?",
-        "howMuch_gift": "Wie hoch ist der geschätzte Geldwert des Geschenks?"
+        "howMuch": "Wie hoch ist der geschätzte Wert?",
+        "howMuch_gift": "Wie hoch ist der geschätzte Wert des Geschenks?"
       },
       "info": {
         "who": "Sie können entweder einem [Geschäftspartner, same] oder einer [anderen Person, Andere] eine Zuwendung zukommen lassen.",
@@ -193,8 +195,8 @@
       "normal_FE2": "In diesem Fall benötigen Sie die Genehmigung von Ihrer FE 2, die nun mit Hilfe Ihrer Vorgangsdaten kontaktiert wird.<br><br>Ihre Anfrage erfordert nähere Angaben und eine aussagekräftige Begründung.<br><br>Für Ihre Unterlagen erhalten Sie im Anschluss eine Zusammenfassung des Vorgangs.",
       "warning_others": "Die Vergabe sämtlicher [Zuwendungen, same]  an [Andere, same] ist nicht gestattet. In Ausnahmefällen kann <i>vorab</i> eine Genehmigung von GComp eingeholt werden.<p>Genehmigung jetzt beantragen?</p>",
       "warning_cash": "Grundsätzlich ist die Vergabe von Bargeld untersagt. In Ausnahmefällen kann <i>vorab</i> eine Genehmigung von GComp eingeholt werden.<p>Genehmigung jetzt beantragen?</p>",
-      "warning_specialEvent_standard": "Grundsätzlich ist die Einladung in Form eines [Special Events, same] im Geldwert von über 250 Euro untersagt. In Ausnahmefällen kann vorab eine Genehmigung von GComp und dem FE 1 eingeholt werden.<p>Genehmigung jetzt beantragen?</p>",
-      "warning_specialEvent_FE1": "Grundsätzlich ist die Einladung in Form eines [Special Events, same] im Geldwert von über 250 Euro untersagt. In Ausnahmefällen kann vorab eine Genehmigung von GComp eingeholt werden.<p>Genehmigung jetzt beantragen?</p>",
+      "warning_specialEvent_standard": "Grundsätzlich ist die Einladung in Form eines [Special Events, same] im Wert von über 250 Euro untersagt. In Ausnahmefällen kann vorab eine Genehmigung von GComp und dem FE 1 eingeholt werden.<p>Genehmigung jetzt beantragen?</p>",
+      "warning_specialEvent_FE1": "Grundsätzlich ist die Einladung in Form eines [Special Events, same] im Wert von über 250 Euro untersagt. In Ausnahmefällen kann vorab eine Genehmigung von GComp eingeholt werden.<p>Genehmigung jetzt beantragen?</p>",
       "high-necessity_FE2": "Sie benötigen die Genehmigung Ihrer FE 2. Zusätzlich muss eine aussagekräftige Begründung der geschäftlichen Notwendigkeit dargebracht werden."
     },
     "infoScreen": {

@@ -13,6 +13,7 @@ export class SavedTemplatesComponent {
 
   templatesReceive = [];
   templatesGive = [];
+  dateFormat: string;
 
   constructor(public navCtrl: NavController,
               private templatesStorageService: TemplatesStorageService,

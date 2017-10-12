@@ -1,7 +1,7 @@
 page-question-screen {
 
   ion-item {
-    ion-label{
+    ion-label {
       font-size: medium !important;
     }
     &.entertainment {
@@ -45,20 +45,19 @@ page-question-screen {
     }
   }
 
-
-
   .item-disabled {
     opacity: 0.3;
     pointer-events: none;
   }
 
-  h1.grey{
-    text-align: right;
-    opacity: 0.3;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    font-weight: bold;
+  div[padding].what-text {
+    padding-bottom: 0;
   }
-
+  div[padding].what-buttons {
+    padding-top: 0;
+    padding-bottom: 0;
+    span.xs{
+      font-size: small;
+    }
+  }
 }

@@ -4,7 +4,7 @@ import {UserService} from '../user/user.service';
 import {TranslateService} from '@ngx-translate/core';
 import {Observable} from 'rxjs/Rx';
 
-type Branch = 'get-donation' | 'give-donation' ;
+export type Branch = 'get-donation' | 'give-donation' ;
 
 @Injectable()
 export class DecisionTreeService {

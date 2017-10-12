@@ -1,9 +1,11 @@
+import {Branch} from './decisionTree/decisionTreeData.service';
+
 export class Process {
   info: {
     what: string;
     who: string;
     howMuch: string;
-    branch: string;
+    branch: Branch;
   };
   procedure: {
     continueWith: string;

@@ -16,7 +16,7 @@
 
 
 <ion-content>
-  <div padding>
+  <div padding [class.what-text] = "option.type == 'what'">
     <h2 class="primary" padding-top [innerHtml] = "question"></h2>
     <div class="stripes"></div>
     <h6 class="grey" [innerHtml] = "info">
@@ -37,7 +37,7 @@
   </div>
 
 
-  <div *ngIf="option.type == 'what'" padding>
+  <div *ngIf="option.type == 'what'" padding class="what-buttons">
     <ion-item
       text-wrap
       tappable
@@ -47,10 +47,10 @@
       [ngClass]="subOption.what">
       <div item-start></div>
       {{"buttons." + subOption.what | translate}}<br>
-      <span class="small">{{"buttons_addition." + subOption.what | translate}}</span>
+      <span class="xs">{{"buttons_addition." + subOption.what | translate}}</span>
     </ion-item>
   </div>
 
-  <h1 class="grey" padding *ngIf="option.type !== 'what'">{{'buttons.' + branch | translate}}</h1>
+  <h1 class="grey branch" padding *ngIf="option.type !== 'what'">{{'buttons.' + branch | translate}}</h1>
 
 </ion-content>

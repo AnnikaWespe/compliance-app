@@ -4,25 +4,34 @@ import {FormComponent} from '../questions/confirmSendInquiry/form/form.component
 import {ProcessStorageService} from '../../services/Template+ProcessStorage/processStorage.Service';
 import {DecisionTreeService} from '../../services/decisionTree/decisionTreeData.service';
 import {Process} from '../../services/process.model';
+import {UserService} from '../../services/user/user.service';
 
 @Component({
   selector: 'page-saved-processes',
   templateUrl: 'savedProcesses.component.html'
 })
+
+
 export class SavedProcessesComponent {
 
   processesReceive = [];
   processesGive = [];
+  dateFormat: string;
+
+
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private processStorageService: ProcessStorageService,
-              private decisionTreeService: DecisionTreeService) {
+              private decisionTreeService: DecisionTreeService,
+              userService: UserService) {
     this.processesReceive = processStorageService.getOpenProcesses('get-donation');
     this.processesGive = processStorageService.getOpenProcesses('give-donation');
+    this.dateFormat = userService.getDateFormat()[1];
   }
 
   loadProcess(process: Process) {
+    this.decisionTreeService.setBranch(process.info.branch);
     this.decisionTreeService.setTitle(process.info.what).subscribe(() => {
         this.navCtrl.push(FormComponent,
           {
