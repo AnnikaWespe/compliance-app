@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {UserService} from '../../services/user/user.service';
-import {FileOpener} from '@ionic-native/file-opener';
+import {InAppBrowser} from '@ionic-native/in-app-browser';
+
 
 @Component({
   selector: 'page-documents',
@@ -10,15 +11,15 @@ export class DocumentsComponent {
 
   language: string;
   constructor(userService: UserService,
-              private fileOpener: FileOpener) {
+              private inAppBrowser: InAppBrowser) {
     this.language = userService.getLanguage();
   }
 
   openDocument(document){
+
     console.log(document);
-    this.fileOpener.open('assets/pdfs/faq_de.pdf', 'application/pdf')
-      .then(() => console.log('File is opened'))
-      .catch(e => console.log('Error openening file', e));
+    let options = 'location=no,toolbarposition=top,toolbar=yes,enableViewportScale=yes,closebuttoncaption=Fertig';
+    this.inAppBrowser.create('assets/pdfs/faq_de.pdf', '_blank', options );
   }
 
 }

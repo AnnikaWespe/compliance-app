@@ -10,6 +10,7 @@ import {GlossaryService} from '../../../../services/glossary/glossary.service';
 import {Process} from '../../../../services/process.model';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import {DecisionTreeService} from '../../../../services/decisionTree/decisionTreeData.service';
+import {Camera, CameraOptions} from '@ionic-native/camera';
 
 @Component({
   selector: 'page-form',
@@ -23,6 +24,19 @@ export class FormComponent implements AfterViewChecked {
   savedProcess: boolean;
   clickHandlersAdded = false;
   title;
+  inTwoYears;
+  optionsCamera: CameraOptions = {
+    destinationType: this.camera.DestinationType.DATA_URL,
+    targetWidth: 1000,
+    targetHeight: 1000
+  };
+  optionsGallery: CameraOptions = {
+    sourceType: 0,
+    destinationType: this.camera.DestinationType.DATA_URL,
+    targetWidth: 1000,
+    targetHeight: 1000,
+  };
+  image;
 
   // strings that need translate service
   label_time;
@@ -37,7 +51,10 @@ export class FormComponent implements AfterViewChecked {
   alertButtonNo;
   alertRequiredFieldMessage;
   alertRequiredFieldTitle;
-
+  alertAttachmentTitle;
+  alertAttachmentCamera;
+  alertAttachmentGallery;
+  alertCancel;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -50,8 +67,12 @@ export class FormComponent implements AfterViewChecked {
               private elRef: ElementRef,
               private renderer: Renderer2,
               private domSanitizer: DomSanitizer,
-              private decisionTreeService: DecisionTreeService) {
-    let timeProposition = new Date().toISOString();
+              private decisionTreeService: DecisionTreeService,
+              private camera: Camera) {
+    let now = new Date()
+    let timeProposition = now.toISOString();
+    this.inTwoYears = now.getFullYear() + 2;
+    console.log(this.inTwoYears);
     this.title = decisionTreeService.getTitle();
     this.process = this.navParams.get('process');
     this.savedProcess = this.navParams.get('savedProcess');
@@ -62,13 +83,15 @@ export class FormComponent implements AfterViewChecked {
       reason: [this.process.supplementaryData.reason || '', Validators.required],
       value: [this.process.supplementaryData.value || '', Validators.required],
       person: [this.process.supplementaryData.person || '', Validators.required],
-      tax: [this.process.supplementaryData.tax || '', Validators.required]
+      tax: [this.process.supplementaryData.tax || '', Validators.required],
+      image: [this.process.supplementaryData.image || '']
     });
     this.supplementaryDataForm.valueChanges.subscribe(
       () => {
         this.saveButtonActive = true;
       }
     );
+    console.log(this.supplementaryDataForm.controls['image'].value);
   }
 
   ngAfterViewChecked() {
@@ -111,8 +134,17 @@ export class FormComponent implements AfterViewChecked {
     }
   }
 
-  addAttachment(){
+  addAttachment(options) {
+    this.camera.getPicture(options).then(
+      data => {
+        let base64Image = 'data:image/jpeg;base64,' + data;
+        this.supplementaryDataForm.controls['image'].setValue(base64Image);
+      }
+    );
+  }
 
+  deleteAttachment() {
+    this.supplementaryDataForm.controls['image'].setValue('');
   }
 
   isFieldValid(field: string) {
@@ -161,6 +193,33 @@ export class FormComponent implements AfterViewChecked {
     alert.present();
   }
 
+  alertChooseImageFromCameraOrGallery() {
+    let alert = this.alertCtrl.create({
+      title: this.alertAttachmentTitle,
+      buttons: [
+        {
+          text: this.alertAttachmentCamera,
+          handler: () => {
+            this.addAttachment(this.optionsCamera);
+          }
+        },
+        {
+          text: this.alertAttachmentGallery,
+          handler: () => {
+            this.addAttachment(this.optionsGallery);
+          }
+        },
+        {
+          text: this.alertCancel,
+          role: 'cancel',
+          handler: () => {
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
 
   // Helper Methods
 
@@ -192,7 +251,7 @@ export class FormComponent implements AfterViewChecked {
         this.alertTitle = value;
       }
     );
-    this.translateService.get( 'alerts.warning').subscribe(
+    this.translateService.get('alerts.warning').subscribe(
       value => {
         this.alertMessage = value;
       }
@@ -215,6 +274,26 @@ export class FormComponent implements AfterViewChecked {
     this.translateService.get(branch + '.formScreen.alert_required-field_title').subscribe(
       value => {
         this.alertRequiredFieldTitle = value;
+      }
+    );
+    this.translateService.get(branch + '.formScreen.alert_attachment_title').subscribe(
+      value => {
+        this.alertAttachmentTitle = value;
+      }
+    );
+    this.translateService.get(branch + '.formScreen.alert_attachment_camera').subscribe(
+      value => {
+        this.alertAttachmentCamera = value;
+      }
+    );
+    this.translateService.get(branch + '.formScreen.alert_attachment_gallery').subscribe(
+      value => {
+        this.alertAttachmentGallery = value;
+      }
+    );
+    this.translateService.get('buttons.cancel').subscribe(
+      value => {
+        this.alertCancel = value;
       }
     );
   }

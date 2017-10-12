@@ -22,6 +22,7 @@ export class SavedTemplatesComponent {
   }
 
   loadProcess(process: Process) {
+    process.supplementaryData.image = '';
     this.decisionTreeService.setTitle(process.info.what).subscribe(() => {
         this.navCtrl.push(FormComponent,
           {

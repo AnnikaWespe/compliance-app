@@ -23,8 +23,9 @@ import {ProcessStorageService} from '../services/Template+ProcessStorage/process
 import {TemplatesStorageService} from '../services/Template+ProcessStorage/templatesStorage.service';
 import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.component';
 import {DocumentsComponent} from '../pages/documents/documents.component';
-import {FileOpener} from '@ionic-native/file-opener';
 import {QuestionScreenComponent} from '../pages/questions/questionScreen.component';
+import {Camera} from '@ionic-native/camera';
+import {InAppBrowser} from '@ionic-native/in-app-browser';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import {QuestionScreenComponent} from '../pages/questions/questionScreen.compone
     GlossaryService,
     ProcessStorageService,
     TemplatesStorageService,
-    FileOpener,
+    InAppBrowser,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

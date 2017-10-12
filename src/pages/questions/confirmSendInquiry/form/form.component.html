@@ -26,7 +26,7 @@
   <form [formGroup]="supplementaryDataForm">
     <ion-item>
       <ion-label stacked>{{label_time}}</ion-label>
-      <ion-datetime formControlName="time" placeholder="Monat/Jahr" displayFormat="DD/MM/YYYY"></ion-datetime>
+      <ion-datetime formControlName="time" displayFormat="DD/MM/YYYY" max = "{{inTwoYears}}"></ion-datetime>
     </ion-item>
     <ion-item [ngClass]="displayFieldCss('description')">
       <ion-label stacked>{{label_description}}</ion-label>
@@ -58,12 +58,16 @@
         <ion-label>{{'generics.no'|translate}}</ion-label>
         <ion-radio checked="false" value="no"></ion-radio>
       </ion-item>
-      <ion-item *ngIf="supplementaryDataForm.value.tax == 'yes'"
-                class="taxReceiptWhere"
+      <ion-item *ngIf="supplementaryDataForm.value.tax == 'yes' && !supplementaryDataForm.value.image"
                 tappable
-                (click) = "addAttachment()">
-        <ion-label text-wrap stacked class="grey">{{'get-donation.formScreen.label_attachment'|translate}}</ion-label>
+                (click) = "alertChooseImageFromCameraOrGallery()">
+        <ion-label text-wrap stacked class="grey">{{'get-donation.formScreen.label_add_attachment'|translate}}</ion-label>
         <ion-icon name="attach" item-end class = "grey"></ion-icon>
+      </ion-item>
+      <ion-item *ngIf="supplementaryDataForm.value.tax == 'yes' && supplementaryDataForm.value.image"
+                tappable>
+        <ion-label text-wrap stacked class="grey">{{'get-donation.formScreen.label_attachment_added'|translate}}</ion-label>
+        <ion-icon name="trash" item-end class = "grey" tappable (click) = "deleteAttachment()"></ion-icon>
       </ion-item>
       <ion-item></ion-item>
     </ion-list>
