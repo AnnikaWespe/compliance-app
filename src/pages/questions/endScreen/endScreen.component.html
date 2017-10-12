@@ -2,7 +2,7 @@
 
   <ion-navbar>
     <button ion-button icon-only menuToggle start>
-      <ion-icon name="md-person" class="menu-button"></ion-icon>
+      <ion-icon name="menu" class="menu-button"></ion-icon>
     </button>
     <ion-title>
       {{'title' | translate}}
@@ -14,15 +14,10 @@
 
 <ion-content>
   <div padding>
-    <h2 class="primary" padding-top>Danke!</h2>
+    <h2 class="primary" padding-top>{{"secondary-pages.endScreen.thanks" | translate}}</h2>
     <div class="stripes"></div>
-    <p class="grey">Wir hoffen, es hat alles geklappt.</p>
-    <p class="grey" *ngIf="process.procedure.documentationRequired">
-      Dieser Vorgang erfordert eine Dokumentation.
-      Bitte bewahren Sie hierfür die Emails zu Anfragen und Genehmigungen sorgfältig auf.
-      Es gelten die Fristen gemäß der
-      <a href="http://mrweb.munichre.com/Main/Reinsurance/CeUn/IT1/it1/Richtlinie%20Aufbewahrungspflichten.pdf">Richtlinien Aufbewahrungsfristen</a>
-    </p>
+    <p class="grey">{{"secondary-pages.endScreen.text_confirmation" | translate}}</p>
+    <p class="grey" *ngIf="process.procedure.documentationRequired" [innerHtml] = "documentationRequired"></p>
   </div>
 
   <div class="buttons-wrapper">

@@ -12,6 +12,7 @@
   {{"receive.formScreen" | translate}}
 </h1>
 <ion-content padding>
+  <p>{{warning}}</p>
   <!--<div>
     <p><b>Nur für Testzwecke</b></p>
     Bei der Zuwendung handelt sich um (ein/e) {{process.info.what}}<br>
@@ -30,7 +31,7 @@
     </ion-item>
     <ion-item [ngClass]="displayFieldCss('description')">
       <ion-label stacked>{{label_description}}</ion-label>
-      <ion-textarea type="text" formControlName="description"></ion-textarea>
+      <ion-textarea  rows = "4" type="text" formControlName="description"></ion-textarea>
     </ion-item>
     <ion-item [ngClass]="displayFieldCss('value')">
       <ion-label stacked>{{label_value}}</ion-label>
@@ -42,7 +43,7 @@
     </ion-item>
     <ion-item [ngClass]="displayFieldCss('reason')">
       <ion-label stacked>{{label_reason}}</ion-label>
-      <ion-textarea type="text" formControlName="reason"></ion-textarea>
+      <ion-textarea rows = "4"  type="text" formControlName="reason"></ion-textarea>
     </ion-item>
     <ion-list radio-group formControlName="tax" *ngIf="process.info.what == 'specialEvent'">
       <ion-item class="radio-tax-label" class="grey" [ngClass]="displayFieldCss('tax')">

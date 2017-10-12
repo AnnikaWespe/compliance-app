@@ -89,6 +89,11 @@
       "overview_give": "Übersicht Vergabe",
       "overview_receive": "Übersicht Annahme",
       "disclaimer": "Disclaimer"
+    },
+    "endScreen":{
+      "thanks" : "Danke!",
+      "text_confirmation": "Ihre Anfrage wird verarbeitet. Sie erhalten schnellstmöglich eine Rückmeldung.",
+      "text_documentation": "Dieser Vorgang erfordert eine Dokumentation. Bitte bewahren Sie hierfür die Emails zu Anfragen und Genehmigungen sorgfältig auf. Es gelten die Fristen gemäß der <a href='http://mrweb.munichre.com/Main/Reinsurance/CeUn/IT1/it1/Richtlinie%20Aufbewahrungspflichten.pdf'>Richtlinien Aufbewahrungsfristen</a>."
     }
   },
   "get-donation": {
@@ -171,7 +176,11 @@
       "alert_required-field_message": "Bitte füllen Sie die rot markierten Felder aus.",
       "alert_attachment_gallery": "Galerie",
       "alert_attachment_camera": "Kamera",
-      "alert_attachment_title": "Von wo möchten Sie den Anhang laden?"
+      "alert_attachment_title": "Von wo möchten Sie den Anhang laden?",
+      "warning_gComp": "Diese Angaben gehen an Group Compliance.",
+      "warning_gComp+FE1":"Diese Angaben gehen an Group Compliance und Ihre FE 1.",
+      "warning_FE1":"Diese Angaben gehen an Ihre FE 1.",
+      "warning_FE2":"Diese Angaben gehen an Ihre FE 2."
     }
   },
   "give-donation": {
@@ -251,7 +260,11 @@
       "alert_required-field_message": "Bitte füllen Sie die rot markierten Felder aus.",
       "alert_attachment_gallery": "Galerie",
       "alert_attachment_camera": "Kamera",
-      "alert_attachment_title": "Von wo möchten Sie den Anhang laden?"
+      "alert_attachment_title": "Von wo möchten Sie den Anhang laden?",
+      "warning_gComp": "Diese Angaben gehen an Group Compliance.",
+      "warning_gComp+FE1":"Diese Angaben gehen an Group Compliance und Ihre FE 1.",
+      "warning_FE1":"Diese Angaben gehen an Ihre FE 1.",
+      "warning_FE2":"Diese Angaben gehen an Ihre FE 2."
     }
   }
 }
