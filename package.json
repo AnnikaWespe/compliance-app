@@ -111,8 +111,8 @@
         "plugins": {
             "cordova-plugin-ionic-webview": {},
             "cordova-plugin-camera": {
-                "CAMERA_USAGE_DESCRIPTION": " ",
-                "PHOTOLIBRARY_USAGE_DESCRIPTION": " "
+                "CAMERA_USAGE_DESCRIPTION": "App benötigt Zugriff auf Kamera",
+                "PHOTOLIBRARY_USAGE_DESCRIPTION": "App benötigt Zugriff auf Fotos"
             },
             "cordova-plugin-inappbrowser": {},
             "cordova-ios-plugin-no-export-compliance": {},
