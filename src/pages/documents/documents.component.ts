@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {UserService} from '../../services/user/user.service';
-import {InAppBrowser} from '@ionic-native/in-app-browser';
-import {TranslateService} from '@ngx-translate/core';
+import {OpenDocumentService} from '../../services/open-document.service';
 
 
 @Component({
@@ -14,26 +13,12 @@ export class DocumentsComponent {
   closeButtonText: string;
 
   constructor(userService: UserService,
-              private inAppBrowser: InAppBrowser,
-              private translateService: TranslateService) {
+              private openDocumentService: OpenDocumentService) {
     this.language = userService.getLanguage();
-    this.getTranslation();
   }
 
   openDocument(document) {
-    let options = 'location=no,toolbarposition=top,toolbar=yes,enableViewportScale=yes,closebuttoncaption='
-      + this.closeButtonText;
-    let url = 'assets/pdfs/' + document + '_' + this.language + '.pdf';
-    console.log(url);
-    this.inAppBrowser.create(url, '_blank', options);
-  }
-
-  getTranslation() {
-    this.translateService.get('buttons.finished').subscribe(
-      value => {
-        this.closeButtonText = value;
-      }
-    );
+    this.openDocumentService.openDocument(document);
   }
 
 }

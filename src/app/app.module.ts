@@ -27,6 +27,7 @@ import {Camera} from '@ionic-native/camera';
 import {InAppBrowser} from '@ionic-native/in-app-browser';
 import {AttachmentModalComponent}from '../pages/questions/confirmSendInquiry/form/attachment/attachmentModal.component';
 import {InfoScreenComponent} from '../pages/questions/infoScreen/infoScreen.component';
+import {OpenDocumentService} from '../services/open-document.service';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,7 @@ import {InfoScreenComponent} from '../pages/questions/infoScreen/infoScreen.comp
     FormComponent,
     SavedProcessesComponent,
     SavedTemplatesComponent,
-    AttachmentModalComponent
+    AttachmentModalComponent,
   ],
   providers: [
     StatusBar,
@@ -79,6 +80,7 @@ import {InfoScreenComponent} from '../pages/questions/infoScreen/infoScreen.comp
     GlossaryService,
     ProcessStorageService,
     TemplatesStorageService,
+    OpenDocumentService,
     InAppBrowser,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

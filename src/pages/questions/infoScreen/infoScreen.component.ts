@@ -35,11 +35,11 @@ export class InfoScreenComponent implements AfterViewChecked {
               decisionTreeService: DecisionTreeService) {
     this.process = this.navParams.get('process');
     this.title = decisionTreeService.getTitle();
+    this.branch = decisionTreeService.getBranch();
     decisionTreeService.getInfoScreenText(this.process.procedure.infoText).subscribe((string) => {
       this.createPageText(string);
     });
     this.getAlertTranslation();
-    this.branch = decisionTreeService.getBranch();
   }
 
   ngAfterViewChecked() {
@@ -78,22 +78,22 @@ export class InfoScreenComponent implements AfterViewChecked {
   }
 
   getAlertTranslation() {
-    this.translateService.get('receive.confirmSendInquiry.alert_0').subscribe(
+    this.translateService.get(this.branch + '.infoScreen.alert_0').subscribe(
       value => {
         this.alertTitle = value;
       }
     );
-    this.translateService.get('receive.confirmSendInquiry.alert_1').subscribe(
+    this.translateService.get(this.branch + '.infoScreen.alert_1').subscribe(
       value => {
         this.alertMessage = value;
       }
     );
-    this.translateService.get('receive.confirmSendInquiry.alert_2').subscribe(
+    this.translateService.get(this.branch + '.infoScreen.alert_2').subscribe(
       value => {
         this.alertButton1Text = value;
       }
     );
-    this.translateService.get('receive.confirmSendInquiry.alert_3').subscribe(
+    this.translateService.get(this.branch + '.infoScreen.alert_3').subscribe(
       value => {
         this.alertButton2Text = value;
       }
