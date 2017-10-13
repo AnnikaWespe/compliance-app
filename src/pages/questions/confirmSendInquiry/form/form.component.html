@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <button ion-button icon-only menuToggle start>
-      <ion-icon name="md-person" class="menu-button"></ion-icon>
+      <ion-icon name="menu" class="menu-button"></ion-icon>
     </button>
     <ion-title>
       {{title}}
@@ -27,7 +27,13 @@
   <form [formGroup]="supplementaryDataForm">
     <ion-item>
       <ion-label stacked>{{label_time}}</ion-label>
-      <ion-datetime formControlName="time" displayFormat="{{dateFormat}}" max = "{{inTwoYears}}"></ion-datetime>
+      <ion-datetime
+        formControlName="time"
+        displayFormat="{{dateFormat}}"
+        max = "{{inTwoYears}}"
+        doneText = "{{'buttons.finished' | translate}}"
+        cancelText = "{{'buttons.cancel' | translate}}"
+      ></ion-datetime>
     </ion-item>
     <ion-item [ngClass]="displayFieldCss('description')">
       <ion-label stacked>{{label_description}}</ion-label>

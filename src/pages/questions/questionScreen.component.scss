@@ -58,6 +58,11 @@ page-question-screen {
     padding-bottom: 0;
     span.xs{
       font-size: small;
+      line-height: 0;
+    }
+    ion-label{
+      margin: 0;
+      line-height: 110%;
     }
   }
 }

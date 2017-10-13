@@ -54,8 +54,9 @@ export class MyAppComponent {
 
 
   setTranslateParams() {
-    this.translate.setDefaultLang('de');
-    this.translate.use('de');
+    let language = this.userService.getLanguage();
+    this.translate.setDefaultLang(language);
+    this.translate.use(language);
   }
 
   switchUser() {

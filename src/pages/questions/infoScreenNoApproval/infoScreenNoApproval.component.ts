@@ -8,10 +8,10 @@ import {DecisionTreeService} from '../../../services/decisionTree/decisionTreeDa
 import {Process} from '../../../services/process.model';
 
 @Component({
-  selector: 'page-info-screen',
-  templateUrl: 'infoScreen.component.html'
+  selector: 'page-info-screen-no-approval',
+  templateUrl: 'infoScreenNoApproval.component.html'
 })
-export class InfoScreenComponent implements AfterViewChecked {
+export class InfoScreenNoApprovalComponent implements AfterViewChecked {
 
   process: Process;
   infoText: SafeHtml;
@@ -35,11 +35,11 @@ export class InfoScreenComponent implements AfterViewChecked {
               decisionTreeService: DecisionTreeService) {
     this.process = this.navParams.get('process');
     this.title = decisionTreeService.getTitle();
+    this.branch = decisionTreeService.getBranch();
     decisionTreeService.getInfoScreenText(this.process.procedure.infoText).subscribe((string) => {
       this.createPageText(string);
     });
     this.getAlertTranslation();
-    this.branch = decisionTreeService.getBranch();
   }
 
   ngAfterViewChecked() {
@@ -78,7 +78,7 @@ export class InfoScreenComponent implements AfterViewChecked {
   }
 
   getAlertTranslation() {
-    this.translateService.get('receive.confirmSendInquiry.alert_0').subscribe(
+    this.translateService.get(this.branch + '.confirmSendInquiry.alert_0').subscribe(
       value => {
         this.alertTitle = value;
       }

@@ -8,7 +8,7 @@ import {HomePageComponent} from '../pages/home/home.component';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {UserService} from '../services/user/user.service';
-import {InfoScreenComponent} from '../pages/questions/infoScreen/infoScreen.component';
+import {InfoScreenComponent} from '../pages/questions/infoScreenNoApproval/infoScreenNoApproval.component';
 import {EndScreenComponent} from '../pages/questions/endScreen/endScreen.component';
 import {AppInsightsModule} from '../services/app-insights/appinsights.module';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';

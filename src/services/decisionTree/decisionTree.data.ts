@@ -21,6 +21,7 @@ export const DECISIONTREE_DATA = {
               all: {
                 continueWith: 'info',
                 infoText: `no-approval_gift`,
+                approvalForm: 'none',
                 documentationRequired: false,
                 sendFormToHumanResources: false,
               }
@@ -105,6 +106,7 @@ export const DECISIONTREE_DATA = {
                     all: {
                       continueWith: 'info',
                       infoText: `no-approval_business-lunch`,
+                      approvalForm: 'none',
                       documentationRequired: false,
                       sendFormToHumanResources: false,
                     }
@@ -131,12 +133,14 @@ export const DECISIONTREE_DATA = {
                     FE2: {
                       continueWith: 'info',
                       infoText: `self-approval_business-lunch`,
+                      approvalForm: 'self',
                       documentationRequired: true,
                       sendFormToHumanResources: false,
                     },
                     FE1: {
                       continueWith: 'info',
                       infoText: `self-approval_business-lunch`,
+                      approvalForm: 'self',
                       documentationRequired: true,
                       sendFormToHumanResources: false,
                     },
@@ -230,12 +234,14 @@ export const DECISIONTREE_DATA = {
                     FE2: {
                       continueWith: 'info',
                       infoText: `self-approval_entertainment`,
+                      approvalForm: 'self',
                       documentationRequired: false,
                       sendFormToHumanResources: true,
                     },
                     FE1: {
                       continueWith: 'info',
                       infoText: `self-approval_entertainment`,
+                      approvalForm: 'self',
                       documentationRequired: false,
                       sendFormToHumanResources: true,
                     },
@@ -330,12 +336,14 @@ export const DECISIONTREE_DATA = {
                     FE2: {
                       continueWith: 'info',
                       infoText: `self-approval_special-event`,
+                      approvalForm: 'self',
                       documentationRequired: false,
                       sendFormToHumanResources: true,
                     },
                     FE1: {
                       continueWith: 'info',
                       infoText: `self-approval_special-event`,
+                      approvalForm: 'self',
                       documentationRequired: false,
                       sendFormToHumanResources: true,
                     },
@@ -448,6 +456,7 @@ export const DECISIONTREE_DATA = {
                     all: {
                       continueWith: 'info',
                       infoText: `no-approval_gift`,
+                      approvalForm: 'none',
                       documentationRequired: false,
                       sendFormToHumanResources: false,
                     }
@@ -474,12 +483,14 @@ export const DECISIONTREE_DATA = {
                     FE2: {
                       continueWith: 'info',
                       infoText: `self-approval_gift`,
+                      approvalForm: 'self',
                       documentationRequired: false,
                       sendFormToHumanResources: true,
                     },
                     FE1: {
                       continueWith: 'info',
                       infoText: `self-approval_gift`,
+                      approvalForm: 'self',
                       documentationRequired: false,
                       sendFormToHumanResources: true,
                     }
@@ -540,6 +551,7 @@ export const DECISIONTREE_DATA = {
                     all: {
                       continueWith: 'info',
                       infoText: `no-approval_business-lunch`,
+                      approvalForm: 'none',
                       documentationRequired: false,
                       sendFormToHumanResources: false,
                     }
@@ -566,12 +578,14 @@ export const DECISIONTREE_DATA = {
                     FE2: {
                       continueWith: 'info',
                       infoText: `self-approval_business-lunch`,
+                      approvalForm: 'self',
                       documentationRequired: false,
                       sendFormToHumanResources: false,
                     },
                     FE1: {
                       continueWith: 'info',
                       infoText: `self-approval_business-lunch`,
+                      approvalForm: 'self',
                       documentationRequired: false,
                       sendFormToHumanResources: false,
                     },
@@ -640,12 +654,14 @@ export const DECISIONTREE_DATA = {
                     FE2: {
                       continueWith: 'info',
                       infoText: `self-approval_entertainment`,
+                      approvalForm: 'self',
                       documentationRequired: true,
                       sendFormToHumanResources: false,
                     },
                     FE1: {
                       continueWith: 'info',
                       infoText: `self-approval_entertainment`,
+                      approvalForm: 'self',
                       documentationRequired: true,
                       sendFormToHumanResources: false,
                     }
@@ -714,12 +730,14 @@ export const DECISIONTREE_DATA = {
                     FE2: {
                       continueWith: 'info',
                       infoText: `self-approval_specialEvent`,
+                      approvalForm: 'self',
                       documentationRequired: true,
                       sendFormToHumanResources: false,
                     },
                     FE1: {
                       continueWith: 'info',
                       infoText: `self-approval_specialEvent`,
+                      approvalForm: 'self',
                       documentationRequired: true,
                       sendFormToHumanResources: false,
                     }

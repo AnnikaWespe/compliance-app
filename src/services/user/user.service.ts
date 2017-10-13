@@ -19,7 +19,8 @@ export class UserService {
   }
 
   getDateFormat(){
-    return ['YYYY/MM/DD', 'yyyy/MM/dd'];
+    // return ['DD/MM/YYYY', 'dd/MM/yyyy'];
+    return ['MMM DD, YYYY', 'MMM dd, yyyy'];
   }
 
 }
