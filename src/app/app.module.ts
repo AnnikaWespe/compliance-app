@@ -8,7 +8,6 @@ import {HomePageComponent} from '../pages/home/home.component';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {UserService} from '../services/user/user.service';
-import {InfoScreenComponent} from '../pages/questions/infoScreenNoApproval/infoScreenNoApproval.component';
 import {EndScreenComponent} from '../pages/questions/endScreen/endScreen.component';
 import {AppInsightsModule} from '../services/app-insights/appinsights.module';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
@@ -26,7 +25,8 @@ import {DocumentsComponent} from '../pages/documents/documents.component';
 import {QuestionScreenComponent} from '../pages/questions/questionScreen.component';
 import {Camera} from '@ionic-native/camera';
 import {InAppBrowser} from '@ionic-native/in-app-browser';
-import {AttachmentModalComponent} from "../pages/questions/confirmSendInquiry/form/attachment/attachmentModal.component";
+import {AttachmentModalComponent}from '../pages/questions/confirmSendInquiry/form/attachment/attachmentModal.component';
+import {InfoScreenComponent} from '../pages/questions/infoScreen/infoScreen.component';
 
 @NgModule({
   declarations: [
