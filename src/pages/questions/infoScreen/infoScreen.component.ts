@@ -21,8 +21,8 @@ export class InfoScreenComponent implements AfterViewChecked {
 
   alertTitle;
   alertMessage;
-  alertButton1Text;
-  alertButton2Text;
+  alertButtonNo;
+  alertButtonYes;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -49,20 +49,20 @@ export class InfoScreenComponent implements AfterViewChecked {
   }
 
 
-  goToStartPage() {
+  openDialogue() {
     let alert = this.alertCtrl.create({
       title: this.alertTitle,
       message: this.alertMessage,
       buttons: [
         {
-          text: this.alertButton1Text,
+          text: this.alertButtonNo,
           cssClass: 'alertButton',
           role: 'cancel',
           handler: () => {
           }
         },
         {
-          text: this.alertButton2Text,
+          text: this.alertButtonYes,
           cssClass: 'alertButton',
           handler: () => {
             this.navCtrl.setRoot(HomePageComponent);
@@ -78,24 +78,24 @@ export class InfoScreenComponent implements AfterViewChecked {
   }
 
   getAlertTranslation() {
-    this.translateService.get(this.branch + '.infoScreen.alert_0').subscribe(
+    this.translateService.get('alerts.question_cancel').subscribe(
       value => {
         this.alertTitle = value;
       }
     );
-    this.translateService.get(this.branch + '.infoScreen.alert_1').subscribe(
+    this.translateService.get('alerts.warning').subscribe(
       value => {
         this.alertMessage = value;
       }
     );
-    this.translateService.get(this.branch + '.infoScreen.alert_2').subscribe(
+    this.translateService.get('generics.yes').subscribe(
       value => {
-        this.alertButton1Text = value;
+        this.alertButtonYes = value;
       }
     );
-    this.translateService.get(this.branch + '.infoScreen.alert_3').subscribe(
+    this.translateService.get( 'generics.no').subscribe(
       value => {
-        this.alertButton2Text = value;
+        this.alertButtonNo = value;
       }
     );
   }

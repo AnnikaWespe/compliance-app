@@ -12,6 +12,7 @@ export class Process {
     emailTo?: string;
     note?: string;
     infoText?: string;
+    approvalForm?: string;
     continueButtonType?: string;
     documentationRequired: boolean;
     sendFormToHumanResources: boolean;
