@@ -3,7 +3,8 @@ import {USER} from './user.data';
 
 @Injectable()
 export class UserService {
-  user = USER['standard'];
+  // user = USER['standard'];
+  user = USER['FE1'];
 
   getUser() {
     return this.user;
@@ -14,11 +15,11 @@ export class UserService {
     return this.user;
   }
 
-  getLanguage(){
+  getLanguage() {
     return 'de';
   }
 
-  getDateFormat(){
+  getDateFormat() {
     // return ['DD/MM/YYYY', 'dd/MM/yyyy'];
     return ['MMM DD, YYYY', 'MMM dd, yyyy'];
   }

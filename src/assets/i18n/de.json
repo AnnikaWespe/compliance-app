@@ -9,6 +9,7 @@
     "get-donation": "Annahme",
     "accept": "Annahme",
     "cancel": "Abbrechen",
+    "goToHomeScreen": "Zum Startscreen",
     "finished": "Fertig",
     "send": "Absenden",
     "save": "Speichern",
@@ -126,11 +127,12 @@
       "warning_gift": "<p>Grundsätzlich ist das erhaltene Geschenk an die MR AG abzugeben und dort zu inventarisieren.</p><p>Bei eigener Verwendung benötigen Sie die Genehmigung der FE 2. Darüber hinaus tragen Sie selbst die Steuer für den entstandenen geldwerten Vorteil, da das Geschenk der Lohnsteuerpflicht unterliegt.</p>Wie möchten Sie fortfahren?"
     },
     "infoScreen": {
-      "no-approval_business-lunch": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung zum Geschäftsessen annehmen.<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
+      "no-approval_business-lunch": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung zum Geschäftsessen annehmen.<br><br>Wenn Sie auf \"Zuwendung annehmen\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
       "no-approval_gift": "Die Annahme eines Geschenkes in diesem Segment ist genehmigungsfrei und hat keine steuerrechtlichen Folgen, sofern die Wertgrenze im Kalendermonat nicht überschritten wird.",
-      "self-approval_business-lunch": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung zum Geschäftsessen [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
-      "self-approval_special-event": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung zum Special Event [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
-      "self-approval_entertainment": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung mit überwiegendem Unterhaltungscharakter [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen."
+      "self-approval_business-lunch": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung zum Geschäftsessen [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Zuwendung annehmen\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
+      "self-approval_special-event": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung zum Special Event [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Zuwendung annehmen\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
+      "self-approval_entertainment": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung mit überwiegendem Unterhaltungscharakter [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Zuwendung annehmen\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
+      "finalize": "Zuwendung annehmen"
     },
     "formScreen": {
       "cash": {
@@ -209,12 +211,14 @@
       "high-necessity_FE2": "Sie benötigen die Genehmigung Ihrer FE 2. Zusätzlich muss eine aussagekräftige Begründung der geschäftlichen Notwendigkeit dargebracht werden."
     },
     "infoScreen": {
-      "self-approval_specialEvent": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung zum Special Event [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
-      "self-approval_entertainment": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung mit überwiegendem Unterhaltungscharakter [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
-      "self-approval_business-lunch": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung zum Geschäftsessen [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
-      "self-approval_gift": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie das Geschenk [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Annahme\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
+      "self-approval_specialEvent": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung zum Special Event [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Zuwendung vergeben\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
+      "self-approval_entertainment": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung mit überwiegendem Unterhaltungscharakter [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Zuwendung vergeben\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
+      "self-approval_business-lunch": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung zum Geschäftsessen [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Zuwendung vergeben\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
+      "self-approval_gift": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie das Geschenk [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Zuwendung vergeben\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
       "no-approval_business-lunch": "Die Vergabe von Geschäftsessen in diesem Segment ist genehmigungsfrei, sofern es im Rahmen der üblichen Geschäftspraxis stattfindet und der Grundsatz der [Sozialadäquanz, same] gewahrt wird.",
-      "no-approval_gift": "Die Vergabe von Geschenken in diesem Segment ist genehmigungsfrei. Sie können eine Bestellung über den <a href = 'www.google.de'>Online Katalog der MR AG</a> aufgeben oder sich das Geschenk selbst organisieren."
+      "no-approval_gift": "Die Vergabe von Geschenken in diesem Segment ist genehmigungsfrei. Sie können eine Bestellung über den Online Katalog der MR AG aufgeben oder sich das Geschenk selbst organisieren.",
+      "finalize": "Zuwendung vergeben",
+      "goToProCat": "Zum ProC@t-Katalog"
     },
     "formScreen": {
       "cash": {

@@ -20,17 +20,35 @@
     </div>
   </div>
 
-  <div class="buttons-wrapper">
+  <div class="buttons-wrapper"
+  *ngIf="process.info.what !== 'gift' || process.info.howMuch !== '≤ 35€'">
     <button
       ion-button
       tappable>
-      {{"buttons.accept" | translate}}
+      {{process.info.branch + ".infoScreen.finalize" | translate}}
     </button>
     <button
       ion-button
       tappable
       (click)="goToStartPage()">
-      {{"buttons.cancel" | translate}}
+      {{"buttons.goToHomeScreen" | translate}}
+    </button>
+  </div>
+
+  <div class="buttons-wrapper"
+       *ngIf="process.info.what === 'gift' && process.info.howMuch === '≤ 35€'">
+    <a href="http://www.google.com">
+      <button
+        ion-button
+        tappable>
+        {{"give-donation.infoScreen.goToProCat" | translate}}
+      </button>
+    </a>
+    <button
+      ion-button
+      tappable
+      (click)="goToStartPage()">
+      {{"buttons.goToHomeScreen" | translate}}
     </button>
   </div>
 

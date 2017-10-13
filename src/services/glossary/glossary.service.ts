@@ -29,17 +29,20 @@ export class GlossaryService {
     if (foundElements.length) {
       foundElements.forEach((element) => {
         let keyWord = element.getAttribute('keyWord');
+        let callback;
         element.setAttribute('tappable', '');
         if (keyWord === 'openGuidelines') {
-          renderer.listen(element, 'click', () => {
+          callback = () => {
             this.openDocument('guideline');
-          });
+          };
         }
         else {
-          renderer.listen(element, 'click', () => {
+          callback = () => {
             this.createPopUp(keyWord);
-          });
+          };
         }
+        renderer.listen(element, 'click', callback);
+
       });
       return true;
     }

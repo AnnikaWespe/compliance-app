@@ -119,14 +119,14 @@ export class FormComponent implements AfterViewChecked {
   }
 
   checkIfFormValid() {
-    if (this.supplementaryDataForm.invalid) {
+    /*if (this.supplementaryDataForm.invalid) {
       Object.keys(this.supplementaryDataForm.controls).forEach(field => {
         const control = this.supplementaryDataForm.get(field);
         control.markAsTouched({onlySelf: true});
       });
       this.requiredFieldAlert();
 
-    } else {
+    } else {*/
       let timeStamp = Date.now().toString();
       this.process.supplementaryData = this.supplementaryDataForm.value;
       if (this.savedProcess) {
@@ -137,7 +137,7 @@ export class FormComponent implements AfterViewChecked {
         this.templatesStorageService.saveTemplate(this.process, this.process.info.branch);
       }
       this.navCtrl.setRoot(EndScreenComponent, {process: this.process});
-    }
+    // }
   }
 
 
