@@ -11,9 +11,9 @@
             ]
         },
         "release": {
-            "codeSignIdentity": "iPhone Distribution",
+            "codeSignIdentity": "iPhone Developer",
             "developmentTeam": "QBXX2YVVB7",
-            "packageType": "app-store",
+            "packageType": "development",
             "buildFlag": [
                 "EMBEDDED_CONTENT_CONTAINS_SWIFT = YES",
                 "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES=NO",
