@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.munichre.compliance" ios-CFBundleVersion="0.0.19" version="0.0.19" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.munichre.compliance" ios-CFBundleVersion="0.0.20" version="0.0.20" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ComplianceApp</name>
     <description>Compliance App.</description>
     <author email="p0050001314@munichre.com" href="http://www.munichre.com/">      Munich Re    </author>
