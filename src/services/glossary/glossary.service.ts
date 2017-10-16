@@ -1,15 +1,20 @@
 import {ElementRef, Injectable, Renderer2} from '@angular/core';
 import {GLOSSARY} from './glossary.data';
 import {AlertController} from 'ionic-angular';
-import {OpenDocumentService} from "../open-document.service";
+import {OpenDocumentService} from '../open-document.service';
+import {UserService} from '../user/user.service';
 
 
 @Injectable()
 export class GlossaryService {
-  glossary = GLOSSARY;
+
+  glossary;
 
   constructor(public alertCtrl: AlertController,
-              private openDocumentService: OpenDocumentService) {
+              private openDocumentService: OpenDocumentService,
+              userService: UserService) {
+    let language = userService.getLanguage();
+    this.glossary = GLOSSARY[language];
   }
 
   createPopUp(term) {

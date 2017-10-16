@@ -6,6 +6,7 @@ import {HomePageComponent} from '../../home/home.component';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import {DecisionTreeService} from '../../../services/decisionTree/decisionTreeData.service';
 import {Process} from '../../../services/process.model';
+import {EndScreenComponent} from '../endScreen/endScreen.component';
 
 @Component({
   selector: 'page-info-screen',
@@ -65,12 +66,18 @@ export class InfoScreenComponent implements AfterViewChecked {
           text: this.alertButtonYes,
           cssClass: 'alertButton',
           handler: () => {
-            this.navCtrl.setRoot(HomePageComponent);
+            this.goToStartPage();
           }
         }
       ]
     });
     alert.present();
+  }
+  goToStartPage(){
+    this.navCtrl.setRoot(HomePageComponent);
+  }
+  goToEndScreen(){
+    this.navCtrl.setRoot(EndScreenComponent, {process: this.process});
   }
 
   openInfo(term) {

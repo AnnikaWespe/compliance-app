@@ -4,7 +4,7 @@ import {USER} from './user.data';
 @Injectable()
 export class UserService {
   // user = USER['standard'];
-  user = USER['FE1'];
+  user = USER['standard'];
 
   getUser() {
     return this.user;
@@ -20,8 +20,9 @@ export class UserService {
   }
 
   getDateFormat() {
-    // return ['DD/MM/YYYY', 'dd/MM/yyyy'];
-    return ['DD.MM.YYYY', 'MMM dd, yyyy'];
+    // de: return ['DD/MM/YYYY', 'dd/MM/yyyy'];
+    // en:
+    return ['MMM DD, YYYY', 'MMM dd, yyyy'];
   }
 
 }
