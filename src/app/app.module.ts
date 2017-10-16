@@ -24,6 +24,7 @@ import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.co
 import {DocumentsComponent} from '../pages/documents/documents.component';
 import {QuestionScreenComponent} from '../pages/questions/questionScreen.component';
 import {Camera} from '@ionic-native/camera';
+import {Keyboard} from '@ionic-native/keyboard';
 import {InAppBrowser} from '@ionic-native/in-app-browser';
 import {AttachmentModalComponent}from '../pages/questions/confirmSendInquiry/form/attachment/attachmentModal.component';
 import {InfoScreenComponent} from '../pages/questions/infoScreen/infoScreen.component';
@@ -83,6 +84,7 @@ import {OpenDocumentService} from '../services/open-document.service';
     OpenDocumentService,
     InAppBrowser,
     Camera,
+    Keyboard,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
