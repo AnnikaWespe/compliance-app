@@ -16,21 +16,17 @@
   <div padding>
     <h2 class="primary" padding-top>{{"secondary-pages.endScreen.thanks" | translate}}</h2>
     <div class="stripes"></div>
-    <p class="grey">{{"secondary-pages.endScreen.text_confirmation" | translate}}</p>
+    <p class="grey" *ngIf = "process.procedure.approvalForm !== 'self' ">{{"secondary-pages.endScreen.text_confirmation" | translate}}</p>
+    <p class="grey" *ngIf = "process.procedure.approvalForm == 'self' ">{{"secondary-pages.endScreen.text_confirmation_self-approval" | translate}}</p>
     <p class="grey" *ngIf="process.procedure.documentationRequired" [innerHtml] = "documentationRequired"></p>
   </div>
 
   <div class="buttons-wrapper">
     <button
       ion-button
-      tappable>
-      Mehr Information
-    </button>
-    <button
-      ion-button
       tappable
       (click)="goToStartPage()">
-      Ok
+      {{'buttons.goToHomeScreen' | translate}}
     </button>
   </div>
 

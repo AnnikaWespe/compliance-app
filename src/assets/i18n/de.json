@@ -94,6 +94,7 @@
     "endScreen":{
       "thanks" : "Danke!",
       "text_confirmation": "Ihre Anfrage wird verarbeitet. Sie erhalten schnellstmöglich eine Rückmeldung.",
+      "text_confirmation_self-approval": "Sie erhalten jetzt eine Zusammenfassung per Email.",
       "text_documentation": "Dieser Vorgang erfordert eine Dokumentation. Bitte bewahren Sie hierfür die Emails zu Anfragen und Genehmigungen sorgfältig auf. Es gelten die Fristen gemäß der <a href='http://mrweb.munichre.com/Main/Reinsurance/CeUn/IT1/it1/Richtlinie%20Aufbewahrungspflichten.pdf'>Richtlinien Aufbewahrungsfristen</a>."
     }
   },
