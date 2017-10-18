@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.munichre.compliance" ios-CFBundleVersion="0.0.20" version="0.0.20" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.munichre.compliance" ios-CFBundleVersion="0.0.26" version="0.0.26" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ComplianceApp</name>
     <description>Compliance App.</description>
     <author email="p0050001314@munichre.com" href="http://www.munichre.com/">      Munich Re    </author>
@@ -12,8 +12,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
@@ -25,6 +23,8 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="orientation" value="portrait" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarStyle" value="lightcontent" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
@@ -81,20 +81,26 @@
         <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
     </platform>
-    <allow-navigation href="http://192.168.182.190:8100" />
     <allow-navigation href="http://172.20.10.3:8100" />
-    <allow-navigation href="http://192.168.178.54:8100" />
-    <plugin name="cordova-plugin-device" spec="1.1.4" />
-    <plugin name="cordova-plugin-ionic-webview" spec="^1.1.15" />
-    <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
-    <plugin name="cordova-plugin-whitelist" spec="1.3.1" />
-    <engine name="ios" spec="~4.5.0" />
-    <plugin name="cordova-plugin-camera" spec="^2.4.1">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="App benötigt Zugriff auf die Kamera" />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="App benötigt Zugriff auf Galerie" />
-    </plugin>
-    <plugin name="cordova-plugin-inappbrowser" spec="^1.7.1" />
+    <allow-navigation href="http://localhost:8080/*" />
+    <feature name="CDVWKWebViewEngine">
+        <param name="ios-package" value="CDVWKWebViewEngine" />
+    </feature>
+    <preference name="CordovaWebViewEngine" value="CDVUIWebViewEngine" />
+    <allow-navigation href="http://192.168.182.190:8100" />
+    <engine name="ios" spec="^4.5.2" />
     <plugin name="cordova-ios-plugin-no-export-compliance" spec="0.0.5" />
-    <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
+    <plugin name="cordova-plugin-camera" spec="^2.4.1">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="App benötigt Zugriff auf Kamera" />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="App benötigt Zugriff auf Fotos" />
+    </plugin>
+    <plugin name="cordova-plugin-device" spec="1.1.4" />
+    <plugin name="cordova-plugin-document-viewer" spec="^0.9.5" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^1.7.1" />
+    <plugin name="cordova-plugin-ionic-webview" spec="^1.1.15" />
+    <plugin name="cordova-plugin-screen-orientation" spec="^2.0.1" />
+    <plugin name="cordova-plugin-splashscreen" spec="~4.0.3" />
     <plugin name="cordova-plugin-statusbar" spec="2.2.2" />
+    <plugin name="cordova-plugin-whitelist" spec="1.3.1" />
+    <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
 </widget>
