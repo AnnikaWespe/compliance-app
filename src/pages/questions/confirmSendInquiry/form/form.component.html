@@ -10,8 +10,8 @@
 </ion-header>
 <ion-content padding>
   <p>{{warning}}</p>
-  <!--<div>
-    <p><b>Nur für Testzwecke</b></p>
+  <div class="test-div">
+    <p><b>Nur für Testzwecke!!!</b></p>
     Bei der Zuwendung handelt sich um (ein/e) {{process.info.what}}<br>
     <div *ngIf="process.info.branch === 'get-donation'"> Die Zuwendung <i>kommt von</i>  {{process.info.who}}</div>
     <div *ngIf="process.info.branch === 'give-donation'"> Die Zuwendung <i>geht an</i>  {{process.info.who}}</div>
@@ -19,8 +19,9 @@
     Die Email geht an {{process.procedure.emailTo}}<br>
     Dokumentation erforderlich? {{process.procedure.documentationRequired}}<br>
     Formular an HR erforderlich? {{process.procedure.sendFormToHumanResources}}<br>
+  </div>
 
-  </div>-->
+
   <form [formGroup]="supplementaryDataForm">
     <ion-item>
       <ion-label stacked>{{label_time}}</ion-label>
@@ -81,8 +82,9 @@
     </ion-list>
 
   </form>
+
   <!--<ion-item>
-    <ion-label class="grey small">{{'get-donation.formScreen.save-template'|translate}}</ion-label>
+    <ion-label class="grey small">{{branch + '.formScreen.save-template'|translate}}</ion-label>
     <ion-checkbox [(ngModel)]="saveTemplateBoolean" item-end></ion-checkbox>
   </ion-item>-->
 

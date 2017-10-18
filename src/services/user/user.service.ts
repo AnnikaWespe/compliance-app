@@ -21,9 +21,9 @@ export class UserService {
   }
 
   getDateFormat() {
-    // de: return ['DD/MM/YYYY', 'dd/MM/yyyy'];
-    // en:
-    return ['MMM DD, YYYY', 'MMM dd, yyyy'];
+    // de:
+    return ['DD/MM/YYYY', 'dd/MM/yyyy'];
+    // en: return ['MMM DD, YYYY', 'MMM dd, yyyy'];
   }
 
 }

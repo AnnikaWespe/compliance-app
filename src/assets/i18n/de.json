@@ -212,13 +212,13 @@
       "warning_cash": "Grundsätzlich ist die Vergabe von Bargeld untersagt. In Ausnahmefällen kann <i>vorab</i> eine Genehmigung von GComp eingeholt werden.<p>Genehmigung jetzt beantragen?</p>",
       "warning_specialEvent_standard": "Grundsätzlich ist die Einladung in Form eines [Special Events, same] im Wert von über 250 Euro untersagt. In Ausnahmefällen kann vorab eine Genehmigung von GComp und dem FE 1 eingeholt werden.<p>Genehmigung jetzt beantragen?</p>",
       "warning_specialEvent_FE1": "Grundsätzlich ist die Einladung in Form eines [Special Events, same] im Wert von über 250 Euro untersagt. In Ausnahmefällen kann vorab eine Genehmigung von GComp eingeholt werden.<p>Genehmigung jetzt beantragen?</p>",
-      "high-necessity_FE2": "Sie benötigen die Genehmigung Ihrer FE 2. Zusätzlich muss eine aussagekräftige Begründung der geschäftlichen Notwendigkeit dargebracht werden."
+      "high-necessity_FE2": "Sie benötigen die Genehmigung Ihrer FE 2. Zusätzlich muss eine aussagekräftige Begründung der geschäftlichen Notwendigkeit dargebracht werden.",
+      "self-approval_gift": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie das Geschenk [selbst genehmigen, Selbstgenehmigung].<br><br>Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang dokumentiert werden muss.",
+      "self-approval_special-event": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie das Special Event [selbst genehmigen, Selbstgenehmigung].<br><br>Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang dokumentiert werden muss.",
+      "self-approval_entertainment": "Sie können die Einladung [selbst genehmigen, Selbstgenehmigung], es besteht aber eine hohe Anforderung an die geschäftliche Notwendigkeit.<br><br>Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang dokumentiert werden muss.",
+      "self-approval_business-lunch": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung zum Geschäftsessen [selbst genehmigen, Selbstgenehmigung].<br><br>Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang dokumentiert werden muss."
     },
     "infoScreen": {
-      "self-approval_specialEvent": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung zum Special Event [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Zuwendung vergeben\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
-      "self-approval_entertainment": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung mit überwiegendem Unterhaltungscharakter [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Zuwendung vergeben\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
-      "self-approval_business-lunch": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie die Einladung zum Geschäftsessen [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Zuwendung vergeben\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
-      "self-approval_gift": "Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie das Geschenk [selbst genehmigen, Selbstgenehmigung].<br><br>Wenn Sie auf \"Zuwendung vergeben\"  klicken, erhalten Sie per E-Mail eine Bestätigung über den Vorgang für Ihre Unterlagen.",
       "no-approval_business-lunch": "Die Vergabe von Geschäftsessen in diesem Segment ist genehmigungsfrei, sofern es im Rahmen der üblichen Geschäftspraxis stattfindet und der Grundsatz der [Sozialadäquanz, same] gewahrt wird.",
       "no-approval_gift": "Die Vergabe von Geschenken in diesem Segment ist genehmigungsfrei. Sie können eine Bestellung über den [Onlinekatalog, same] der MR AG aufgeben oder sich das Geschenk selbst organisieren.",
       "finalize": "Zuwendung vergeben",
@@ -272,7 +272,8 @@
       "warning_gComp": "Diese Angaben gehen an Group Compliance.",
       "warning_gComp+FE1":"Diese Angaben gehen an Group Compliance und Ihre FE 1.",
       "warning_FE1":"Diese Angaben gehen an Ihre FE 1.",
-      "warning_FE2":"Diese Angaben gehen an Ihre FE 2."
+      "warning_FE2":"Diese Angaben gehen an Ihre FE 2.",
+      "warning_self":"Diese Angaben sind für Ihre eigenen Unterlagen."
     }
   }
 }

@@ -29,6 +29,7 @@ import {InAppBrowser} from '@ionic-native/in-app-browser';
 import {AttachmentModalComponent}from '../pages/questions/confirmSendInquiry/form/attachment/attachmentModal.component';
 import {InfoScreenComponent} from '../pages/questions/infoScreen/infoScreen.component';
 import {OpenDocumentService} from '../services/open-document.service';
+import {ScreenOrientation} from '@ionic-native/screen-orientation';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import {OpenDocumentService} from '../services/open-document.service';
     InAppBrowser,
     Camera,
     Keyboard,
+    ScreenOrientation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
