@@ -59,7 +59,7 @@ export class ConfirmSendInquiryComponent implements AfterViewChecked{
   }
 
 
-  goToStartPage() {
+  askIfReallyCancel() {
     let alert = this.alertCtrl.create({
       title: this.alertTitle,
       message: this.alertMessage,
