@@ -6,7 +6,7 @@ import {HomePageComponent} from '../pages/home/home.component';
 import {UserService} from '../services/user/user.service';
 import {TranslateService} from '@ngx-translate/core';
 import {SavedProcessesComponent} from '../pages/savedProcesses/savedProcesses.component';
-import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.component';
+// import {SavedTemplatesComponent} from '../pages/savedTemplates/savedTemplates.component';
 import {DocumentsComponent} from '../pages/documents/documents.component';
 
 // import {AppInsightsService} from '../app-insights/appinsights.service';
@@ -48,7 +48,7 @@ export class MyAppComponent {
       home: {component: HomePageComponent, parameters: {}},
       documents: {component: DocumentsComponent, parameters: {}},
       savedProcesses: {component: SavedProcessesComponent, parameters: {}},
-      templates: {component: SavedTemplatesComponent, parameters: {}}
+     // templates: {component: SavedTemplatesComponent, parameters: {}}
     };
   }
 

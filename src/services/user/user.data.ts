@@ -2,20 +2,19 @@ export const USER = {
   standard: {
     name: 'Eva',
     lastName: 'Muster',
-    function: 'senior underwriter',
+    function: 'Underwriter',
     careerLevel: 'standard'
   },
   FE1: {
-    name: 'Eva',
-    lastName: 'Muster',
-    function: 'senior underwriter',
+    name: 'Jane',
+    lastName: 'Doe',
+    function: 'Head of Business Unit',
     careerLevel: 'FE1'
   },
   FE2: {
-    name: 'Eva',
-    lastName: 'Muster',
-    function: 'senior underwriter',
+    name: 'John',
+    lastName: 'Doe',
+    function: 'Head of Department',
     careerLevel: 'FE2'
   }
 }
-

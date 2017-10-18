@@ -1,0 +1,277 @@
+{
+  "title": "Compliance App",
+  "generics": {
+    "yes": "Yes",
+    "no": "No"
+  },
+  "buttons": {
+    "give-donation": "Giving",
+    "get-donation": "Accepting",
+    "accept": "Accepting",
+    "cancel": "Cancel",
+    "goToHomeScreen": "Übersetzung: Zum Startscreen",
+    "finished": "Übersetzung: Fertig",
+    "send": "Send",
+    "save": "Save",
+    "cash": "Cash",
+    "specialEvent": "Special event",
+    "entertainment": "Invitations",
+    "businessLunch": "Business meals",
+    "gifts": "Gifts",
+    "businessPartner": "Business partner",
+    "others": "Others",
+    "≤ 500€": "≤ €500",
+    "≤ 40€": "≤ €40",
+    "x ≤ 35€": "x ≤ €35",
+    "≤ 250€": "≤ €250",
+    "> 500€": "> €500",
+    "> 250€": "> €250",
+    "x ≤ 250€": "x ≤ €250",
+    "250€ < x ≤ 500€": "€250 < x ≤ €500",
+    "40€ < x ≤ 500€": "€40 < x ≤ €500",
+    "35€ < x ≤ 500€": "35€ < x ≤ 500€",
+    "x > 500€": "x > €500",
+    "x > 250€": "x > €250",
+    "inquiry_normal": "Enquiry",
+    "inquiry_gComp": "Send enquiry to GComp",
+    "yes": "Yes",
+    "inventory": "Inventory",
+    "deductible": "Deductible"
+  },
+  "alerts": {
+    "question_cancel": "Are you sure you want to cancel?",
+    "warning": "Any entries you have made will be lost."
+  },
+  "buttons_addition": {
+    "cash": "and cash-like benefits",
+    "specialEvent": "(e.g. Formula 1, VIP boxes, Oktoberfest)",
+    "entertainment": "consisting primarily of entertainment",
+    "businessLunch": "",
+    "gifts": ""
+  },
+  "titles": {
+    "entertainment": "Entertainment",
+    "specialEvent": "Special event",
+    "businessLunch": "Business meal",
+    "gifts": "Gifts",
+    "cash": "Cash",
+    "Anhang": "attachment"
+  },
+  "secondary-pages": {
+    "side-menu": {
+      "name": "Name",
+      "function": "Function",
+      "carreer-level": "Career level"
+    },
+    "home": {
+      "title_menu": "Home",
+      "title": "[Geschenke und Einladungen, same]",
+      "info": "<p>What is important when giving and receiving gifts and invitations?</p>The principle of [Sozialadäquanz, same] must be observed to avoid conflicts of interest or reputational damage. This means<ul><li>always taking into account the recipient and their social status.</li><li>A typical test question is: \"Could the recipient afford this, and would they also be prepared to do so?\"</li></ul>"
+    },
+    "templates": {
+      "title": "Templates",
+      "give-donation": "Giving of gratuity",
+      "get-donation": "Acceptance of gratuity",
+      "please-click": "Click on a template to access the pre-populated form.",
+      "no-templates": "You do not have any templates in this category."
+    },
+    "savedProcesses": {
+      "title": "Saved processes",
+      "give-donation": "Giving of gratuity",
+      "get-donation": "Acceptance of gratuity",
+      "please-click": "Click on a process to continue with it",
+      "no-processes": "You do not have any processes in this category."
+    },
+    "documents": {
+      "title": "Documents",
+      "faq": "FAQ",
+      "glossary": "Glossary",
+      "guideline": "Guideline",
+      "overview_give": "Übersetzung: Übersicht Vergabe",
+      "overview_receive": "Übersetzung: Übersicht Annahme",
+      "disclaimer": "Disclaimer"
+    },
+    "endScreen": {
+      "thanks": "Danke!",
+      "text_confirmation": "Übersetzung: Ihre Anfrage wird verarbeitet. Sie erhalten schnellstmöglich eine Rückmeldung.",
+      "text_confirmation_self-approval": "Übersetzung: Sie erhalten jetzt eine Zusammenfassung per Email.",
+      "text_documentation": "Übersetzung: Dieser Vorgang erfordert eine Dokumentation. Bitte bewahren Sie hierfür die Emails zu Anfragen und Genehmigungen sorgfältig auf. Es gelten die Fristen gemäß der <a href='http://mrweb.munichre.com/Main/Reinsurance/CeUn/IT1/it1/Richtlinie%20Aufbewahrungspflichten.pdf'>Richtlinien Aufbewahrungsfristen</a>."
+    }
+  },
+  "get-donation": {
+    "questionScreen": {
+      "question": {
+        "what": "What is involved?",
+        "who_invitation": "Who has invited you?",
+        "who_gift": "From whom is the gift?",
+        "howMuch_invitation": "What is the estimated monetary value of the invitation?",
+        "howMuch_gift": "What is the estimated monetary value of the gift?"
+      },
+      "info": {
+        "what": "We differentiate between five forms of [Zuwendungen, same]: [Bargeld, same], [Special Events, same], [Einladungen mit überwiegendem Unterhaltungscharakter, same], [Geschäftsessen, same] and [Geschenke, same].",
+        "who_invitation": "You can be invited by either a [Geschäftspartner, same] or by [anderen Person, Andere].",
+        "howMuch_invitation": "",
+        "howMuch_gift": ""
+      }
+    },
+    "confirmSendInquiry": {
+      "normal_gComp": "In this instance, you will require the authorisation of Group Compliance, who will now be contacted on the basis of your process data.<br><br>Your enquiry requires provision of further details and a pertinent reason.<br><br>You will subsequently receive a summary of the process for your records.",
+      "normal_FE1": "In this instance, you will require the authorisation of your ML1, who will now be contacted on the basis of the data entered.<br><br>Your enquiry requires provision of further details and a pertinent reason.<br><br>You will subsequently receive a summary of the process for your records.",
+      "normal_FE2": "In this instance, you will require the authorisation of your ML2, who will now be contacted on the basis of the data entered.<br><br>Your enquiry requires provision of further details and a pertinent reason.<br><br>You will subsequently receive a summary of the process for your records.",
+      "high-necessity_FE1": "Authorisation can be requested from your ML1, if you provide a pertinent reason for the business necessity.<p>Do your wish to continue?</p>",
+      "high-necessity_FE2": "Authorisation can be requested from your ML2, if you provide a pertinent reason for the business necessity.<p>Do you wish to continue?</p>",
+      "high-necessity_gComp": "Authorisation can be requested from GComp, if you provide a pertinent reason for the business necessity.<p>Do you wish to continue?</p>",
+      "warning_business-lunch_others": "Accepting invitations to [Geschäftsessen, same] from [Anderen, Andere] is generally prohibited.<br><br>It is possible to apply to Compliance to request an exception.",
+      "warning_cash": "The acceptance of [Bargeld, same] is generally prohibited. In exceptional cases, <i>prior</i> written authorisation can be requested from GComp.<p>Apply for authorisation now?</p>",
+      "warning_specialEvent_others": "The acceptance of invitations to special events from [Anderen, Andere] is generally prohibited. In exceptional cases, <i>prior</i> written authorisation can be requested from GComp.<p>Apply for authorisation now?</p>",
+      "warning_entertainment_others": "The acceptance of invitations that primarily constitute entertainment from [Anderen, Andere] is generally prohibited. In exceptional cases, <i>prior</i> written authorisation can be requested from GComp.<p>Apply for authorisation now?</p>",
+      "warning_gift": "<p>Any gifts received must be surrendered to Munich Reinsurance Company and inventarised.</p><p>To use the gift yourself, you will require authorisation from your ML2. You must also bear the tax for the benefit in kind generated because the gift is subject to German salary tax.</p>How do you wish to proceed?",
+      "self-approval_special-event": "Übersetzung: Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung zum Special Event [selbst genehmigen, Selbstgenehmigung].<br><br> Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang bei HR dokumentiert werden muss.",
+      "self-approval_entertainment": "Übersetzung: Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung mit überwiegendem Unterhaltungscharakter [selbst genehmigen, Selbstgenehmigung].<br><br> Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang bei HR dokumentiert werden muss.",
+      "self-approval_gift": "Übersetzung: Grundsätzlich ist das erhaltene Geschenk an die MR AG abzugeben und dort zu inventarisieren.</p><p>Eine eigene Verwendung können Sie sich selbst genehmigen. Hierbei ist zu beachten:</p> <ul><li>Sie selbst tragen die Steuer für den entstandenen geldwerten Vorteil, da das Geschenk der Lohnsteuerpflicht unterliegt</li><li>Wir benötigen weitere Angaben, die Sie auf der nächsten Seite machen können. Diese dienen der Dokumentation bei HR.</li></ul>Wie möchten Sie fortfahren?",
+      "self-approval_business-lunch": "Übersetzung: Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung zum Geschäftsessen [selbst genehmigen, Selbstgenehmigung].<br><br> Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang dokumentiert werden muss."
+    },
+    "infoScreen": {
+      "no-approval_business-lunch": "As long as the principle of [Sozialadäquanz, same] is satisfied, you can accept the business meal invitation.<br><br>If you click on \"Accept\"  you will receive email confirmation of the process for your records.",
+      "no-approval_gift": "Acceptance of a gift in this segment requires no authorisation and has no tax implications as long as the monthly value limit is not exceeded.",
+      "finalize": "Übersetzung: Zuwendung annehmen"
+    },
+    "formScreen": {
+      "cash": {
+        "label_time": "Time of gratuity",
+        "label_description": "Form of monetary gift (cash, cheque, shares)",
+        "label_value": "Value in €",
+        "label_person": "Giver – Name of person, company",
+        "label_reason": "Reason"
+      },
+      "specialEvent": {
+        "label_time": "Time of event",
+        "label_description": "Name of event, occasion",
+        "label_value": "Estimated value in €",
+        "label_person": "Host – Name of person, company",
+        "label_reason": "Reason"
+      },
+      "entertainment": {
+        "label_time": "Time of event",
+        "label_description": "Name of event, occasion",
+        "label_value": "Estimated value in €",
+        "label_person": "Host – Name of person, company",
+        "label_reason": "Reason"
+      },
+      "businessLunch": {
+        "label_time": "Time of business meal",
+        "label_description": "Name of venue, occasion",
+        "label_value": "Estimated value in €",
+        "label_person": "Host – Name of person, company",
+        "label_reason": "Reason"
+      },
+      "gift": {
+        "label_time": "Time of gratuity",
+        "label_description": "Description of gift",
+        "label_value": "Estimated value in €",
+        "label_person": "Giver – Name of person, company",
+        "label_reason": "Reason"
+      },
+      "label_tax": "Has tax been paid by the issuer in accordance with [§37b EStG, same]?",
+      "label_add_attachment": "Attach confirmation",
+      "label_attachment_added": "Confirmation attached",
+      "save-template": "Save as template",
+      "alert_required-field_title": "Form incomplete",
+      "alert_required-field_message": "Please complete the fields marked in red.",
+      "alert_attachment_gallery": "Galerie",
+      "alert_attachment_camera": "Übersetzung: Kamera",
+      "alert_attachment_title": "Übersetzung: Von wo möchten Sie den Anhang laden?",
+      "warning_gComp": "Übersetzung: Diese Angaben gehen an Group Compliance.",
+      "warning_gComp+FE1": "Übersetzung: Diese Angaben gehen an Group Compliance und Ihre FE 1.",
+      "warning_FE1": "Übersetzung: Diese Angaben gehen an Ihre FE 1.",
+      "warning_FE2": "Übersetzung: Diese Angaben gehen an Ihre FE 2.",
+      "warning_HR": "Übersetzung: Diese Angaben gehen an HR.",
+      "warning_self": "Übersetzung: Diese Angaben sind für Ihre eigenen Unterlagen."
+    }
+  },
+  "give-donation": {
+    "questionScreen": {
+      "question": {
+        "who": "Whom do you want to give a gift?",
+        "what": "What would you like to give?",
+        "howMuch": "What is the estimated monetary value?",
+        "howMuch_gift": "What is the estimated monetary value of the gift?"
+      },
+      "info": {
+        "who": "You can give a gratuity to either a [Geschäftspartner, same] or [anderen Person, Andere].",
+        "what": "We differentiate between five forms of [Zuwendungen, same]: [Bargeld, same], [Special Events, same], [Einladungen mit überwiegendem Unterhaltungscharakter, same], [Geschäftsessen, same] and [Geschenke, same].",
+        "howMuch": "",
+        "howMuch_gift": ""
+      }
+    },
+    "confirmSendInquiry": {
+      "normal_gComp": "In this instance, you will require the authorisation of Group Compliance, who will now be contacted on the basis of your process data.<br><br>Your enquiry requires provision of further details and a pertinent reason.<br><br>You will subsequently receive a summary of the process for your records.",
+      "normal_FE1": "In this instance, you will require the authorisation of your ML1, who will now be contacted on the basis of the data entered.<br><br>Your enquiry requires provision of further details and a pertinent reason.<br><br>You will subsequently receive a summary of the process for your records.",
+      "normal_FE2": "In this instance, you will require the authorisation of your ML2, who will now be contacted on the basis of your process data.<br><br>Your enquiry requires provision of further details and a pertinent reason.<br><br>You will subsequently receive a summary of the process for your records.",
+      "warning_others": "Provision of any [Zuwendungen, same] to [Andere, same] is not permitted. In exceptional cases, <i>prior</i> authorisation can be obtained from GComp.<p>Apply for authorisation now?</p>",
+      "warning_cash": "The giving of cash is generally prohibited. In exceptional cases, <i>prior</i> authorisation can be obtained from GComp.<p>Apply for authorisation now?</p>",
+      "warning_specialEvent_standard": "It is generally not permissible to issue invitations in the form of [Special Events, same] if these have a monetary value in excess of €250. In exceptional cases, prior authorisation can be obtained from GComp and your ML1.<p>Apply for authorisation now?</p>",
+      "warning_specialEvent_FE1": "It is generally not permissible to issue invitations in the form of [Special Events, same] if these have a monetary value in excess of €250. In exceptional cases, prior authorisation can be obtained from GComp.<p>Apply for authorisation now?</p>",
+      "high-necessity_FE2": "You require authorisation from your ML2. And must also supply a pertinent reason for the business necessity."
+    },
+    "infoScreen": {
+      "self-approval_specialEvent": "As long as the principle of [Sozialadäquanz, same] is satisfied, you can [selbst genehmigen, Selbstgenehmigung] the invitation to the special event.<br><br>If you click on \"Accept\"  you will receive email confirmation of the process for your records.",
+      "self-approval_entertainment": "As long as the principle of [Sozialadäquanz, same] is satisfied, you can [selbst genehmigen, Selbstgenehmigung] the invitation that primarily constitutes entertainment.<br><br>If you click on \"Accept\"  you will receive email confirmation of the process for your records.",
+      "self-approval_business-lunch": "As long as the principle of [Sozialadäquanz, same] is satisfied, you can [selbst genehmigen, Selbstgenehmigung] the business meal invitation.<br><br>If you click on \"Accept\"  you will receive email confirmation of the process for your records.",
+      "self-approval_gift": "As long as the principle of [Sozialadäquanz, same] is satisfied, you can [selbst genehmigen, Selbstgenehmigung] the gift.<br><br>If you click on \"Accept\"  you will receive email confirmation of the process for your records.",
+      "no-approval_business-lunch": "No approval for business meals is required in this segment as long as these conform to normal business practice and satisfy the principle of [Sozialadäquanz, same].",
+      "no-approval_gift": "No approval for gifts is required in this segment. You can place an order from <a href = 'www.google.de'>Munich Reinsurance Company’s online catalogue</a>, or arrange the gift yourself.",
+      "finalize": "Übersetzung: Zuwendung vergeben",
+      "goToProCat": "Übersetzung: Zum ProC@t-Katalog"
+    },
+    "formScreen": {
+      "cash": {
+        "label_time": "Time of gratuity",
+        "label_description": "Form of monetary gift (cash, cheque, shares)",
+        "label_value": "Value in €",
+        "label_person": "Recipient – Name of person, company",
+        "label_reason": "Reason"
+      },
+      "specialEvent": {
+        "label_time": "Time of event",
+        "label_description": "Name of event, occasion",
+        "label_value": "Estimated value in €",
+        "label_person": "Invitee – Name of person, company",
+        "label_reason": "Reason"
+      },
+      "entertainment": {
+        "label_time": "Time of event",
+        "label_description": "Name of event, occasion",
+        "label_value": "Estimated value in €",
+        "label_person": "Invitee – Name of person, company",
+        "label_reason": "Reason"
+      },
+      "businessLunch": {
+        "label_time": "Time of business meal",
+        "label_description": "Name of venue, occasion",
+        "label_value": "Estimated value in €",
+        "label_person": "Invitee – Name of person, company",
+        "label_reason": "Reason"
+      },
+      "gift": {
+        "label_time": "Time of gratuity",
+        "label_description": "Description of gift",
+        "label_value": "Estimated value in €",
+        "label_person": "Recipient – Name of person, company",
+        "label_reason": "Reason"
+      },
+      "label_tax": "Has tax been paid by the issuer in accordance with[§37b EStG, same]?",
+      "label_attachment": "Attach confirmation",
+      "save-template": "Save as template",
+      "alert_required-field_title": "Form incomplete",
+      "alert_required-field_message": "Please complete the fields marked in red.",
+      "alert_attachment_gallery": "Übersetzung: Galerie",
+      "alert_attachment_camera": "Übersetzung: Kamera",
+      "alert_attachment_title": "Übersetzung: Von wo möchten Sie den Anhang laden?",
+      "warning_gComp": "Übersetzung: Diese Angaben gehen an Group Compliance.",
+      "warning_gComp+FE1": "Übersetzung: Diese Angaben gehen an Group Compliance und Ihre FE 1.",
+      "warning_FE1": "Übersetzung: Diese Angaben gehen an Ihre FE 1.",
+      "warning_FE2": "Übersetzung: Diese Angaben gehen an Ihre FE 2."
+    }
+  }
+}

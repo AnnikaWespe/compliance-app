@@ -20,25 +20,6 @@
     </div>
   </div>
 
-
-  <!-- buttons for self-approval -->
-  <div class="buttons-wrapper"
-       *ngIf="process.procedure.approvalForm === 'self'">
-    <button
-      ion-button
-      tappable
-      (click)="goToEndScreen()">
-      {{process.info.branch + ".infoScreen.finalize" | translate}}
-    </button>
-    <button
-      ion-button
-      tappable
-      (click)="openDialogue()">
-      {{"buttons.goToHomeScreen" | translate}}
-    </button>
-  </div>
-
-
   <!-- special buttons for Link to ProC@t Catalogue -->
   <div class="buttons-wrapper"
        *ngIf="process.procedure.approvalForm === 'none' && process.info.howMuch === '≤ 35€'">
