@@ -16,8 +16,8 @@ export class UserService {
   }
 
   getLanguage() {
-    return 'de';
-    // return 'en';
+    // return 'de';
+    return 'en';
   }
 
   getDateFormat() {

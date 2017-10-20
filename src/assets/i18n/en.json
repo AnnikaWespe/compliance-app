@@ -9,8 +9,8 @@
     "get-donation": "Accepting",
     "accept": "Accepting",
     "cancel": "Cancel",
-    "goToHomeScreen": "Übersetzung: Zum Startscreen",
-    "finished": "Übersetzung: Fertig",
+    "goToHomeScreen": "Go to start screen",
+    "finished": "Done",
     "send": "Send",
     "save": "Save",
     "cash": "Cash",
@@ -55,7 +55,7 @@
     "businessLunch": "Business meal",
     "gifts": "Gifts",
     "cash": "Cash",
-    "Anhang": "attachment"
+    "attachment": "Attachment"
   },
   "secondary-pages": {
     "side-menu": {
@@ -65,8 +65,8 @@
     },
     "home": {
       "title_menu": "Home",
-      "title": "[Geschenke und Einladungen, same]",
-      "info": "<p>What is important when giving and receiving gifts and invitations?</p>The principle of [Sozialadäquanz, same] must be observed to avoid conflicts of interest or reputational damage. This means<ul><li>always taking into account the recipient and their social status.</li><li>A typical test question is: \"Could the recipient afford this, and would they also be prepared to do so?\"</li></ul>"
+      "title": "[Gifts and Invitations, openGuidelines]",
+      "info": "<p>What is important when giving and receiving gifts and invitations?</p>The principle of [social acceptability, Social Acceptability] must be observed to avoid conflicts of interest or reputational damage. This means<ul><li>always taking into account the recipient and their social status.</li><li>A typical test question is: \"Could the recipient afford this, and would they also be prepared to do so?\"</li></ul>"
     },
     "templates": {
       "title": "Templates",
@@ -87,8 +87,8 @@
       "faq": "FAQ",
       "glossary": "Glossary",
       "guideline": "Guideline",
-      "overview_give": "Übersetzung: Übersicht Vergabe",
-      "overview_receive": "Übersetzung: Übersicht Annahme",
+      "overview_give": "Overview giving gratuity",
+      "overview_receive": "Overview accepting gratuity",
       "disclaimer": "Disclaimer"
     },
     "endScreen": {
@@ -108,8 +108,8 @@
         "howMuch_gift": "What is the estimated monetary value of the gift?"
       },
       "info": {
-        "what": "We differentiate between five forms of [Zuwendungen, same]: [Bargeld, same], [Special Events, same], [Einladungen mit überwiegendem Unterhaltungscharakter, same], [Geschäftsessen, same] and [Geschenke, same].",
-        "who_invitation": "You can be invited by either a [Geschäftspartner, same] or by [anderen Person, Andere].",
+        "what": "We differentiate between five forms of [gratuities, Gratuity]: [cash, Cash], [special events, Special events], [entertainment, same], [business meals, Business meals] and [gifts, Gifts].",
+        "who_invitation": "You can be invited by either a [business partner, Business partners] or by [another person, Others].",
         "howMuch_invitation": "",
         "howMuch_gift": ""
       }
@@ -121,18 +121,18 @@
       "high-necessity_FE1": "Authorisation can be requested from your ML1, if you provide a pertinent reason for the business necessity.<p>Do your wish to continue?</p>",
       "high-necessity_FE2": "Authorisation can be requested from your ML2, if you provide a pertinent reason for the business necessity.<p>Do you wish to continue?</p>",
       "high-necessity_gComp": "Authorisation can be requested from GComp, if you provide a pertinent reason for the business necessity.<p>Do you wish to continue?</p>",
-      "warning_business-lunch_others": "Accepting invitations to [Geschäftsessen, same] from [Anderen, Andere] is generally prohibited.<br><br>It is possible to apply to Compliance to request an exception.",
-      "warning_cash": "The acceptance of [Bargeld, same] is generally prohibited. In exceptional cases, <i>prior</i> written authorisation can be requested from GComp.<p>Apply for authorisation now?</p>",
-      "warning_specialEvent_others": "The acceptance of invitations to special events from [Anderen, Andere] is generally prohibited. In exceptional cases, <i>prior</i> written authorisation can be requested from GComp.<p>Apply for authorisation now?</p>",
-      "warning_entertainment_others": "The acceptance of invitations that primarily constitute entertainment from [Anderen, Andere] is generally prohibited. In exceptional cases, <i>prior</i> written authorisation can be requested from GComp.<p>Apply for authorisation now?</p>",
+      "warning_business-lunch_others": "Accepting invitations to [business meals, Business meals] from [others, Others] is generally prohibited.<br><br>It is possible to apply to Compliance to request an exception.",
+      "warning_cash": "The acceptance of [cash, Cash] is generally prohibited. In exceptional cases, <i>prior</i> written authorisation can be requested from GComp.<p>Apply for authorisation now?</p>",
+      "warning_specialEvent_others": "The acceptance of invitations to special events from [others, Others] is generally prohibited. In exceptional cases, <i>prior</i> written authorisation can be requested from GComp.<p>Apply for authorisation now?</p>",
+      "warning_entertainment_others": "The acceptance of invitations that primarily constitute entertainment from [others, Others] is generally prohibited. In exceptional cases, <i>prior</i> written authorisation can be requested from GComp.<p>Apply for authorisation now?</p>",
       "warning_gift": "<p>Any gifts received must be surrendered to Munich Reinsurance Company and inventarised.</p><p>To use the gift yourself, you will require authorisation from your ML2. You must also bear the tax for the benefit in kind generated because the gift is subject to German salary tax.</p>How do you wish to proceed?",
-      "self-approval_special-event": "Übersetzung: Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung zum Special Event [selbst genehmigen, Selbstgenehmigung].<br><br> Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang bei HR dokumentiert werden muss.",
-      "self-approval_entertainment": "Übersetzung: Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung mit überwiegendem Unterhaltungscharakter [selbst genehmigen, Selbstgenehmigung].<br><br> Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang bei HR dokumentiert werden muss.",
+      "self-approval_special-event": "As long as the principle of [social acceptability, Social Acceptability] is satisfied, you can [self-approve, Self-approval] the invitation to the special event.<br><br>Übersetzung: Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang bei HR dokumentiert werden muss.",
+      "self-approval_entertainment": "As long as the principle of [social acceptability, Social Acceptability] is satisfied, you can [self-approve, Self-approval] the invitation that primarily constitutes entertainment.<br><br>Übersetzung: Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang bei HR dokumentiert werden muss.",
       "self-approval_gift": "Übersetzung: Grundsätzlich ist das erhaltene Geschenk an die MR AG abzugeben und dort zu inventarisieren.</p><p>Eine eigene Verwendung können Sie sich selbst genehmigen. Hierbei ist zu beachten:</p> <ul><li>Sie selbst tragen die Steuer für den entstandenen geldwerten Vorteil, da das Geschenk der Lohnsteuerpflicht unterliegt</li><li>Wir benötigen weitere Angaben, die Sie auf der nächsten Seite machen können. Diese dienen der Dokumentation bei HR.</li></ul>Wie möchten Sie fortfahren?",
-      "self-approval_business-lunch": "Übersetzung: Sofern der Grundsatz der [Sozialadäquanz, same] erfüllt ist, können Sie sich die Einladung zum Geschäftsessen [selbst genehmigen, Selbstgenehmigung].<br><br> Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang dokumentiert werden muss."
+      "self-approval_business-lunch": "As long as the principle of [social acceptability, Social Acceptability] is satisfied, you can [self-approve, Self-approval] the business meal invitation.<br><br>Übersetzung: Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang dokumentiert werden muss."
     },
     "infoScreen": {
-      "no-approval_business-lunch": "As long as the principle of [Sozialadäquanz, same] is satisfied, you can accept the business meal invitation.<br><br>If you click on \"Accept\"  you will receive email confirmation of the process for your records.",
+      "no-approval_business-lunch": "As long as the principle of [social acceptability, Social Acceptability] is satisfied, you can accept the business meal invitation.<br><br>If you click on \"Accept\"  you will receive email confirmation of the process for your records.",
       "no-approval_gift": "Acceptance of a gift in this segment requires no authorisation and has no tax implications as long as the monthly value limit is not exceeded.",
       "finalize": "Übersetzung: Zuwendung annehmen"
     },
@@ -178,9 +178,9 @@
       "save-template": "Save as template",
       "alert_required-field_title": "Form incomplete",
       "alert_required-field_message": "Please complete the fields marked in red.",
-      "alert_attachment_gallery": "Galerie",
-      "alert_attachment_camera": "Übersetzung: Kamera",
-      "alert_attachment_title": "Übersetzung: Von wo möchten Sie den Anhang laden?",
+      "alert_attachment_gallery": "Gallery",
+      "alert_attachment_camera": "Camera",
+      "alert_attachment_title": "From where would you like to load the attachment?",
       "warning_gComp": "Übersetzung: Diese Angaben gehen an Group Compliance.",
       "warning_gComp+FE1": "Übersetzung: Diese Angaben gehen an Group Compliance und Ihre FE 1.",
       "warning_FE1": "Übersetzung: Diese Angaben gehen an Ihre FE 1.",
@@ -198,8 +198,8 @@
         "howMuch_gift": "What is the estimated monetary value of the gift?"
       },
       "info": {
-        "who": "You can give a gratuity to either a [Geschäftspartner, same] or [anderen Person, Andere].",
-        "what": "We differentiate between five forms of [Zuwendungen, same]: [Bargeld, same], [Special Events, same], [Einladungen mit überwiegendem Unterhaltungscharakter, same], [Geschäftsessen, same] and [Geschenke, same].",
+        "who": "You can give a gratuity to either a [business partner, Business partners] or to [another person, Others].",
+        "what": "We differentiate between five forms of [gratuities, Gratuity]: [cash, Cash], [special events, Special Events], [entertainment, same], [business meals, Business meals] and [gifts, Gifts].",
         "howMuch": "",
         "howMuch_gift": ""
       }
@@ -208,21 +208,21 @@
       "normal_gComp": "In this instance, you will require the authorisation of Group Compliance, who will now be contacted on the basis of your process data.<br><br>Your enquiry requires provision of further details and a pertinent reason.<br><br>You will subsequently receive a summary of the process for your records.",
       "normal_FE1": "In this instance, you will require the authorisation of your ML1, who will now be contacted on the basis of the data entered.<br><br>Your enquiry requires provision of further details and a pertinent reason.<br><br>You will subsequently receive a summary of the process for your records.",
       "normal_FE2": "In this instance, you will require the authorisation of your ML2, who will now be contacted on the basis of your process data.<br><br>Your enquiry requires provision of further details and a pertinent reason.<br><br>You will subsequently receive a summary of the process for your records.",
-      "warning_others": "Provision of any [Zuwendungen, same] to [Andere, same] is not permitted. In exceptional cases, <i>prior</i> authorisation can be obtained from GComp.<p>Apply for authorisation now?</p>",
+      "warning_others": "Provision of any [gratuity, Gratuity] to [others, Others] is not permitted. In exceptional cases, <i>prior</i> authorisation can be obtained from GComp.<p>Apply for authorisation now?</p>",
       "warning_cash": "The giving of cash is generally prohibited. In exceptional cases, <i>prior</i> authorisation can be obtained from GComp.<p>Apply for authorisation now?</p>",
-      "warning_specialEvent_standard": "It is generally not permissible to issue invitations in the form of [Special Events, same] if these have a monetary value in excess of €250. In exceptional cases, prior authorisation can be obtained from GComp and your ML1.<p>Apply for authorisation now?</p>",
-      "warning_specialEvent_FE1": "It is generally not permissible to issue invitations in the form of [Special Events, same] if these have a monetary value in excess of €250. In exceptional cases, prior authorisation can be obtained from GComp.<p>Apply for authorisation now?</p>",
-      "high-necessity_FE2": "You require authorisation from your ML2. And must also supply a pertinent reason for the business necessity."
+      "warning_specialEvent_standard": "It is generally not permissible to issue invitations in the form of [special events, Special events] if these have a monetary value in excess of €250. In exceptional cases, prior authorisation can be obtained from GComp and your ML1.<p>Apply for authorisation now?</p>",
+      "warning_specialEvent_FE1": "It is generally not permissible to issue invitations in the form of [special events, Special events] if these have a monetary value in excess of €250. In exceptional cases, prior authorisation can be obtained from GComp.<p>Apply for authorisation now?</p>",
+      "high-necessity_FE2": "You require authorisation from your ML2. And must also supply a pertinent reason for the business necessity.",
+      "self-approval_special-event": "As long as the principle of [social acceptability, Social Acceptability] is satisfied, you can [self-approve, Self-approval] the invitation to the special event.<br><br>Übersetzung: Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang dokumentiert werden muss.",
+      "self-approval_entertainment": "As long as the principle of [social acceptability, Social Acceptability] is satisfied, you can [self-approve, Self-approval] the invitation that primarily constitutes entertainment.<br><br>Übersetzung: Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang dokumentiert werden muss.",
+      "self-approval_business-lunch": "As long as the principle of [social acceptability, Social Acceptability] is satisfied, you can [self-approve, Self-approval] the business meal invitation.<br><br>Übersetzung: Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang dokumentiert werden muss.",
+      "self-approval_gift": "As long as the principle of [social acceptability, Social Acceptability] is satisfied, you can [self-approve, Self-approval] the gift.<br><br>Übersetzung: Bitte machen Sie auf der nächsten Seite noch weitere Angaben, da der Vorgang dokumentiert werden muss."
     },
     "infoScreen": {
-      "self-approval_specialEvent": "As long as the principle of [Sozialadäquanz, same] is satisfied, you can [selbst genehmigen, Selbstgenehmigung] the invitation to the special event.<br><br>If you click on \"Accept\"  you will receive email confirmation of the process for your records.",
-      "self-approval_entertainment": "As long as the principle of [Sozialadäquanz, same] is satisfied, you can [selbst genehmigen, Selbstgenehmigung] the invitation that primarily constitutes entertainment.<br><br>If you click on \"Accept\"  you will receive email confirmation of the process for your records.",
-      "self-approval_business-lunch": "As long as the principle of [Sozialadäquanz, same] is satisfied, you can [selbst genehmigen, Selbstgenehmigung] the business meal invitation.<br><br>If you click on \"Accept\"  you will receive email confirmation of the process for your records.",
-      "self-approval_gift": "As long as the principle of [Sozialadäquanz, same] is satisfied, you can [selbst genehmigen, Selbstgenehmigung] the gift.<br><br>If you click on \"Accept\"  you will receive email confirmation of the process for your records.",
-      "no-approval_business-lunch": "No approval for business meals is required in this segment as long as these conform to normal business practice and satisfy the principle of [Sozialadäquanz, same].",
-      "no-approval_gift": "No approval for gifts is required in this segment. You can place an order from <a href = 'www.google.de'>Munich Reinsurance Company’s online catalogue</a>, or arrange the gift yourself.",
-      "finalize": "Übersetzung: Zuwendung vergeben",
-      "goToProCat": "Übersetzung: Zum ProC@t-Katalog"
+      "no-approval_business-lunch": "No approval for business meals is required in this segment as long as these conform to normal business practice and satisfy the principle of [social acceptability, Social Acceptability].",
+      "no-approval_gift": "No approval for gifts is required in this segment. You can place an order from the [online catalogue, Online catalogue], or arrange the gift yourself.",
+      "finalize": "Give gratuity",
+      "goToProCat": "Go to online catalogue"
     },
     "formScreen": {
       "cash": {
@@ -260,14 +260,14 @@
         "label_person": "Recipient – Name of person, company",
         "label_reason": "Reason"
       },
-      "label_tax": "Has tax been paid by the issuer in accordance with[§37b EStG, same]?",
+      "label_tax": "Has tax been paid by the issuer in accordance with [§37b EStG, same]?",
       "label_attachment": "Attach confirmation",
       "save-template": "Save as template",
       "alert_required-field_title": "Form incomplete",
       "alert_required-field_message": "Please complete the fields marked in red.",
-      "alert_attachment_gallery": "Übersetzung: Galerie",
-      "alert_attachment_camera": "Übersetzung: Kamera",
-      "alert_attachment_title": "Übersetzung: Von wo möchten Sie den Anhang laden?",
+      "alert_attachment_gallery": "Gallery",
+      "alert_attachment_camera": "Camera",
+      "alert_attachment_title": "From where would you like to load the attachment?",
       "warning_gComp": "Übersetzung: Diese Angaben gehen an Group Compliance.",
       "warning_gComp+FE1": "Übersetzung: Diese Angaben gehen an Group Compliance und Ihre FE 1.",
       "warning_FE1": "Übersetzung: Diese Angaben gehen an Ihre FE 1.",

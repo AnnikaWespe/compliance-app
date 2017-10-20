@@ -96,10 +96,40 @@ Großsportveranstaltungen (Oktoberfest,Fußballspiele, Formel-1-Rennen)`,
   Abgeltung der Steuerpflicht werden bei Geschenken über 35 € die Barcode-Etiketten, die 
   durch den Dienstleister EIDEX auf jeder Verpackungseinheit angebracht werden, 
   um den Satz "Artikel wurde von Munich Re bereits pauschal versteuert" ergänzt.`,
-  'Geschenke':
-    `Geschenke sind ein Sonderfall der Zuwendungen, wobei unter „Zuwendungen“ ökonomische, 
+    'Geschenke':
+      `Geschenke sind ein Sonderfall der Zuwendungen, wobei unter „Zuwendungen“ ökonomische, 
     soziale oder persönliche Vorteile aller Art zu verstehen sind. Hierzu gehören 
-    insbesondere Sachgeschenke inkl. Gutscheine und Voucher.`
+    insbesondere Sachgeschenke inkl. Gutscheine und Voucher.`,
+    'Einladungen mit überwiegendem Unterhaltungscharakter' : `fehlender Text angefragt`
+  },
+  en: {
+    'Social Acceptability': `The principle of social acceptability aims to avoid potential conflicts of 
+    interest and the resulting reputational damage. This must always be determined on the basis of the 
+    respective individual recipient and their social status. The typical “test question” here is: Could 
+    the recipient afford this, and would they also be prepared to do so?`,
+    'Gratuity': `Gratuities are economic, social or personal benefits of all kinds. In particular, these include
+- Non-monetary gifts including coupons and vouchers
+- Cash, cash-like gifts and other financial benefits
+- Lotteries and competitions
+- Mediation of business contacts, honorary offices or memberships
+- Extending or accepting offers of employment or other professional advantages
+- Invitations to meals or which primarily constitute entertainment
+- Invitations to seminars, lectures and trade fairs including travel and accommodation costs.
+Non-monetary prizes given to winners of internal competitions are not gratuities.`,
+    'Cash': `Within the meaning of the Guideline, the term cash also incorporates gifts and hospitality, 
+    cash-like benefits and other financial benefits, e.g. cheques, bank transfers, cash discounts, rebates, etc.`,
+    'Special events': `Special events include football games and Formula 1 races, comparable major 
+    international sporting or other events where the purpose is primarily or purely entertainment 
+    (e.g. Munich’s Oktoberfest).`,
+    'entertainment': `missing text requested`,
+    'Business meals': `A business meal is any hospitality involving the provision of a meal outside 
+    Munich Re’s premises.`,
+    'Gifts': `missing text requested`,
+    'Business partners': `Any party with whom Munich Re has business relations is a 
+    business partner. In particular, these include cedants, retrocedants, retrocessionaires and intermediaries.`,
+    'Others': `Other persons include suppliers, external service providers and public officials.`,
+    'Self-approval': `If the requester’s position is equivalent to the approver’s, the requester can 
+    self-approve within the respective approval limit. This is to be documented.`,
+    'Online catalogue': `Munich Re gift catalogue (available on the ProC@t platform)`
   }
-
 }
