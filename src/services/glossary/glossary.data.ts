@@ -124,7 +124,8 @@ Non-monetary prizes given to winners of internal competitions are not gratuities
     'entertainment': `missing text requested`,
     'Business meals': `A business meal is any hospitality involving the provision of a meal outside 
     Munich Re’s premises.`,
-    'Gifts': `missing text requested`,
+    'Gifts': `Gifts are a special subset of benefits, which represent social, personal or financial gains. 
+    Prominent examples of such benefits are gifts including vouchers and coupons.`,
     'Business partners': `Any party with whom Munich Re has business relations is a 
     business partner. In particular, these include cedants, retrocedants, retrocessionaires and intermediaries.`,
     'Others': `Other persons include suppliers, external service providers and public officials.`,

@@ -58,7 +58,7 @@ export class OpenDocumentService implements OnDestroy{
         this.screenOrientation.unlock();
       })
       ;
-      this.loadEndSubscription = inAppBrowserInstance.on('loadstop').subscribe(() => {
+      this.loadEndSubscription = inAppBrowserInstance.on('exit').subscribe(() => {
         this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       });
     }
